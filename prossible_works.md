@@ -250,3 +250,43 @@ Analyze cryptocurrency transaction networks to uncover patterns, detect anomalie
 2. "Clustering Cryptocurrency Wallets Using Transaction Data" by Kumar et al. (2021)
 3. "Flow Analysis of Cryptocurrency Transactions Using Graph Theory" by Lee et al. (2020)
 
+
+## 8. Lichess Network Analysis
+
+### Overview
+
+This project aims to explore the world of chess through a network science and graph theory lens. 
+Lichess, a popular online chess platform, provides a rich dataset of chess games, player interactions, and game histories. 
+Using this dataset, we delve into various aspects of network analysis, seeking to gain insights into the strategies, players, and dynamics of the Lichess chess community.
+
+### Objectives
+
+1. **Network Creation**: We construct networks from the chess games and interactions on Lichess. These networks are composed of nodes representing chess pieces, players, game states, and more.
+2. **Centrality Measures**: We employ various centrality metrics to identify the most important nodes in these networks. This helps us understand the significance of certain chess pieces, players, or game positions within the **Lichess community**.
+3. **Community Detection**: Community detection algorithms are used to identify clusters of related chess pieces, players, or games, revealing strategies and playing styles.
+4. **Temporal Analysis**: By viewing chess games as temporal networks, we explore how game states change over time and analyze the dynamics of moves and piece interactions.
+
+### Possible Research Questions
+
+1. How can network analysis enhance our understanding of chess game strategies and player interactions on Lichess?
+2. What are the key players (both human and pieces) in the Lichess chess community, and how are they connected within the network?
+3. How do chess game states change over time, and what insights can be gained from temporal network analysis?
+4. Can community detection algorithms help identify distinct playing styles or strategies among Lichess players?
+
+### Datasets
+
+https://database.lichess.org/ : A collection of millions of chess games played on Lichess.
+
+### Methods
+
+1. **Network Analysis**: We use network analysis libraries such as NetworkX in Python to analyze the Lichess networks and calculate centrality measures.
+2. **Community Detection**: Various community detection algorithms, such as Louvain or Girvan-Newman, are applied to find clusters within the networks.
+3. **Temporal Network Analysis**: We consider chess games as temporal networks, analyzing changes in network structure over the course of a game.
+4. **Visualization**: Network visualizations help convey the patterns and structures discovered in the Lichess data.
+
+### Potential Applications
+
+1. **Chess Strategy**: Understanding the importance of different pieces and positions can aid in chess strategy and improve gameplay.
+2. **Player Communities**: Identifying distinct player communities or playing styles can enhance community engagement and chess learning.
+3. **Game Dynamics**: Temporal analysis can offer insights into the flow of a chess game, helping players understand key moments and transitions.
+4. **Chess Education**: Findings from this project can be used to develop educational tools and resources for chess enthusiasts.
