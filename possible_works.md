@@ -1,4 +1,87 @@
-# Possible project works
+# Possible project works: Finance-related projects
+
+## 1. Cryptocurrency Transaction Analysis
+
+**Objective:**
+
+Analyze cryptocurrency transaction networks to uncover patterns, detect anomalies like money laundering, and gain insights into how funds flow within the blockchain network.
+
+**Data Sources:**
+
+1. Cryptocurrency Transaction Histories
+2. Exchange Data
+3. Darknet Market Data
+
+**Network Representation:**
+
+1. Construct a directed graph where nodes represent wallet addresses and edges represent transactions.
+2. Assign weights to edges based on transaction amounts.
+3. Use timestamps to track the temporal evolution of the network.
+
+**Anomaly Detection:**
+
+1. Implement graph-based anomaly detection algorithms to identify suspicious transaction patterns.
+2. Look for unusual transaction volumes, transaction sequences, or clustering of addresses.
+
+**Clustering and Address Tagging:**
+
+1. Use clustering algorithms to group wallet addresses likely owned by the same entity.
+2. Consider factors such as transaction patterns, address relationships, and external information.
+3. Tag clusters with labels such as "exchange," "darknet market," or "individual user."
+
+**Flow Analysis:**
+
+1. Track the flow of funds by tracing transactions through the network.
+2. Identify major sources, destinations, and intermediaries of cryptocurrency flows.
+3. Understand how cryptocurrencies move between different entities and how funds are used within the blockchain ecosystem.
+
+**Use Cases:**
+
+1. Identify potentially fraudulent transactions and track illicit activity.
+2. Assist cryptocurrency exchanges in monitoring transactions and complying with regulations.
+3. Provide insights for researchers studying cryptocurrency behavior and market dynamics.
+
+**Datasets:**
+
+1. Bitcoin Transaction Graph
+2. Ethereum Transaction Graph
+3. Elliptic Data
+
+**Research Papers:**
+
+1. "Graph-Based Anomaly Detection for Cryptocurrency Transactions" by Monamo et al. (2022)
+2. "Clustering Cryptocurrency Wallets Using Transaction Data" by Kumar et al. (2021)
+3. "Flow Analysis of Cryptocurrency Transactions Using Graph Theory" by Lee et al. (2020)
+
+## 2. Identifying and understanding the dynamics of financial bubbles
+
+**Description:**
+
+Financial bubbles are periods of rapid and unsustainable growth in asset prices.
+Financial bubbles are often characterized by herding behavior, where investors make investment decisions based on the actions of others rather than on their own analysis. 
+One way to use network analysis to identify financial bubbles is to look for sudden increases in the number of connections in the network. This may indicate that investors are becoming more interconnected, and that herding behavior is becoming more likely. Additionally, network analysis can be used to identify the most central nodes in the network. These nodes are more likely to influence others, and so they may play a key role in the formation and evolution of financial bubbles.
+Another way to use network analysis to understand financial bubbles is to study the dynamics of information diffusion through the network. When new information about an asset becomes available, it can spread through the network and influence the investment decisions of other investors. 
+
+**Steps:**
+
+- Use network analysis to identify the parameters related to financial bubbles.
+- Develop network-based models to simulate the formation and evolution of financial bubbles.
+- Analyze the network dynamics of financial bubbles to identify patterns and trends that can be used to predict future bubbles.
+
+## 3. Developing network-based models to simulate the spread of financial contagion
+
+Financial contagion is the process by which financial shocks spread from one institution or market to another. It can be triggered by a variety of factors, such as a bank failure, a sovereign debt crisis, or a market crash.
+Network analysis can be used to develop network-based models to simulate the spread of financial contagion.
+To simulate the spread of financial contagion, network-based models typically use a Monte Carlo approach. This involves randomly selecting a node in the network and assuming that it experiences a shock. The model then uses the network topology to simulate how the shock spreads to other nodes in the network. The model can be used to assess the probability of different contagion scenarios, and to identify the institutions and markets that are most vulnerable to contagion.
+
+**Steps:**
+
+- Construct a network of financial institutions and other relevant entities, such as central banks and governments.
+- Use network metrics to identify the most critical nodes and linkages in the network.
+- Develop a network-based model to simulate the spread of financial contagion through the network.
+- Use the model to assess the impact of different policies and interventions (modifying the network) on the spread of financial contagion.
+
+# Possible project works: Non-financial topics
 
 ## 1. Analyze brain connectivity of people with Alzheimer's
 
@@ -197,61 +280,7 @@ Develop a personalized health recommendation system that utilizes network modeli
 2. "Graph-Based Approaches for Personalized Health Recommendations" by Wang et al. (2019)
 3. "Leveraging Social Networks for Personalized Health Recommendations" by Yang et al. (2017)
 
-## 7. Cryptocurrency Transaction Analysis
-
-**Objective:**
-
-Analyze cryptocurrency transaction networks to uncover patterns, detect anomalies like money laundering, and gain insights into how funds flow within the blockchain network.
-
-**Data Sources:**
-
-1. Cryptocurrency Transaction Histories
-2. Exchange Data
-3. Darknet Market Data
-
-**Network Representation:**
-
-1. Construct a directed graph where nodes represent wallet addresses and edges represent transactions.
-2. Assign weights to edges based on transaction amounts.
-3. Use timestamps to track the temporal evolution of the network.
-
-**Anomaly Detection:**
-
-1. Implement graph-based anomaly detection algorithms to identify suspicious transaction patterns.
-2. Look for unusual transaction volumes, transaction sequences, or clustering of addresses.
-
-**Clustering and Address Tagging:**
-
-1. Use clustering algorithms to group wallet addresses likely owned by the same entity.
-2. Consider factors such as transaction patterns, address relationships, and external information.
-3. Tag clusters with labels such as "exchange," "darknet market," or "individual user."
-
-**Flow Analysis:**
-
-1. Track the flow of funds by tracing transactions through the network.
-2. Identify major sources, destinations, and intermediaries of cryptocurrency flows.
-3. Understand how cryptocurrencies move between different entities and how funds are used within the blockchain ecosystem.
-
-**Use Cases:**
-
-1. Identify potentially fraudulent transactions and track illicit activity.
-2. Assist cryptocurrency exchanges in monitoring transactions and complying with regulations.
-3. Provide insights for researchers studying cryptocurrency behavior and market dynamics.
-
-**Datasets:**
-
-1. Bitcoin Transaction Graph
-2. Ethereum Transaction Graph
-3. Elliptic Data
-
-**Research Papers:**
-
-1. "Graph-Based Anomaly Detection for Cryptocurrency Transactions" by Monamo et al. (2022)
-2. "Clustering Cryptocurrency Wallets Using Transaction Data" by Kumar et al. (2021)
-3. "Flow Analysis of Cryptocurrency Transactions Using Graph Theory" by Lee et al. (2020)
-
-
-## 8. Lichess Network Analysis
+## 7. Lichess Network Analysis
 
 ### Overview
 
@@ -292,7 +321,7 @@ https://database.lichess.org/ : A collection of millions of chess games played o
 4. **Chess Education**: Findings from this project can be used to develop educational tools and resources for chess enthusiasts.
 
 
-## 9. Studying the Evolution of the AI and Data Science Community
+## 8. Studying the Evolution of the AI and Data Science Community
 
 ### Data Collection
 1. Gather data from platforms like GitHub, Kaggle, Stack Overflow, research paper databases, and social media (e.g., Twitter, LinkedIn) to create a comprehensive dataset.
@@ -322,7 +351,7 @@ https://database.lichess.org/ : A collection of millions of chess games played o
 ### Ethical Considerations
 12. Be mindful of ethical concerns related to data privacy and usage. Ensure that data is anonymized and that you follow relevant guidelines and regulations.
 
-### Other fields of application:
+# Other fields of application (to be expanded):
 	1.	Economics and Finance: Analyze the temporal dynamics of financial markets, study the interconnections between different assets, and predict market trends. Identify financial networks, such as interbank lending networks.
 	2.	Biology and Genomics: Study the evolution of biological networks, track the interactions between genes, proteins, and diseases over time. Explore the dynamics of ecological networks in ecosystems.
 	3.	Transportation and Urban Planning: Analyze the evolution of transportation networks and traffic patterns in urban areas. Optimize public transportation routes and study the growth of ridesharing networks.
