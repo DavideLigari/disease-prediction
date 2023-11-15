@@ -25,6 +25,27 @@ Addressing the task as a multi-class classification problem, we can use the foll
 3. **Kernel-SVM**
 4. **Bayesian Generative Models:** Naive Bayes, Gaussian Naive Bayes, Multinomial Naive Bayes, etc.
 
+**Dataset:**
+1. [Symptom-Disease Associations](https://www.kaggle.com/itachi9604/disease-symptom-description-dataset).
+There are columns containing diseases, their symptoms , precautions to be taken, and their weights.
+This dataset can be easily cleaned by using file handling in any language. The user only needs to understand how rows and columns are arranged. 
+License: CC BY-SA 4.0
+`
+
+2. [Disease Symptoms and Patient Profile Dataset](https://www.kaggle.com/datasets/uom190346a/disease-symptoms-and-patient-profile-dataset).
+Data:
+   - Disease: The name of the disease or medical condition.
+   - Fever: Indicates whether the patient has a fever (Yes/No).
+   - Cough: Indicates whether the patient has a cough (Yes/No).
+   - Fatigue: Indicates whether the patient experiences fatigue (Yes/No).
+   - Difficulty Breathing: Indicates whether the patient has difficulty breathing (Yes/No).
+   - Age: The age of the patient in years.
+   - Gender: The gender of the patient (Male/Female).
+   - Blood Pressure: The blood pressure level of the patient (Normal/High).
+   - Cholesterol Level: The cholesterol level of the patient (Normal/High).
+   - Outcome Variable: The outcome variable indicating the result of the diagnosis or assessment for the specific disease (Positive/Negative).
+License: CC0: Public Domain
+
 
 ---
 
