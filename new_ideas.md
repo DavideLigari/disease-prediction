@@ -45,10 +45,13 @@ Data:
    - Cholesterol Level: The cholesterol level of the patient (Normal/High).
    - Outcome Variable: The outcome variable indicating the result of the diagnosis or assessment for the specific disease (Positive/Negative).
 License: CC0: Public Domain
+`
 
 3. [DDXPlus Dataset](https://figshare.com/articles/dataset/DDXPlus_Dataset/20043374).
    Large-scale synthetic dataset of roughly 1.3 million patients that includes a differential diagnosis, along with the ground truth pathology, symptoms and antecedents for each patient. Unlike existing datasets which only contain binary symptoms and antecedents, this dataset also contains categorical and multi-choice symptoms and antecedents useful for efficient data collection. Moreover, some symptoms are organized in a hierarchy, making it possible to design systems able to interact with patients in a logical way. 
-   License: CC-BY
+   License: CC-BY.
+
+   Related Paper [DDXPlus Dataset Paper](https://arxiv.org/pdf/2205.09148.pdf)
 
 **Sources:**
 1. [Predicting Diseases from Symptoms using Graph Neural Networks](https://arxiv.org/pdf/2010.15818.pdf)
