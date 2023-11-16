@@ -53,6 +53,9 @@ License: CC0: Public Domain
 
    Related Paper [DDXPlus Dataset Paper](https://arxiv.org/pdf/2205.09148.pdf)
 
+4. [Disease and Symptoms Reccomandation](https://ieee-dataport.org/documents/disease-diagnosis-and-recommended-remedy).
+   With the motivation of no good data sources available for all diseases (from generic to chronic) and their treatment courses, a new dataset is synthesized by exploring several medical websites and resources. It provides the precaution list corresponding to over 1000+ diagnosis. prec\_t.csv : (did, diagnose, pid) = (Disease identifier, Disease name, treatment course). This dataset can be utilized for many machine learning or deep learning based healthcare applications. One such application is developing the recommender systems to recommend the most suitable treatment plan for a given disease.
+
 **Sources:**
 1. [Predicting Diseases from Symptoms using Graph Neural Networks](https://arxiv.org/pdf/2010.15818.pdf)
 2. [Disease Prediction with Machine Learning](https://ieeexplore.ieee.org/document/9753707)
