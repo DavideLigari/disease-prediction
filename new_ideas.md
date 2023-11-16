@@ -27,9 +27,9 @@ Addressing the task as a multi-class classification problem, we can use the foll
 
 **Dataset:**
 1. [Symptom-Disease Associations](https://www.kaggle.com/itachi9604/disease-symptom-description-dataset).
-There are columns containing diseases, their symptoms , precautions to be taken, and their weights.
-This dataset can be easily cleaned by using file handling in any language. The user only needs to understand how rows and columns are arranged. 
-License: CC BY-SA 4.0
+   There are columns containing diseases, their symptoms , precautions to be taken, and their weights.
+   This dataset can be easily cleaned by using file handling in any language. The user only needs to understand how rows and columns are arranged. 
+   License: CC BY-SA 4.0
 `
 
 2. [Disease Symptoms and Patient Profile Dataset](https://www.kaggle.com/datasets/uom190346a/disease-symptoms-and-patient-profile-dataset).
@@ -46,6 +46,14 @@ Data:
    - Outcome Variable: The outcome variable indicating the result of the diagnosis or assessment for the specific disease (Positive/Negative).
 License: CC0: Public Domain
 
+3. [DDXPlus Dataset](https://figshare.com/articles/dataset/DDXPlus_Dataset/20043374).
+   Large-scale synthetic dataset of roughly 1.3 million patients that includes a differential diagnosis, along with the ground truth pathology, symptoms and antecedents for each patient. Unlike existing datasets which only contain binary symptoms and antecedents, this dataset also contains categorical and multi-choice symptoms and antecedents useful for efficient data collection. Moreover, some symptoms are organized in a hierarchy, making it possible to design systems able to interact with patients in a logical way. 
+   License: CC-BY
+
+**Sources:**
+1. [Predicting Diseases from Symptoms using Graph Neural Networks](https://arxiv.org/pdf/2010.15818.pdf)
+2. [Disease Prediction with Machine Learning](https://ieeexplore.ieee.org/document/9753707)
+3. [Disease Prediction with KNN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3661426)
 
 ---
 
