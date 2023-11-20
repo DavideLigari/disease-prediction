@@ -6,20 +6,20 @@ Read papers provided by the prof to find useful insights
 
 ## 2. Dataset analysis
 
-Find a suitable dataset for our analysis
+Find a suitable dataset for our analysis. Understand the meaning of the weights
 
-## 3. Feature definition
-
-Define which features will be used to make predictions.
-Network features
-
-## 4. Data cleaning
+## 3. Data cleaning
 
 Remove outliers and fix invalid values.
 
-## 5. Network analysis
+## 4. Network analysis
 
 Chosing most suitable type of graph (e.g. bipartite) and compute metrics.
+
+## 5. Feature definition
+
+Define which features will be used to make predictions.
+Network features
 
 ## 6. Model creation
 
