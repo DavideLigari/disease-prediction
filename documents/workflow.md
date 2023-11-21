@@ -1,4 +1,4 @@
-# Workflow
+# Workflow :
 
 ## 1. Read papers
 
@@ -14,7 +14,7 @@ Remove outliers and fix invalid values.
 
 ## 4. Network analysis
 
-Chosing most suitable type of graph (e.g. bipartite) and compute metrics.
+Choosing most suitable type of graph (e.g. bipartite) and compute metrics.
 
 ## 5. Feature definition
 
@@ -28,3 +28,8 @@ Train different model with different parameters to find the best one
 ## 7. Comparison between models
 
 Compare model with network features and the model without them.
+
+# Notes :
+
+1. use a hypotheses testing approach : we decide different network metrics and then we test their significance.
+2.
