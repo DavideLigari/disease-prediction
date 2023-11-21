@@ -67,4 +67,11 @@ With the motivation of no good data sources available for all diseases (from gen
 2. [Disease Prediction with Machine Learning](https://ieeexplore.ieee.org/document/9753707)
 3. [Disease Prediction with KNN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3661426)
 
+## Dataset 2
+
+https://www.kaggle.com/datasets/dhivyeshrk/diseases-and-symptoms-dataset?select=Final_Augmented_dataset_Diseases_and_Symptoms.csv
+773 diseases
+377 symptoms
+247k rows
+
 ---
