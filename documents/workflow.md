@@ -1,4 +1,5 @@
-# Workflow :
+# Workflow 
+The idea is to conduct a network analysis, defining metrics on nodes and identifying potential communities, with a dual objective. The first is to generate a useful descriptive analysis of the symptom-disease interaction. The second is to identify potential features to introduce into the predictive model to enhance its performance.
 
 ## 1. Read Research Papers about the Topic
    Explore the literature to have a complete and deep understanding of network theory and disease prediction
