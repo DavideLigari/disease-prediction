@@ -71,8 +71,8 @@ Retrieve communities.
 ### 3e. Community Detection
 
    - Identify possible communities and similarities between diseases, this information could be useful in prediction explanation. 
-   - Communities could have significant predictive properties.
-   - Modularity can be used to compare different partitions
+   - Communities could have significant predictive properties. See [ChatGPT chat](https://chat.openai.com/share/d771039a-788d-4b0c-abaf-787d96d1b002)
+   - Modularity can be used to asses soundness and compare different partitions
 
 ## 4. Data cleaning
 
