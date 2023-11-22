@@ -31,36 +31,48 @@ Retrieve communities.
 
 ### 3b. Node importance metrics:
 
-1. **SS1**: Symptom Specificity. For each `s`, calculate the sum over `d` of all non-zero entries in the adjacency matrix, represented as
+1. **Degree SS1**: Symptom Specificity. For each `s`, calculate the sum over `d` of all non-zero entries in the adjacency matrix, represented as
    \[ \sum_{d} \text{nonzeroAdj}(s, d) \]. The lower the value, the higher the specificity.
 
-2. **SO1**: Symptom Occurrence. For each `s` sum all the weights over `d`. Computed as \[ \sum_{d} \text{nonzeroAdj}(s, d) \].
+2. **Strength SO1**: Symptom Occurrence. For each `s` sum all the weights over `d`. Computed as \[ \sum_{d} \text{nonzeroAdj}(s, d) \].
 
 3. **SC2**: Symptom Commonality: Measures if a symptom is present in diseases which are affected by many other symptoms or in disease which are affected by only few symptoms.
 
 
-4. **DS1**: Disease Specificity. For each `d`, calculate the sum over `s` of all non-zero entries in the adjacency matrix, represented as
+4. **Degree DS1**: Disease Specificity. For each `d`, calculate the sum over `s` of all non-zero entries in the adjacency matrix, represented as
    \[ \sum_{s} \text{nonzeroAdj}(s, d) \]. The lower the value, the higher the specificity.
 
-5. **DO1**: Disease Occurrence. For each `d` sum all the weights over `s`. It tells how many times a disease occurs across the dataset. Computed as \[ \sum_{s} \text{nonzeroAdj}(s, d) \].
+5. **Strength DO1**: Disease Occurrence. For each `d` sum all the weights over `s`. It tells how many times a disease occurs across the dataset. Computed as \[ \sum_{s} \text{nonzeroAdj}(s, d) \].
 
 6. **DC2**: Disease Commonality: Measures if a disease presents symptoms which affect many other diseases or symptoms which affect only few diseases.
 
-#### - Statistical Significance:
+   #### - Statistical Significance
 
    Null Model with Random Network?
 
-#### - Plot the metrics distribution
+### 3c. General metrics
 
-   - Power Law distribution (Log-Log)
-   - Beta coefficient
-   - Z-score
+1. **Clustering coefficient**
+2. **Assortativity**
+3. **Betweenness centrality**
 
-### 3c. Community Detection
+### 3d. Analyze metrics
 
-- Identify possible communities and similarities between diseases, this information could be useful in prediction explanation. 
-- Communities could have significant predictive properties.
-- Modularity can be used to compare different partitions
+- Plot weight distribution
+- Analyze correlation between degrees and strengths (SS1 - S01 | DS1 - DO1) --> Beta coefficient
+- Analyze correlation of weights of two nodes and their degrees --> Theta coefficient
+
+- Clustering coefficient comparison (weighted vs unweighted)
+- Assortativity comparison (weighted vs unweighted)
+
+- Power Law distribution (Log-Log)
+- Z-score
+
+### 3e. Community Detection
+
+   - Identify possible communities and similarities between diseases, this information could be useful in prediction explanation. 
+   - Communities could have significant predictive properties.
+   - Modularity can be used to compare different partitions
 
 ## 4. Data cleaning
 
