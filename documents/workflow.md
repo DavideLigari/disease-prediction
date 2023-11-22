@@ -46,11 +46,11 @@ Retrieve communities.
 
 6. **DC2**: Disease Commonality: Measures if a disease presents symptoms which affect many other diseases or symptoms which affect only few diseases.
 
-   ### - Statistical Significance:
+#### - Statistical Significance:
 
    Null Model with Random Network?
 
-   ### - Plot the metrics distribution
+#### - Plot the metrics distribution
 
    - Power Law distribution (Log-Log)
    - Beta coefficient
