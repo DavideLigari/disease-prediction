@@ -1,4 +1,4 @@
-## 1. Sickness Prediction
+## Sickness Prediction
 
 **Graph Representation:**
 
@@ -50,8 +50,11 @@ Addressing the task as a multi-class classification problem, we can use the foll
    - Cholesterol Level: The cholesterol level of the patient (Normal/High).
    - Outcome Variable: The outcome variable indicating the result of the diagnosis or assessment for the specific disease (Positive/Negative).
      License: CC0: Public Domain
-     `
-
+3. [Disease-Symptom Dataset](https://www.kaggle.com/datasets/dhivyeshrk/diseases-and-symptoms-dataset?select=Final_Augmented_dataset_Diseases_and_Symptoms.csv)
+   - 773 diseases
+   - 377 symptoms
+   - 247k rows
+---
 X. [DDXPlus Dataset](https://figshare.com/articles/dataset/DDXPlus_Dataset/20043374).
 Large-scale synthetic dataset of roughly 1.3 million patients that includes a differential diagnosis, along with the ground truth pathology, symptoms and antecedents for each patient. Unlike existing datasets which only contain binary symptoms and antecedents, this dataset also contains categorical and multi-choice symptoms and antecedents useful for efficient data collection. Moreover, some symptoms are organized in a hierarchy, making it possible to design systems able to interact with patients in a logical way.
 License: CC-BY.
@@ -61,17 +64,12 @@ Related Paper [DDXPlus Dataset Paper](https://arxiv.org/pdf/2205.09148.pdf)
 X. [Disease and Symptoms Reccomandation](https://ieee-dataport.org/documents/disease-diagnosis-and-recommended-remedy).
 With the motivation of no good data sources available for all diseases (from generic to chronic) and their treatment courses, a new dataset is synthesized by exploring several medical websites and resources. It provides the precaution list corresponding to over 1000+ diagnosis. prec_t.csv : (did, diagnose, pid) = (Disease identifier, Disease name, treatment course). This dataset can be utilized for many machine learning or deep learning based healthcare applications. One such application is developing the recommender systems to recommend the most suitable treatment plan for a given disease.
 
+---
 **Sources:**
 
 1. [Predicting Diseases from Symptoms using Graph Neural Networks](https://arxiv.org/pdf/2010.15818.pdf)
 2. [Disease Prediction with Machine Learning](https://ieeexplore.ieee.org/document/9753707)
 3. [Disease Prediction with KNN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3661426)
 
-## Dataset 2
-
-https://www.kaggle.com/datasets/dhivyeshrk/diseases-and-symptoms-dataset?select=Final_Augmented_dataset_Diseases_and_Symptoms.csv
-773 diseases
-377 symptoms
-247k rows
 
 ---
