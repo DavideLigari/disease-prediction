@@ -63,6 +63,11 @@ Retrieve communities.
 - Power Law distribution (Log-Log)
 - Z-score
 
+#### - Statistical Significance
+
+Create a null model: use a configuration model, which is a random network that preserves the number of nodes, links, and the degree of each node (eg link swapping)
+Compute the z-score of the S2 and D2 metrics.
+
 ### 3e. Community Detection
 1) transform the adjacency matrix into a co-occurrence matrix disease-disease
 2) clustering algorithm
@@ -71,11 +76,6 @@ Retrieve communities.
    - Identify possible communities and similarities between diseases, this information could be useful in prediction explanation. 
    - Communities could have significant predictive properties. See [ChatGPT chat](https://chat.openai.com/share/d771039a-788d-4b0c-abaf-787d96d1b002)
    - Modularity can be used to asses soundness and compare different partitions
-
-#### - Statistical Significance
-
-Create a null model: use a configuration model, which is a random network that preserves the nummber of nodes, links, and the degree of each node (eg link swapping)
-Compute the z-score of the S2 and D2 metrics.
 
 ## 4. Data cleaning
 
