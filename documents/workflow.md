@@ -8,9 +8,9 @@ The idea is to conduct a network analysis, defining metrics on nodes and identif
 ### 2a. Dataset
 Choose a dataset between:
 
-smaller:    https://www.kaggle.com/datasets/itachi9604/disease-symptom-description-dataset?select=Symptom-severity.csv
+smaller, faster:    https://www.kaggle.com/datasets/itachi9604/disease-symptom-description-dataset?select=Symptom-severity.csv
 
-larger, but artificially generated:    https://www.kaggle.com/datasets/dhivyeshrk/diseases-and-symptoms-dataset?select=Final_Augmented_dataset_Diseases_and_Symptoms.csv
+larger, cooler:    https://www.kaggle.com/datasets/dhivyeshrk/diseases-and-symptoms-dataset?select=Final_Augmented_dataset_Diseases_and_Symptoms.csv
 
 ### 2b. Analysis
 - Structure investigation
@@ -27,28 +27,21 @@ Retrieve communities.
 ### 3a. Structure:
 
 1. Bipartite network with 2 type of nodes (symptoms and disease)
-2. Weighted links (occurrence of a symptom in the disease: from 0 to 1 or just in absolute value)
+2. Non-weighted links (either 0 or 1 in the adjacency matrix)
 
 ### 3b. Node importance metrics:
 
-1. **Degree SS1**: Symptom Specificity. For each `s`, calculate the sum over `d` of all non-zero entries in the adjacency matrix, represented as
-   \[ \sum_{d} \text{nonzeroAdj}(s, d) \]. The lower the value, the higher the specificity.
+#### For Symptoms:
 
-2. **Strength SO1**: Symptom Occurrence. For each `s` sum all the weights over `d`. Computed as \[ \sum_{d} \text{nonzeroAdj}(s, d) \].
+1. **S1**: Symptom Occurrence. It's the degree of each symptom `s`. Computed as \[ \sum_{d} \text{nonzeroAdj}(s, d) \].
 
-3. **SC2**: Symptom Commonality: Measures if a symptom is present in diseases which are affected by many other symptoms or in disease which are affected by only few symptoms.
+2. **S2**: Symptom Commonality: Measures if a symptom is present in diseases which are affected by many other symptoms or in disease which are affected by only few symptoms.
 
+#### For Diseases:
 
-4. **Degree DS1**: Disease Specificity. For each `d`, calculate the sum over `s` of all non-zero entries in the adjacency matrix, represented as
-   \[ \sum_{s} \text{nonzeroAdj}(s, d) \]. The lower the value, the higher the specificity.
+3. **Strength D1**: Disease Occurrence.  It's the degree of each disease `d`. Computed as \[ \sum_{s} \text{nonzeroAdj}(s, d) \].
 
-5. **Strength DO1**: Disease Occurrence. For each `d` sum all the weights over `s`. It tells how many times a disease occurs across the dataset. Computed as \[ \sum_{s} \text{nonzeroAdj}(s, d) \].
-
-6. **DC2**: Disease Commonality: Measures if a disease presents symptoms which affect many other diseases or symptoms which affect only few diseases.
-
-   #### - Statistical Significance
-
-   Null Model with Random Network?
+4. **D2**: Disease Commonality: Measures if a disease presents symptoms which affect many other diseases or symptoms which affect only few diseases.
 
 ### 3c. General metrics
 
@@ -56,10 +49,12 @@ Retrieve communities.
 2. **Assortativity**
 3. **Betweenness centrality**
 
+
+
 ### 3d. Analyze metrics
 
 - Plot weight distribution
-- Analyze correlation between degrees and strengths (SS1 - S01 | DS1 - DO1) --> Beta coefficient
+- Analyze correlation between degrees and strengths (S1 - S1 | D1 - D1) --> Beta coefficient
 - Analyze correlation of weights of two nodes and their degrees --> Theta coefficient
 
 - Clustering coefficient comparison (weighted vs unweighted)
@@ -69,10 +64,18 @@ Retrieve communities.
 - Z-score
 
 ### 3e. Community Detection
+1) transform the adjacency matrix into a co-occurrence matrix disease-disease
+2) clustering algorithm
+3) check results using a modularity measure
 
    - Identify possible communities and similarities between diseases, this information could be useful in prediction explanation. 
    - Communities could have significant predictive properties. See [ChatGPT chat](https://chat.openai.com/share/d771039a-788d-4b0c-abaf-787d96d1b002)
    - Modularity can be used to asses soundness and compare different partitions
+
+#### - Statistical Significance
+
+Create a null model: use a configuration model, which is a random network that preserves the nummber of nodes, links, and the degree of each node (eg link swapping)
+Compute the z-score of the S2 and D2 metrics.
 
 ## 4. Data cleaning
 
@@ -81,13 +84,20 @@ Remove outliers and fix invalid values.
 
 ## 5. Feature definition
 
-Define which features will be used to make predictions.
-Network features
+Some of the metrics defined so far can be used as features for prediction in conjunction with symmptom occurrence.
+
+Features:
+    -Feature vector of symptoms (one-hot encoding)
+    -Symptom occurrence
+    -Symptom commonality
+Alternative features:
+    -Community clustering in place of the symptoms vector
 
 ## 6. Model creation
 
-Train different model with different parameters to find the best one
+Create a neural network which predicts the disease
 
 ## 7. Comparison between models
 
-Compare model with network features and the model without them.
+Compare model with network features and the model without them. 
+In particular, compare the model using the one-hot encoding of the symptoms against the network leveraging the spatial reduction given by the community clustering.
