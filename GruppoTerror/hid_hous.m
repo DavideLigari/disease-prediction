@@ -1,3 +1,7 @@
+
+
+
+
 function [K_B,K_L]=hid_hous(AdjMat_rist,nn)
 %% hidalgo houssman
 K_B = zeros(size(AdjMat_rist,1),nn);

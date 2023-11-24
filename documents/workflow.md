@@ -12,13 +12,13 @@ smaller, faster:    https://www.kaggle.com/datasets/itachi9604/disease-symptom-d
 
 larger, cooler:    https://www.kaggle.com/datasets/dhivyeshrk/diseases-and-symptoms-dataset?select=Final_Augmented_dataset_Diseases_and_Symptoms.csv
 
-### 2b. Analysis
-- Structure investigation
-- One Hot Encoding (if needed)
-- Check Missing Values
-- Check number of distinct values
-- Train, Test and Validation split
+### 2b. Preliminary Analysis
+- Data cleaning:
+    - Check number of distinct values
+    - Check Missing Values
+    - Switch to One Hot Encoding
 - Symptoms distribution for each disease
+
 
 ## 3. Network analysis
 Decide the network structure (e.g. bipartite, weighted...). Define useful metrics, test their statistical significance and analyze their results.
@@ -28,6 +28,7 @@ Retrieve communities.
 
 1. Bipartite network with 2 type of nodes (symptoms and disease)
 2. Non-weighted links (either 0 or 1 in the adjacency matrix)
+3. Structure investigation
 
 ### 3b. Node importance metrics:
 
@@ -44,21 +45,26 @@ Retrieve communities.
 4. **D2**: Disease Commonality: Measures if a disease presents symptoms which affect many other diseases or symptoms which affect only few diseases.
 
 ### 3c. General metrics
-
 1. **Clustering coefficient**
-2. **Assortativity**
-3. **Betweenness centrality**
+Code:
+    import networkx as nx
+    clustering_coefficient_i = nx.clustering(graph, node_i)
+Interpretation for disease nodes: it could reflect whether certain symptoms tend to co-occur within multiple diseases.
+
+2. **Betweenness centrality**
 
 
 
 ### 3d. Analyze metrics
 
-- Plot weight distribution
+- Plot degree distribution
+  P(k) = N(degree == k)/N
+   Plot for symptoms and for diseases in log scale P(k) versus k.
+   
 - Analyze correlation between degrees and strengths (S1 - S1 | D1 - D1) --> Beta coefficient
 - Analyze correlation of weights of two nodes and their degrees --> Theta coefficient
 
 - Clustering coefficient comparison (weighted vs unweighted)
-- Assortativity comparison (weighted vs unweighted)
 
 - Power Law distribution (Log-Log)
 - Z-score
@@ -77,27 +83,23 @@ Compute the z-score of the S2 and D2 metrics.
    - Communities could have significant predictive properties. See [ChatGPT chat](https://chat.openai.com/share/d771039a-788d-4b0c-abaf-787d96d1b002)
    - Modularity can be used to asses soundness and compare different partitions
 
-## 4. Data cleaning
 
-Remove outliers and fix invalid values.
+## 4. Feature definition
 
-
-## 5. Feature definition
-
-Some of the metrics defined so far can be used as features for prediction in conjunction with symmptom occurrence.
+Some of the metrics defined so far can be used as features for prediction in conjunction with symptom occurrence.
 
 Features:
-    -Feature vector of symptoms (one-hot encoding)
-    -Symptom occurrence
-    -Symptom commonality
+- Feature vector of symptoms (one-hot encoding)
+- Symptom occurrence
+- Symptom commonality
 Alternative features:
-    -Community clustering in place of the symptoms vector
+- Community clustering in place of the symptoms vector
 
-## 6. Model creation
-
+## 5. Model creation
+Train, Test and Validation split
 Create a neural network which predicts the disease
 
-## 7. Comparison between models
+## 6. Comparison between models
 
 Compare model with network features and the model without them. 
 In particular, compare the model using the one-hot encoding of the symptoms against the network leveraging the spatial reduction given by the community clustering.
