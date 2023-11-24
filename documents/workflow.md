@@ -40,19 +40,15 @@ Retrieve communities.
 
 #### For Diseases:
 
-3. **Strength D1**: Disease Occurrence.  It's the degree of each disease `d`. Computed as \[ \sum_{s} \text{nonzeroAdj}(s, d) \].
+1. **D1**: Disease Occurrence.  It's the degree of each disease `d`. Computed as \[ \sum_{s} \text{nonzeroAdj}(s, d) \].
 
-4. **D2**: Disease Commonality: Measures if a disease presents symptoms which affect many other diseases or symptoms which affect only few diseases.
+2. **D2**: Disease Commonality: Measures if a disease presents symptoms which affect many other diseases or symptoms which affect only few diseases.
 
 ### 3c. General metrics
 1. **Clustering coefficient**
-Code:
-    import networkx as nx
-    clustering_coefficient_i = nx.clustering(graph, node_i)
 Interpretation for disease nodes: it could reflect whether certain symptoms tend to co-occur within multiple diseases.
 
 2. **Betweenness centrality**
-
 
 
 ### 3d. Analyze metrics

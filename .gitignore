@@ -14,5 +14,6 @@
 *.synctex.gz
 *.blg
 *.bbl
+__pycache__/
 Presentation/~$Presentation.pptx
 documents/papers/to read/1-s2.0-S0378873322000685-main_highlited.pdf
