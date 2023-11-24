@@ -49,7 +49,7 @@ Retrieve communities.
 Interpretation for disease nodes: it could reflect whether certain symptoms tend to co-occur within multiple diseases.
 
 2. **Betweenness centrality**
-
+A symptom node with high betweenness centrality indicates that it is frequently associated with a variety of diseases. High betweenness symptom nodes act as bridges connecting different diseases in the network.
 
 ### 3d. Analyze metrics
 
