@@ -3,7 +3,8 @@ The idea is to conduct a network analysis, defining metrics on nodes and identif
 
 ## 1. Read Research Papers about the Topic
    Explore the literature to have a complete and deep understanding of network theory and disease prediction
-   
+
+
 ## 2. Exploratory Data Analysis
 ### 2a. Dataset
 Choose a dataset between:
@@ -12,65 +13,51 @@ smaller, faster:    https://www.kaggle.com/datasets/itachi9604/disease-symptom-d
 
 larger, cooler:    https://www.kaggle.com/datasets/dhivyeshrk/diseases-and-symptoms-dataset?select=Final_Augmented_dataset_Diseases_and_Symptoms.csv
 
-### 2b. Preliminary Analysis
-- Data cleaning:
-    - Check number of distinct values
-    - Check Missing Values
-    - Switch to One Hot Encoding
-- Symptoms distribution for each disease
+### 2b. Data cleaning
+- Check number of distinct values
+- Check Missing Values
+- Switch to One Hot Encoding
 
 
 ## 3. Network analysis
 Decide the network structure (e.g. bipartite, weighted...). Define useful metrics, test their statistical significance and analyze their results.
-Retrieve communities.
+Identify different communities through clustering algorithms.
 
 ### 3a. Structure:
 
 1. Bipartite network with 2 type of nodes (symptoms and disease)
 2. Non-weighted links (either 0 or 1 in the adjacency matrix)
 3. Structure investigation
+4. Unipartite projections
 
-### 3b. Node importance metrics:
+### 3b. General network metrics
 
-#### For Symptoms:
+1. **Degree distribution**
+  P(k) = N(degree == k)/N
+   Plot for symptoms and for diseases in log scale P(k) versus k.
+
+2. **Clustering coefficient**
+Interpretation for disease nodes: it could reflect whether certain symptoms tend to co-occur within multiple diseases.
+
+3. **Betweenness centrality**
+A symptom node with high betweenness centrality indicates that it is frequently associated with a variety of diseases. High betweenness symptom nodes act as bridges connecting different diseases in the network.
+
+### 3c. Node importance metrics:
 
 1. **S1**: Symptom Occurrence. It's the degree of each symptom `s`. Computed as \[ \sum_{d} \text{nonzeroAdj}(s, d) \].
 
 2. **S2**: Symptom Commonality: Measures if a symptom is present in diseases which are affected by many other symptoms or in disease which are affected by only few symptoms.
 
-#### For Diseases:
+3. **D1**: Disease Occurrence.  It's the degree of each disease `d`. Computed as \[ \sum_{s} \text{nonzeroAdj}(s, d) \].
 
-1. **D1**: Disease Occurrence.  It's the degree of each disease `d`. Computed as \[ \sum_{s} \text{nonzeroAdj}(s, d) \].
+4. **D2**: Disease Commonality: Measures if a disease presents symptoms which affect many other diseases or symptoms which affect only few diseases.
 
-2. **D2**: Disease Commonality: Measures if a disease presents symptoms which affect many other diseases or symptoms which affect only few diseases.
+#### Statistical Significance:
 
-### 3c. General metrics
-1. **Clustering coefficient**
-Interpretation for disease nodes: it could reflect whether certain symptoms tend to co-occur within multiple diseases.
+1. Create a configuration model to use as a null model. The configuration model is a random network that preserves the number of nodes, links, and the degree of each node (eg link swapping).
+2. Compute the z-score of the S2 and D2 metrics to determine which observed structural properties are not simply explained by the constraint specifying the null model itself.
 
-2. **Betweenness centrality**
-A symptom node with high betweenness centrality indicates that it is frequently associated with a variety of diseases. High betweenness symptom nodes act as bridges connecting different diseases in the network.
-
-### 3d. Analyze metrics
-
-- Plot degree distribution
-  P(k) = N(degree == k)/N
-   Plot for symptoms and for diseases in log scale P(k) versus k.
-   
-- Analyze correlation between degrees and strengths (S1 - S1 | D1 - D1) --> Beta coefficient
-- Analyze correlation of weights of two nodes and their degrees --> Theta coefficient
-
-- Clustering coefficient comparison (weighted vs unweighted)
-
-- Power Law distribution (Log-Log)
-- Z-score
-
-#### - Statistical Significance
-
-Create a null model: use a configuration model, which is a random network that preserves the number of nodes, links, and the degree of each node (eg link swapping)
-Compute the z-score of the S2 and D2 metrics.
-
-### 3e. Community Detection
+### 3d. Community Detection
 1) transform the adjacency matrix into a co-occurrence matrix disease-disease
 2) clustering algorithm
 3) check results using a modularity measure
@@ -85,17 +72,20 @@ Compute the z-score of the S2 and D2 metrics.
 Some of the metrics defined so far can be used as features for prediction in conjunction with symptom occurrence.
 
 Features:
-- Feature vector of symptoms (one-hot encoding)
+- Feature vector of symptoms
 - Symptom occurrence
 - Symptom commonality
+
 Alternative features:
 - Community clustering in place of the symptoms vector
 
+
 ## 5. Model creation
-Train, Test and Validation split
-Create a neural network which predicts the disease
+- Train, Test and Validation split (or crossvalidation)
+- Create a neural network which predicts the disease
+
 
 ## 6. Comparison between models
 
-Compare model with network features and the model without them. 
-In particular, compare the model using the one-hot encoding of the symptoms against the network leveraging the spatial reduction given by the community clustering.
+- Compare the model using network features and the model without them. 
+- In particular, compare the model using the one-hot encoding of the symptoms against the network leveraging community clustering.
