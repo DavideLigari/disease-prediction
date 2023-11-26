@@ -37,7 +37,8 @@ Identify different communities through clustering algorithms.
    Plot for symptoms and for diseases in log scale P(k) versus k.
 
 2. **Clustering coefficient**
-Interpretation for disease nodes: it could reflect whether certain symptoms tend to co-occur within multiple diseases.
+Interpretation for symptom nodes: it reflects whether certain symptoms tend to co-occur within multiple diseases.
+Interpretation for disease nodes: it measures how connected diseases are in terms of their symptom overlap.
 
 3. **Betweenness centrality**
 A symptom node with high betweenness centrality indicates that it is frequently associated with a variety of diseases. High betweenness symptom nodes act as bridges connecting different diseases in the network.
