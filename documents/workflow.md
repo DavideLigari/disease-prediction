@@ -33,15 +33,18 @@ Identify different communities through clustering algorithms.
 ### 3b. General network metrics
 
 1. **Degree distribution**
-  P(k) = N(degree == k)/N
-   Plot for symptoms and for diseases in log scale P(k) versus k.
+P(k) = N(degree == k)/N
+Plot for symptoms and for diseases in log scale P(k) versus k.
+To fit a power law, use logarithmic binning.
 
 2. **Clustering coefficient**
 Interpretation for symptom nodes: it reflects whether certain symptoms tend to co-occur within multiple diseases.
 Interpretation for disease nodes: it measures how connected diseases are in terms of their symptom overlap.
 
 3. **Betweenness centrality**
-A symptom node with high betweenness centrality indicates that it is frequently associated with a variety of diseases. High betweenness symptom nodes act as bridges connecting different diseases in the network.
+High betweenness symptom nodes act as bridges connecting different diseases in the network.
+Identifying hub diseases or symptoms can be relevant in the context of diagnosis.
+Diseases that act as hubs may represent conditions with broad symptomatology, while symptoms that act as hubs may indicate manifestations that are commonly shared across multiple diseases.
 
 ### 3c. Node importance metrics:
 
