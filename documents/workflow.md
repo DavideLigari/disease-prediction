@@ -85,11 +85,27 @@ Alternative features:
 
 
 ## 5. Model creation
+- Features Extraction (Andrea)
+  
 - Train, Test and Validation split (or crossvalidation)
-- Create a neural network which predicts the disease
+  
+- Models Fitting using 'greedy' approach based on severity/onehot features: (Cristian)
+  - Logistic Regression
+  - Random Forest
+  - Multi Layer Perceptron
+
+- Pick the best model and improve it using the other features: (Matteo)
+  - Symptoms Commonality (S2)
+  - Community Symptom Count
+  - Community Symptom Size
+
+  - Symptoms Degree (S1)
+  - Symptoms Clustering
+  - Symptoms Betweenness
 
 
-## 6. Comparison between models
-
-- Compare the model using network features and the model without them. 
-- In particular, compare the model using the one-hot encoding of the symptoms against the network leveraging community clustering.
+## 6. Model's results visualization
+- Confusion Matrix
+- ROC Curve
+- Precision Recall Curve
+- Feature Importance

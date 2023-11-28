@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import networkx as nx
 
-def get_community_onehot_from_symptoms(symptoms_onehot, communities):
+def get_community_from_symptoms_onehot(symptoms_onehot, communities):
     """
     This function takes as input a one hot vector with the symptoms and returns the number of symptoms for each community.
 
