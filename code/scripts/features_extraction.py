@@ -11,7 +11,7 @@ def get_x_y(to_be_transformed, data_onehot, store_path = None):
      
      features = []
      
-     data_onehot = data_onehot.drop("Unnamed: 0", axis=1)
+     #data_onehot = data_onehot.drop("Unnamed: 0", axis=1)
      data_onehot_y = data_onehot["Disease"].values
      data_onehot_x = data_onehot.drop("Disease", axis=1).values
      
@@ -21,7 +21,7 @@ def get_x_y(to_be_transformed, data_onehot, store_path = None):
      data_onehot_features = np.vstack(features)
      
      if store_path:
-          np.savez(store_path, X = data_onehot_features, y = data_onehot_y)
+          np.savez_compressed(store_path, X = data_onehot_features, y = data_onehot_y)
           
      return data_onehot_features, data_onehot_y
      
