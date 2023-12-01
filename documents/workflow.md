@@ -2,16 +2,19 @@
 The idea is to conduct a network analysis, defining metrics on nodes and identifying potential communities, with a dual objective. The first is to generate a useful descriptive analysis of the symptom-disease interaction. The second is to identify potential features to introduce into the predictive model to enhance its performance.
 
 ## 1. Read Research Papers about the Topic
-   Explore the literature to have a complete and deep understanding of network theory and disease prediction
+Explore the literature:
+  1) To have a complete and deep understanding of network theory and disease prediction
+  2) To search for previous work regarding this topic, establishing a baseline to follow
+  3) To have the means to explain the results obtained from the analysis of the network
 
 
 ## 2. Exploratory Data Analysis
 ### 2a. Dataset
 Choose a dataset between:
 
-smaller, faster:    https://www.kaggle.com/datasets/itachi9604/disease-symptom-description-dataset?select=Symptom-severity.csv
+smaller (5k lines):    https://www.kaggle.com/datasets/itachi9604/disease-symptom-description-dataset?select=Symptom-severity.csv
 
-larger, cooler:    https://www.kaggle.com/datasets/dhivyeshrk/diseases-and-symptoms-dataset?select=Final_Augmented_dataset_Diseases_and_Symptoms.csv
+larger (250k lines):    https://www.kaggle.com/datasets/dhivyeshrk/diseases-and-symptoms-dataset?select=Final_Augmented_dataset_Diseases_and_Symptoms.csv
 
 ### 2b. Data cleaning
 - Check number of distinct values
@@ -62,13 +65,10 @@ Diseases that act as hubs may represent conditions with broad symptomatology, wh
 2. Compute the z-score of the S2 and D2 metrics to determine which observed structural properties are not simply explained by the constraint specifying the null model itself.
 
 ### 3d. Community Detection
-1) transform the adjacency matrix into a co-occurrence matrix disease-disease
-2) clustering algorithm
-3) check results using a modularity measure
-
-   - Identify possible communities and similarities between diseases, this information could be useful in prediction explanation. 
-   - Communities could have significant predictive properties. See [ChatGPT chat](https://chat.openai.com/share/d771039a-788d-4b0c-abaf-787d96d1b002)
-   - Modularity can be used to asses soundness and compare different partitions
+[ChatGPT chat](https://chat.openai.com/share/d771039a-788d-4b0c-abaf-787d96d1b002)
+  1) transform the adjacency matrix into a co-occurrence matrix disease-disease
+  2) clustering algorithm
+  3) check results using a modularity measure
 
 
 ## 4. Feature definition
@@ -100,7 +100,6 @@ Alternative features:
   - Community Symptom Size
 
   - Symptoms Degree (S1)
-  - Symptoms Clustering
   - Symptoms Betweenness
 
 
