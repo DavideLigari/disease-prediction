@@ -24,3 +24,26 @@ def get_graph(adjacency_matrix):
                 G.add_edge(i, num_rows + j)
 
     return G
+
+
+def get_weighted_graph(co_occurrence_matrix):
+    """
+    Create a weighted graph from a co-occurrence matrix.
+    :param co_occurrence_matrix: The co-occurrence matrix of the weighted graph.
+    :return: A weighted graph.
+    """
+    
+    # Create a weighted graph directly
+    G = nx.Graph()
+
+    # Add nodes to the graph
+    num_nodes = co_occurrence_matrix.shape[0]
+    G.add_nodes_from(range(num_nodes))
+
+    # Add weighted edges to the graph
+    for i in range(num_nodes):
+        for j in range(i+1, num_nodes):
+            weight = co_occurrence_matrix[i, j]
+            if weight != 0:
+                G.add_edge(i, j, weight=weight)
+    return G
