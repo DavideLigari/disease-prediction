@@ -7,6 +7,17 @@ Explore the literature:
   2) To search for previous work regarding this topic, establishing a baseline to follow
   3) To have the means to explain the results obtained from the analysis of the network
 
+## 1a. Possible Sources for Report:
+    .. [1] Newman, M. E. J. "Networks: An Introduction", page 224
+       Oxford University Press 2011.
+    .. [2] Clauset, A., Newman, M. E., & Moore, C.
+       "Finding community structure in very large networks."
+       Physical Review E 70(6), 2004.
+    .. [3] Reichardt and Bornholdt "Statistical Mechanics of Community
+       Detection" Phys. Rev. E74, 2006.
+    .. [4] Newman, M. E. J."Analysis of weighted networks"
+       Physical Review E 70(5 Pt 2):056131, 2004.
+
 
 ## 2. Exploratory Data Analysis
 ### 2a. Dataset
