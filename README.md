@@ -11,3 +11,4 @@ The idea is to extract meaningful features from the network of symptoms and dise
 - `Scikit-learn`
 - `Matplotlib`
 - `Seaborn`
+- `powerlaw`

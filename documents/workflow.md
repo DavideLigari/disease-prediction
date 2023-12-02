@@ -17,6 +17,10 @@ Explore the literature:
        Detection" Phys. Rev. E74, 2006.
     .. [4] Newman, M. E. J."Analysis of weighted networks"
        Physical Review E 70(5 Pt 2):056131, 2004.
+    .. [1] ARF_layout "Self-Organization Applied to Dynamic Network Layout", M. Geipel,
+       International Journal of Modern Physics C, 2007, Vol 18, No 10, pp. 1537-1549.
+       https://doi.org/10.1142/S0129183107011558 https://arxiv.org/abs/0704.1748
+
 
 
 ## 2. Exploratory Data Analysis
