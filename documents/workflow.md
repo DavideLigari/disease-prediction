@@ -88,7 +88,7 @@ Diseases that act as hubs may represent conditions with broad symptomatology, wh
 
 ## 4. Network Analysis
 #### 4a. Hidalgo Haussmann Metrics
-Divide the symptoms nodes into 4 classes:
+Divide the ***symptoms*** nodes into 4 classes:
 - **High L1 - High L2**: Symptoms with high degree and high L2. These symptoms are the less important for prediction since they contribute to many classes (diseases) and
   those classes are also connected to many other symptoms.
 - **High L1 - Low L2**: Symptoms with high degree and low L2
@@ -101,6 +101,10 @@ This approach considering both L1 and L2 should improve some problems of the L1 
 since it is not enough discriminative. However, if the symptom is connected with diseases that have few symptoms, we risk to lose important information, also considering
 that a model doesn't focus on a single symptom but on the combination of present symptoms.
 This division can be used both for the **prediction** and for the **interpretation** of the results in the initial analysis section.
+
+The same approach can be used for the ***diseases*** nodes. In this case the diseases of class 1 are the most challenging to predict since they are connected to many symptoms
+and those symptoms are also connected to many other diseases. On the other hand, the diseases of class 4 are the easiest to predict since they are connected to few symptoms
+and those symptoms are also connected to few other diseases.
 
 
 ## 5. Feature definition
