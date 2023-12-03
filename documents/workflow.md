@@ -106,6 +106,13 @@ The same approach can be used for the ***diseases*** nodes. In this case the dis
 and those symptoms are also connected to many other diseases. On the other hand, the diseases of class 4 are the easiest to predict since they are connected to few symptoms
 and those symptoms are also connected to few other diseases.
 
+#### 4b. Betweenness Centrality
+From an informative point of view, the betweenness centrality provides a measure that embeds both the L1 and L2 metrics. Indeed, in our bipartite network, a symptom
+is only connected to diseases and no interconnection between symptoms is possible. Therefore, the betweenness centrality of a symptom measures how many shortest paths 
+between any symptom and any disease pass through that symptom. Thereby a symptom which is connected to many diseases (L1) and those diseases are connected to few symptoms (L2), so that the symptom is the only path between those diseases, will have a high betweenness centrality. 
+
+Under the diseases point of view, a disease node has high centrality if it is connected to many symptoms (L1) and those symptoms are connected to few diseases (L2), so that the disease is the only path between those symptoms.
+
 
 ## 5. Feature definition
 
