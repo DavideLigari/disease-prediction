@@ -7,6 +7,21 @@ Explore the literature:
   2) To search for previous work regarding this topic, establishing a baseline to follow
   3) To have the means to explain the results obtained from the analysis of the network
 
+## 1a. Possible Sources for Report:
+    .. [1] Newman, M. E. J. "Networks: An Introduction", page 224
+       Oxford University Press 2011.
+    .. [2] Clauset, A., Newman, M. E., & Moore, C.
+       "Finding community structure in very large networks."
+       Physical Review E 70(6), 2004.
+    .. [3] Reichardt and Bornholdt "Statistical Mechanics of Community
+       Detection" Phys. Rev. E74, 2006.
+    .. [4] Newman, M. E. J."Analysis of weighted networks"
+       Physical Review E 70(5 Pt 2):056131, 2004.
+    .. [1] ARF_layout "Self-Organization Applied to Dynamic Network Layout", M. Geipel,
+       International Journal of Modern Physics C, 2007, Vol 18, No 10, pp. 1537-1549.
+       https://doi.org/10.1142/S0129183107011558 https://arxiv.org/abs/0704.1748
+
+
 
 ## 2. Exploratory Data Analysis
 ### 2a. Dataset
@@ -22,7 +37,7 @@ larger (250k lines):    https://www.kaggle.com/datasets/dhivyeshrk/diseases-and-
 - Switch to One Hot Encoding
 
 
-## 3. Network analysis
+## 3. Network creation and metrics
 Decide the network structure (e.g. bipartite, weighted...). Define useful metrics, test their statistical significance and analyze their results.
 Identify different communities through clustering algorithms.
 
@@ -71,7 +86,35 @@ Diseases that act as hubs may represent conditions with broad symptomatology, wh
   3) check results using a modularity measure
 
 
-## 4. Feature definition
+## 4. Network Analysis
+#### 4a. Hidalgo Haussmann Metrics
+Divide the ***symptoms*** nodes into 4 classes:
+- **High L1 - High L2**: Symptoms with high degree and high L2. These symptoms are the less important for prediction since they contribute to many classes (diseases) and
+  those classes are also connected to many other symptoms.
+- **High L1 - Low L2**: Symptoms with high degree and low L2
+- **Low L1 - High L2**: Symptoms with low degree and high L2
+- **Low L1 - Low L2**: Symptoms with low degree and low L2. These symptoms are the most important for prediction since they contribute to few classes (diseases) and
+  those classes are also connected to few other symptoms.
+
+The division can be done using a threshold on the L1 and L2 metrics. An example are the quartiles of the L1 and L2 distributions or we can empirically choose other ones.
+This approach considering both L1 and L2 should improve some problems of the L1 metric alone. For example, a symptom with High L1 (degree) may be considered as not important
+since it is not enough discriminative. However, if the symptom is connected with diseases that have few symptoms, we risk to lose important information, also considering
+that a model doesn't focus on a single symptom but on the combination of present symptoms.
+This division can be used both for the **prediction** and for the **interpretation** of the results in the initial analysis section.
+
+The same approach can be used for the ***diseases*** nodes. In this case the diseases of class 1 are the most challenging to predict since they are connected to many symptoms
+and those symptoms are also connected to many other diseases. On the other hand, the diseases of class 4 are the easiest to predict since they are connected to few symptoms
+and those symptoms are also connected to few other diseases.
+
+#### 4b. Betweenness Centrality
+From an informative point of view, the betweenness centrality provides a measure that embeds both the L1 and L2 metrics. Indeed, in our bipartite network, a symptom
+is only connected to diseases and no interconnection between symptoms is possible. Therefore, the betweenness centrality of a symptom measures how many shortest paths 
+between any symptom and any disease pass through that symptom. Thereby a symptom which is connected to many diseases (L1) and those diseases are connected to few symptoms (L2), so that the symptom is the only path between those diseases, will have a high betweenness centrality. 
+
+Under the diseases point of view, a disease node has high centrality if it is connected to many symptoms (L1) and those symptoms are connected to few diseases (L2), so that the disease is the only path between those symptoms.
+
+
+## 5. Feature definition
 
 Some of the metrics defined so far can be used as features for prediction in conjunction with symptom occurrence.
 
@@ -84,7 +127,7 @@ Alternative features:
 - Community clustering in place of the symptoms vector
 
 
-## 5. Model creation
+## 6. Model creation
 - Features Extraction (Andrea)
   
 - Train, Test and Validation split (or crossvalidation)
@@ -103,7 +146,7 @@ Alternative features:
   - Symptoms Betweenness
 
 
-## 6. Model's results visualization
+## 7. Model's results visualization
 - Confusion Matrix
 - ROC Curve
 - Precision Recall Curve
