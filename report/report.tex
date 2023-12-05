@@ -44,53 +44,62 @@
 
     % ------------------- START OF SECTIONS -------------------
 
+
     % ------------------- Introduction -------------------
     % Introduction to the medical problem and how it is currently addressed (some bibliography)
-    \input{./sections/Introduction.tex}
+    \input{./sections/introduction.tex}
+
 
     % ------------------- Dataset -------------------
+
     % Description of the dataset and its features (some plots and one hot encoding)
-    \input{./sections/Dataset.tex}
+    \input{./sections/dataset.tex}
+
 
     % ------------------- Goals -------------------
+
     % Description of the goals of the project:
     % - ML model to predict the disease
     % - Network analysis to find the most important symptoms to reduce complexity, and enhance the available features
-    \input{./sections/Goals.tex}
+    \input{./sections/goals.tex}
 
-    % ------------------- Methodology -------------------
+
+    % ------------------- Methodology and Results Network -------------------
+
     % Methodology used (very technical)
-    \input{./sections/Methodology_intro.tex}
-
-    % How we built the network, how we computed metrics:
-    \input{./sections/Methodology_network.tex}
+    \input{./sections/methodoloy_network.tex}
     % - hidalgo + significance
-    % - communities with adjacency matrix
-    
-    % How we built the ML model 
-    \input{./sections/Methodology_ML.tex}
-    % - Grid search (why we choose that specific greedy approach)
-    % - Model selection
-    % - features selection (2 approaches)
-    
-    % ------------------- Results -------------------
-    % Results of the project
-    \input{./sections/Results_intro.tex}
+    % - communities with co-occurrence matrix
 
-    % Results of the network analysis (plots and tables)
-    \input{./sections/Results_network.tex}
-    % - degree distribution
+    \input{./sections/results_network.tex}
+    % - degree distribution and power law
     % - clustering coefficient
     % - most important symptoms/diseases (4 classes) 
     % - communities
-    
+    % - L2 has no sense, it's right that z-score low value
+    % - Meaning of Z-score
+
+    % ------------------- Methodology and Results ML -------------------
+
+    % How we built the ML model 
+    \input{./sections/methodology_ML.tex}
+    % - Grid search (why we choose that specific greedy approach)
+    % - Model selection
+    % - features selection (2 approaches)
+
     % Results of the ML model (plots and tables)
-    \input{./sections/Results_ML.tex} 
+    \input{./sections/results_ML.tex}
     % - selected model performances
     % - only with one hot symptoms 
     % - with new features 
     % - reduction in computational complexity)
-    
+
+
+    % ---------------------- Conclusion -----------------------------
+
+    \input{./sections/conclusion.tex}
+    \input{./sections/future_works.tex}
+
 
 
     \clearpage
