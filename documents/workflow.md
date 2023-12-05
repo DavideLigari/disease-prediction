@@ -137,22 +137,20 @@ Alternative features:
   
 - Train, Test and Validation split (or crossvalidation)
   
-- Models Fitting using 'greedy' approach based on severity/onehot features: (Cristian)
+- Models to test
   - Logistic Regression
   - Random Forest
   - Multi Layer Perceptron
 
-- Pick the best model and improve it using the other features: (Matteo)
-  - Symptoms Commonality (S2)
-  - Community Symptom Count
-  - Community Symptom Size
-
-  - Symptoms Degree (S1)
-  - Symptoms Betweenness
+- select best parameters for symptoms one hot only
+  - select best parameters for combination of other features (best combination is chosen with random parameters looking at the accuracy)
+  - train for each model the two version above with optimal parameters
+  - pick the best model according to accuracy
 
 
 ## 7. Model's results visualization
-- Confusion Matrix
-- ROC Curve
-- Precision Recall Curve
+- Confusion Matrix (data divided in 4 classes according to the values of L1 and L2)
+- ROC PR Curve
 - Feature Importance
+- Compare model with only symptoms and one with combination of other features
+- Compare computational complexity
