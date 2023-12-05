@@ -1,0 +1,61 @@
+\documentclass{class}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{enumitem} % Customize bullet lists
+
+
+\title{Integrative Network Analysis: \\ Unveiling Symptom-Disease Interactions and Enhancing Predictive Models}
+
+\githubrepo{https://github.com/DavideLigari01/financial-project}
+
+\author{Andreoli C. • Ligari D. • Alberti A. • Scardovi M. }
+
+
+
+\affil[1]{Department of Computer Engineering, Data ScienSickness predictionce, University of Pavia, Italy \newline\centering Course of Financial Data Science}
+%% Corresponding author
+\corrauthor{Author One}
+
+%% Abbreviated author list for the running footer
+\runningauthor{Alberti, Andreoli, Intini, Ligari, Scardovi}
+\shortname{Integrative Network Analysis}
+\bibliography{References}
+
+\begin{document}
+
+\maketitle
+\begin{abstract}
+    This report presents the experimental results of a project focused on assessing the impact of a DNS reflection and amplification attack.
+    The study explores different amplification factors based on the DNS request types used and analyzes their effects on the targeted system
+    and the DNS server within a local network environment.
+    The results indicate that higher amplification factors correspond to increased latency during the attack,
+    with some query times exceeding a threshold of 100 ms.
+    However, the attack primarily affects DNS requests rather than causing widespread disruption to the entire system,
+    as demonstrated by the analysis using the ping command-line tool.
+    Surprisingly, the attack has no significant impact on system resources, such as RAM and CPU utilization,
+    suggesting efficient resource management by the targeted server.
+    Additionally, an intensified attack configuration reveals notable changes in query times and increased CPU utilization on the DNS server,
+    indicating its struggle to handle the intensified query traffic.
+
+    \keywords{Graph theory • Features Engineering • Community detection • Null models • Random forest • MLP }
+\end{abstract}
+\begin{multicols}{2}
+    \tableofcontents
+    \clearpage
+    % \nocite{dizdar_dns_2021}
+
+    \nocite{dnsbaseddos}
+    \nocite{taylor_four_2021}
+    \nocite{Devi_2015}
+
+    \input{./sections/Introduction.tex}
+
+    % \clearpage
+    \printbibliography
+
+\end{multicols}
+\end{document}
