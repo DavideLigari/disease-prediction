@@ -47,6 +47,7 @@
 
 
     % ------------------- Introduction -------------------
+
     % Introduction to the medical problem and how it is currently addressed (some bibliography)
     \input{./sections/introduction.tex}
 
@@ -69,37 +70,45 @@
 
     % Methodology used (very technical)
     \input{./sections/methodoloy_network.tex}
+    % - network creation (not weighted - bipartite)
     % - hidalgo + significance
     % - communities with co-occurrence matrix
+    % - clustering
+    % - betweenness centrality
 
     \input{./sections/results_network.tex}
     % - degree distribution and power law
-    % - clustering coefficient
     % - most important symptoms/diseases (4 classes) 
     % - communities
     % - L2 has no sense, it's right that z-score low value
     % - Meaning of Z-score
+    % - betweenness centrality
+    % - clustering coefficient
 
     % ------------------- Methodology and Results ML -------------------
 
     % How we built the ML model 
     \input{./sections/methodology_ML.tex}
-    % - Grid search (why we choose that specific greedy approach)
-    % - Model selection
-    % - features selection (2 approaches)
+    % - select best parameters for symptoms one hot only
+    % - select best parameters for combination of other features (best combination is chosen with random parameters looking at the accuracy)
+    % - train for each model the two version above with optimal parameters
+    % - pick the best model according to accuracy
 
     % Results of the ML model (plots and tables)
     \input{./sections/results_ML.tex}
-    % - selected model performances
-    % - only with one hot symptoms 
+    % - selected model performances (see which is the worst error or the most commonly misclassified diseases)
+    % - Compute accuracy and PR AUC
+    % - Compute the accuracy of the model dividing the data into the 4 classes (HighL1 - HighL2, LowL1 - HighL2, ...)
+    % - only with one hot symptoms (with optimal parameters both for one hot and other features) 
     % - with new features 
     % - reduction in computational complexity
-
 
     % ---------------------- Conclusion -----------------------------
 
     \input{./sections/conclusion.tex}
     \input{./sections/future_works.tex}
+    % - our approach in feature selection and parameters search is not optimal 
+    % - list the possible issues (e.g. we are training model on diverse features with the optimal parameters for other features)
 
 
 
