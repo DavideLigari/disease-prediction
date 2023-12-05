@@ -1,0 +1,27 @@
+
+\subsection{Network Creation (Not Weighted - Bipartite)}
+
+\subsection{L1 and L2 measures}
+
+\subsection{Clustering}
+To compute the average network clustering coefficient, as proposed by \Citeauthor{Watts_Strogatz_1998} \cite{Watts_Strogatz_1998}, it is possible to use the following
+formula: 
+\begin{equation}
+    C = \frac{1}{n}\sum_{i = 1}^{n} C_i = \frac{1}{n}\sum_{i = 1}^{n} \frac{2e_i}{k_i(k_i-1)}
+\end{equation}
+where:
+\begin{itemize}
+    \item \textbf{n} is the total number of nodes in the network.
+    \item \textbf{C\_i} represents the clustering coefficient of node \textbf{i}, which measures the degree to which the neighbors of node \textbf{i} are interconnected.
+    \item \textbf{e\_i} stands for the number of edges that exist between the neighbors of node \textbf{i}.
+    \item \textbf{k\_i} is the degree of node \textbf{i}, indicating the number of edges connected to node \textbf{i}.
+\end{itemize}
+Specifically, we used the version of clustering coefficient for bipartite graphs, redefined by \Citeauthor{Latapy_Magnien_Vecchio_2008} \cite{Latapy_Magnien_Vecchio_2008} and implemented
+in the NetworkX function \texttt{nx.bipartite.average\_clustering}.
+
+
+\subsection{Betweenness Centrality}
+
+\subsection{Communities with Co-occurrence Matrix}
+
+

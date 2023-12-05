@@ -20,6 +20,11 @@ Explore the literature:
     .. [1] ARF_layout "Self-Organization Applied to Dynamic Network Layout", M. Geipel,
        International Journal of Modern Physics C, 2007, Vol 18, No 10, pp. 1537-1549.
        https://doi.org/10.1142/S0129183107011558 https://arxiv.org/abs/0704.1748
+    .. [1] Unbalanced Data [Kaggle](https://www.kaggle.com/code/klospascal/under-oversampling-recall-and-precision)
+    .. [1] Over and Under Sampling [Kaggle](https://www.kaggle.com/code/residentmario/undersampling-and-oversampling-imbalanced-data/notebook)
+    .. [1] Clutsering "Latapy, Matthieu, Clémence Magnien, and Nathalie Del Vecchio (2008).
+        Basic notions for the analysis of large two-mode networks.
+        Social Networks 30(1), 31--48".
 
 
 
@@ -35,6 +40,9 @@ larger (250k lines):    https://www.kaggle.com/datasets/dhivyeshrk/diseases-and-
 - Check number of distinct values
 - Check Missing Values
 - Switch to One Hot Encoding
+- Deal with unbalanced classes
+  - Remove classes with < 3 samples
+  - Oversampling and Undersampling until 34 samples per class
 
 
 ## 3. Network creation and metrics
@@ -132,22 +140,20 @@ Alternative features:
   
 - Train, Test and Validation split (or crossvalidation)
   
-- Models Fitting using 'greedy' approach based on severity/onehot features: (Cristian)
+- Models to test
   - Logistic Regression
   - Random Forest
   - Multi Layer Perceptron
 
-- Pick the best model and improve it using the other features: (Matteo)
-  - Symptoms Commonality (S2)
-  - Community Symptom Count
-  - Community Symptom Size
-
-  - Symptoms Degree (S1)
-  - Symptoms Betweenness
+- select best parameters for symptoms one hot only
+  - select best parameters for combination of other features (best combination is chosen with random parameters looking at the accuracy)
+  - train for each model the two version above with optimal parameters
+  - pick the best model according to accuracy
 
 
 ## 7. Model's results visualization
-- Confusion Matrix
-- ROC Curve
-- Precision Recall Curve
+- Confusion Matrix (data divided in 4 classes according to the values of L1 and L2)
+- ROC PR Curve
 - Feature Importance
+- Compare model with only symptoms and one with combination of other features
+- Compare computational complexity
