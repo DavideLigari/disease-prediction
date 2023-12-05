@@ -22,6 +22,8 @@
 \RequirePackage[absolute]{textpos}
 \RequirePackage[right]{lineno}
 \RequirePackage{amsmath}
+\usepackage{lettrine}
+
 
 \def\@keywordsname{Keywords}
 \def\@authornotename{Author's notes}
@@ -36,6 +38,11 @@
 \definecolor{PANDarkGray}{RGB}{153,153,153}
 
 \RequirePackage{microtype}
+
+% Definitions for capital letter
+\newcommand{\firstword}[2]{\lettrine[findent=2pt]{\textbf{#1}}{}#2 }
+
+
 \newif\ifxetexorluatex
 \ifxetex
   \xetexorluatextrue
