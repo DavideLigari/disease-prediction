@@ -20,6 +20,8 @@ Explore the literature:
     .. [1] ARF_layout "Self-Organization Applied to Dynamic Network Layout", M. Geipel,
        International Journal of Modern Physics C, 2007, Vol 18, No 10, pp. 1537-1549.
        https://doi.org/10.1142/S0129183107011558 https://arxiv.org/abs/0704.1748
+    .. [1] Unbalanced Data [Kaggle](https://www.kaggle.com/code/klospascal/under-oversampling-recall-and-precision)
+    .. [1] Over and Under Sampling [Kaggle](https://www.kaggle.com/code/residentmario/undersampling-and-oversampling-imbalanced-data/notebook)
 
 
 
@@ -35,6 +37,9 @@ larger (250k lines):    https://www.kaggle.com/datasets/dhivyeshrk/diseases-and-
 - Check number of distinct values
 - Check Missing Values
 - Switch to One Hot Encoding
+- Deal with unbalanced classes
+  - Remove classes with < 3 samples
+  - Oversampling and Undersampling until 34 samples per class
 
 
 ## 3. Network creation and metrics
