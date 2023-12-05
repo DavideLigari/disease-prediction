@@ -22,6 +22,9 @@ Explore the literature:
        https://doi.org/10.1142/S0129183107011558 https://arxiv.org/abs/0704.1748
     .. [1] Unbalanced Data [Kaggle](https://www.kaggle.com/code/klospascal/under-oversampling-recall-and-precision)
     .. [1] Over and Under Sampling [Kaggle](https://www.kaggle.com/code/residentmario/undersampling-and-oversampling-imbalanced-data/notebook)
+    .. [1] Clutsering "Latapy, Matthieu, Clémence Magnien, and Nathalie Del Vecchio (2008).
+        Basic notions for the analysis of large two-mode networks.
+        Social Networks 30(1), 31--48".
 
 
 
