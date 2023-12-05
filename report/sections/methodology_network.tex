@@ -4,13 +4,13 @@
 \subsection{L1 and L2 measures}
 
 \subsection{Clustering}
-To compute the average network clustering coefficient, according to \cite[Watts and Strogatz]{Watts_Strogatz_1998}, it is possible to use the following
+To compute the average network clustering coefficient, according to \cite{Watts_Strogatz_1998}, it is possible to use the following
 formula: 
 \begin{equation}
     C = \frac{1}{n}\sum_{i = 1}^{n} C_i = \frac{1}{n}\sum_{i = 1}^{n} \frac{2e_i}{k_i(k_i-1)}
 \end{equation}
 where $n$ is the number of nodes, $C_i$ is the clustering coefficient of node $i$, $e_i$ is the number of edges between the neighbors of node $i$ and $k_i$ is the degree of node $i$.
-Specifically, we used the version of clustering coefficient for bipartite graphs, redefined by \cite[Latapy et al.]{Latapy_Magnien_Vecchio_2008} and implemented
+Specifically, we used the version of clustering coefficient for bipartite graphs, redefined by \cite{Latapy_Magnien_Vecchio_2008} and implemented
 in the NetworkX function \texttt{nx.bipartite.average\_clustering}.
 
 
