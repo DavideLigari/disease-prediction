@@ -42,8 +42,31 @@
     \nocite{taylor_four_2021}
     \nocite{Devi_2015}
 
+    % ------------------- START OF SECTIONS -------------------
+    % Introduction to the medical problem and how it is currently addressed (some bibliography)
     \input{./sections/Introduction.tex}
-    \input{./sections/metrics.tex}
+
+    % Description of the dataset and its features (some plots and one hot encoding)
+    \input{./sections/Dataset.tex}
+
+    % Description of the goals of the project:
+    % - ML model to predict the disease
+    % - Network analysis to find the most important symptoms to reduce complexity, and enhance the available features
+    \input{./sections/Goals.tex}
+
+    % Methodology used (very technical)
+    % How we built the network, how we computed metrics (hidalgo + significance    -    communities with adjacency matrix)
+    \input{./sections/Methodology_network.tex}
+    % How we built the ML model (grid search (greedy)    -    model selection    -    features selection (2 approaches))
+    \input{./sections/Methodology_ML.tex}
+
+    % Results of the network analysis (plots and tables)
+    % Analysis of the network (degree distribution    -     clustering coefficient    -    most important symptoms/diseases (4 classes)    -     communities)
+    \input{./sections/Results_network.tex}
+    % Results of the ML model (plots and tables)
+    % Analysis of the ML model (selected model performances    -    only with one hot symptoms    -    with new features    -    reduction in computational complexity)
+    \input{./sections/Results_ML.tex}
+
 
     \clearpage
     \printbibliography
