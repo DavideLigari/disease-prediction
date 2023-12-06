@@ -189,20 +189,6 @@
 \newcommand{\thead}[1]{\bfseries #1\rule[-1.2ex]{0pt}{2em}}
 \renewcommand{\arraystretch}{1.2}
 
-% \usepackage[backend=biber,style=numeric]{biblatex}
-
-% \xpatchbibmacro{name:andothers}{%
-%   \bibstring{andothers}%
-% }{%
-%   \bibstring[\emph]{andothers}%
-% }{}{}
-
-% \newcommand{\insert@supplmat}{\section*{Supplementary Material}(This is dummy text) For supplementary material accompanying this paper, please visit \url{https://doi.org/10.1017/pan.xxxx.xx.}}
-% \if@suppmat
-%   \xpretocmd{\printbibliography}{\insert@supplmat}{}{}
-%   \AtBeginEnvironment{thebibliography}{\insert@supplmat}
-% \fi
-% \renewcommand{\bibfont}{\small}
 
 \PassOptionsToPackage{hyphens}{url}
 \RequirePackage{hyperref}
