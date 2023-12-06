@@ -3,25 +3,69 @@
 
 \subsection{L1 and L2 measures}
 
-\subsection{Clustering}
-To compute the average network clustering coefficient, as proposed by \Citeauthor{Watts_Strogatz_1998} \cite{Watts_Strogatz_1998}, it is possible to use the following
-formula: 
-\begin{equation}
-    C = \frac{1}{n}\sum_{i = 1}^{n} C_i = \frac{1}{n}\sum_{i = 1}^{n} \frac{2e_i}{k_i(k_i-1)}
-\end{equation}
-where:
-\begin{itemize}
-    \item \textbf{n} is the total number of nodes in the network.
-    \item \textbf{C\_i} represents the clustering coefficient of node \textbf{i}, which measures the degree to which the neighbors of node \textbf{i} are interconnected.
-    \item \textbf{e\_i} stands for the number of edges that exist between the neighbors of node \textbf{i}.
-    \item \textbf{k\_i} is the degree of node \textbf{i}, indicating the number of edges connected to node \textbf{i}.
-\end{itemize}
-Specifically, we used the version of clustering coefficient for bipartite graphs, redefined by \Citeauthor{Latapy_Magnien_Vecchio_2008} \cite{Latapy_Magnien_Vecchio_2008} and implemented
-in the NetworkX function \texttt{nx.bipartite.average\_clustering}.
-
 
 \subsection{Betweenness Centrality}
+The betweenness centrality of a node $v$, according to \Citeauthor{Brandes_2008} \cite{Brandes_2008}, 
+is defined as the sum of the fraction of all-pairs shortest paths that pass through $v$:
 
-\subsection{Communities with Co-occurrence Matrix}
+\begin{equation}
+    c_B(v) = \sum_{s,t \in V} \frac{\sigma(s, t|v)}{\sigma(s, t)} \label{eq:betweenness}
+\end{equation}
+
+\noindent
+where:\\
+
+\begin{itemize}
+    \item $V$: The set of nodes.
+    \item $\sigma(s, t)$: The number of shortest paths from node $s$ to node $t$.
+    \item $\sigma(s, t|v)$: The number of those shortest paths from node $s$ to node $t$ that pass through some node $v$ other than $s$ and $t$.
+    \item If $s = t$, then $\sigma(s, t) = 1$.
+    \item If $v \in \{s, t\}$, then $\sigma(s, t|v) = 0$.
+\end{itemize}
+
+\vspace{0.2cm}
+\noindent
+To compute the betweenness centrality we used the NetworkX function \texttt{nx.bipartite.betweenness\_centrality} 
+which implements the algorithm proposed by \Citeauthor{Brandes_2004} \cite{Brandes_2004} and
+uses a proper normalization for bipartite graphs.
+
+\subsection{Communities Detection}
+Prior to apply any community detection algorithm, we need to perform two steps:\\
+
+\begin{itemize}
+    \item \textbf{Graph Projections}: We need to project the bipartite graph into two graphs, one for each set of nodes. 
+    In our case the two sets are represented by symptoms and diseases. At this scope is available 
+    the NetworkX function \texttt{nx.bipartite.projected\_graph} which returns the projection of the bipartite graph onto the specified nodes.
+    \item \textbf{Compute Similarity}: We need to compute the similarity between nodes. For our purposes, it is possible to create 
+    a co-occurrence matrix, for each set of nodes. 
+    Taking as example the co-occurrence matrix of symptoms, each entry $s_{ij}$ represents the number of times the symptom $i$ and 
+    the symptom $j$ co-occur in the same disease.
+\end{itemize}
+
+\vspace{0.2cm}
+\noindent
+Once we have the two graphs, whose links are weighted by the similarity between nodes, we can apply the community detection algorithm. We used the 
+Clauset-Newman-Moore greedy modularity maximization algorithm \cite{Clauset_Newman_Moore_2004}, implemented in the NetworkX function
+\texttt{nx.algorithms.community.greedy\_modularity\_communities}. This algorithm aims at finding the partition of the graph that maximizes the modularity,
+which is defined by \Citeauthor{Newman_2006} \cite{Newman_2006} as:
+
+\begin{equation}
+    Q = \frac{1}{2m} \sum_{ij} \left[A_{ij} - \frac{k_i k_j}{2m}\right] \delta(c_i, c_j) \label{eq:modularity}
+\end{equation}
+
+\noindent
+where:\\
+
+\begin{itemize}
+    \item $Q$: Modularity of the network.
+    \item $A_{ij}$: Element of the adjacency matrix representing the connection between nodes $i$ and $j$.
+    \item $k_i$ and $k_j$: Degrees of nodes $i$ and $j$, respectively.
+    \item $m$: Total number of edges in the network.
+    \item $\delta(c_i, c_j)$: Kronecker delta function, which is 1 if $c_i$ is equal to $c_j$ (i.e., nodes $i$ and $j$ belong to the same community) and 0 otherwise.
+    \item The sum is taken over all pairs of nodes $i$ and $j$.
+\end{itemize}
+
+
+
 
 
