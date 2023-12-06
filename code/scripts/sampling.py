@@ -1,6 +1,8 @@
 import numpy as np
+from imblearn.over_sampling import RandomOverSampler
+from imblearn.under_sampling import RandomUnderSampler
 
-def sampling(features, labels, sample_size, random_state=42):
+def sampling(features, labels, sample_size=25000, random_state=42):
     """
     Perform random sampling on the dataset.
 
@@ -25,3 +27,32 @@ def sampling(features, labels, sample_size, random_state=42):
     sampled_labels = labels[indices]
 
     return sampled_features, sampled_labels
+
+
+def balanceSampling(features, labels, threshold=35):
+    """
+    Oversample classes with fewer than 'target_samples_per_class' samples
+    and undersample classes with more than 'target_samples_per_class' samples.
+
+    Parameters:
+    - features: Input features.
+    - labels: Corresponding class labels.
+    - target_samples_per_class: The target number of samples for each class.
+    - random_state: Random seed for reproducibility.
+
+    Returns:
+    - Sampled features and labels.
+    """
+
+    # Over-sample
+    original_samples_per_class = {label: np.sum(labels == label) for label in np.unique(labels)}
+    sampling_strategy = {label: max(threshold, original_samples) for label, original_samples in original_samples_per_class.items()}
+    ros = RandomOverSampler(sampling_strategy=sampling_strategy)
+    oversampled_features, oversampled_labels = ros.fit_resample(features, labels)
+    # Under-sample
+    updated_samples_per_class = {label: np.sum(oversampled_labels == label) for label in np.unique(labels)}
+    sampling_strategy = {label: min(threshold, original_samples) for label, original_samples in updated_samples_per_class.items()}
+    rus = RandomUnderSampler(sampling_strategy=sampling_strategy)
+    undersampled_features, labels = rus.fit_resample(oversampled_features, oversampled_labels)
+
+    return undersampled_features, labels
