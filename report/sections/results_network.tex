@@ -100,9 +100,11 @@ generic nature and limited discriminatory value.
     \label{fig:com1_diseases}
 \end{figure}
 
-Transitioning to the creation of features for the ML model, two types of features were developed:
+Transitioning to the creation of features for the ML model, two types of features were developed:\\
 
 \begin{itemize}
+    \setlength\itemsep{1em} % set space between items
+
     \item \textbf{Community Count:} This feature counts how many symptoms of the symptom vector belong to each community. 
     Each symptom community is characterized by different pointed diseases. The model can learn to prioritize 
     diseases associated with the community with the highest count.
@@ -112,20 +114,27 @@ Transitioning to the creation of features for the ML model, two types of feature
     large communities, injecting community information into the model beyond basic one-hot encoding of symptoms.
 \end{itemize}
 
+\vspace{0.4cm}
 It is noteworthy that communities can also contribute to improving the computational efficiency of the model. 
 For example, a symptom associated with many diseases may be less informative and could potentially be removed from the 
 symptom vector. However, we opted for a comprehensive approach using a combination of L1 and L2 measures to address this issue.
 
 % END: communities
 
-\subsection{Most Important Symptoms/Diseases (4 Classes)}
+\subsection{Most Important Actors}
 % BEGIN: most important symptoms/diseases (4 classes)
+
+As anticipated our goal is not only to extract features from the network but also to exploit this latter to improve the 
+computational efficiency of the model. The idea is to reduce the number of symptoms, retaining only the most important
+ones, to reduce the training time, while maintaining an as high as possible accuracy. To this end, we tested different
+approaches, involving betweenness centrality or even the degree of the unipartite projection of symptoms.
+
 
 % END: most important symptoms/diseases (4 classes)
 
 
 
-
+% ------------- Appendix Figures -------------
 % Figures to be placed in the appendix
 
 \begin{figure}[H]
