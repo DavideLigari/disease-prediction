@@ -93,12 +93,14 @@ def top_common_entity(communities, adjacency_matrix, diseases_list, entity, top=
      :return: None
      """
 
+     comm_sizes = []
      if entity == 'disease':
           adjacency_matrix = adjacency_matrix.T
      
      num_communities = len(communities)
      for i in range(num_communities):
           comm = [label for index, label in enumerate(communities[i])]
+          comm_sizes.append(len(comm))
           adjacency_matrix_filtered = adjacency_matrix[:, comm]
           avg_num = adjacency_matrix_filtered.sum(axis=1).mean()
           num_for = adjacency_matrix_filtered.sum(axis=1)
@@ -112,14 +114,15 @@ def top_common_entity(communities, adjacency_matrix, diseases_list, entity, top=
           plt.xticks(rotation=90)
           
           if entity == 'symptom':
-               plt.title(f'Number of symptoms for the top diseases in the community {i+1}')
+               plt.title(f'Most common diseases in community {i+1} of size {len(comm)}')
                plt.ylabel('Number of symptoms')
                plt.xlabel('Diseases')
           else:
-               plt.title(f'Number of diseases for the top symptoms in the community {i+1}')
+               plt.title(f'Most common symptoms in community {i+1} of size {len(comm)}')
                plt.ylabel('Number of diseases')
                plt.xlabel('Symptoms')
                
           plt.legend()
           #plt.tight_layout()
           plt.show()
+     return comm_sizes
