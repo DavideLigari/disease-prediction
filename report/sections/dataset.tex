@@ -1,0 +1,24 @@
+\section{Dataset}
+
+The dataset used for this project is obtained from Kaggle and is available at the 
+\href{https://www.kaggle.com/datasets/dhivyeshrk/diseases-and-symptoms-dataset?select=Final_Augmented_dataset_Diseases_and_Symptoms.csv}{following link}. 
+It comprises disease names along with the symptoms reported by the respective patients.
+
+\noindent
+\textbf{Overview:} The dataset encompasses 773 unique diseases and 377 symptoms, resulting in approximately 246,000 rows. 
+It was artificially generated while preserving Symptom Severity and Disease Occurrence Possibility.
+
+\noindent
+\textbf{Data Encoding:} To facilitate model training, the dataset utilizes one-hot encoding for each symptom, transforming 
+categorical symptom data into a binary format.
+
+\noindent
+\textbf{Class Imbalance:} The original dataset exhibited significant class imbalance, with some classes having only one 
+sample and others containing thousands. We addressed this problem using Oversampling and Undersampling techniques,
+and the details are further elaborated in Section \ref{sec:methodology_ML}.
+
+\noindent
+\textbf{Data Cleaning:} To allow consistent Oversampling, classes (diseases) with fewer than three symptoms were excluded 
+from the dataset, resulting in the removal of 25 classes. Additionally, diseases with no symptoms and symptoms with 
+no associated diseases were deleted as well.
+
