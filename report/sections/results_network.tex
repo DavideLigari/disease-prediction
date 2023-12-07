@@ -1,36 +1,25 @@
 
-\subsection{Degree Distribution and Power Law}
+\subsection{L1 and L2 Metrics}
 % BEGIN: degree distribution and power law
 
 % END: degree distribution and power law
 
-\subsection{Most Important Symptoms/Diseases (4 Classes)}
-% BEGIN: most important symptoms/diseases (4 classes)
-
-% END: most important symptoms/diseases (4 classes)
-
 \subsection{Betweenness Centrality}
 % BEGIN: betweenness centrality
-As shown in Figure \ref{fig:bet_entire}, the betweenness centrality of the nodes in the network follows a Power Law Distribution. This suggests
-a scale-free structure of the network, with a few central nodes working as connecting actors, while the majority of the nodes have a low betweenness centrality.
-Dividing the centrality values into the two classes of symptoms and diseases (Figures \ref{fig:bet_diseases} and \ref{fig:bet_symptoms}), we can see that 
-the symptoms have a higher betweenness centrality than the diseases. To understand the meaning of this result we have to delve into
-the interpretation of the betweenness centrality. In general, a symptom is more likely to have a high betweenness centrality if it is
-connected to many diseases and these latter are connected to few symptoms. Conversely a disease is more likely to have a high betweenness centrality
-if it is connected to many symptoms and these latter are connected to few diseases. Looking at the results of L1 and L2, we can see that in our case
-the justification of the higher symptoms betweenness centrality is due to the fact that the symptoms are connected to many diseases, while the diseases
-are connected to few symptoms.
-From a predictive point of view, this is not a good result, since each symptom is not very specific contributing to many different classes.
-
-Figure \ref{fig:bet_top} shows the top 10 nodes with the highest betweenness centrality. As expected, they are all symptoms and seems 
-reasonable that they are the most generic symptoms.
+The examination of betweenness centrality in our bipartite network, as depicted in Figure~\ref{fig:bet_all}, 
+reveals a Power Law Distribution, indicative of a scale-free structure. This implies the presence of a few central 
+nodes that act as pivotal connectors, while the majority of nodes exhibit lower betweenness centrality.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\columnwidth]{bet_entire.png}
-    \caption{Betweenness Centrality of the entire network}
-    \label{fig:bet_entire}
-\end{figure}
+    \includegraphics[width=1\columnwidth]{bet_all.png}
+    \caption{Betweenness Centrality CDFs}
+    \label{fig:bet_all}
+ \end{figure}
+
+Upon dissecting the centrality values into symptoms and diseases (see Figures~\ref{fig:bet_diseases} and~\ref{fig:bet_symptoms}), 
+a notable observation emerges: symptoms tend to have higher betweenness centrality compared to diseases. To decipher the 
+significance of this result, it's essential to delve into the interpretation of betweenness centrality.
 
 \begin{figure}[H]
     \centering
@@ -46,12 +35,17 @@ reasonable that they are the most generic symptoms.
     \label{fig:bet_symptoms}
 \end{figure}
 
-\begin{figure}[H]
-   \centering
-   \includegraphics[width=1\columnwidth]{bet_all.png}
-   \caption{Betweenness Centrality CDFs}
-   \label{fig:bet_all}
-\end{figure}
+In general, a symptom exhibits high betweenness centrality when it is linked to numerous diseases, and these diseases, 
+in turn, are connected to a relatively limited set of symptoms. Conversely, a disease attains high betweenness centrality 
+when it connects to numerous symptoms, and these symptoms are associated with relatively few diseases.
+
+Analyzing our results (L1 and L2), it becomes evident that the higher betweenness centrality of symptoms is attributed 
+to their connections with a multitude of diseases, while diseases, on the contrary, are linked to a relatively limited 
+number of symptoms. From a predictive standpoint, this outcome presents a challenge as each symptom is not sufficiently 
+specific, contributing to a broad array of disease classes.
+
+Figure~\ref{fig:bet_top} highlights the top 10 nodes with the highest betweenness centrality, all of which are symptoms. 
+As anticipated, these symptoms are more generic in nature, aligning with their central role in connecting various diseases.
 
 \begin{figure}[H]
     \centering
@@ -63,30 +57,15 @@ reasonable that they are the most generic symptoms.
 % END: betweenness centrality
 
 \subsection{Communities}
+
 % BEGIN: communities
-The detection of communities in a network can be useful both for the interpretation of the network itself and for the ML model prediction Enhancing.
-As regard the network interpretation it is worth to underline that a community of symptoms identifies a set of symptoms that are 
-often co-occurring within the same diseases, while a community of diseases identifies a set of diseases that are often co-occurring within the same symptoms.
-The size of the different communities is reported in Figure \ref{fig:com_sizes_all}.
+The identification of communities within the network serves a dual purpose – facilitating network interpretation 
+and enhancing the capabilities of our ML prediction model.
 
-Given a symptoms community could be of clinical interest to understand which are the diseases that are most often associated with the symptoms of the community.
-This information is depicted in (Figures \ref{fig:com1_symptoms}, \ref{fig:com2_symptoms} and \ref{fig:com3_symptoms}). 
-As an interpretation example we can look at the community 1 of symptoms (Figure \ref{fig:com1_symptoms}). In this case we can say that 'herniated disk' is the 
-third most pointed disease by the symptoms of the community. It is pointed by 12 symptoms each one pointing on average 3 diseases.
-
-The same kind of study can be done for the communities of diseases. In this case the results are shown in Figures \ref{fig:com1_diseases}, 
-\ref{fig:com2_diseases} and \ref{fig:com3_diseases}. This kind of information could be useful to profile the diseases and understanding the significance
-of each symptom. For example, looking at community 1 of diseases (Figure \ref{fig:com1_diseases}), the 'sharp abdominal pain' symptom is present in almost 
-half of the diseases of the community. This means that this symptom is very generic and it is not very useful to discriminate between the diseases of the community.
-
-Switching now the the creation of features for the Ml model, we created two kinds of features: 
-\begin{itemize}
-    \item \textbf{Community Count}: taking a symptoms one hot vector, we count how many symptoms of the vector are in each community. The new features vector 
-    has a length equal to the number of communities and a value equal to the number of symptoms of the original vector that are in the community.
-    \item \textbf{Community Size}: taking a symptoms one hot vector, we replace each symptom with the size of the community of the symptom.
-\end{itemize}
-
-
+From a network interpretation perspective, communities offer insights into disease-symptom relationships. 
+A community of symptoms signifies a set of symptoms that frequently co-occur within the same diseases, while a 
+community of diseases identifies a set of diseases often co-occurring within the same symptoms. The sizes of 
+different communities are illustrated in Figure~\ref{fig:com_sizes_all}.
 
 \begin{figure}[H]
     \centering
@@ -95,12 +74,59 @@ Switching now the the creation of features for the Ml model, we created two kind
     \label{fig:com_sizes_all}
 \end{figure}
 
+For clinical relevance, examining symptoms communities provides valuable information about diseases associated 
+with these symptoms. This is exemplified in Figures~\ref{fig:com1_symptoms}, \ref{fig:com2_symptoms}, 
+and \ref{fig:com3_symptoms}. As an illustration, in the community 1 of symptoms (Figure~\ref{fig:com1_symptoms}), 
+'herniated disk' is the third most pointed disease by the symptoms of the community, with each symptom pointing, 
+on average, to three diseases.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\columnwidth]{com1_symptoms.png}
     \caption{Community 1 of symptoms}
     \label{fig:com1_symptoms}
 \end{figure}
+
+A similar study can be conducted for communities of diseases, as depicted in Figures~\ref{fig:com1_diseases}, 
+\ref{fig:com2_diseases}, and \ref{fig:com3_diseases}. This information aids in profiling diseases and understanding 
+the significance of each symptom. For instance, in community 1 of diseases (Figure~\ref{fig:com1_diseases}), 
+the symptom 'sharp abdominal pain' is present in almost half of the diseases in the community, indicating its 
+generic nature and limited discriminatory value.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\columnwidth]{com1_diseases.png}
+    \caption{Community 1 of diseases}
+    \label{fig:com1_diseases}
+\end{figure}
+
+Transitioning to the creation of features for the ML model, two types of features were developed:
+
+\begin{itemize}
+    \item \textbf{Community Count:} This feature counts how many symptoms of the symptom vector belong to each community. 
+    Each symptom community is characterized by different pointed diseases. The model can learn to prioritize 
+    diseases associated with the community with the highest count.
+    
+    \item \textbf{Community Size:} This feature replaces each symptom in the symptom vector with the size of the 
+    community to which the symptom belongs. It enables the model to distinguish between symptoms belonging to small and 
+    large communities, injecting community information into the model beyond basic one-hot encoding of symptoms.
+\end{itemize}
+
+It is noteworthy that communities can also contribute to improving the computational efficiency of the model. 
+For example, a symptom associated with many diseases may be less informative and could potentially be removed from the 
+symptom vector. However, we opted for a comprehensive approach using a combination of L1 and L2 measures to address this issue.
+
+% END: communities
+
+\subsection{Most Important Symptoms/Diseases (4 Classes)}
+% BEGIN: most important symptoms/diseases (4 classes)
+
+% END: most important symptoms/diseases (4 classes)
+
+
+
+
+% Figures to be placed in the appendix
 
 \begin{figure}[H]
     \centering
@@ -116,12 +142,7 @@ Switching now the the creation of features for the Ml model, we created two kind
     \label{fig:com3_symptoms}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\columnwidth]{com1_diseases.png}
-    \caption{Community 1 of diseases}
-    \label{fig:com1_diseases}
-\end{figure}
+
 
 \begin{figure}[H]
     \centering
@@ -136,9 +157,3 @@ Switching now the the creation of features for the Ml model, we created two kind
     \caption{Community 3 of diseases}
     \label{fig:com3_diseases}
 \end{figure}
-
-
-
-% END: communities
-
-
