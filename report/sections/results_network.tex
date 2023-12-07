@@ -67,11 +67,25 @@ reasonable that they are the most generic symptoms.
 The detection of communities in a network can be useful both for the interpretation of the network itself and for the ML model prediction Enhancing.
 As regard the network interpretation it is worth to underline that a community of symptoms identifies a set of symptoms that are 
 often co-occurring within the same diseases, while a community of diseases identifies a set of diseases that are often co-occurring within the same symptoms.
-In Figure \ref{fig:com_sizes_all} we can see the sizes comparison of the communities of symptoms and diseases. It is clear that the diseases communities are
+The size of the different communities is reported in Figure \ref{fig:com_sizes_all}.
 
+Given a symptoms community could be of clinical interest to understand which are the diseases that are most often associated with the symptoms of the community.
+This information is depicted in (Figures \ref{fig:com1_symptoms}, \ref{fig:com2_symptoms} and \ref{fig:com3_symptoms}). 
+As an interpretation example we can look at the community 1 of symptoms (Figure \ref{fig:com1_symptoms}). In this case we can say that 'herniated disk' is the 
+third most pointed disease by the symptoms of the community. It is pointed by 12 symptoms each one pointing on average 3 diseases.
 
-Starting from the analysis of the symptoms communities, we can see that the symptoms are grouped in 3 communities (Figures \ref{fig:com1_symptoms}, 
-\ref{fig:com2_symptoms} and \ref{fig:com3_symptoms}). Each figure shows the diseases to which most different symptoms point.
+The same kind of study can be done for the communities of diseases. In this case the results are shown in Figures \ref{fig:com1_diseases}, 
+\ref{fig:com2_diseases} and \ref{fig:com3_diseases}. This kind of information could be useful to profile the diseases and understanding the significance
+of each symptom. For example, looking at community 1 of diseases (Figure \ref{fig:com1_diseases}), the 'sharp abdominal pain' symptom is present in almost 
+half of the diseases of the community. This means that this symptom is very generic and it is not very useful to discriminate between the diseases of the community.
+
+Switching now the the creation of features for the Ml model, we created two kinds of features: 
+\begin{itemize}
+    \item \textbf{Community Count}: taking a symptoms one hot vector, we count how many symptoms of the vector are in each community. The new features vector 
+    has a length equal to the number of communities and a value equal to the number of symptoms of the original vector that are in the community.
+    \item \textbf{Community Size}: taking a symptoms one hot vector, we replace each symptom with the size of the community of the symptom.
+\end{itemize}
+
 
 
 \begin{figure}[H]
@@ -101,6 +115,28 @@ Starting from the analysis of the symptoms communities, we can see that the symp
     \caption{Community 3 of symptoms}
     \label{fig:com3_symptoms}
 \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\columnwidth]{com1_diseases.png}
+    \caption{Community 1 of diseases}
+    \label{fig:com1_diseases}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\columnwidth]{com2_diseases.png}
+    \caption{Community 2 of diseases}
+    \label{fig:com2_diseases}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\columnwidth]{com3_diseases.png}
+    \caption{Community 3 of diseases}
+    \label{fig:com3_diseases}
+\end{figure}
+
 
 
 % END: communities
