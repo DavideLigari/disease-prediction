@@ -5,65 +5,70 @@
 
 
 \subsection{Betweenness Centrality}
-The betweenness centrality of a node $v$, according to \Citeauthor{Brandes_2008} \cite{Brandes_2008}, 
-is defined as the sum of the fraction of all-pairs shortest paths that pass through $v$:
+The betweenness centrality of a node \(v\), as defined by \Citeauthor{Brandes_2008} \cite{Brandes_2008}, 
+is calculated as the sum of the fraction of all-pairs shortest paths that pass through \(v\):
 
 \begin{equation}
     c_B(v) = \sum_{s,t \in V} \frac{\sigma(s, t|v)}{\sigma(s, t)} \label{eq:betweenness}
 \end{equation}
 
-\noindent
-where:\\
+where:
 
 \begin{itemize}
-    \item $V$: The set of nodes.
-    \item $\sigma(s, t)$: The number of shortest paths from node $s$ to node $t$.
-    \item $\sigma(s, t|v)$: The number of those shortest paths from node $s$ to node $t$ that pass through some node $v$ other than $s$ and $t$.
-    \item If $s = t$, then $\sigma(s, t) = 1$.
-    \item If $v \in \{s, t\}$, then $\sigma(s, t|v) = 0$.
+    \setlength\itemsep{0.4em} % set space between items
+    \item \(V\): The set of nodes.
+    \item \(\sigma(s, t)\): The number of shortest paths from node \(s\) to node \(t\).
+    \item \(\sigma(s, t|v)\): The number of those shortest paths from node \(s\) to node \(t\) that pass 
+    through some node \(v\) other than \(s\) and \(t\).
+    \item If \(s = t\), then \(\sigma(s, t) = 1\).
+    \item If \(v \in \{s, t\}\), then \(\sigma(s, t|v) = 0\).
 \end{itemize}
 
-\vspace{0.2cm}
-\noindent
-To compute the betweenness centrality we used the NetworkX function \texttt{nx.bipartite.betweenness\_centrality} 
-which implements the algorithm proposed by \Citeauthor{Brandes_2004} \cite{Brandes_2004} and
-uses a proper normalization for bipartite graphs.
+To compute the betweenness centrality, the NetworkX function \textit{nx.bipartite.betweenness\_centrality} 
+was utilized. This function implements the algorithm proposed by \Citeauthor{Brandes_2004} \cite{Brandes_2004}, 
+specifically designed for bipartite graphs, and includes proper normalization for accurate results.
 
 \subsection{Communities Detection}
-Prior to apply any community detection algorithm, we need to perform two steps:\\
+\section{Methodology for Communities Detection}
+
+Prior to applying any community detection algorithm, two crucial steps must be performed:
+
 
 \begin{itemize}
-    \item \textbf{Graph Projections}: We need to project the bipartite graph into two graphs, one for each set of nodes. 
-    In our case the two sets are represented by symptoms and diseases. At this scope is available 
-    the NetworkX function \texttt{nx.bipartite.projected\_graph} which returns the projection of the bipartite graph onto the specified nodes.
-    \item \textbf{Compute Similarity}: We need to compute the similarity between nodes. For our purposes, it is possible to create 
-    a co-occurrence matrix, for each set of nodes. 
-    Taking as example the co-occurrence matrix of symptoms, each entry $s_{ij}$ represents the number of times the symptom $i$ and 
-    the symptom $j$ co-occur in the same disease.
+    \setlength\itemsep{1em} % set space between items
+    \item \textbf{Graph Projections:} The bipartite graph needs to be projected into two separate graphs, 
+    one for each set of nodes. In our case, the two sets represent symptoms and diseases. To achieve this, 
+    the NetworkX function \textit{nx.bipartite.projected\_graph} is employed, returning the projection of 
+    the bipartite graph onto the specified nodes.
+    
+    \item \textbf{Compute Similarity:} The similarity between nodes needs to be computed. For our purposes, 
+    a co-occurrence matrix is created for each set of nodes. Taking the example of the co-occurrence matrix 
+    for symptoms, each entry \(s_{ij}\) represents the number of times the symptom \(i\) and the symptom \(j\) 
+    co-occur in the same disease.
 \end{itemize}
 
-\vspace{0.2cm}
-\noindent
-Once we have the two graphs, whose links are weighted by the similarity between nodes, we can apply the community detection algorithm. We used the 
-Clauset-Newman-Moore greedy modularity maximization algorithm \cite{Clauset_Newman_Moore_2004}, implemented in the NetworkX function
-\texttt{nx.algorithms.community.greedy\_modularity\_communities}. This algorithm aims at finding the partition of the graph that maximizes the modularity,
-which is defined by \Citeauthor{Newman_2006} \cite{Newman_2006} as:
+Once the two graphs, with links weighted by node similarity, are obtained, the community detection algorithm 
+can be applied. We utilized the Clauset-Newman-Moore greedy modularity maximization algorithm \cite{Clauset_Newman_Moore_2004}, 
+implemented in the NetworkX function \textit{nx.algorithms.community.greedy\_modularity\_communities}. This algorithm aims to 
+find the partition of the graph that maximizes modularity, defined by \Citeauthor{Newman_2006} \cite{Newman_2006} as:
 
 \begin{equation}
     Q = \frac{1}{2m} \sum_{ij} \left[A_{ij} - \frac{k_i k_j}{2m}\right] \delta(c_i, c_j) \label{eq:modularity}
 \end{equation}
 
-\noindent
-where:\\
+where:
 
 \begin{itemize}
-    \item $Q$: Modularity of the network.
-    \item $A_{ij}$: Element of the adjacency matrix representing the connection between nodes $i$ and $j$.
-    \item $k_i$ and $k_j$: Degrees of nodes $i$ and $j$, respectively.
-    \item $m$: Total number of edges in the network.
-    \item $\delta(c_i, c_j)$: Kronecker delta function, which is 1 if $c_i$ is equal to $c_j$ (i.e., nodes $i$ and $j$ belong to the same community) and 0 otherwise.
-    \item The sum is taken over all pairs of nodes $i$ and $j$.
+    \setlength\itemsep{0.4em} % set space between items
+    \item \(Q\): Modularity of the network.
+    \item \(A_{ij}\): Element of the adjacency matrix representing the connection between nodes \(i\) and \(j\).
+    \item \(k_i\) and \(k_j\): Degrees of nodes \(i\) and \(j\), respectively.
+    \item \(m\): Total number of edges in the network.
+    \item \(\delta(c_i, c_j)\): Kronecker delta function, which is 1 if \(c_i\) is equal to \(c_j\) (i.e., nodes \(i\) 
+    and \(j\) belong to the same community) and 0 otherwise.
+    \item The sum is taken over all pairs of nodes \(i\) and \(j\).
 \end{itemize}
+
 
 
 
