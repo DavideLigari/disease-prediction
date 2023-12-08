@@ -50,7 +50,7 @@ To statistically assess the significance of SI and DI, we adopt a hypothesis tes
 Specifically, we posit \textbf{H0} as the hypothesis that SI and DI level-2 do not offer additional information compared to level-1,
 and \textbf{H1} as the opposite.
 To test these hypotheses, we generate 5000 random networks using a null model with the same level-1 properties as the original network.\\
-With this ample set of null models, we assume that the distribution of SI and DI level-1 is Gaussian, leveraging the Central Limit Theorem (CLT).
+With this ample set of null models, we assume that the distribution of SI and DI is Gaussian, leveraging the Central Limit Theorem (CLT).
 For each null model, we calculate the mean ($\mu$) and standard deviation ($\sigma$) of SI and DI and compute the z-score for each SI and DI level-2,
 as expressed in the following equation:
 
@@ -58,8 +58,7 @@ as expressed in the following equation:
     z_{SI_{v, 2}} = \frac{SI_{v, 2} - \mu_{SI_{v, 2}}}{\sigma_{SI_{v, 2}}}
 \end{equation}
 \noindent
-This process results in a Gaussian and normal distribution. If \textbf{H0} holds true,
-the z-scores of SI and DI should be normally distributed with a mean of 0 and a standard deviation of 1.
+If \textbf{H0} holds true,the z-scores of SI and DI should be normally distributed with a mean of 0 and a standard deviation of 1.
 Conversely, if \textbf{H1} is true, the z-scores of SI and DI should be normally distributed with a mean and standard deviation different from 0 and 1,
 respectively.
 
