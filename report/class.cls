@@ -43,36 +43,7 @@
 \newcommand{\firstword}[2]{\lettrine[findent=2pt]{\textbf{#1}}{}#2 }
 
 
-\newif\ifxetexorluatex
-\ifxetex
-  \xetexorluatextrue
-\else
-  \ifluatex
-    \xetexorluatextrue
-  \else
-    \xetexorluatexfalse
-  \fi
-\fi
 
-\ifxetexorluatex
-  \RequirePackage[no-math]{fontspec}
-  \let\boldsymbol\symbf
-  % Patch microtype for older versions; from https://tex.stackexchange.com/a/373607/226
-  \@ifpackagelater{microtype}{2017/07/05}{}{%
-    \patchcmd{\MT@is@composite}
-    {\expandafter\expandafter\expandafter}
-    {\ifx\UnicodeEncodingName\@undefined\else
-        \expandafter\expandafter\expandafter\MT@is@uni@comp\MT@char\iffontchar\else\fi\relax
-      \fi\expandafter\expandafter\expandafter}
-    {}{}
-    \def\MT@is@uni@comp#1\iffontchar#2\else#3\fi\relax{%
-      \ifx\\#2\\\else\edef\MT@char{\iffontchar#2\fi}\fi
-    }
-  }
-\else
-  \RequirePackage[utf8]{inputenc}
-  \RequirePackage[T1]{fontenc}
-\fi
 \RequirePackage[default]{sourcesanspro}
 \RequirePackage[nosymbolsc,slantedGreek]{newtxsf}
 
@@ -90,6 +61,15 @@
   headheight=21\p@,
   headsep=\baselineskip
 }
+\usepackage{hyperref} % Add this line to resolve undefined references
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{enumitem} % Customize bullet lists
+\usepackage{biblatex}
 
 \newcommand{\runningauthor}[1]{\def\@runningauthor{#1}}
 \newcommand{\shortname}[1]{\def\@shortname{#1}}
