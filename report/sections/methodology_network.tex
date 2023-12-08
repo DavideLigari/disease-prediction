@@ -1,13 +1,40 @@
 \section{Network Methodology}
 In this section we technically describe the methodology used to create the network and to compute metrics on it.
 % ------------------- Network Creation -------------------
-\subsection{Network Creation (Not Weighted - Bipartite)}
+\subsection{Network Creation}
 
 % ------------------- Hidalgo + Significance -------------------
 
-\subsection{L1 and L2 measures}
+\subsection{Method of Reflections}
 
-
+To identify influential nodes in the symptom-disease network, we introduce two indices that capture the relative importance of each actor.
+The first index, referred to as the Symptom Influence (\textit{SI}) index, not only ranks symptom nodes based on their frequency (level-1)
+but also considers symptom commonality.
+This commonality measures whether a symptom is present in diseases affected by numerous other symptoms (level-2) or in diseases affected by only a few symptoms.\\
+Conversely, the second index, known as the Disease Influence (\textit{DI}) index,
+assesses the distinct symptoms related to a disease (level-1) and whether a disease exhibits symptoms that affect many other diseases (level-2).\\
+In more detail, level-1 of these indices quantifies the number of symptoms associated with a disease,
+while level-2 measures the commonality of these symptoms. In network theory, level-2 measures are recognized as the average nearest neighbor strength.\\
+We adapt the level-\textit{N} indices following the approach of Hidalgo et al. (2007) \cite{Hidalgo_2007} and Hidalgo et al. (2009) \cite{Hidalgo_2009}.
+The level-\textit{N} indices are defined as:
+\begin{equation}
+    SI_{v, N} = \frac{1}{SI_{v, 1}} \sum_u W(v, u) DI_{u, N-1}
+\end{equation}
+\begin{equation}
+    DI_{u, N} = \frac{1}{DI_{u, 1}} \sum_v W(v, u) SI_{v, N-1}
+\end{equation}
+\noindent
+Here, $SI_{v, 1}$ and $DI_{u, 1}$ represent the level-1 indices, and $W(v,u)$ denotes the edge weight between symptom $v$ and disease $u$.
+The level-1 indices are defined as follows:
+\begin{equation}
+    SI_{v, 1} = \sum_u W(v, u)
+\end{equation}
+\begin{equation}
+    DI_{u, 1} = \sum_v W(v, u)
+\end{equation}
+\noindent
+Since our network is not weighted ($W(v,u)=1$ if symptom $v$ is associated with disease $u$ and $W(v,u)=0$ otherwise),
+$SI_{v,1}$ and $DI_{u,1}$ are equal to the degree of symptom $v$ and disease $u$, respectively.
 
 % ------------------- Betweenness -------------------
 
@@ -16,19 +43,19 @@ The betweenness centrality of a node \(v\), as defined by \Citeauthor{Brandes_20
 is calculated as the sum of the fraction of all-pairs shortest paths that pass through \(v\):
 
 \begin{equation}
-  c_B(v) = \sum_{s,t \in V} \frac{\sigma(s, t|v)}{\sigma(s, t)} \label{eq:betweenness}
+    c_B(v) = \sum_{s,t \in V} \frac{\sigma(s, t|v)}{\sigma(s, t)} \label{eq:betweenness}
 \end{equation}
 
 where:
 
 \begin{itemize}
-  \setlength\itemsep{0.4em} % set space between items
-  \item \(V\): The set of nodes.
-  \item \(\sigma(s, t)\): The number of shortest paths from node \(s\) to node \(t\).
-  \item \(\sigma(s, t|v)\): The number of those shortest paths from node \(s\) to node \(t\) that pass
-        through some node \(v\) other than \(s\) and \(t\).
-  \item If \(s = t\), then \(\sigma(s, t) = 1\).
-  \item If \(v \in \{s, t\}\), then \(\sigma(s, t|v) = 0\).
+    \setlength\itemsep{0.4em} % set space between items
+    \item \(V\): The set of nodes.
+    \item \(\sigma(s, t)\): The number of shortest paths from node \(s\) to node \(t\).
+    \item \(\sigma(s, t|v)\): The number of those shortest paths from node \(s\) to node \(t\) that pass
+          through some node \(v\) other than \(s\) and \(t\).
+    \item If \(s = t\), then \(\sigma(s, t) = 1\).
+    \item If \(v \in \{s, t\}\), then \(\sigma(s, t|v) = 0\).
 \end{itemize}
 
 To compute the betweenness centrality, the NetworkX function \textit{nx.bipartite.betweenness\_centrality}
@@ -41,16 +68,16 @@ Prior to applying any community detection algorithm, two crucial steps must be p
 
 
 \begin{itemize}
-  \setlength\itemsep{1em} % set space between items
-  \item \textbf{Graph Projections:} The bipartite graph needs to be projected into two separate graphs,
-        one for each set of nodes. In our case, the two sets represent symptoms and diseases. To achieve this,
-        the NetworkX function \textit{nx.bipartite.projected\_graph} is employed, returning the projection of
-        the bipartite graph onto the specified nodes.
+    \setlength\itemsep{1em} % set space between items
+    \item \textbf{Graph Projections:} The bipartite graph needs to be projected into two separate graphs,
+          one for each set of nodes. In our case, the two sets represent symptoms and diseases. To achieve this,
+          the NetworkX function \textit{nx.bipartite.projected\_graph} is employed, returning the projection of
+          the bipartite graph onto the specified nodes.
 
-  \item \textbf{Compute Similarity:} The similarity between nodes needs to be computed. For our purposes,
-        a co-occurrence matrix is created for each set of nodes. Taking the example of the co-occurrence matrix
-        for symptoms, each entry \(s_{ij}\) represents the number of times the symptom \(i\) and the symptom \(j\)
-        co-occur in the same disease.
+    \item \textbf{Compute Similarity:} The similarity between nodes needs to be computed. For our purposes,
+          a co-occurrence matrix is created for each set of nodes. Taking the example of the co-occurrence matrix
+          for symptoms, each entry \(s_{ij}\) represents the number of times the symptom \(i\) and the symptom \(j\)
+          co-occur in the same disease.
 \end{itemize}
 
 Once the two graphs, with links weighted by node similarity, are obtained, the community detection algorithm
@@ -59,20 +86,20 @@ implemented in the NetworkX function \textit{nx.algorithms.community.greedy\_mod
 find the partition of the graph that maximizes modularity, defined by \Citeauthor{Newman_2006} \cite{Newman_2006} as:
 
 \begin{equation}
-  Q = \frac{1}{2m} \sum_{ij} \left[A_{ij} - \frac{k_i k_j}{2m}\right] \delta(c_i, c_j) \label{eq:modularity}
+    Q = \frac{1}{2m} \sum_{ij} \left[A_{ij} - \frac{k_i k_j}{2m}\right] \delta(c_i, c_j) \label{eq:modularity}
 \end{equation}
 
 where:
 
 \begin{itemize}
-  \setlength\itemsep{0.4em} % set space between items
-  \item \(Q\): Modularity of the network.
-  \item \(A_{ij}\): Element of the adjacency matrix representing the connection between nodes \(i\) and \(j\).
-  \item \(k_i\) and \(k_j\): Degrees of nodes \(i\) and \(j\), respectively.
-  \item \(m\): Total number of edges in the network.
-  \item \(\delta(c_i, c_j)\): Kronecker delta function, which is 1 if \(c_i\) is equal to \(c_j\) (i.e., nodes \(i\)
-        and \(j\) belong to the same community) and 0 otherwise.
-  \item The sum is taken over all pairs of nodes \(i\) and \(j\).
+    \setlength\itemsep{0.4em} % set space between items
+    \item \(Q\): Modularity of the network.
+    \item \(A_{ij}\): Element of the adjacency matrix representing the connection between nodes \(i\) and \(j\).
+    \item \(k_i\) and \(k_j\): Degrees of nodes \(i\) and \(j\), respectively.
+    \item \(m\): Total number of edges in the network.
+    \item \(\delta(c_i, c_j)\): Kronecker delta function, which is 1 if \(c_i\) is equal to \(c_j\) (i.e., nodes \(i\)
+          and \(j\) belong to the same community) and 0 otherwise.
+    \item The sum is taken over all pairs of nodes \(i\) and \(j\).
 \end{itemize}
 
 
