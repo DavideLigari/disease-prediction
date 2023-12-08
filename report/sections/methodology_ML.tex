@@ -1,11 +1,37 @@
 \section{ML Model Methodology}
-In this section we describe the techniques used to deal with the ML building, together with the logical flow of the process.
+This section provides a comprehensive overview of the methodologies employed in the construction of the machine 
+learning model. The discussion encompasses various techniques designed to handle the intricacies of model building, 
+coupled with a logical flow that guides the entire process.
+
+% ------------------- Data Preparation -------------------
 
 \subsection{Data Balancing}
 % - Face the unbalanced dataset problem
 
+
+
+% ------------------- Feature Extraction -------------------
+
 \subsection{Feature Extraction}
 % - Prepare the features and normalization
+A pivotal phase in constructing a machine learning model is feature extraction. In addition to the one-hot vector representation 
+of symptoms, the network analysis affords us the following features:
+
+\begin{itemize}
+    \setlength\itemsep{0.4em} % set space between items
+    \item \textbf{L1 and L2 Measures}: A vector with values representing the L1 and L2 measures for each symptom.
+    \item \textbf{Betweenness Centrality}: A vector with values denoting the betweenness centrality of each symptom.
+    \item \textbf{Community Count}: A vector indicating the number of symptoms belonging to each community.
+    \item \textbf{Community Size}: A vector replacing symptoms with the size of the community to which they belong.
+\end{itemize}
+\vspace{0.4cm}
+
+Given the diverse scales of these features, normalization becomes imperative for their cohesive integration into the model 
+without introducing biases. To achieve this, we opted for \textit{MaxAbs} normalization. This normalization scales each feature 
+individually, ensuring that the maximal absolute value of each feature in the training set becomes 1.0, while preserving the sparsity of data.
+
+
+% ------------------- Operative Flow -------------------
 
 \subsection{Operative Flow}
 % - Operative Flow
@@ -14,3 +40,104 @@ In this section we describe the techniques used to deal with the ML building, to
 	% - train for each model the two version above with optimal parameters
 	% - pick the best model according to accuracy
 	% - train the best model with whole dataset and reduce the number of features
+
+Once the features are ready, the core part of the model building process can begin.
+We trained three different models: a Logistic Regression, a Random Forest, and a Multi Layer Perceptron (MLP).
+For each model we had to address two problems: the selection of the best parameters and the selection of the best features.
+The problem is that the two things are not independent from each other, in other words, changing the parameters 
+leads to different features being selected and vice versa. The unique solution to this problem is to test all the parameters 
+combinations and for each of them test all the features combinations. This approach is not feasible
+in terms of computational effort. 
+For this reason we decided for a greedy approach. First of all we split the features in two groups: the symptoms one hot vector
+and the other features. The former is used to train a base model with random parameters, the latter is used to investigate
+the improvement that may be brought by the new features. For each of the two groups
+we get the best feature combination using Algorithm \ref{alg:feature_selection}, then given the best combination of features
+we get the best combination of parameters as shown in Algorithm \ref{alg:best_selection}. Now we train each model with the best parameters
+and the best features combination and we pick the best model according to the accuracy. Finally the best model overall is trained
+with the whole dataset.
+
+\begin{algorithm}[H] \small
+	\caption{Feature Selection Algorithm}\label{alg:feature_selection}
+	
+	\begin{algorithmic}[1]
+	
+	\State BestFeatureComb $\gets$ EmptySet
+	
+	\For{each model}
+	    \State CurrentModel $\gets$ EmptyModel
+	    \State BestModAccuracy $\gets$ 0
+	    \State Parameters $\gets$ InitializeRandomParameters
+	
+	    \For{i = 1 to NumberOfFeatures}
+	    		\State BestAccuracy $\gets$ -1
+
+			\For{each feature}
+				\State TrainModel(CurrentModel, Parameters)
+			
+				\State CurrentAccuracy $\gets$ GetAccuracy(CurrentModel)
+			
+				\If{CurrentAccuracy $>=$ BestAccuracy}
+					\State BestAccuracy $\gets$ CurrentAccuracy
+					\State BestFeature $\gets$ feature
+					
+				\EndIf
+				\State UpdateModel(CurrentModel, BestFeature)
+			\EndFor
+			\State FreezeFeatures(CurrentModel)
+			\State ModelAccuracy[i] $\gets$ GetAccuracy(CurrentModel)
+			\State FeaturesComb[i] $\gets$ GetFeat(CurrentModel)
+	
+	    \EndFor
+	
+	    \State BestComb $\gets$ FeaturesComb[Max(ModelAccuracy)]
+	    \State BestFeatureComb $\gets$ BestComb $\cup$ BestFeatureComb
+	
+	\EndFor
+	
+	\State \textbf{return} BestFeatureComb
+	\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H] \small
+	\caption{Best Model Selection Algorithm}\label{alg:best_selection}
+	
+	\begin{algorithmic}[1]
+	
+	\State CurrentAccuracy $\gets$ 0
+	\For{each model}
+	    
+	    \State CreateGrid(Parameters)
+	    \State BestParameters $\gets$ GridSearchCV(model)
+	    \State TrainModel(model, BestParameters)
+	    \State CurrentAccuracy $\gets$ GetAccuracy(model)
+
+	    \If{CurrentAccuracy $>=$ BestAccuracy}
+			\State BestAccuracy $\gets$ CurrentAccuracy
+			\State BestModel $\gets$ model
+			\State BestParameters $\gets$ Parameters
+	    \EndIf
+
+	\EndFor
+
+	\State FullDataTrain(BestModel, BestParameters)
+	\State BestAccuracy $\gets$ GetAccuracy(BestModel)
+	\State ReduceFeatures(BestModel, BestParameters)
+	
+	\State \textbf{return} BestParameters, BestModel, BestAccuracy
+	\end{algorithmic}
+\end{algorithm}
+
+At the end of these two algorithm we have the following two models:\\
+
+\begin{itemize}
+    \setlength\itemsep{0.4em} % set space between items
+    \item \textbf{Symptoms Model}: Best model with the best parameters and the symptoms as features
+    \item \textbf{Other Features Model}: Best model with the best parameters and the best features combination
+\end{itemize}
+\vspace{0.4cm}
+
+At this point we can compare the two models in term of prediction performance to see whether the network features
+are capable of improving the accuracy of the model. As regard the second goal of the project, we 
+can apply the feature reduction technique discussed in Section \ref{sec:feature_reduction}
+to both models, to see whether the network features can reduce the computational
+complexity of the model without affecting the accuracy.
