@@ -1,9 +1,33 @@
 \section{Network Methodology}
-
-% ------------------- Network Creation -------------------
 \subsection{Network Creation}
+In this project, a bipartite graph was created where nodes represent symptoms (lightcoral) and diseases (lightblue),
+and edges denote the presence of symptoms in diseases.
+For simplicity, the graph is unweighted, and all edges have a weight of 1.
+Prior to graph creation, a preliminary data analysis was conducted to identify isolated nodes.
+Additionally, an analysis of the node degree distribution was performed to assess whether the distribution follows a power law (see Section 5.1).\\
+The analysis revealed the presence of several symptoms, precisely 52 out of 377, not associated with any disease.
+Consequently, these isolated symptoms were removed from the graph as they do not contribute informative content.
+Diseases without associated symptoms were also removed for the same reason.\\
+Figure \ref{fig:bipartite_graph} illustrates the resulting bipartite graph. As observed, diseases tend to be peripheral,
+while symptoms tend to be central. This observation arises from the fact that symptoms are shared by multiple diseases,
+whereas diseases exhibit distinct symptoms. Furthermore, symptoms are fewer in number than diseases,
+making it more likely for a symptom to be shared among multiple diseases.\\
+Figure \ref{fig:unipartite_graphs} presents the unipartite graphs of symptoms and diseases.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{network.png}
+    \caption{Visual representation of the symptom-disease bipartite graph.}
+    \label{fig:bipartite_graph}
+\end{figure}
+\noindent
 
-% ------------------- Hidalgo + Significance -------------------
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{unipartite_networks.png}
+    \caption{Visual representation of symptom and disease unipartite graphs.}
+    \label{fig:unipartite_graphs}
+\end{figure}
+\noindent
 
 \subsection{Method of Reflections}
 
