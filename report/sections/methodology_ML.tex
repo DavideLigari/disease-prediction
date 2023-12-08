@@ -5,9 +5,18 @@ coupled with a logical flow that guides the entire process.
 
 % ------------------- Data Preparation -------------------
 
-\subsection{Data Balancing}
-% - Face the unbalanced dataset problem
-
+\subsection{Preliminary Data Preparation}
+Before delving into model development, a data preprocessing pipeline was employed to properly prepare them for the subsequent steps, facing the problems 
+of class imbalance and training computational complexity.
+\begin{itemize}
+    \item \textbf{Random Sampling}: Given the extensive nature of hyperparameter tuning, we adopted a random sampling strategy, picking around 10\% of the dataset.
+    Instead of training the models on the entire dataset for each hyperparameter combination, the random subset was used to expedite the tuning 
+    phase without sacrificing model representativity.
+    \item \textbf{Class Imbalance with Oversampling and Undersampling}: The dataset was highly unbalanced across its 700 disease classes.
+    To mitigate this, a combination of oversampling and undersampling techniques was applied. The former was performed for minority classes,
+    while the latter was applied to the majority classes, ensuring all the diseases were adequately represented during training, 
+    preventing dominance and biases in the model.
+\end{itemize}
 
 
 % ------------------- Feature Extraction -------------------
@@ -29,6 +38,41 @@ of symptoms, the network analysis affords us the following features:
 Given the diverse scales of these features, normalization becomes imperative for their cohesive integration into the model 
 without introducing biases. To achieve this, we opted for \textit{MaxAbs} normalization. This normalization scales each feature 
 individually, ensuring that the maximal absolute value of each feature in the training set becomes 1.0, while preserving the sparsity of data.
+
+
+% ------------------- Model Choice -------------------
+
+\subsection{Model Choice}
+The number of machine learning classification models available for disease prediction is vast. We decide to focus on three models
+that are widely used in the literature and that are known to perform well in a variety of contexts: Logistic Regression, Random Forest, and Multilayer Perceptron (MLP).
+
+\textbf{Logistic Regression}\\
+\begin{itemize}
+    \item \textbf{Strengths}: Logistic Regression's computational efficiency makes it an attractive choice for initial exploration and 
+    baseline performance assessment. Its simplicity facilitates interpretability, providing insights into the impact of individual symptoms on disease prediction.
+    \item \textbf{Considerations}: While efficient, Logistic Regression assumes a linear relationship between features and the 
+    log-odds of the target, potentially limiting its ability to capture complex non-linear patterns.
+\end{itemize}
+\vspace{0.4cm}
+
+\textbf{Random Forest}\\
+\begin{itemize}
+    \item \textbf{Strengths}: Random Forest is renowned for its robustness in handling large and diverse datasets, making 
+    it well-suited for our expansive dataset with 700 disease classes. Moreover, Its ability to capture non-linear relationships 
+    ensures that complex patterns within the symptoms' one-hot encoded features are effectively modeled.
+    \item \textbf{Considerations}: The ensemble nature of Random Forest provides resilience against overfitting, a crucial factor 
+    in the context of disease prediction.
+\end{itemize}
+\vspace{0.4cm}
+
+\textbf{Multilayer Perceptron (MLP)}\\
+\begin{itemize}
+    \item \textbf{Strengths}: MLPs are adept at capturing intricate relationships in high-dimensional datasets, 
+    aligning with the complexity inherent in our 300-feature symptom representation.
+    \item \textbf{Considerations}: Their capacity for adapting to non-linear mappings positions MLPs as powerful 
+    tools in unraveling the nuanced interactions between symptoms and diseases.
+\end{itemize}
+
 
 
 % ------------------- Operative Flow -------------------

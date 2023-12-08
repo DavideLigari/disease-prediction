@@ -1,47 +1,51 @@
-\subsection{Choosing Models for Disease Prediction}
-In the realm of disease prediction, selecting the right machine learning models is paramount to achieving accurate and meaningful results. Our dataset, consisting of 250,000 samples and encompassing 700 disease classes, presents unique challenges and opportunities. In this section, we delve into the rationale behind the selection of three distinct models: Random Forest, Multilayer Perceptron (MLP), and Logistic Regression.
+% \subsection{Choosing Models for Disease Prediction}
+% In the realm of disease prediction, selecting the right machine learning models is paramount to achieving accurate and meaningful results. Our dataset, consisting of 250,000 samples and encompassing 700 disease classes, presents unique challenges and opportunities. In this section, we delve into the rationale behind the selection of three distinct models: Random Forest, Multilayer Perceptron (MLP), and Logistic Regression.
 
-\subsubsection{Data Preprocessing}
-Before delving into model development, a robust data preprocessing pipeline was employed to enhance the effectiveness of our machine learning models.
-\begin{itemize}
-    \item \textbf{Random Sampling for Efficient Hyperparameter Tuning}: Given the extensive nature of hyperparameter tuning, we adopted a random sampling strategy during the optimization process. Instead of training on the entire dataset for each hyperparameter combination, a random subset was used to expedite the tuning phase without sacrificing model representativity.
-    \item \textbf{Addressing Class Imbalance with Oversampling and Undersampling}: The dataset, with its 700 disease classes, exhibited class imbalance. To mitigate this, a combination of oversampling and undersampling techniques was applied. Oversampling was performed for minority classes, ensuring that these classes were adequately represented during training. Concurrently, undersampling was applied to the majority classes, preventing dominance and bias in the model.
-    \item \textbf{Max-Abs Normalization for Sparse Feature Representation}: Considering the sparsity of our one-hot encoded symptom features (300 features representing 700 classes), a careful choice of normalization technique was crucial. We opted for max-abs normalization, preserving the sparsity of the data. This normalization method scales each feature by its maximum absolute value, ensuring that the sparsity pattern remains intact while achieving feature-wise scale consistency.
-\end{itemize}
+% \subsubsection{Data Preprocessing}
+% Before delving into model development, a robust data preprocessing pipeline was employed to enhance the effectiveness of our machine learning models.
+% \begin{itemize}
+%     \item \textbf{Random Sampling for Efficient Hyperparameter Tuning}: Given the extensive nature of hyperparameter tuning, we adopted a random sampling strategy during the optimization process. Instead of training on the entire dataset for each hyperparameter combination, a random subset was used to expedite the tuning phase without sacrificing model representativity.
+%     \item \textbf{Addressing Class Imbalance with Oversampling and Undersampling}: The dataset, with its 700 disease classes, exhibited class imbalance. To mitigate this, a combination of oversampling and undersampling techniques was applied. Oversampling was performed for minority classes, ensuring that these classes were adequately represented during training. Concurrently, undersampling was applied to the majority classes, preventing dominance and bias in the model.
+%     \item \textbf{Max-Abs Normalization for Sparse Feature Representation}: Considering the sparsity of our one-hot encoded symptom features (300 features representing 700 classes), a careful choice of normalization technique was crucial. We opted for max-abs normalization, preserving the sparsity of the data. This normalization method scales each feature by its maximum absolute value, ensuring that the sparsity pattern remains intact while achieving feature-wise scale consistency.
+% \end{itemize}
 
-\subsubsection{Logistic Regression}
-\begin{itemize}
-    \item \textbf{Strengths}: Logistic Regression's computational efficiency makes it an attractive choice for initial exploration and baseline performance assessment. Its simplicity facilitates interpretability, providing insights into the impact of individual symptoms on disease prediction.
-    \item \textbf{Considerations}: While efficient, Logistic Regression assumes a linear relationship between features and the log-odds of the target, potentially limiting its ability to capture complex non-linear patterns.
-\end{itemize}
+% \subsubsection{Logistic Regression}
+% \begin{itemize}
+%     \item \textbf{Strengths}: Logistic Regression's computational efficiency makes it an attractive choice for initial exploration and baseline performance assessment. Its simplicity facilitates interpretability, providing insights into the impact of individual symptoms on disease prediction.
+%     \item \textbf{Considerations}: While efficient, Logistic Regression assumes a linear relationship between features and the log-odds of the target, potentially limiting its ability to capture complex non-linear patterns.
+% \end{itemize}
 
-\subsubsection{Random Forest}
-\begin{itemize}
-    \item \textbf{Strengths}: Random Forest is renowned for its robustness in handling large and diverse datasets, making it well-suited for our expansive dataset with 700 disease classes. Moreover, Its ability to capture non-linear relationships ensures that complex patterns within the symptoms' one-hot encoded features are effectively modeled.
-    \item \textbf{Considerations}: The ensemble nature of Random Forest provides resilience against overfitting, a crucial factor in the context of disease prediction.
-\end{itemize}
+% \subsubsection{Random Forest}
+% \begin{itemize}
+%     \item \textbf{Strengths}: Random Forest is renowned for its robustness in handling large and diverse datasets, making it well-suited for our expansive dataset with 700 disease classes. Moreover, Its ability to capture non-linear relationships ensures that complex patterns within the symptoms' one-hot encoded features are effectively modeled.
+%     \item \textbf{Considerations}: The ensemble nature of Random Forest provides resilience against overfitting, a crucial factor in the context of disease prediction.
+% \end{itemize}
 
-\subsubsection{Multilayer Perceptron (MLP)}
-\begin{itemize}
-    \item \textbf{Strengths}: MLPs are adept at capturing intricate relationships in high-dimensional datasets, aligning with the complexity inherent in our 300-feature symptom representation.
-    \item \textbf{Considerations}: Their capacity for adapting to non-linear mappings positions MLPs as powerful tools in unraveling the nuanced interactions between symptoms and diseases.
-\end{itemize}
+% \subsubsection{Multilayer Perceptron (MLP)}
+% \begin{itemize}
+%     \item \textbf{Strengths}: MLPs are adept at capturing intricate relationships in high-dimensional datasets, aligning with the complexity inherent in our 300-feature symptom representation.
+%     \item \textbf{Considerations}: Their capacity for adapting to non-linear mappings positions MLPs as powerful tools in unraveling the nuanced interactions between symptoms and diseases.
+% \end{itemize}
 
-\subsubsection{Parameter Tuning}
-To optimize the performance of our machine learning models, we initiated the process by conducting parameter tuning for models using symptom features represented as a one-hot vector. Given the high-dimensional nature of our dataset, a thoughtful approach was taken to efficiently explore the hyperparameter space.
-\begin{itemize}
-    \item \textbf{Greedy Hyperparameter Optimization}: Rather than exhaustively searching all combinations, we adopted a greedy approach for hyperparameter optimization. One parameter at a time was systematically varied while keeping others constant. This allowed us to efficiently identify key hyperparameters influencing model performance.
-    \item \textbf{Cross-Validation}: The models were subjected to cross-validation techniques, ensuring that the selected hyperparameters demonstrated robust performance across multiple folds. This approach provided a balance between optimization efficiency and model generalization.
-\end{itemize}
-Expanding our approach beyond symptom features, we incorporated a combination of other features in the models. The parameter tuning process for this scenario involved a randomized search across a broader hyperparameter space.
-\begin{itemize}
-    \item \textbf{Randomized Hyperparameter Search}: Random parameter combinations were sampled to efficiently explore the high-dimensional space of hyperparameters. This approach allowed us to identify promising configurations for models using combined features.
-    \item \textbf{Performance Evaluation}: The models were rigorously evaluated based on accuracy. We assessed their ability to generalize to unseen data and make accurate predictions across the diverse set of disease classes.
-\end{itemize}
 
-\subsubsection{Training and Model Selection}
-Following the parameter tuning phase, we proceeded with the training of multiple model instances.
-\begin{itemize}
-    \item \textbf{Model Training}: Each model configuration, both for symptom features only and combined features, was trained on the entire dataset. Training involved the application of optimal hyperparameters determined through the tuning process.
-    \item \textbf{Performance Comparison}: The models were comprehensively compared based on their accuracy and other relevant metrics. This step allowed us to identify the model configuration that demonstrated the highest predictive performance.
-\end{itemize}
+% ---------- THIS HAS BEEN REWRITTEN IN ALGORITHMIC FASHION ---------
+
+
+% \subsubsection{Parameter Tuning}
+% To optimize the performance of our machine learning models, we initiated the process by conducting parameter tuning for models using symptom features represented as a one-hot vector. Given the high-dimensional nature of our dataset, a thoughtful approach was taken to efficiently explore the hyperparameter space.
+% \begin{itemize}
+%     \item \textbf{Greedy Hyperparameter Optimization}: Rather than exhaustively searching all combinations, we adopted a greedy approach for hyperparameter optimization. One parameter at a time was systematically varied while keeping others constant. This allowed us to efficiently identify key hyperparameters influencing model performance.
+%     \item \textbf{Cross-Validation}: The models were subjected to cross-validation techniques, ensuring that the selected hyperparameters demonstrated robust performance across multiple folds. This approach provided a balance between optimization efficiency and model generalization.
+% \end{itemize}
+% Expanding our approach beyond symptom features, we incorporated a combination of other features in the models. The parameter tuning process for this scenario involved a randomized search across a broader hyperparameter space.
+% \begin{itemize}
+%     \item \textbf{Randomized Hyperparameter Search}: Random parameter combinations were sampled to efficiently explore the high-dimensional space of hyperparameters. This approach allowed us to identify promising configurations for models using combined features.
+%     \item \textbf{Performance Evaluation}: The models were rigorously evaluated based on accuracy. We assessed their ability to generalize to unseen data and make accurate predictions across the diverse set of disease classes.
+% \end{itemize}
+
+% \subsubsection{Training and Model Selection}
+% Following the parameter tuning phase, we proceeded with the training of multiple model instances.
+% \begin{itemize}
+%     \item \textbf{Model Training}: Each model configuration, both for symptom features only and combined features, was trained on the entire dataset. Training involved the application of optimal hyperparameters determined through the tuning process.
+%     \item \textbf{Performance Comparison}: The models were comprehensively compared based on their accuracy and other relevant metrics. This step allowed us to identify the model configuration that demonstrated the highest predictive performance.
+% \end{itemize}
