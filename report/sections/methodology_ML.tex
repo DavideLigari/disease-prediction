@@ -41,20 +41,21 @@ individually, ensuring that the maximal absolute value of each feature in the tr
 	% - pick the best model according to accuracy
 	% - train the best model with whole dataset and reduce the number of features
 
-Once the features are ready, the core part of the model building process can begin.
-We trained three different models: a Logistic Regression, a Random Forest, and a Multi Layer Perceptron (MLP).
-For each model we had to address two problems: the selection of the best parameters and the selection of the best features.
-The problem is that the two things are not independent from each other, in other words, changing the parameters 
-leads to different features being selected and vice versa. The unique solution to this problem is to test all the parameters 
-combinations and for each of them test all the features combinations. This approach is not feasible
-in terms of computational effort. 
-For this reason we decided for a greedy approach. First of all we split the features in two groups: the symptoms one hot vector
-and the other features. The former is used to train a base model with random parameters, the latter is used to investigate
-the improvement that may be brought by the new features. For each of the two groups
-we get the best feature combination using Algorithm \ref{alg:feature_selection}, then given the best combination of features
-we get the best combination of parameters as shown in Algorithm \ref{alg:best_selection}. Now we train each model with the best parameters
-and the best features combination and we pick the best model according to the accuracy. Finally the best model overall is trained
-with the whole dataset.
+Once the features are ready, the core part of the model-building process can begin. 
+We trained three different models: a Logistic Regression, a Random Forest, and a Multi-Layer Perceptron (MLP).
+
+For each model, we faced the challenge of selecting both the best parameters and the most effective features. 
+The interdependence between these two aspects makes the optimal approach to explore all the possible combination of features
+and for each combination trying all the parameters combination. This approach is not feasible in terms of computational effort
+leading us to adopt a greedy approach. We firstly split the features into two 
+groups: the symptoms' one-hot vector and the remaining features. The former is used to train a base model, 
+while the latter is utilized to explore the potential improvement brought by the new features.
+
+Using Algorithm \ref{alg:feature_selection}, we determined the best feature combination for each group (symptoms and other features).
+Subsequently, given the optimal feature combination, we identified the best parameter combination using Algorithm 
+\ref{alg:best_selection}. Each model was then trained with the best parameters and the best features combination, 
+and the model with the highest accuracy was chosen. Finally, the best overall model was trained with the entire dataset.
+
 
 \begin{algorithm}[H] \small
 	\caption{Feature Selection Algorithm}\label{alg:feature_selection}
@@ -127,17 +128,18 @@ with the whole dataset.
 	\end{algorithmic}
 \end{algorithm}
 
-At the end of these two algorithm we have the following two models:\\
+
+At the conclusion of these procedures, we obtained the following two models:\\
 
 \begin{itemize}
     \setlength\itemsep{0.4em} % set space between items
-    \item \textbf{Symptoms Model}: Best model with the best parameters and the symptoms as features
-    \item \textbf{Other Features Model}: Best model with the best parameters and the best features combination
+    \item \textbf{Symptoms Model}: The best model with the optimal parameters and the symptoms as features
+    \item \textbf{Other Features Model}: The best model with the optimal parameters and the best features combination
 \end{itemize}
 \vspace{0.4cm}
 
-At this point we can compare the two models in term of prediction performance to see whether the network features
-are capable of improving the accuracy of the model. As regard the second goal of the project, we 
-can apply the feature reduction technique discussed in Section \ref{sec:feature_reduction}
-to both models, to see whether the network features can reduce the computational
-complexity of the model without affecting the accuracy.
+With these models in hand, we could compare their prediction performance to evaluate whether the network 
+features contributed to an accuracy improvement. Additionally, we applied the feature reduction technique discussed 
+in Section \ref{sec:feature_reduction} to both models, assessing whether network features could reduce computational 
+complexity without compromising accuracy.
+
