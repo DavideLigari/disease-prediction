@@ -90,7 +90,15 @@ that are widely used in the literature and that are known to perform well in a v
 	% - pick the best model according to accuracy
 	% - train the best model with whole dataset and reduce the number of features
 
-Once the features are ready, the core part of the model-building process can begin. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{operational_flow.png}
+    \caption{Operative Flow of the ML Model}
+    \label{fig:ML_operative_flow}
+\end{figure}
+
+Once the features are ready, the core part of the model-building process can begin. The operational flow was quite complex,
+and it is summarized in Figure \ref{fig:ML_operative_flow}.\\
 We trained three different models: a Logistic Regression, a Random Forest, and a Multi-Layer Perceptron (MLP).
 
 For each model, we faced the challenge of selecting both the best parameters and the most effective features. 
