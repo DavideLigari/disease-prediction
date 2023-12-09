@@ -101,17 +101,23 @@ Once the features are ready, the core part of the model-building process can beg
 and it is summarized in Figure \ref{fig:ML_operative_flow}.\\
 We trained three different models: a Logistic Regression, a Random Forest, and a Multi-Layer Perceptron (MLP).
 
-For each model, we faced the challenge of selecting both the best parameters and the most effective features. 
+For each model, we faced the challenge of selecting both the best hyperparameters and the most effective features. 
 The interdependence between these two aspects makes the optimal approach to explore all the possible combination of features
-and for each combination trying all the parameters combination. This approach is not feasible in terms of computational effort
+and for each combination trying all the hyperparameters combination. This approach is not feasible in terms of computational effort
 leading us to adopt a greedy approach. We firstly split the features into two 
 groups: the symptoms' one-hot vector and the remaining features. The former is used to train a base model, 
 while the latter is utilized to explore the potential improvement brought by the new features.
 
 Using Algorithm \ref{alg:feature_selection}, we determined the best feature combination for each group (symptoms and other features).
-Subsequently, given the optimal feature combination, we identified the best parameter combination using Algorithm 
-\ref{alg:best_selection}. Each model was then trained with the best parameters and the best features combination, 
-and the model with the highest accuracy was chosen. Finally, the best overall model was trained with the entire dataset.
+Subsequently, given the optimal feature combination, we identified the best Hyperparameters combination using Algorithm 
+\ref{alg:best_selection}. Each model was then trained with the best hyperparameters and the best features combination. 
+For each group of three models available at this point (3 models with symptoms and 3 models with other features), we selected the best one
+according to a combination of accuracy, precision and recall (these latter summarized by the Area Under the Precision and Recall Curve).
+Only at this point the two winning models were trained with the whole dataset to provide a more precise evaluation of their performance and
+were compared to assess the result of our first Goal.\\
+As regard the last Goal, the best between the above two models undergone the feature reduction process 
+discussed in Section \ref{subsec:most_important_actors} and its computational time was compared to the one of the full features model.\\
+
 
 
 \begin{algorithm}[H] \small
@@ -156,8 +162,9 @@ and the model with the highest accuracy was chosen. Finally, the best overall mo
 	\end{algorithmic}
 \end{algorithm}
 
+% TO BE MODIFIED BY CRISTIAN
 \begin{algorithm}[H] \small
-	\caption{Best Model Selection Algorithm}\label{alg:best_selection}
+	\caption{Best Hyperparameters Selection Algorithm}\label{alg:best_selection}
 	
 	\begin{algorithmic}[1]
 	
@@ -190,13 +197,8 @@ At the conclusion of these procedures, we obtained the following two models:\\
 
 \begin{itemize}
     \setlength\itemsep{0.4em} % set space between items
-    \item \textbf{Symptoms Model}: The best model with the optimal parameters and the symptoms as features
-    \item \textbf{Other Features Model}: The best model with the optimal parameters and the best features combination
+    \item \textbf{Symptoms Model}: The best model with the optimal hyperparameters and the symptoms as features
+    \item \textbf{Other Features Model}: The best model with the optimal hyperparameters and the best features combination
 \end{itemize}
 \vspace{0.4cm}
-
-With these models in hand, we could compare their prediction performance to evaluate whether the network 
-features contributed to an accuracy improvement. Additionally, we applied the feature reduction technique discussed 
-in Section \ref{subsec:most_important_actors} to both models, assessing whether network features could reduce computational 
-complexity without compromising accuracy.
 
