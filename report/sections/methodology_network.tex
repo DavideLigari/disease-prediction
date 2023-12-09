@@ -17,7 +17,7 @@ making it more likely for a symptom to be shared among multiple diseases.\\
 Figure \ref{fig:unipartite_graphs} presents the unipartite graphs of symptoms and diseases.
 \begin{figure*}[thbp]
     \centering
-    \includegraphics[width=\textwidth]{network.png}
+    \includegraphics[width=.9\textwidth]{network.png}
     \caption{Visual representation of the symptom-disease bipartite graph.}
     \label{fig:bipartite_graph}
 \end{figure*}
@@ -35,12 +35,16 @@ Figure \ref{fig:unipartite_graphs} presents the unipartite graphs of symptoms an
 
 To identify influential nodes in the symptom-disease network, we introduce two indices that capture the relative importance of each actor.
 The first index, referred to as the Symptom Influence (\textit{SI}) index, not only ranks symptom nodes based on their frequency (level-1)
-but also considers symptom commonality.
-This commonality measures whether a symptom is present in diseases affected by numerous other symptoms (level-2) or in diseases affected by only a few symptoms.\\
+but also considers whether a symptom is present in diseases affected by numerous other symptoms (level-2) or in diseases affected by only a few symptoms.\\
 Conversely, the second index, known as the Disease Influence (\textit{DI}) index,
 assesses the distinct symptoms related to a disease (level-1) and whether a disease exhibits symptoms that affect many other diseases (level-2).\\
-In more detail, level-1 of these indices quantifies the number of symptoms associated with a disease,
-while level-2 measures the commonality of these symptoms. In network theory, level-2 measures are recognized as the average nearest neighbor strength.\\
+In other words, level-1 of these indices quantifies the number of symptoms associated with a disease,
+while level-2 measures the interconnectedness and broader impact of symptoms or diseases within the network.
+For the Symptom Influence (\textit{SI}) index, level-2 takes into account the presence of a symptom across diseases,
+shedding light on whether a particular symptom tends to co-occur with a wide range of other symptoms or is more specific to a subset of diseases.
+This dual-level analysis provides a nuanced understanding of the significance of symptoms based not only on their individual prevalence (level-1)
+but also on their associations with other symptoms across different diseases (level-2). Similarly, for the Disease Influence (\textit{DI}) index,
+level-2 assesses the extent to which a disease's symptoms have ripple effects on other diseases, indicating the potential for cascading impacts within the network.\\
 We adapt the level-\textit{N} indices following the approach of \citeauthor{Hidalgo_2007},\cite{Hidalgo_2007} and  \citeauthor{Hidalgo_2009},\cite{Hidalgo_2009}.
 The level-\textit{N} indices are defined as:
 \begin{equation}
@@ -83,7 +87,6 @@ as expressed in the following equation:
 \begin{equation}
     z_{SI_{v, 2}} = \frac{SI_{v, 2} - \mu_{SI_{v, 2}}}{\sigma_{SI_{v, 2}}}
 \end{equation}
-\\
 \noindent
 If \textbf{H0} holds true,the z-scores of SI and DI should be normally distributed with a mean of 0 and a standard deviation of 1.
 Conversely, if \textbf{H1} is true, the z-scores of SI and DI should be normally distributed with a mean and standard deviation different from 0 and 1,
