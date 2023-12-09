@@ -119,6 +119,7 @@ symptom vector. However, we opted for a comprehensive approach using a combinati
 % END: communities
 
 \subsection{Most Important Actors}
+\label{subsec:most_important_actors}
 % BEGIN: most important symptoms/diseases (4 classes)
 
 As previously mentioned, our objective extends beyond feature extraction; we aim to leverage network information to
@@ -164,10 +165,11 @@ Consequently, we define the following classes:\\
           for prediction since they contribute to few classes (diseases), and those classes are also connected to
           few other symptoms.
 \end{itemize}
+\vspace{0.4cm}
 \noindent
 According to the above considerations, we can start from the last class and iteratively add symptoms from the
 other classes, monitoring the impact on both accuracy and training time.
-The results are analyzed in Section \ref{sec:results_ml}.\\
+The results are analyzed in Section \ref{sec:results_ML}.\\
 It is worth saying that all the other features (betweenness centrality, community count, and community size)
 represent a valuable alternative to L1 and L2. Their use in computational time reduction is not explored in this work,
 but it is a possible future development.
