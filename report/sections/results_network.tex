@@ -129,12 +129,13 @@ Various approaches were tested, including L1, L2, betweenness centrality, and th
 of symptoms. We performed a graphical analysis of their correlation (Figure \ref{fig:feat_corr}), favoring the
 most uncorrelated features to provide the most complementary information.
 
-\begin{figure}[H]
+\begin{figure*}[!htb]
     \centering
-    \includegraphics[width=\columnwidth]{feat_corr.png}
+    \includegraphics[width=\textwidth]{feat_corr.png}
     \caption{Correlation between features}
     \label{fig:feat_corr}
-\end{figure}
+\end{figure*}
+
 \noindent
 Despite a non-negligible positive correlation in all cases, we opted for L1 and L2 due to their interpretability and
 the less pronounced positive correlation at lower L1 values. This allows for a substantial division of symptoms for
