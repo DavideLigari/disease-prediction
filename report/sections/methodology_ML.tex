@@ -6,9 +6,11 @@ coupled with a logical flow that guides the entire process.
 % ------------------- Data Preparation -------------------
 
 \subsection{Preliminary Data Preparation}
+\label{subsec:preliminary_data_preparation}
 Before delving into model development, a data preprocessing pipeline was employed to properly prepare them for the subsequent steps, facing the problems 
-of class imbalance and training computational complexity.
+of class imbalance and training computational complexity.\\
 \begin{itemize}
+	    \setlength\itemsep{1em} % set space between items
     \item \textbf{Random Sampling}: Given the extensive nature of hyperparameter tuning, we adopted a random sampling strategy, picking around 10\% of the dataset.
     Instead of training the models on the entire dataset for each hyperparameter combination, the random subset was used to expedite the tuning 
     phase without sacrificing model representativity.
@@ -24,10 +26,10 @@ of class imbalance and training computational complexity.
 \subsection{Feature Extraction}
 % - Prepare the features and normalization
 A pivotal phase in constructing a machine learning model is feature extraction. In addition to the one-hot vector representation 
-of symptoms, the network analysis affords us the following features:
+of symptoms, the network analysis affords us the following features:\\
 
 \begin{itemize}
-    \setlength\itemsep{0.4em} % set space between items
+    \setlength\itemsep{1em} % set space between items
     \item \textbf{L1 and L2 Measures}: A vector with values representing the L1 and L2 measures for each symptom.
     \item \textbf{Betweenness Centrality}: A vector with values denoting the betweenness centrality of each symptom.
     \item \textbf{Community Count}: A vector indicating the number of symptoms belonging to each community.
@@ -44,9 +46,10 @@ individually, ensuring that the maximal absolute value of each feature in the tr
 
 \subsection{Model Choice}
 The number of machine learning classification models available for disease prediction is vast. We decide to focus on three models
-that are widely used in the literature and that are known to perform well in a variety of contexts: Logistic Regression, Random Forest, and Multilayer Perceptron (MLP).
+that are widely used in the literature and that are known to perform well in a variety of contexts: Logistic Regression, Random Forest, and Multilayer Perceptron (MLP).\\
 
-\textbf{Logistic Regression}\\
+\noindent
+\textbf{Logistic Regression}\vspace{0.15cm}
 \begin{itemize}
     \item \textbf{Strengths}: Logistic Regression's computational efficiency makes it an attractive choice for initial exploration and 
     baseline performance assessment. Its simplicity facilitates interpretability, providing insights into the impact of individual symptoms on disease prediction.
@@ -55,7 +58,8 @@ that are widely used in the literature and that are known to perform well in a v
 \end{itemize}
 \vspace{0.4cm}
 
-\textbf{Random Forest}\\
+\noindent
+\textbf{Random Forest}\vspace{0.15cm}
 \begin{itemize}
     \item \textbf{Strengths}: Random Forest is renowned for its robustness in handling large and diverse datasets, making 
     it well-suited for our expansive dataset with 700 disease classes. Moreover, Its ability to capture non-linear relationships 
@@ -65,7 +69,8 @@ that are widely used in the literature and that are known to perform well in a v
 \end{itemize}
 \vspace{0.4cm}
 
-\textbf{Multilayer Perceptron (MLP)}\\
+\noindent
+\textbf{Multilayer Perceptron (MLP)}\vspace{0.15cm}
 \begin{itemize}
     \item \textbf{Strengths}: MLPs are adept at capturing intricate relationships in high-dimensional datasets, 
     aligning with the complexity inherent in our 300-feature symptom representation.
@@ -184,6 +189,6 @@ At the conclusion of these procedures, we obtained the following two models:\\
 
 With these models in hand, we could compare their prediction performance to evaluate whether the network 
 features contributed to an accuracy improvement. Additionally, we applied the feature reduction technique discussed 
-in Section \ref{sec:feature_reduction} to both models, assessing whether network features could reduce computational 
+in Section \ref{subsec:most_important_actors} to both models, assessing whether network features could reduce computational 
 complexity without compromising accuracy.
 

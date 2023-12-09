@@ -1,7 +1,38 @@
 \section{ML Model Results}
-% - selected model performances (see which is the worst error or the most commonly misclassified diseases)
-% - Compute accuracy and PR AUC
-% - Compute the accuracy of the model dividing the data into the 4 classes (HighL1 - HighL2, LowL1 - HighL2, ...)
-% - only with one hot symptoms (with optimal parameters both for one hot and other features) 
-% - with new features 
-% - reduction in computational complexity
+\label{sec:results_ML}
+In this section we present the results of the ML models we have trained. We then deeply inspect the best performing model, 
+in order to understand its features and its performance.
+
+
+% --------------- Model Selection ---------------
+
+\subsection{Model Selection}
+\label{subsec:results_ML_model_selection}
+% - Matrix plot of stepwise (which is results of algorithm 1) for each model
+% - Comparison of the three models (with best combination of features) and best parameters
+% - Some other plot that can be informative about how the various models perform
+
+
+
+% --------------- New Features Effect ---------------
+
+\subsection{New Features Effect}
+% - compare the symptoms one hot model with the one with the new features
+
+
+
+% --------------- Best Model Performance ---------------
+
+\subsection{Best Model Analysis}
+% - what are its features
+% - precision, recall, AUC, accuracy
+% - confusion matrix computed on the 4 class diseases (HighL1 - HighL2, LowL1 - HighL2, ...)
+% - Worst error
+% - Most impactful symptoms
+
+
+
+\subsection{Computational Complexity}
+% - apply the reduction technique based on symptoms importance (L1 and L2 combined in the 4 classes)
+% - compare the performance of the reduced model with the original one
+% - compare the times needed to train the two models
