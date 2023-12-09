@@ -1,4 +1,4 @@
-\documentclass{class}
+\documentclass[twocolumn]{class}
 \usepackage{multicol}
 \usepackage{float}
 \usepackage{graphicx}
@@ -16,107 +16,111 @@
 \graphicspath{ {./images/} }
 
 \title{Integrative Network Analysis: \\ Unveiling Symptom-Disease Interactions and Enhancing Predictive Models}
+\shorttitle{Integrative Network Analysis}
 
-\githubrepo{https://github.com/DavideLigari01/financial-project}
+
+\github{https://github.com/DavideLigari01/financial-project}
 
 \author{Andreoli C. • Ligari D. • Alberti A. • Scardovi M. }
 
 \affil[1]{Department of Computer Engineering, Data ScienSickness predictionce, University of Pavia, Italy \newline\centering Course of Financial Data Science}
-%% Corresponding author
-\corrauthor{Author One}
 
-%% Abbreviated author list for the running footer
-\runningauthor{Alberti, Andreoli, Ligari, Scardovi}
-\shortname{Integrative Network Analysis}
-%\bibliography{References}
+\keywords{Graph theory • Features Engineering • Community detection • Null models • Random forest • MLP }
+\abstract{  We will write it once we have the results.
+}
+\firstauthor{Scardovi Ligari Alberti Andreoli}
 
 \begin{document}
+\publicationdate{\today}
 
 \maketitle
-\begin{abstract}
 
-    We will write it once we have the results.
+\tableofcontents
+% \nocite{dizdar_dns_2021}
 
-    \keywords{Graph theory • Features Engineering • Community detection • Null models • Random forest • MLP }
-\end{abstract}
-\begin{multicols}{2}
-    \tableofcontents
-    % \nocite{dizdar_dns_2021}
-
-    % ------------------- START OF SECTIONS -------------------
+% ------------------- START OF SECTIONS -------------------
 
 
-    % ------------------- Introduction -------------------
+% ------------------- Introduction -------------------
 
-    % Introduction to the medical problem and how it is currently addressed (some bibliography)
-    \input{./sections/introduction.tex}
-
-
-    % ------------------- Dataset -------------------
-
-    % Description of the dataset and its features (some plots and one hot encoding)
-    \input{./sections/dataset.tex}
+% Introduction to the medical problem and how it is currently addressed (some bibliography)
+\input{./sections/introduction.tex}
 
 
-    % ------------------- Goals -------------------
+% ------------------- Dataset -------------------
 
-    % Description of the goals of the project:
-    \input{./sections/goals.tex}
-    % - ML model to predict the disease
-    % - Network analysis to find the most important symptoms to reduce complexity, and enhance the available features
+% Description of the dataset and its features (some plots and one hot encoding)
+\input{./sections/dataset.tex}
 
 
-    % ------------------- Methodology and Results Network -------------------
+% ------------------- Goals -------------------
 
-    % Methodology used (very technical)
-    \input{./sections/methodology_network.tex}
-    % - network creation (adjacency matrix - not weighted - bipartite)
-    % - hidalgo + significance
-    % - communities with co-occurrence matrix
-    % - betweenness centrality
-
-    \input{./sections/results_network.tex}
-    % - degree distribution and power law
-    % - most important symptoms/diseases (4 classes) 
-    % - communities
-    % - L2 has no sense, it's right that z-score low value
-    % - Meaning of Z-score
-    % - betweenness centrality
-    % - clustering coefficient
-
-    % ------------------- Methodology and Results ML -------------------
-
-    % How we built the ML model 
-    \input{./sections/methodology_ML.tex}
-    % - Face the unbalanced dataset problem
-    % - select best parameters for symptoms one hot only
-    % - select best parameters for combination of other features (best combination is chosen with random parameters looking at the accuracy)
-    % - Face the problem of normalization
-    % - train for each model the two version above with optimal parameters
-    % - pick the best model according to accuracy
-
-    % Results of the ML model (plots and tables)
-    \input{./sections/results_ML.tex}
-    % - selected model performances (see which is the worst error or the most commonly misclassified diseases)
-    % - Compute accuracy and PR AUC
-    % - Compute the accuracy of the model dividing the data into the 4 classes (HighL1 - HighL2, LowL1 - HighL2, ...)
-    % - only with one hot symptoms (with optimal parameters both for one hot and other features) 
-    % - with new features 
-    % - reduction in computational complexity
-
-    % ---------------------- Conclusion -----------------------------
-
-    \input{./sections/conclusion.tex}
-    \input{./sections/future_works.tex}
-    % - our approach in feature selection and parameters search is not optimal 
-    % - list the possible issues (e.g. we are training model on diverse features with the optimal parameters for other features)
-    % - exploit the knowledge of symptoms communities and their most pointed diseases, using it at prior probability for the model classification
+% Description of the goals of the project:
+\input{./sections/goals.tex}
+% - ML model to predict the disease
+% - Network analysis to find the most important symptoms to reduce complexity, and enhance the available features
 
 
-    \input{./sections/appendix.tex}
+% ------------------- Methodology and Results Network -------------------
 
-    \clearpage
-    \printbibliography
+<<<<<<< HEAD
+% Methodology used (very technical)
+\input{./sections/methodology_network.tex}
+% - network creation (adjacency matrix - not weighted - bipartite)
+% - hidalgo + significance
+% - communities with co-occurrence matrix
+% - clustering
+% - betweenness centrality
+=======
+% Methodology used (very technical)
+\input{./sections/methodology_network.tex}
+% - network creation (adjacency matrix - not weighted - bipartite)
+% - hidalgo + significance
+% - communities with co-occurrence matrix
+% - betweenness centrality
+>>>>>>> c1f1783e81797716f18a59a4644bbabaf1375634
 
-\end{multicols}
+\input{./sections/results_network.tex}
+% - degree distribution and power law
+% - most important symptoms/diseases (4 classes) 
+% - communities
+% - L2 has no sense, it's right that z-score low value
+% - Meaning of Z-score
+% - betweenness centrality
+% - clustering coefficient
+
+% ------------------- Methodology and Results ML -------------------
+
+% How we built the ML model 
+\input{./sections/methodology_ML.tex}
+% - Face the unbalanced dataset problem
+% - select best parameters for symptoms one hot only
+% - select best parameters for combination of other features (best combination is chosen with random parameters looking at the accuracy)
+% - Face the problem of normalization
+% - train for each model the two version above with optimal parameters
+% - pick the best model according to accuracy
+
+% Results of the ML model (plots and tables)
+\input{./sections/results_ML.tex}
+% - selected model performances (see which is the worst error or the most commonly misclassified diseases)
+% - Compute accuracy and PR AUC
+% - Compute the accuracy of the model dividing the data into the 4 classes (HighL1 - HighL2, LowL1 - HighL2, ...)
+% - only with one hot symptoms (with optimal parameters both for one hot and other features) 
+% - with new features 
+% - reduction in computational complexity
+
+% ---------------------- Conclusion -----------------------------
+
+\input{./sections/conclusion.tex}
+\input{./sections/future_works.tex}
+% - our approach in feature selection and parameters search is not optimal 
+% - list the possible issues (e.g. we are training model on diverse features with the optimal parameters for other features)
+% - exploit the knowledge of symptoms communities and their most pointed diseases, using it at prior probability for the model classification
+
+
+\input{./sections/appendix.tex}
+
+\clearpage
+\printbibliography
+
 \end{document}
