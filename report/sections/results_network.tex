@@ -152,8 +152,13 @@ As previously mentioned, our objective extends beyond feature extraction; we aim
 enhance the computational efficiency of the model. The strategy involves reducing the number of symptoms,
 retaining only the most significant ones, to decrease training time while maintaining high accuracy.
 Various approaches were tested, including L1, L2, betweenness centrality, and the degree of the unipartite projection
-of symptoms. We performed a graphical analysis of their correlation (Figure \ref{fig:feat_corr}), favoring the
-most uncorrelated features to provide the most complementary information.
+of symptoms. To select the most appropriate approach, we examined the correlation between these features
+(Figure \ref{fig:feat_corr}). Indeed, a high correlation between features means that they provide
+similar information, and therefore retaining both features would be redundant. On the other hand,
+a low correlation between features indicates that they provide complementary information, and this enhances 
+in a considerable way the quality of the choice.\\
+For this reason, as clearly shown in Figure \ref{fig:feat_corr}, we decided to use L1 and L2 to discriminate 
+among the symptoms in a more effective manner.
 
 \begin{figure*}[!t]
     \centering
@@ -163,21 +168,13 @@ most uncorrelated features to provide the most complementary information.
 \end{figure*}
 
 \noindent
-Despite a non-negligible positive correlation in all cases, we opted for L1 and L2 due to their interpretability and
-the less pronounced positive correlation at lower L1 values. This allows for a substantial division of symptoms for
-the same value of L1 but different values of L2. Figure \ref{fig:l1_l2_division} illustrates the possibility of
-placing a proper threshold on L1 and L2 to obtain four classes of symptoms, each with a non-null number of symptoms.
+While the analytical approach relying on correlation analysis lays a robust foundation for feature selection, 
+it is equally crucial to invest effort in interpreting the results. This interpretive step facilitates a 
+more profound understanding of the solution. 
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\columnwidth]{l1_l2_division.png}
-    \caption{Division based on L1 and L2 values}
-    \label{fig:l1_l2_division}
-\end{figure}
-\noindent
-To interpret these classes, we briefly recall the meanings of L1 and L2. The former represents the number of diseases
-associated with a symptom, while the latter measures the number of symptoms associated with those diseases.
-Consequently, we define the following classes:\\
+To shed light on these classes, a brief reminder of the meanings of L1 and L2 is warranted. L1 denotes the number 
+of diseases associated with a symptom, whereas L2 quantifies the number of symptoms linked to those diseases. 
+As a result, we categorize the features into the following classes:\\
 
 \begin{itemize}
     \setlength\itemsep{1em}
@@ -193,15 +190,52 @@ Consequently, we define the following classes:\\
           few other symptoms.
 \end{itemize}
 \vspace{0.4cm}
+
 \noindent
 According to the above considerations, we can start from the last class and iteratively add symptoms from the
 other classes, monitoring the impact on both accuracy and training time.
 The results are analyzed in Section \ref{sec:results_ML}.\\
-It is worth saying that all the other features (betweenness centrality, community count, and community size)
-represent a valuable alternative to L1 and L2. Their use in computational time reduction is not explored in this work,
-but it is a possible future development.
+
+To practically create the classes, we need to define thresholds for L1 and L2. We decided to consider 
+a symptom as very important for our model if it is present in less than 0.5 times the average of L1 diseases, 
+translating into a threshold of 8.21 for L1. Consequently, we adjusted the L2 threshold to maintain a proper balance 
+between the classes, setting it to 8.
+
+Figures \ref{fig:symptoms_classes} and \ref{fig:l1_l2_division} illustrate the division of symptoms into the four classes.
+The same analysis was conducted for diseases, in this case focusing on the high-L1-high-L2 class, which contains
+the most complex diseases under a symptomatology perspective. The results are reported in Figures \ref{fig:diseases_classes}
+and \ref{fig:high_l1_high_l2_class}.\\
+    
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{symptoms_classes.png}
+    \caption{Symptoms divided into the four classes}
+    \label{fig:symptoms_classes}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{l1_l2_division.png}
+    \caption{Division based on L1 and L2 values}
+    \label{fig:l1_l2_division}
+\end{figure}
+\noindent
+
+\noindent
+To provide a complete picture of the most important symptoms we report the composition of the low-L1-low-L2 class
+in Figure \ref{fig:low_l1_low_l2_class}.\\
+
+\begin{figure*}[!t]
+    \centering
+    \includegraphics[width=\textwidth]{low_l1_low_l2_class.png}
+    \caption{Composition of the low-L1-low-L2 class for symptoms}
+    \label{fig:low_l1_low_l2_class}
+\end{figure*}
 
 % END: most important symptoms/diseases (4 classes)
+
+
 
 
 
