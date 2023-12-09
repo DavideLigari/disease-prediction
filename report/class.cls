@@ -41,38 +41,38 @@
 \usepackage{biblatex}
 %%% PDF file setup
 \usepackage[bookmarks,
-    bookmarksopen = true,
-    bookmarksnumbered = true,
-    breaklinks = true,
-    colorlinks = true,
-    linkcolor = black,
-    urlcolor  = blue,
-    citecolor = black,
-    anchorcolor = green,
-    hyperindex = true,
-    hyperfigures
+  bookmarksopen = true,
+  bookmarksnumbered = true,
+  breaklinks = true,
+  colorlinks = true,
+  linkcolor = black,
+  urlcolor  = blue,
+  citecolor = black,
+  anchorcolor = green,
+  hyperindex = true,
+  hyperfigures
 ]{hyperref}
 
 \lstset{
-    basicstyle=\ttfamily\scriptsize,   % the size and font of the code
-    numbers=none,                   % where to put the line numbers
-    numberstyle=\scriptsize\color{gray},  % the style of the line numbers
-    stepnumber=1,                   % the step between two line numbers
-    numbersep=5pt,                  % how far the line numbers are from the code
-    backgroundcolor=\color{white},  % choose the background color of the code
-    showspaces=false,               % show spaces adding particular underscores
-    showstringspaces=false,         % underline spaces within strings
-    showtabs=false,                 % show tabs within strings adding particular underscores
-    frame=single,                   % adds a frame around the code
-    tabsize=1,                      % sets default tabsize to 2 spaces
-    captionpos=b,                   % sets the caption-position to bottom
-    breaklines=true,                % sets automatic line breaking
-    breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
-    escapeinside={\%*}{*)},
-    frame=single,
-    frameround=fttf,
-    framexleftmargin=0mm,
-    rulecolor=\color{white},
+  basicstyle=\ttfamily\scriptsize,   % the size and font of the code
+  numbers=none,                   % where to put the line numbers
+  numberstyle=\scriptsize\color{gray},  % the style of the line numbers
+  stepnumber=1,                   % the step between two line numbers
+  numbersep=5pt,                  % how far the line numbers are from the code
+  backgroundcolor=\color{white},  % choose the background color of the code
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  frame=single,                   % adds a frame around the code
+  tabsize=1,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  escapeinside={\%*}{*)},
+  frame=single,
+  frameround=fttf,
+  framexleftmargin=0mm,
+  rulecolor=\color{white},
 }
 % Page setup
 \setlength{\hoffset}{-1in}
@@ -111,26 +111,26 @@
 \def\firstauthor#1{\gdef\@thefirstauthor{#1}}
 
 \newcommand*{\authorheader}{%
-    \begingroup
-    \ifnum\value{authors}<4 % One author
-        \if@isblind
-            AUTHOR
-        \else
-            \MakeUppercase{\@thefirstauthor}
+  \begingroup
+  \ifnum\value{authors}<4 % One author
+    \if@isblind
+      AUTHOR
+    \else
+      \MakeUppercase{\@thefirstauthor}
 
-        \fi
-    \else % 4 or more authors
-        \if@isblind
-            1st. AUTHOR~{\itshape et al.}
-        \else
-            {\MakeUppercase{\@thefirstauthor}~{\itshape et al.}}
-        \fi
     \fi
-    \endgroup
+  \else % 4 or more authors
+    \if@isblind
+      1st. AUTHOR~{\itshape et al.}
+    \else
+      {\MakeUppercase{\@thefirstauthor}~{\itshape et al.}}
+    \fi
+  \fi
+  \endgroup
 }
 \newcommand{\vcenteredinclude}[1]{\begingroup
-    \setbox0=\hbox{\includegraphics[height=\headheight]{#1}}%
-    \parbox{\wd0}{\box0}\endgroup}
+  \setbox0=\hbox{\includegraphics[height=\headheight]{#1}}%
+  \parbox{\wd0}{\box0}\endgroup}
 
 
 % Configuration of figure headings
@@ -156,37 +156,37 @@
 % Work job cover
 \newcommand*\varhrulefill[1][0.4pt]{\leavevmode\leaders\hrule height#1\hfill\kern0pt}
 \renewcommand{\@maketitle}{%
-    \null
-    \onecolumn
-    \begingroup
-    \vspace{0cm}%
-    {\begin{center}%
-            \noindent\varhrulefill[0.25mm] \par
-            {\fontsize{20}{24} \selectfont \@title \par}
-            \noindent\varhrulefill[0.25mm] \par
-            {\setlength{\tabcolsep}{0in}
-                \if@isblind
-                {\fontsize{12}{14} \selectfont Version for reviewers.} \\
-                \else
-                \begin{tabular}[c]{c}%
-                    {\@author}                                                 \\
-                    {\fontsize{8}{10} \selectfont Github page: \url{\@github}} \\
-                    {\fontsize{8}{10} \selectfont Date: \@publicationdate}     \\
-                \end{tabular}
-                \fi
-            }
-        \end{center}}% end of \parbox
-    %\vspace{0.3cm}
-    \noindent\varhrulefill[0.25mm] \par
-    \vspace{0.4cm}
-    \noindent {\fontsize{9}{12} \selectfont {\bfseries{Abstract }}---\@englishabstract} \par
-    \vspace{0.3cm}
-    \noindent {\fontsize{9}{12} \selectfont {\bfseries{Keywords }}---\@englishkeywords} \par
-    \vspace{0.2cm}
-    \noindent\varhrulefill[0.25mm]
-    \twocolumn
-    \endgroup
-    %\vspace{0.5cm}
+  \null
+  \onecolumn
+  \begingroup
+  \vspace{0cm}%
+  {\begin{center}%
+      \noindent\varhrulefill[0.25mm] \par
+      {\fontsize{20}{24} \selectfont \@title \par}
+      \noindent\varhrulefill[0.25mm] \par
+      {\setlength{\tabcolsep}{0in}
+        \if@isblind
+        {\fontsize{12}{14} \selectfont Version for reviewers.} \\
+        \else
+        \begin{tabular}[c]{c}%
+          {\@author}                                                 \\
+          {\fontsize{8}{10} \selectfont Github page: \url{\@github}} \\
+          {\fontsize{8}{10} \selectfont Date: \@publicationdate}     \\
+        \end{tabular}
+        \fi
+      }
+    \end{center}}% end of \parbox
+  %\vspace{0.3cm}
+  \noindent\varhrulefill[0.25mm] \par
+  \vspace{0.4cm}
+  \noindent {\fontsize{9}{12} \selectfont {\bfseries{Abstract }}---\@englishabstract} \par
+  \vspace{0.3cm}
+  \noindent {\fontsize{9}{12} \selectfont {\bfseries{Keywords }}---\@englishkeywords} \par
+  \vspace{0.2cm}
+  \noindent\varhrulefill[0.25mm]
+  \twocolumn
+  \endgroup
+  %\vspace{0.5cm}
 } % end of \@maketitle
 
 %%% Header and footer settings
@@ -195,36 +195,35 @@
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0pt}
 \fancypagestyle{FirstPage}{%
-    \fancyhf{}
-    \fancyhead[C]{\vcenteredinclude{figures/logo.png}}
-    \fancyhead[L]{}
-    \fancyhead[R]{}
+  \fancyhf{}
+  \fancyhead[C]{\vcenteredinclude{figures/logo.png}}
+  \fancyhead[L]{}
+  \fancyhead[R]{}
 
 }
 \fancypagestyle{OtherPage}{%
-    \fancyhf{}
-    \fancyhead[R]{\fontsize{7}{10} \selectfont \thepage}
-    \fancyhead[C]{{\fontsize{7}{10} \selectfont \MakeUppercase{\@theshorttitle}}}
-    \fancyhead[L]{{\fontsize{7}{10} \selectfont \authorheader}}
+  \fancyhead[R]{\fontsize{7}{10} \selectfont \thepage}
+  \fancyhead[C]{{\fontsize{7}{10} \selectfont \MakeUppercase{\@theshorttitle}}}
+  \fancyhead[L]{}
 }
 % Section Format Settings
 \renewcommand{\@seccntformat}[1]{\csname the#1\endcsname.~}
 
 \renewcommand*{\thesection}{\arabic{section}}
 \renewcommand{\section}{\@startsection{section}{1}{0mm}%
-    {-12pt}%
-    {6pt}%
-    {\setlength\parindent{0em} \fontsize{12}{14} \selectfont \bfseries\textsc}}%
+  {-12pt}%
+  {6pt}%
+  {\setlength\parindent{0em} \fontsize{12}{14} \selectfont \bfseries\textsc}}%
 \renewcommand \thesubsection{\alph{subsection}}
 \renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
-    {-12pt}%
-    {6pt}%
-    {\setlength\parindent{0em} \fontsize{11}{13} \selectfont \bfseries}}%
+  {-12pt}%
+  {6pt}%
+  {\setlength\parindent{0em} \fontsize{11}{13} \selectfont \bfseries}}%
 \renewcommand \thesubsubsection{\arabic{subsubsection}}
 \renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
-    {-12pt}%
-    {6pt}%
-    {\setlength\parindent{0em} \fontsize{11}{13} \selectfont \bfseries\textit}}
+  {-12pt}%
+  {6pt}%
+  {\setlength\parindent{0em} \fontsize{11}{13} \selectfont \bfseries\textit}}
 
 
 
@@ -236,46 +235,46 @@
 \TabPositions{\bibmargin}
 \newcommand{\quotes}[1]{``#1''}
 \newcommand{\insertbibliography}[1]{%
-    \setlength{\parindent}{0pt}
-    %\setlength{\bibsep}{4pt}
-    %\setlength\itemindent{0pt}
-    %\setlength{\bibhang}{\bibmargin}
-    {\setstretch{0.85}
-        \fontsize{8}{10} \selectfont
-        \bibliographystyle{un}
-        \renewcommand\refname{References}
-        \bibliography{#1}}
+  \setlength{\parindent}{0pt}
+  %\setlength{\bibsep}{4pt}
+  %\setlength\itemindent{0pt}
+  %\setlength{\bibhang}{\bibmargin}
+  {\setstretch{0.85}
+    \fontsize{8}{10} \selectfont
+    \bibliographystyle{un}
+    \renewcommand\refname{References}
+    \bibliography{#1}}
 }
 
 % Definitions for capital letter
 \newcommand{\firstword}[2]{\lettrine[findent=2pt]{\textbf{#1}}{}#2 }
 
 \if@isblind
-    \makeatletter
-    \AtBeginDocument{
-        \hypersetup{
-            pdfinfo={
-                    Title={\@title},
-                    Author={AUTHOR},
-                    Keywords={\@englishkeywords},
-                    Producer={AJCEAM/UFT},
-                    Subject={\@englishabstract}
-                }
+  \makeatletter
+  \AtBeginDocument{
+    \hypersetup{
+      pdfinfo={
+          Title={\@title},
+          Author={AUTHOR},
+          Keywords={\@englishkeywords},
+          Producer={AJCEAM/UFT},
+          Subject={\@englishabstract}
         }
     }
-    \makeatother
+  }
+  \makeatother
 \else
-    \makeatletter
-    \AtBeginDocument{
-        \hypersetup{
-            pdfinfo={
-                    Title={\@title},
-                    Author={\@thefirstauthor},
-                    Keywords={\@englishkeywords},
-                    Producer={AJCEAM/UFT},
-                    Subject={\@englishabstract}
-                }
+  \makeatletter
+  \AtBeginDocument{
+    \hypersetup{
+      pdfinfo={
+          Title={\@title},
+          Author={\@thefirstauthor},
+          Keywords={\@englishkeywords},
+          Producer={AJCEAM/UFT},
+          Subject={\@englishabstract}
         }
     }
-    \makeatother
+  }
+  \makeatother
 \fi
