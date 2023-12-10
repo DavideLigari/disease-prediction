@@ -102,7 +102,7 @@ is calculated as the sum of the fraction of all-pairs shortest paths that pass t
 \begin{equation}
     c_B(v) = \sum_{s,t \in V} \frac{\sigma(s, t|v)}{\sigma(s, t)} \label{eq:betweenness}
 \end{equation}
-
+\noindent
 where:
 
 \begin{itemize}
@@ -114,7 +114,7 @@ where:
     \item If \(s = t\), then \(\sigma(s, t) = 1\).
     \item If \(v \in \{s, t\}\), then \(\sigma(s, t|v) = 0\).
 \end{itemize}
-
+\noindent
 To compute the betweenness centrality, the NetworkX function \textit{nx.bipartite.betweenness\_centrality}
 was utilized. This function implements the algorithm proposed by \Citeauthor{Brandes_2004} \cite{Brandes_2004},
 specifically designed for bipartite graphs, and includes proper normalization for accurate results.
@@ -137,7 +137,7 @@ Prior to applying any community detection algorithm, two crucial steps must be p
           co-occur in the same disease.
 \end{itemize}
 \vspace{0.4cm}
-
+\noindent
 Once the two graphs, with links weighted by node similarity, are obtained, the community detection algorithm
 can be applied. We utilized the Clauset-Newman-Moore greedy modularity maximization algorithm \cite{Clauset_Newman_Moore_2004},
 implemented in the NetworkX function \textit{nx.algorithms.community.greedy\_modularity\_communities}. This algorithm aims to
@@ -146,7 +146,7 @@ find the partition of the graph that maximizes modularity, defined by \Citeautho
 \begin{equation}
     Q = \frac{1}{2m} \sum_{ij} \left[A_{ij} - \frac{k_i k_j}{2m}\right] \delta(c_i, c_j) \label{eq:modularity}
 \end{equation}
-
+\noindent
 where:
 
 \begin{itemize}
