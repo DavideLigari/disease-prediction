@@ -107,7 +107,7 @@ Using Algorithm \ref{alg:feature_selection}, we determined the best feature comb
 Subsequently, given the optimal feature combination, we identified the best Hyperparameters combination using Algorithm
 \ref{alg:greedy_hyperparameter_search}. Each model was then trained with the best hyperparameters and the best features combination.
 For each group of three models available at this point (3 models with symptoms and 3 models with other features), we selected the best one
-according to a combination of accuracy, precision and recall (these latter summarized by the Area Under the Precision and Recall Curve).
+according to their accuracy value (Section \ref{subsubsec:results_ML_model_comparison}).
 Only at this point the two winning models were trained with the whole dataset to provide a more precise evaluation of their performance and
 were compared to assess the result of our first Goal.\\
 As regard the last Goal, the best between the above two models undergone the feature reduction process
