@@ -230,10 +230,30 @@ among the symptoms in a more effective manner.
     \label{fig:feat_corr}
 \end{figure*}
 
+To practically create the classes, we need to define thresholds for L1 and L2. We decided to consider
+a symptom as very important for our model if it is present in less than 0.5 times the average of L1 diseases,
+translating into a threshold of 8.21 for L1. Consequently, we adjusted the L2 threshold to maintain a proper balance
+between the classes, setting it to 8.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{symptoms_classes.png}
+    \caption{Symptoms divided into the four classes}
+    \label{fig:symptoms_classes}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{l1_l2_division.png}
+    \caption{Division based on L1 and L2 values}
+    \label{fig:l1_l2_division}
+\end{figure}
 \noindent
-While the analytical approach relying on correlation analysis lays a robust foundation for feature selection,
-it is equally crucial to invest effort in interpreting the results. This interpretive step facilitates a
-more profound understanding of the solution.
+
+
+\noindent
+As demonstrated in Figure~\ref{fig:symptoms_classes}, the four classes have different sizes, and more importantly,
+they provide very different and valuable information.
 
 To shed light on these classes, a brief reminder of the meanings of L1 and L2 is warranted. L1 denotes the number
 of diseases associated with a symptom, whereas L2 quantifies the number of symptoms linked to those diseases.
@@ -259,31 +279,11 @@ According to the above considerations, we can start from the last class and iter
 other classes, monitoring the impact on both accuracy and training time.
 The results are analyzed in Section~\ref{sec:results_ML}.\\
 
-To practically create the classes, we need to define thresholds for L1 and L2. We decided to consider
-a symptom as very important for our model if it is present in less than 0.5 times the average of L1 diseases,
-translating into a threshold of 8.21 for L1. Consequently, we adjusted the L2 threshold to maintain a proper balance
-between the classes, setting it to 8.
-
 Figures~\ref{fig:symptoms_classes} and~\ref{fig:l1_l2_division} illustrate the division of symptoms into the four classes.
-The same analysis was conducted for diseases, in this case focusing on the high-L1-high-L2 class, which contains
+The same entire analysis was conducted for diseases, in this case focusing on the high-L1-high-L2 class, which contains
 the most complex diseases under a symptomatology perspective. The results are reported in Figures~\ref{fig:diseases_classes}
 and~\ref{fig:high_l1_high_l2_class}.\\
 
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\columnwidth]{symptoms_classes.png}
-    \caption{Symptoms divided into the four classes}
-    \label{fig:symptoms_classes}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\columnwidth]{l1_l2_division.png}
-    \caption{Division based on L1 and L2 values}
-    \label{fig:l1_l2_division}
-\end{figure}
-\noindent
 
 \noindent
 To provide a complete picture of the most important symptoms we report the composition of the low-L1-low-L2 class
