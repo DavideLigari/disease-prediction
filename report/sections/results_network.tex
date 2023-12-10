@@ -14,12 +14,7 @@ ranging predominantly between 0 and 60. This suggests that certain symptoms exhi
 showcasing the diverse nature of symptom-disease relationships.\\
 Conversely, the Disease Influence (\textit{DI}) at level-1, reflecting the number of symptoms related to a disease,
 exhibited a narrower range, typically falling between 2 and 12.
-This narrower range indicates that diseases tend to have a more focused set of associated symptoms.\\
-Notably, our analysis unveiled a power-law distribution (Figure~\ref{fig:powerlaw_hid_metrics})
-for both level-1 Symptom Influence (\textit{SI}) and Disease Influence (\textit{DI}) metrics.
-This power-law distribution emphasizes the presence of nodes with higher influence,
-coexisting with numerous nodes exhibiting lower influence. In other words, the network exhibits a scale-free structure,
-where a small number of symptoms and diseases play a significant role in connecting and influencing others.
+This narrower range indicates that diseases tend to have a more focused set of associated symptoms.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\columnwidth]{degree_distribution.png}
@@ -41,10 +36,7 @@ This broader range signifies that certain diseases have a more extensive influen
 A higher level-2 Disease Influence (\textit{DI}) implies that a disease's symptoms not only contribute to its immediate associations
 but also have far-reaching consequences, affecting a network of interconnected diseases.\\
 These results highlight the diverse roles played by symptoms and diseases in influencing the network when considering higher-order interactions.
-The observed power-law distribution in level-1 metrics extends to level-2 metrics,
-reaffirming the presence of both highly influential and less influential nodes in the network's intricate structure.
-The power-law behavior (shown in Figure~\ref{fig:powerlaw_hid_metrics}) suggests that a few symptoms and diseases play central roles in the network,
-impacting a wide array of others, while the majority exhibit lower levels of influence.
+
 
 \begin{figure}[H]
     \centering
@@ -52,6 +44,21 @@ impacting a wide array of others, while the majority exhibit lower levels of inf
     \caption{L2 Distribution for both symptoms and diseases}
     \label{fig:l2_distribution}
 \end{figure}
+\subsubsection*{Power Law CCDF}
+
+
+In our statistical validation of the Symptom Influence (\textit{SI}) and Disease Influence (\textit{DI}) indices at both level-1 and level-2,
+the analysis of the complementary cumulative probability distribution (CCDF) reveals distinctive patterns.\\
+For level-1 diseases, the CCDF power-law behavior exhibits a rapid decrease, indicating that a small number of diseases
+have a disproportionately high influence. This steep decline suggests the presence of disease hubs that significantly impact the network dynamics.
+Conversely, for level-1 symptoms, the power-law CCDF demonstrates a slow decrease, starting at 0 and extending until 100.
+This suggests a more distributed influence of symptoms across diseases, with a considerable number of symptoms exhibiting
+varying degrees of prevalence. The gradual decline in the CCDF emphasizes the diverse roles played by symptoms in the network.\\
+Level-2 diseases, on the other hand, exhibit a slower power-law decrease, starting at 50 and reaching zero around 90.
+This gradual decline implies that a broader range of diseases contributes to the interconnectedness within the network,
+with a subset of diseases exerting influence across multiple others.\\
+Finally, for level-2 symptoms, the power-law CCDF displays a rapid decrease around 10,
+emphasizing the existence of highly influential symptoms that play a pivotal role in connecting various diseases.
 
 \begin{figure}[H]
     \centering
