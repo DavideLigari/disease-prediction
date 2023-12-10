@@ -105,9 +105,9 @@ groups: the symptoms' one-hot vector and the remaining features. The former is u
 while the latter is utilized to explore the potential improvement brought by the new features.\\
 Using Algorithm \ref{alg:feature_selection}, we determined the best feature combination for each group (symptoms and other features).
 Subsequently, given the optimal feature combination, we identified the best Hyperparameters combination using Algorithm
-\ref{alg:best_selection}. Each model was then trained with the best hyperparameters and the best features combination.
+\ref{alg:greedy_hyperparameter_search}. Each model was then trained with the best hyperparameters and the best features combination.
 For each group of three models available at this point (3 models with symptoms and 3 models with other features), we selected the best one
-according to a combination of accuracy, precision and recall (these latter summarized by the Area Under the Precision and Recall Curve).
+according to their accuracy value (Section \ref{subsubsec:results_ML_model_comparison}).
 Only at this point the two winning models were trained with the whole dataset to provide a more precise evaluation of their performance and
 were compared to assess the result of our first Goal.\\
 As regard the last Goal, the best between the above two models undergone the feature reduction process
@@ -155,41 +155,69 @@ discussed in Section \ref{subsec:most_important_actors} and its computational ti
 	\end{algorithmic}
 \end{algorithm}
 
+The quest for optimal hyperparameters (hparams) in machine learning models is often constrained by computational resources. In light of these 
+limitations, we adopted a resource-efficient greedy search strategy to navigate the vast hyperparameter space.
+Our approach unfolds in several stages. Initially, we randomly initialize hyperparameters (hparams) to initiate the search. Subsequently, we employ 
+a stepwise exploration, beginning with the first hyperparameter. For this, we perform an initial search over a small set of values 
+(e.g., 0.001, 0.01, 1, 10, 100). If the optimum lies at one of the extremes, we extend the search to encompass values in the corresponding 
+direction.; conversely, if it resides within an intermediate range, we conduct a more focused exploration in a narrower interval. 
+This process is iteratively repeated for each hyperparameter, gradually refining our understanding of the optimal regions within the 
+hyperparameter space.
+This iterative approach serves a dual purpose. First, it conserves computational resources by avoiding an exhaustive search over all 
+potential combinations. Second, it capitalizes on the information gleaned from earlier iterations to guide subsequent searches efficiently. 
+By strategically determining the next set of values based on the observed trends, we strike a balance between exploration and exploitation, 
+ultimately converging to a set of hyperparameters (hparams) that maximizes model performance. This resource-conscious strategy is paramount when 
+computational resources are limited, allowing us to derive meaningful results within practical constraints.
+
 % TO BE MODIFIED BY CRISTIAN
-\begin{algorithm}[t] \small
-	\caption{Best Hyperparameters Selection Algorithm}\label{alg:best_selection}
-
+\begin{algorithm}[H]
+	\caption{Greedy Hyperparameter Search}\label{alg:greedy_hyperparameter_search}
 	\begin{algorithmic}[1]
-
-		\State CurrentAccuracy $\gets$ 0
-		\For{each model}
-
-		\State CreateGrid(Parameters)
-		\State BestParameters $\gets$ GridSearchCV(model)
-		\State TrainModel(model, BestParameters)
-		\State CurrentAccuracy $\gets$ GetAccuracy(model)
-
-		\If{CurrentAccuracy $>=$ BestAccuracy}
-		\State BestAccuracy $\gets$ CurrentAccuracy
-		\State BestModel $\gets$ model
-		\State BestParameters $\gets$ Parameters
-		\EndIf
-
-		\EndFor
-
-		\State FullDataTrain(BestModel, BestParameters)
-		\State BestAccuracy $\gets$ GetAccuracy(BestModel)
-		\State ReduceFeatures(BestModel, BestParameters)
-
-		\State \textbf{return} BestParameters, BestModel, BestAccuracy
+	    \State hparams $\gets$ randomInitialization
+	    
+	    \For{each hparam in hparams}
+		   \State src\_range $\gets$ initialSrcRange
+		   \State best\_value $\gets$ curr\_hparams[hparam]
+		   \State accuracy $\gets$ 0
+		   
+		   \For{value in src\_range}
+			  \State curr\_hparams[hparam] $\gets$ value
+			  \State performance $\gets$ eval(model, curr\_hparams)
+			  
+			  \If{performance better than accuracy}
+				 \State best\_value $\gets$ value
+				 \State accuracy $\gets$ performance
+			  \EndIf
+		   \EndFor
+		   
+		   \If{best\_value is at the lower extreme}
+			  \State src\_range $\gets$ extendSrcRangeLower(best\_value)
+		   \ElsIf{best\_value is at the upper extreme}
+			  \State src\_range $\gets$ extendSrcRangeUpper(best\_value)
+		   \Else
+			  \State src\_range $\gets$ narrowSrcRange(best\_value)
+		   \EndIf
+		   
+		   \For{value in src\_range}
+			  \State curr\_hparams[hparam] $\gets$ value
+			  \State performance $\gets$ eval(model, curr\_hparams)
+			  
+			  \If{performance better than accuracy}
+				 \State best\_value $\gets$ value
+				 \State accuracy $\gets$ performance
+			  \EndIf
+		   \EndFor
+		   \State curr\_hparams[hparam] $\gets$ best\_value
+	    \EndFor
 	\end{algorithmic}
-\end{algorithm}
+ \end{algorithm}
 \noindent
+
 At the conclusion of these procedures, we obtained the following two models:\\
 
 \begin{itemize}
 	\setlength\itemsep{0.4em} % set space between items
-	\item \textbf{Symptoms Model}: The best model with the optimal hyperparameters and the symptoms as features
+	\item \textbf{Symptoms Model}: The best model with the optimal hparams and the symptoms as features
 	\item \textbf{Other Features Model}: The best model with the optimal hyperparameters and the best features combination
 \end{itemize}
 \vspace{0.4cm}

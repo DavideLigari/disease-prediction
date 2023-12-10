@@ -11,13 +11,56 @@ in order to understand its features and its performance.
 
 % MATTEO
 % - Matrix plot of stepwise (which is results of algorithm 1) for each model --> to justify the chosen features
+\subsubsection*{Features Selection}
 
 % CRISTIAN
 % - Comparison for each model of the selected parameters --> to justify the chosen parameters
+\subsubsection*{Hyperparameters Selection}
+
 
 % ANDREA
 % - Comparison of the three models with best combination of features and best parameters
 	% - precision, recall, AUC, accuracy
+	\subsubsection*{Model Comparison} \label{subsubsec:results_ML_model_comparison}
+
+	As depicted in Figure \ref{fig:ML_operative_flow}, we now have six different models: three with only symptoms 
+	and three with both symptoms and new features. The best model was selected from each group based on their accuracy 
+	values. Figures \ref{fig:acc_symptoms} and \ref{fig:acc_new_features} indicate consistently low overfitting 
+	and similar performance across all models in both groups. Despite their varying complexity, the models achieve 
+	similar performance due to the highly discriminative nature of the dataset features.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\columnwidth]{images/acc_symptoms.png}
+		\caption{Accuracy of the three models with only symptoms}
+		\label{fig:acc_symptoms}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\columnwidth]{images/acc_new_features.png}
+		\caption{Accuracy of the three models with new features}
+		\label{fig:acc_new_features}
+	\end{figure}
+	
+	% THE FIGURE IS THE FIGURE OF MODEL FULLY TRAINED ON THE BALANCED DATASET
+	\noindent
+	The best model from each group was further trained on the full balanced dataset to ensure a more reliable 
+	performance evaluation. The results in Figure \ref{fig:acc_best_models} reveal a minimal difference between 
+	the two groups. This addresses our \textbf{first goal}: the new features, while not improving the model, 
+	offer a comparable performance to using symptoms alone. It's essential to note that the new features are 
+	more numerous than the symptoms, contributing to a more complex model. In conclusion, the extracted network 
+	features are not a superior alternative to symptoms. A potential avenue for future exploration could involve 
+	combining both feature groups to assess the possibility of performance improvement.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\columnwidth]{images/acc_best_models.png}
+		\caption{Accuracy of the best models from both groups}
+		\label{fig:acc_best_models}
+	\end{figure}
+	
+
 
 
 % --------------- New Features Effect ---------------
