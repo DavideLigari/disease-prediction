@@ -1,0 +1,204 @@
+\section{ML Model Methodology}
+This section provides a comprehensive overview of the methodologies employed in the construction of the machine 
+learning model. The discussion encompasses various techniques designed to handle the intricacies of model building, 
+coupled with a logical flow that guides the entire process.
+
+% ------------------- Data Preparation -------------------
+
+\subsection{Preliminary Data Preparation}
+\label{subsec:preliminary_data_preparation}
+Before delving into model development, a data preprocessing pipeline was employed to properly prepare them for the subsequent steps, facing the problems 
+of class imbalance and training computational complexity.\\
+\begin{itemize}
+	    \setlength\itemsep{1em} % set space between items
+    \item \textbf{Random Sampling}: Given the extensive nature of hyperparameter tuning, we adopted a random sampling strategy, picking around 10\% of the dataset.
+    Instead of training the models on the entire dataset for each hyperparameter combination, the random subset was used to expedite the tuning 
+    phase without sacrificing model representativity.
+    \item \textbf{Class Imbalance with Oversampling and Undersampling}: The dataset was highly unbalanced across its 700 disease classes.
+    To mitigate this, a combination of oversampling and undersampling techniques was applied. The former was performed for minority classes,
+    while the latter was applied to the majority classes, ensuring all the diseases were adequately represented during training, 
+    preventing dominance and biases in the model.
+\end{itemize}
+
+
+% ------------------- Feature Extraction -------------------
+
+\subsection{Feature Extraction}
+% - Prepare the features and normalization
+A pivotal phase in constructing a machine learning model is feature extraction. In addition to the one-hot vector representation 
+of symptoms, the network analysis affords us the following features:\\
+
+\begin{itemize}
+    \setlength\itemsep{1em} % set space between items
+    \item \textbf{L1 and L2 Measures}: A vector with values representing the L1 and L2 measures for each symptom.
+    \item \textbf{Betweenness Centrality}: A vector with values denoting the betweenness centrality of each symptom.
+    \item \textbf{Community Count}: A vector indicating the number of symptoms belonging to each community.
+    \item \textbf{Community Size}: A vector replacing symptoms with the size of the community to which they belong.
+\end{itemize}
+\vspace{0.4cm}
+
+Given the diverse scales of these features, normalization becomes imperative for their cohesive integration into the model 
+without introducing biases. To achieve this, we opted for \textit{MaxAbs} normalization. This normalization scales each feature 
+individually, ensuring that the maximal absolute value of each feature in the training set becomes 1.0, while preserving the sparsity of data.
+
+
+% ------------------- Model Choice -------------------
+
+\subsection{Model Choice}
+The number of machine learning classification models available for disease prediction is vast. We decide to focus on three models
+that are widely used in the literature and that are known to perform well in a variety of contexts: Logistic Regression, Random Forest, and Multilayer Perceptron (MLP).\\
+
+\noindent
+\textbf{Logistic Regression}\vspace{0.15cm}
+\begin{itemize}
+    \item \textbf{Strengths}: Logistic Regression's computational efficiency makes it an attractive choice for initial exploration and 
+    baseline performance assessment. Its simplicity facilitates interpretability, providing insights into the impact of individual symptoms on disease prediction.
+    \item \textbf{Considerations}: While efficient, Logistic Regression assumes a linear relationship between features and the 
+    log-odds of the target, potentially limiting its ability to capture complex non-linear patterns.
+\end{itemize}
+\vspace{0.4cm}
+
+\noindent
+\textbf{Random Forest}\vspace{0.15cm}
+\begin{itemize}
+    \item \textbf{Strengths}: Random Forest is renowned for its robustness in handling large and diverse datasets, making 
+    it well-suited for our expansive dataset with 700 disease classes. Moreover, Its ability to capture non-linear relationships 
+    ensures that complex patterns within the symptoms' one-hot encoded features are effectively modeled.
+    \item \textbf{Considerations}: The ensemble nature of Random Forest provides resilience against overfitting, a crucial factor 
+    in the context of disease prediction.
+\end{itemize}
+\vspace{0.4cm}
+
+\noindent
+\textbf{Multilayer Perceptron (MLP)}\vspace{0.15cm}
+\begin{itemize}
+    \item \textbf{Strengths}: MLPs are adept at capturing intricate relationships in high-dimensional datasets, 
+    aligning with the complexity inherent in our 300-feature symptom representation.
+    \item \textbf{Considerations}: Their capacity for adapting to non-linear mappings positions MLPs as powerful 
+    tools in unraveling the nuanced interactions between symptoms and diseases.
+\end{itemize}
+
+
+
+% ------------------- Operative Flow -------------------
+
+\subsection{Operative Flow}
+% - Operative Flow
+	% - select best parameters for symptoms one hot only
+	% - select best parameters for combination of other features (best combination is chosen with random parameters looking at the accuracy)
+	% - train for each model the two version above with optimal parameters
+	% - pick the best model according to accuracy
+	% - train the best model with whole dataset and reduce the number of features
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{operational_flow.png}
+    \caption{Operative Flow of the ML Model}
+    \label{fig:ML_operative_flow}
+\end{figure}
+
+Once the features are ready, the core part of the model-building process can begin. The operational flow was quite complex,
+and it is summarized in Figure \ref{fig:ML_operative_flow}.\\
+We trained three different models: a Logistic Regression, a Random Forest, and a Multi-Layer Perceptron (MLP).
+
+For each model, we faced the challenge of selecting both the best hyperparameters and the most effective features. 
+The interdependence between these two aspects makes the optimal approach to explore all the possible combination of features
+and for each combination trying all the hyperparameters combination. This approach is not feasible in terms of computational effort
+leading us to adopt a greedy approach. We firstly split the features into two 
+groups: the symptoms' one-hot vector and the remaining features. The former is used to train a base model, 
+while the latter is utilized to explore the potential improvement brought by the new features.
+
+Using Algorithm \ref{alg:feature_selection}, we determined the best feature combination for each group (symptoms and other features).
+Subsequently, given the optimal feature combination, we identified the best Hyperparameters combination using Algorithm 
+\ref{alg:best_selection}. Each model was then trained with the best hyperparameters and the best features combination. 
+For each group of three models available at this point (3 models with symptoms and 3 models with other features), we selected the best one
+according to a combination of accuracy, precision and recall (these latter summarized by the Area Under the Precision and Recall Curve).
+Only at this point the two winning models were trained with the whole dataset to provide a more precise evaluation of their performance and
+were compared to assess the result of our first Goal.\\
+As regard the last Goal, the best between the above two models undergone the feature reduction process 
+discussed in Section \ref{subsec:most_important_actors} and its computational time was compared to the one of the full features model.\\
+
+
+
+\begin{algorithm}[H] \small
+	\caption{Feature Selection Algorithm}\label{alg:feature_selection}
+	
+	\begin{algorithmic}[1]
+	
+	\State BestFeatureComb $\gets$ EmptySet
+	
+	\For{each model}
+	    \State CurrentModel $\gets$ EmptyModel
+	    \State BestModAccuracy $\gets$ 0
+	    \State Parameters $\gets$ InitializeRandomParameters
+	
+	    \For{i = 1 to NumberOfFeatures}
+	    		\State BestAccuracy $\gets$ -1
+
+			\For{each feature}
+				\State TrainModel(CurrentModel, Parameters)
+			
+				\State CurrentAccuracy $\gets$ GetAccuracy(CurrentModel)
+			
+				\If{CurrentAccuracy $>=$ BestAccuracy}
+					\State BestAccuracy $\gets$ CurrentAccuracy
+					\State BestFeature $\gets$ feature
+					
+				\EndIf
+				\State UpdateModel(CurrentModel, BestFeature)
+			\EndFor
+			\State FreezeFeatures(CurrentModel)
+			\State ModelAccuracy[i] $\gets$ GetAccuracy(CurrentModel)
+			\State FeaturesComb[i] $\gets$ GetFeat(CurrentModel)
+	
+	    \EndFor
+	
+	    \State BestComb $\gets$ FeaturesComb[Max(ModelAccuracy)]
+	    \State BestFeatureComb $\gets$ BestComb $\cup$ BestFeatureComb
+	
+	\EndFor
+	
+	\State \textbf{return} BestFeatureComb
+	\end{algorithmic}
+\end{algorithm}
+
+% TO BE MODIFIED BY CRISTIAN
+\begin{algorithm}[H] \small
+	\caption{Best Hyperparameters Selection Algorithm}\label{alg:best_selection}
+	
+	\begin{algorithmic}[1]
+	
+	\State CurrentAccuracy $\gets$ 0
+	\For{each model}
+	    
+	    \State CreateGrid(Parameters)
+	    \State BestParameters $\gets$ GridSearchCV(model)
+	    \State TrainModel(model, BestParameters)
+	    \State CurrentAccuracy $\gets$ GetAccuracy(model)
+
+	    \If{CurrentAccuracy $>=$ BestAccuracy}
+			\State BestAccuracy $\gets$ CurrentAccuracy
+			\State BestModel $\gets$ model
+			\State BestParameters $\gets$ Parameters
+	    \EndIf
+
+	\EndFor
+
+	\State FullDataTrain(BestModel, BestParameters)
+	\State BestAccuracy $\gets$ GetAccuracy(BestModel)
+	\State ReduceFeatures(BestModel, BestParameters)
+	
+	\State \textbf{return} BestParameters, BestModel, BestAccuracy
+	\end{algorithmic}
+\end{algorithm}
+
+
+At the conclusion of these procedures, we obtained the following two models:\\
+
+\begin{itemize}
+    \setlength\itemsep{0.4em} % set space between items
+    \item \textbf{Symptoms Model}: The best model with the optimal hyperparameters and the symptoms as features
+    \item \textbf{Other Features Model}: The best model with the optimal hyperparameters and the best features combination
+\end{itemize}
+\vspace{0.4cm}
+

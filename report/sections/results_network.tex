@@ -1,70 +1,304 @@
+\section{Network Results}
+\subsection{Method of reflection}
 
-\subsection{Degree Distribution and Power Law}
-% BEGIN: degree distribution and power law
+We conducted an in-depth analysis of the Symptom Influence (\textit{SI}) and Disease Influence (\textit{DI}) indices,
+considering both level-1 and level-2 metrics in our symptom-disease network.
 
+\subsubsection*{Level-1 Metrics}
+
+
+For the level-1 metrics, which quantify the individual prevalence of symptoms and diseases,
+we observed distinctive patterns, as illustrated in Figure~\ref{fig:DegreeDistribution}.
+The Symptom Influence (\textit{SI}) at level-1, representing the number of diseases associated with a symptom, demonstrated a wide distribution,
+ranging predominantly between 0 and 60. This suggests that certain symptoms exhibit a broad association with various diseases,
+showcasing the diverse nature of symptom-disease relationships.\\
+Conversely, the Disease Influence (\textit{DI}) at level-1, reflecting the number of symptoms related to a disease,
+exhibited a narrower range, typically falling between 2 and 12.
+This narrower range indicates that diseases tend to have a more focused set of associated symptoms.\\
+Notably, our analysis unveiled a power-law distribution (Figure~\ref{fig:powerlaw_hid_metrics})
+for both level-1 Symptom Influence (\textit{SI}) and Disease Influence (\textit{DI}) metrics.
+This power-law distribution emphasizes the presence of nodes with higher influence,
+coexisting with numerous nodes exhibiting lower influence. In other words, the network exhibits a scale-free structure,
+where a small number of symptoms and diseases play a significant role in connecting and influencing others.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{degree_distribution.png}
+    \caption{Degree Distribution (level 1)}
+    \label{fig:DegreeDistribution}
+\end{figure}
+
+\subsubsection*{Level-2 Metrics}
+Moving to the level-2 metrics, which capture the interconnectedness and broader impact of symptoms or diseases within the network,
+we uncovered intriguing patterns (see Figure~\ref{fig:l2_distribution}).
+The Symptom Influence (\textit{SI}) at level-2, reflecting the presence of symptoms across diseases and their associations with other symptoms,
+exhibited values ranging from 4 to 12.
+This suggests that certain symptoms not only co-occur within diseases but also form meaningful connections with a diverse set of other symptoms.
+A higher level-2 Symptom Influence (\textit{SI}) implies a symptom's propensity to be associated with a wide range of symptoms,
+indicating its potential impact on various disease pathways.\\
+On the other hand, the Disease Influence (\textit{DI}) at level-2, quantifying the ripple effects of a disease's symptoms on other diseases,
+demonstrated a wider range, typically spanning from 10 to 80.
+This broader range signifies that certain diseases have a more extensive influence on the network by affecting a multitude of other diseases.
+A higher level-2 Disease Influence (\textit{DI}) implies that a disease's symptoms not only contribute to its immediate associations
+but also have far-reaching consequences, affecting a network of interconnected diseases.\\
+These results highlight the diverse roles played by symptoms and diseases in influencing the network when considering higher-order interactions.
+The observed power-law distribution in level-1 metrics extends to level-2 metrics,
+reaffirming the presence of both highly influential and less influential nodes in the network's intricate structure.
+The power-law behavior (shown in Figure~\ref{fig:powerlaw_hid_metrics}) suggests that a few symptoms and diseases play central roles in the network,
+impacting a wide array of others, while the majority exhibit lower levels of influence.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{L2_distribution.png}
+    \caption{L2 Distribution for both symptoms and diseases}
+    \label{fig:l2_distribution}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{powerlaw_hid_metrics.png}
+    \caption{Power Law Distribution of the level 1 and level 2 metrics}
+    \label{fig:powerlaw_hid_metrics}
+\end{figure}
+\subsubsection*{Statistical Validation of SI and DI}
+
+In our statistical validation of the Symptom Influence (\textit{SI}) and Disease Influence (\textit{DI}) indices at level-2,
+we aimed to discern whether these higher-order metrics provide additional information compared to level-1,
+and whether this information is statistically significant.
+Our null hypothesis (\textbf{H0}) posited that level-2 metrics do not offer additional insights beyond level-1,
+while the alternative hypothesis (\textbf{H1}) suggested the opposite.\\
+Upon generating 5000 random networks with the same level-1 properties as the original network,
+we calculated z-scores for both Symptom Influence (\textit{SI}) and Disease Influence (\textit{DI}) at level-2.\\
+Remarkably, the z-score distribution (Figure~\ref{fig:pdf_z_score}) for both symptoms and diseases exhibited a shape quite similar to a Gaussian distribution,
+with means close to zero.\\
+For symptoms, the z-scores ranged between -4 and 3, indicating that the level-2 Symptom Influence (\textit{SI})
+values were generally lower than the mean but still within a reasonable range. This suggests that, on average,
+symptoms tend to exhibit a level-2 influence that aligns closely with the overall network structure.\\
+Similarly, for diseases, the z-scores ranged from -3 to 4, signifying that the level-2 Disease Influence
+(\textit{DI}) values were distributed around the mean.
+This implies that diseases, on average, have a level-2 influence that aligns with the overall network structure,
+showcasing a balance between localized effects and broader impacts.\\
+The proximity of the mean to zero in both distributions suggests that, on average,
+the level-2 metrics for both symptoms and diseases do not significantly deviate from the null model.
+However, the broader range of z-scores signifies the presence of nodes with both positive and negative deviations,
+underscoring the heterogeneous nature of influences within the symptom-disease network.\\
+In conclusion, our statistical validation reinforces that while the level-2 metrics follow a distribution akin to a Gaussian,
+the nuanced deviations reflected by the z-scores
+for both symptoms and diseases underscore the diverse and context-dependent nature of their influences within the intricate network structure.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{PDF_z_score.png}
+    \caption{probability density function of the z-score}
+    \label{fig:pdf_z_score}
+\end{figure}
 % END: degree distribution and power law
-
-\subsection{Most Important Symptoms/Diseases (4 Classes)}
-% BEGIN: most important symptoms/diseases (4 classes)
-
-% END: most important symptoms/diseases (4 classes)
 
 \subsection{Betweenness Centrality}
 % BEGIN: betweenness centrality
-As shown in Figure \ref{fig:bet_entire}, the betweenness centrality of the nodes in the network follows a Power Law Distribution. This suggests
-a scale-free structure of the network, with a few central nodes working as connecting actors, while the majority of the nodes have a low betweenness centrality.
-Dividing the centrality values into the two classes of symptoms and diseases (Figures \ref{fig:bet_diseases} and \ref{fig:bet_symptoms}), we can see that 
-the symptoms have a higher betweenness centrality than the diseases. To understand the meaning of this result we have to delve into
-the interpretation of the betweenness centrality. In general, a symptom is more likely to have a high betweenness centrality if it is
-connected to many diseases and these latter are connected to few symptoms. Conversely a disease is more likely to have a high betweenness centrality
-if it is connected to many symptoms and these latter are connected to few diseases. Looking at the results of L1 and L2, we can see that in our case
-the justification of the higher symptoms betweenness centrality is due to the fact that the symptoms are connected to many diseases, while the diseases
-are connected to few symptoms.
-From a predictive point of view, this is not a good result, since each symptom is not very specific contributing to many different classes.
-
-Figure \ref{fig:bet_top} shows the top 10 nodes with the highest betweenness centrality. As expected, they are all symptoms and seems 
-reasonable that they are the most generic symptoms.
+The examination of betweenness centrality in our bipartite network, as depicted in Figure~\ref{fig:bet_all},
+reveals a Power Law Distribution, indicative of a scale-free structure. This implies the presence of a few central
+nodes that act as pivotal connectors, while the majority of nodes exhibit lower betweenness centrality.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\columnwidth]{bet_entire.png}
-    \caption{Betweenness Centrality of the entire network}
-    \label{fig:bet_entire}
+    \includegraphics[width=\columnwidth]{bet_all.png}
+    \caption{Betweenness Centrality CDFs}
+    \label{fig:bet_all}
 \end{figure}
+\noindent
+Upon dissecting the centrality values into symptoms and diseases (see Figures~\ref{fig:bet_diseases} and~\ref{fig:bet_symptoms}),
+a notable observation emerges: symptoms tend to have higher betweenness centrality compared to diseases. To decipher the
+significance of this result, it's essential to delve into the interpretation of betweenness centrality.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\columnwidth]{bet_diseases.png}
+    \includegraphics[width=\columnwidth]{bet_diseases.png}
     \caption{Betweenness Centrality of the diseases}
     \label{fig:bet_diseases}
 \end{figure}
-
+\noindent
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\columnwidth]{bet_symptoms.png}
+    \includegraphics[width=\columnwidth]{bet_symptoms.png}
     \caption{Betweenness Centrality of the symptoms}
     \label{fig:bet_symptoms}
 \end{figure}
+\noindent
+In general, a symptom exhibits high betweenness centrality when it is linked to numerous diseases, and these diseases,
+in turn, are connected to a relatively limited set of symptoms. Conversely, a disease attains high betweenness centrality
+when it connects to numerous symptoms, and these symptoms are associated with relatively few diseases.\\
+Analyzing our results (L1 and L2), it becomes evident that the higher betweenness centrality of symptoms is attributed
+to their connections with a multitude of diseases, while diseases, on the contrary, are linked to a relatively limited
+number of symptoms. From a predictive standpoint, this outcome presents a challenge as each symptom is not sufficiently
+specific, contributing to a broad array of disease classes.\\
+Figure~\ref{fig:bet_top} highlights the top 10 nodes with the highest betweenness centrality, all of which are symptoms.
+As anticipated, these symptoms are more generic in nature, aligning with their central role in connecting various diseases.
 
 \begin{figure}[H]
-   \centering
-   \includegraphics[width=1\columnwidth]{bet_all.png}
-   \caption{Betweenness Centrality CDFs}
-   \label{fig:bet_all}
+    \centering
+    \includegraphics[width=\columnwidth]{bet_top.png}
+    \caption{Top 10 nodes with the highest betweenness centrality}
+    \label{fig:bet_top}
+\end{figure}
+\noindent
+% END: betweenness centrality
+
+\subsection{Communities}
+
+% BEGIN: communities
+The identification of communities within the network serves a dual purpose – facilitating network interpretation
+and enhancing the capabilities of our ML prediction model.\\
+From a network interpretation perspective, communities offer insights into disease-symptom relationships.
+A community of symptoms signifies a set of symptoms that frequently co-occur within the same diseases, while a
+community of diseases identifies a set of diseases often co-occurring within the same symptoms. The sizes of
+different communities are illustrated in Figure~\ref{fig:com_sizes_all}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{com_sizes_all.png}
+    \caption{Sizes of the communities of symptoms and diseases}
+    \label{fig:com_sizes_all}
+\end{figure}
+\noindent
+For clinical relevance, examining symptoms communities provides valuable information about diseases associated
+with these symptoms. This is exemplified in Figures~\ref{fig:com1_symptoms},~\ref{fig:com2_symptoms},
+and~\ref{fig:com3_symptoms}. As an illustration, in the community 1 of symptoms (Figure~\ref{fig:com1_symptoms}),
+`herniated disk' is the third most pointed disease by the symptoms of the community, with each symptom pointing,
+on average, to three diseases.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{com1_symptoms.png}
+    \caption{Community 1 of symptoms}
+    \label{fig:com1_symptoms}
+\end{figure}
+\noindent
+A similar study can be conducted for communities of diseases, as depicted in Figures~\ref{fig:com1_diseases},
+~\ref{fig:com2_diseases},~\ref{fig:com3_diseases}. This information aids in profiling diseases and understanding
+the significance of each symptom. For instance, in community 1 of diseases (Figure~\ref{fig:com1_diseases}),
+the symptom `sharp abdominal pain' is present in almost half of the diseases in the community, indicating its
+generic nature and limited discriminatory value.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{com1_diseases.png}
+    \caption{Community 1 of diseases}
+    \label{fig:com1_diseases}
+\end{figure}
+\noindent
+Transitioning to the creation of features for the ML model, two types of features were developed:\\
+
+\begin{itemize}
+    \setlength\itemsep{1em} % set space between items
+
+    \item \textbf{Community Count:} This feature counts how many symptoms of the symptom vector belong to each community.
+          Each symptom community is characterized by different pointed diseases. The model can learn to prioritize
+          diseases associated with the community with the highest count.
+
+    \item \textbf{Community Size:} This feature replaces each symptom in the symptom vector with the size of the
+          community to which the symptom belongs. It enables the model to distinguish between symptoms belonging to small and
+          large communities, injecting community information into the model beyond basic one-hot encoding of symptoms.
+\end{itemize}
+\noindent
+\vspace{0.4cm}
+It is noteworthy that communities can also contribute to improving the computational efficiency of the model.
+For example, a symptom associated with many diseases may be less informative and could potentially be removed from the
+symptom vector. However, we opted for a comprehensive approach using a combination of L1 and L2 measures to address this issue.
+
+% END: communities
+
+\subsection{Most Important Actors}
+\label{subsec:most_important_actors}
+% BEGIN: most important symptoms/diseases (4 classes)
+
+As previously mentioned, our objective extends beyond feature extraction; we aim to leverage network information to
+enhance the computational efficiency of the model. The strategy involves reducing the number of symptoms,
+retaining only the most significant ones, to decrease training time while maintaining high accuracy.
+Various approaches were tested, including L1, L2, betweenness centrality, and the degree of the unipartite projection
+of symptoms. To select the most appropriate approach, we examined the correlation between these features
+(Figure~\ref{fig:feat_corr}). Indeed, a high correlation between features means that they provide
+similar information, and therefore retaining both features would be redundant. On the other hand,
+a low correlation between features indicates that they provide complementary information, and this enhances
+in a considerable way the quality of the choice.\\
+For this reason, as clearly shown in Figure~\ref{fig:feat_corr}, we decided to use L1 and L2 to discriminate
+among the symptoms in a more effective manner.
+
+\begin{figure*}[!t]
+    \centering
+    \includegraphics[width=\textwidth]{feat_corr.png}
+    \caption{Correlation between features}
+    \label{fig:feat_corr}
+\end{figure*}
+
+\noindent
+While the analytical approach relying on correlation analysis lays a robust foundation for feature selection,
+it is equally crucial to invest effort in interpreting the results. This interpretive step facilitates a
+more profound understanding of the solution.
+
+To shed light on these classes, a brief reminder of the meanings of L1 and L2 is warranted. L1 denotes the number
+of diseases associated with a symptom, whereas L2 quantifies the number of symptoms linked to those diseases.
+As a result, we categorize the features into the following classes:\\
+
+\begin{itemize}
+    \setlength\itemsep{1em}
+    \item \textbf{High L1 - High L2}: Symptoms with high degree and high L2. These symptoms are less crucial for
+          prediction as they contribute to many classes (diseases), which are also connected to many other symptoms.
+    \item \textbf{High L1 - Low L2}: Symptoms with high degree and low L2. These symptoms should not be removed a
+          priori since they can be useful. For instance, a symptom may be associated with many diseases, but those
+          diseases may only be associated with that symptom. In this case, the symptom is very important for prediction.
+    \item \textbf{Low L1 - High L2}: Symptoms with low degree and high L2. These symptoms may be important for
+          prediction, as they contribute to few diseases.
+    \item \textbf{Low L1 - Low L2}: Symptoms with low degree and low L2. These symptoms are the most important
+          for prediction since they contribute to few classes (diseases), and those classes are also connected to
+          few other symptoms.
+\end{itemize}
+\vspace{0.4cm}
+
+\noindent
+According to the above considerations, we can start from the last class and iteratively add symptoms from the
+other classes, monitoring the impact on both accuracy and training time.
+The results are analyzed in Section~\ref{sec:results_ML}.\\
+
+To practically create the classes, we need to define thresholds for L1 and L2. We decided to consider
+a symptom as very important for our model if it is present in less than 0.5 times the average of L1 diseases,
+translating into a threshold of 8.21 for L1. Consequently, we adjusted the L2 threshold to maintain a proper balance
+between the classes, setting it to 8.
+
+Figures~\ref{fig:symptoms_classes} and~\ref{fig:l1_l2_division} illustrate the division of symptoms into the four classes.
+The same analysis was conducted for diseases, in this case focusing on the high-L1-high-L2 class, which contains
+the most complex diseases under a symptomatology perspective. The results are reported in Figures~\ref{fig:diseases_classes}
+and~\ref{fig:high_l1_high_l2_class}.\\
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{symptoms_classes.png}
+    \caption{Symptoms divided into the four classes}
+    \label{fig:symptoms_classes}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\columnwidth]{bet_top.png}
-    \caption{Top 10 nodes with the highest betweenness centrality}
-    \label{fig:bet_top}
+    \includegraphics[width=\columnwidth]{l1_l2_division.png}
+    \caption{Division based on L1 and L2 values}
+    \label{fig:l1_l2_division}
 \end{figure}
+\noindent
 
-% END: betweenness centrality
+\noindent
+To provide a complete picture of the most important symptoms we report the composition of the low-L1-low-L2 class
+in Figure~\ref{fig:low_l1_low_l2_class}.\\
 
-\subsection{Communities}
-% BEGIN: communities
+\begin{figure*}[!t]
+    \centering
+    \includegraphics[width=\textwidth]{low_l1_low_l2_class.png}
+    \caption{Composition of the low-L1-low-L2 class for symptoms}
+    \label{fig:low_l1_low_l2_class}
+\end{figure*}
 
-% END: communities
+% END: most important symptoms/diseases (4 classes)
+
+
+
 
 
