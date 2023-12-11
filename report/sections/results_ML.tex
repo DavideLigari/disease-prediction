@@ -27,7 +27,8 @@ As depicted in Figure \ref{fig:ML_operative_flow}, we now have six different mod
 and three with both symptoms and new features. The best model was selected from each group based on their accuracy 
 values. Figures \ref{fig:acc_symptoms} and \ref{fig:acc_new_features} indicate consistently low overfitting 
 and similar performance across all models in both groups. Despite their varying complexity, the models achieve 
-similar performance due to the highly discriminative nature of the dataset features.
+similar performance on the test set, meaning that a linear separation boundary is sufficient to properly classify
+the features vector. This founds justification in the highly discriminative nature of the features of this dataset.
 
 \begin{figure}[H]
 	\centering
@@ -55,10 +56,17 @@ similar performance due to the highly discriminative nature of the dataset featu
 The best model from each group was further trained on the full balanced dataset to ensure a more reliable 
 performance evaluation. The results in Figure \ref{fig:acc_best_models} reveal a minimal difference between 
 the two groups. This addresses our \textbf{first goal}: the new features, while not improving the model, 
-offer a comparable performance to using symptoms alone. It's essential to note that the new features are 
+offer a comparable performance to using symptoms alone. However, It's essential to note that the new features are 
 more numerous than the symptoms, contributing to a more complex model. In conclusion, the extracted network 
-features are not a superior alternative to symptoms. A potential avenue for future exploration could involve 
-combining both feature groups to assess the possibility of performance improvement.
+features are not a superior alternative to symptoms. 
+
+It is noteworthy that the 'simplicity' of the dataset, leads to a very high accuracy in all models, thus may also affect the performance
+evaluation of the new features, which have a small room to improve the model. Therefore, a possible avenue
+for future exploration could involve the use of more complex dataset, to better assess the performance of the
+new features.
+
+Another viable option for future work is to use the new features as a complement to the symptoms.
+
 
 % THE FIGURE IS THE FIGURE OF MODEL FULLY TRAINED ON THE BALANCED DATASET
 
