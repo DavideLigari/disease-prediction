@@ -1,774 +1,774 @@
 Disease,Disease_num
-threatened pregnancy,0
-neuropathy due to drugs,1
-pinworm infection,2
-syphilis,3
-urinary tract infection,4
-arrhythmia,5
-preeclampsia,6
-heart block,7
-polycystic ovarian syndrome (pcos),8
-endometriosis,9
-acute bronchitis,10
-poisoning due to sedatives,11
-poisoning due to antihypertensives,12
-spondylolisthesis,13
-dislocation of the shoulder,14
-tuberculosis,15
-open wound of the foot,16
-ear wax impaction,17
-poisoning due to opioids,18
-optic neuritis,19
-kidney failure,20
-uterine cancer,21
-diabetic ketoacidosis,22
-parkinson disease,23
-kidney disease due to longstanding hypertension,24
-injury to the arm,25
-tooth disorder,26
-sickle cell anemia,27
-diabetes insipidus,28
-asthma,29
-injury to the hand,30
-idiopathic absence of menstruation,31
-human immunodeficiency virus infection (hiv),32
-fracture of the ankle,33
-carcinoid syndrome,34
-cataract,35
-dislocation of the hip,36
-aortic valve disease,37
-liver disease,38
-retinal detachment,39
-indigestion,40
-open wound of the abdomen,41
-scoliosis,42
-ulcerative colitis,43
-breast cancer,44
-thoracic outlet syndrome,45
-soft tissue sarcoma,46
-open wound due to trauma,47
-cirrhosis,48
-cryptorchidism,49
-thrombophlebitis,50
-intertrigo (skin condition),51
-lactose intolerance,52
-erectile dysfunction,53
-paroxysmal supraventricular tachycardia,54
-moyamoya disease,55
-open wound from surgical incision,56
-myocarditis,57
-spina bifida,58
-restless leg syndrome,59
-melanoma,60
-chondromalacia of the patella,61
-attention deficit hyperactivity disorder (adhd),62
-acute stress reaction,63
-chickenpox,64
-pulmonary embolism,65
-meckel diverticulum,66
-hypokalemia,67
-cystitis,68
-genital herpes,69
-acariasis,70
-sebaceous cyst,71
-breast cyst,72
-migraine,73
-mononucleosis,74
-sinus bradycardia,75
-shingles (herpes zoster),76
-chronic knee pain,77
-rotator cuff injury,78
-testicular disorder,79
-thalassemia,80
-sick sinus syndrome,81
-achalasia,82
-tracheitis,83
-intracranial hemorrhage,84
-dislocation of the foot,85
-anemia,86
-fracture of the finger,87
-hypercalcemia,88
-vitreous degeneration,89
-fungal infection of the hair,90
-lymphoma,91
-mucositis,92
-gastroparesis,93
-scabies,94
-acute otitis media,95
-benign vaginal discharge (leukorrhea),96
-complex regional pain syndrome,97
-athlete's foot,98
-cervical disorder,99
-urethral disorder,100
-vaginitis,101
-acute sinusitis,102
-zenker diverticulum,103
-placenta previa,104
-drug poisoning due to medication,105
-sjogren syndrome,106
-spinal stenosis,107
-kidney stone,108
-abdominal aortic aneurysm,109
-neonatal jaundice,110
-turner syndrome,111
-cardiomyopathy,112
-meningitis,113
-intestinal cancer,114
-rocky mountain spotted fever,115
-dementia,116
-cranial nerve palsy,117
-sickle cell crisis,118
-seborrheic keratosis,119
-mononeuritis,120
-endometrial hyperplasia,121
-volvulus,122
-herniated disk,123
-anemia of chronic disease,124
-drug reaction,125
-intestinal obstruction,126
-multiple sclerosis,127
-knee ligament or meniscus tear,128
-aplastic anemia,129
-vitamin a deficiency,130
-open wound of the knee,131
-de quervain disease,132
-crohn disease,133
-bladder obstruction,134
-missed abortion,135
-sporotrichosis,136
-impulse control disorder,137
-injury of the ankle,138
-dysthymic disorder,139
-chronic kidney disease,140
-intestinal disease,141
-abscess of the lung,142
-persistent vomiting of unknown cause,143
-polycystic kidney disease,144
-peritonitis,145
-bladder cancer,146
-lice,147
-narcolepsy,148
-atrophic vaginitis,149
-protein deficiency,150
-heart attack,151
-acne,152
-orthostatic hypotension,153
-postpartum depression,154
-foreign body in the ear,155
-stenosis of the tear duct,156
-heat stroke,157
-diabetes,158
-pneumoconiosis,159
-trichinosis,160
-anemia due to malignancy,161
-friedrich ataxia,162
-callus,163
-alzheimer disease,164
-vaginal yeast infection,165
-vitamin b12 deficiency,166
-eye alignment disorder,167
-male genitalia infection,168
-skin polyp,169
-myositis,170
-oral leukoplakia,171
-poisoning due to antipsychotics,172
-dumping syndrome,173
-crushing injury,174
-liver cancer,175
-spherocytosis,176
-fracture of the rib,177
-muscular dystrophy,178
-urinary tract obstruction,179
-skin disorder,180
-hypothermia,181
-spondylitis,182
-avascular necrosis,183
-endometrial cancer,184
-presbyacusis,185
-syndrome of inappropriate secretion of adh (siadh),186
-urge incontinence,187
-phimosis,188
-tuberous sclerosis,189
-arthritis of the hip,190
-iron deficiency anemia,191
-peritonsillar abscess,192
-hemarthrosis,193
-vaginal cyst,194
-vertebrobasilar insufficiency,195
-acute bronchiolitis,196
-breast infection (mastitis),197
-cyst of the eyelid,198
-temporomandibular joint disorder,199
-nasal polyp,200
-subconjunctival hemorrhage,201
-congenital malformation syndrome,202
-female genitalia infection,203
-asperger syndrome,204
-reactive arthritis,205
-alcohol withdrawal,206
-connective tissue disorder,207
-diabetic peripheral neuropathy,208
-testicular cancer,209
-flu,210
-actinic keratosis,211
-acute fatty liver of pregnancy (aflp),212
-injury to the knee,213
-foreign body in the throat,214
-trichomonas infection,215
-alcoholic liver disease,216
-histoplasmosis,217
-uterine atony,218
-hemangioma,219
-floaters,220
-drug withdrawal,221
-scleroderma,222
-fracture of the facial bones,223
-acanthosis nigricans,224
-bone cancer,225
-stye,226
-anxiety,227
-dental caries,228
-hirsutism,229
-lymphedema,230
-urethritis,231
-epilepsy,232
-urethral valves,233
-rheumatoid arthritis,234
-cornea infection,235
-fracture of the skull,236
-conjunctivitis due to allergy,237
-drug abuse (barbiturates),238
-chronic constipation,239
-dislocation of the knee,240
-lymphogranuloma venereum,241
-hormone disorder,242
-pyogenic skin infection,243
-extrapyramidal effect of drugs,244
-marijuana abuse,245
-viral hepatitis,246
-vacterl syndrome,247
-autonomic nervous system disorder,248
-foreign body in the eye,249
-pelvic fistula,250
-benign prostatic hyperplasia (bph),251
-smoking or tobacco addiction,252
-intestinal malabsorption,253
-diverticulosis,254
-vulvar cancer,255
-cerebral edema,256
-conduct disorder,257
-gastritis,258
-paroxysmal ventricular tachycardia,259
-polymyalgia rheumatica,260
-colorectal cancer,261
-anal fistula,262
-myasthenia gravis,263
-postoperative infection,264
-galactorrhea of unknown cause,265
-testicular torsion,266
-subdural hemorrhage,267
-joint effusion,268
-ganglion cyst,269
-atelectasis,270
-endophthalmitis,271
-hypothyroidism,272
-cat scratch disease,273
-anemia due to chronic kidney disease,274
-gastroduodenal ulcer,275
-premature ventricular contractions (pvcs),276
-tendinitis,277
-teething syndrome,278
-infection of open wound,279
-degenerative disc disease,280
-spermatocele,281
-peripheral arterial embolism,282
-insect bite,283
-depression,284
-systemic lupus erythematosis (sle),285
-glucocorticoid deficiency,286
-panic attack,287
-hyperopia,288
-tinnitus of unknown cause,289
-sialoadenitis,290
-spontaneous abortion,291
-huntington disease,292
-vulvodynia,293
-menopause,294
-ischemic heart disease,295
-gout,296
-cushing syndrome,297
-interstitial lung disease,298
-dengue fever,299
-substance-related mental disorder,300
-tonsillitis,301
-schizophrenia,302
-injury to the abdomen,303
-open wound of the face,304
-hemolytic anemia,305
-rosacea,306
-neurosis,307
-pulmonic valve disease,308
-macular degeneration,309
-uveitis,310
-essential tremor,311
-pseudotumor cerebri,312
-skin pigmentation disorder,313
-pain after an operation,314
-developmental disability,315
-typhoid fever,316
-ovarian cancer,317
-impetigo,318
-multiple myeloma,319
-alcohol abuse,320
-ovarian cyst,321
-pulmonary hypertension,322
-aphakia,323
-von willebrand disease,324
-headache after lumbar puncture,325
-lung contusion,326
-croup,327
-osteochondroma,328
-endocarditis,329
-congenital heart defect,330
-heart contusion,331
-fracture of the vertebra,332
-iridocyclitis,333
-hashimoto thyroiditis,334
-psychotic disorder,335
-hematoma,336
-prostate cancer,337
-myelodysplastic syndrome,338
-thoracic aortic aneurysm,339
-hypergammaglobulinemia,340
-lichen simplex,341
-hypernatremia,342
-cold sore,343
-labyrinthitis,344
-whooping cough,345
-tourette syndrome,346
-acute bronchospasm,347
-polycythemia vera,348
-personality disorder,349
-idiopathic infrequent menstruation,350
-encephalitis,351
-atrophic skin condition,352
-heart failure,353
-folate deficiency,354
-idiopathic excessive menstruation,355
-factitious disorder,356
-infectious gastroenteritis,357
-sciatica,358
-open wound of the neck,359
-birth trauma,360
-perirectal infection,361
-cysticercosis,362
-deviated nasal septum,363
-nonalcoholic liver disease (nash),364
-dislocation of the finger,365
-idiopathic nonmenstrual bleeding,366
-insulin overdose,367
-g6pd enzyme deficiency,368
-premature atrial contractions (pacs),369
-laryngitis,370
-molluscum contagiosum,371
-poisoning due to anticonvulsants,372
-nose disorder,373
-hpv,374
-hyperemesis gravidarum,375
-pseudohypoparathyroidism,376
-dislocation of the vertebra,377
-salivary gland disorder,378
-aphthous ulcer,379
-bone spur of the calcaneous,380
-oppositional disorder,381
-cervical cancer,382
-food allergy,383
-spinocerebellar ataxia,384
-pinguecula,385
-primary thrombocythemia,386
-injury to the leg,387
-fibrocystic breast disease,388
-alcohol intoxication,389
-autism,390
-acute glaucoma,391
-hyperkalemia,392
-vocal cord polyp,393
-chronic glaucoma,394
-premature rupture of amniotic membrane,395
-foreign body in the vagina,396
-high blood pressure,397
-balanitis,398
-ankylosing spondylitis,399
-idiopathic irregular menstrual cycle,400
-esophageal cancer,401
-amyloidosis,402
-pityriasis rosea,403
-gas gangrene,404
-hammer toe,405
-adrenal adenoma,406
-hyperlipidemia,407
-chronic obstructive pulmonary disease (copd),408
-hydrocele of the testicle,409
-open wound of the eye,410
-contact dermatitis,411
-epidural hemorrhage,412
+fracture of the pelvis,0
+testicular cancer,1
+injury to the arm,2
+heat stroke,3
+sporotrichosis,4
+erythema multiforme,5
+noninfectious gastroenteritis,6
+pancreatic cancer,7
+temporary or benign blood in urine,8
+rhabdomyolysis,9
+mastectomy,10
+emphysema,11
+scar,12
+perirectal infection,13
+urinary tract obstruction,14
+sickle cell anemia,15
+vaginitis,16
+delirium,17
+sialoadenitis,18
+obstructive sleep apnea (osa),19
+dermatitis due to sun exposure,20
+polymyalgia rheumatica,21
+pityriasis rosea,22
+friedrich ataxia,23
+lymphedema,24
+pharyngitis,25
+female genitalia infection,26
+protein deficiency,27
+urethral valves,28
+hyperhidrosis,29
+lung contusion,30
+subarachnoid hemorrhage,31
+missed abortion,32
+drug poisoning due to medication,33
+cushing syndrome,34
+urethritis,35
+soft tissue sarcoma,36
+hydronephrosis,37
+open wound of the eye,38
+breast cyst,39
+shingles (herpes zoster),40
+smoking or tobacco addiction,41
+dengue fever,42
+orthostatic hypotension,43
+endometrial hyperplasia,44
+itching of unknown cause,45
+fracture of the hand,46
+croup,47
+fungal infection of the skin,48
+conversion disorder,49
+gastroduodenal ulcer,50
+osteoporosis,51
+hypothermia,52
+chronic kidney disease,53
+cryptococcosis,54
+uterine cancer,55
+pulmonary congestion,56
+skin polyp,57
+empyema,58
+joint effusion,59
+corneal disorder,60
+deviated nasal septum,61
+infectious gastroenteritis,62
+tourette syndrome,63
+alzheimer disease,64
+somatization disorder,65
+typhoid fever,66
+pulmonary hypertension,67
+vitamin a deficiency,68
+ovarian cyst,69
+parkinson disease,70
+spondylolisthesis,71
+peritonsillar abscess,72
+coagulation (bleeding) disorder,73
+fibroadenoma,74
+alcoholic liver disease,75
+hypernatremia,76
+muscular dystrophy,77
+tooth abscess,78
+paroxysmal supraventricular tachycardia,79
+huntington disease,80
+callus,81
+goiter,82
+cornea infection,83
+syphilis,84
+foreign body in the gastrointestinal tract,85
+seborrheic dermatitis,86
+bone disorder,87
+hypercholesterolemia,88
+intestinal disease,89
+cranial nerve palsy,90
+hemiplegia,91
+overflow incontinence,92
+abscess of the pharynx,93
+contact dermatitis,94
+neonatal jaundice,95
+gout,96
+molluscum contagiosum,97
+open wound from surgical incision,98
+retinopathy due to high blood pressure,99
+acute pancreatitis,100
+acute glaucoma,101
+stenosis of the tear duct,102
+acute respiratory distress syndrome (ards),103
+hyperemesis gravidarum,104
+tuberous sclerosis,105
+pelvic fistula,106
+drug reaction,107
+mononucleosis,108
+chorioretinitis,109
+spherocytosis,110
+achalasia,111
+benign prostatic hyperplasia (bph),112
+priapism,113
+pinguecula,114
+de quervain disease,115
+skin disorder,116
+food allergy,117
+pneumonia,118
+thrombocytopenia,119
+frostbite,120
+scurvy,121
+amblyopia,122
+adjustment reaction,123
+peripheral arterial disease,124
+vacterl syndrome,125
+conjunctivitis,126
+ovarian cancer,127
+flu,128
+epilepsy,129
+atrophy of the corpus cavernosum,130
+pleural effusion,131
+anemia of chronic disease,132
+hydrocele of the testicle,133
+macular degeneration,134
+tricuspid valve disease,135
+down syndrome,136
+pseudohypoparathyroidism,137
+ectopic pregnancy,138
+lichen simplex,139
+sensorineural hearing loss,140
+alopecia,141
+esophageal varices,142
+uveitis,143
+gonorrhea,144
+vulvar cancer,145
+cystic fibrosis,146
+vulvodynia,147
+liver cancer,148
+encephalitis,149
+hepatic encephalopathy,150
+multiple myeloma,151
+intracranial abscess,152
+conjunctivitis due to virus,153
+menopause,154
+persistent vomiting of unknown cause,155
+mumps,156
+genital herpes,157
+injury to the spinal cord,158
+endocarditis,159
+kidney disease due to longstanding hypertension,160
+dislocation of the wrist,161
+aortic valve disease,162
+spondylitis,163
+injury of the ankle,164
+conduct disorder,165
+polycystic kidney disease,166
+polycythemia vera,167
+pinworm infection,168
+spina bifida,169
+aplastic anemia,170
+gastroparesis,171
+chalazion,172
+seborrheic keratosis,173
+poisoning due to opioids,174
+cervical disorder,175
+chronic obstructive pulmonary disease (copd),176
+psoriasis,177
+toxic multinodular goiter,178
+trichinosis,179
+asperger syndrome,180
+schizophrenia,181
+acne,182
+bladder cancer,183
+anxiety,184
+pneumothorax,185
+open wound of the hand,186
+uterine fibroids,187
+cat scratch disease,188
+chronic knee pain,189
+viral warts,190
+gallstone,191
+gynecomastia,192
+astigmatism,193
+psychosexual disorder,194
+injury to the leg,195
+fibromyalgia,196
+myopia,197
+pulmonary eosinophilia,198
+iridocyclitis,199
+ulcerative colitis,200
+pelvic organ prolapse,201
+impulse control disorder,202
+metastatic cancer,203
+benign vaginal discharge (leukorrhea),204
+injury to the shoulder,205
+cold sore,206
+hypothyroidism,207
+scarlet fever,208
+sciatica,209
+hematoma,210
+strep throat,211
+white blood cell disease,212
+trigger finger (finger disorder),213
+pulmonary embolism,214
+mastoiditis,215
+open wound of the back,216
+ear wax impaction,217
+premature rupture of amniotic membrane,218
+injury to the trunk,219
+ear drum damage,220
+envenomation from spider or animal bite,221
+open wound due to trauma,222
+acute bronchitis,223
+fracture of the foot,224
+autonomic nervous system disorder,225
+hepatitis due to a toxin,226
+dumping syndrome,227
+tietze syndrome,228
+orbital cellulitis,229
+chronic pancreatitis,230
+parasitic disease,231
+hypercalcemia,232
+lung cancer,233
+fracture of the shoulder,234
+bladder obstruction,235
+vitreous degeneration,236
+open wound of the abdomen,237
+pseudotumor cerebri,238
+hypertensive heart disease,239
+volvulus,240
+moyamoya disease,241
+alcohol withdrawal,242
+angina,243
+hypocalcemia,244
+nonalcoholic liver disease (nash),245
+injury to the hip,246
+vasculitis,247
+pituitary disorder,248
+pericarditis,249
+ganglion cyst,250
+folate deficiency,251
+fluid overload,252
+hypertension of pregnancy,253
+concussion,254
+otitis media,255
+injury to the hand,256
+scabies,257
+marijuana abuse,258
+drug abuse,259
+foreign body in the eye,260
+subdural hemorrhage,261
+appendicitis,262
+abdominal aortic aneurysm,263
+meningioma,264
+migraine,265
+liver disease,266
+injury to the abdomen,267
+hpv,268
+ingrown toe nail,269
+poisoning due to antidepressants,270
+deep vein thrombosis (dvt),271
+allergy,272
+neuropathy due to drugs,273
+diabetic peripheral neuropathy,274
+idiopathic irregular menstrual cycle,275
+neurofibromatosis,276
+tonsillar hypertrophy,277
+open wound of the nose,278
+guillain barre syndrome,279
+necrotizing fasciitis,280
+sarcoidosis,281
+hirsutism,282
+tuberculosis,283
+gas gangrene,284
+bipolar disorder,285
+abdominal hernia,286
+erectile dysfunction,287
+venous insufficiency,288
+peyronie disease,289
+temporomandibular joint disorder,290
+septic arthritis,291
+headache after lumbar puncture,292
+idiopathic excessive menstruation,293
+chronic inflammatory demyelinating polyneuropathy (cidp),294
+bone cancer,295
+open wound of the mouth,296
+blepharospasm,297
+gestational diabetes,298
+actinic keratosis,299
+panic attack,300
+hidradenitis suppurativa,301
+rectal disorder,302
+lactose intolerance,303
+restless leg syndrome,304
+turner syndrome,305
+indigestion,306
+scleroderma,307
+central atherosclerosis,308
+vaginal cyst,309
+anemia due to malignancy,310
+granuloma inguinale,311
+stress incontinence,312
+balanitis,313
+multiple sclerosis,314
+fetal alcohol syndrome,315
+bone spur of the calcaneous,316
+gastroesophageal reflux disease (gerd),317
+complex regional pain syndrome,318
+parathyroid adenoma,319
+acanthosis nigricans,320
+hemolytic anemia,321
+open wound of the arm,322
+stomach cancer,323
+atelectasis,324
+thalassemia,325
+neurosis,326
+hypovolemia,327
+raynaud disease,328
+rotator cuff injury,329
+connective tissue disorder,330
+open wound of the ear,331
+poisoning due to gas,332
+peripheral nerve disorder,333
+abscess of nose,334
+hiatal hernia,335
+arthritis of the hip,336
+panic disorder,337
+preeclampsia,338
+scleritis,339
+colonic polyp,340
+poisoning due to anticonvulsants,341
+premenstrual tension syndrome,342
+peripheral arterial embolism,343
+lymphoma,344
+thyroid disease,345
+bunion,346
+cryptorchidism,347
+chronic glaucoma,348
+oral mucosal lesion,349
+acute kidney injury,350
+injury to the face,351
+spermatocele,352
+laryngitis,353
+hemochromatosis,354
+aspergillosis,355
+dental caries,356
+oral thrush (yeast infection),357
+open wound of the jaw,358
+prostate cancer,359
+vaginismus,360
+diverticulosis,361
+heart contusion,362
+hyperlipidemia,363
+hydrocephalus,364
+chronic pain disorder,365
+epididymitis,366
+burn,367
+foreign body in the nose,368
+benign paroxysmal positional vertical (bppv),369
+postoperative infection,370
+foreign body in the ear,371
+diabetes insipidus,372
+hyperopia,373
+poisoning due to antimicrobial drugs,374
+dislocation of the elbow,375
+hemophilia,376
+acute sinusitis,377
+drug abuse (barbiturates),378
+wernicke korsakoff syndrome,379
+breast cancer,380
+crohn disease,381
+vitreous hemorrhage,382
+intertrigo (skin condition),383
+alcohol intoxication,384
+extrapyramidal effect of drugs,385
+subconjunctival hemorrhage,386
+systemic lupus erythematosis (sle),387
+malaria,388
+dislocation of the finger,389
+hammer toe,390
+idiopathic infrequent menstruation,391
+ependymoma,392
+rheumatic fever,393
+heart attack,394
+open wound of the face,395
+cholecystitis,396
+congenital heart defect,397
+vaginal yeast infection,398
+poisoning due to antihypertensives,399
+arrhythmia,400
+poisoning due to antipsychotics,401
+developmental disability,402
+pain disorder affecting the neck,403
+cataract,404
+pyelonephritis,405
+chronic otitis media,406
+sebaceous cyst,407
+gastrointestinal hemorrhage,408
+kidney cancer,409
+lichen planus,410
+valley fever,411
+galactorrhea of unknown cause,412
 drug abuse (cocaine),413
-fibromyalgia,414
-carpal tunnel syndrome,415
-esophagitis,416
-idiopathic painful menstruation,417
-transient ischemic attack,418
-meningioma,419
-pulmonary eosinophilia,420
-chalazion,421
-lipoma,422
-tonsillar hypertrophy,423
-open wound of the cheek,424
-sensorineural hearing loss,425
-primary immunodeficiency,426
-ingrown toe nail,427
-hypertension of pregnancy,428
-placental abruption,429
-malignant hypertension,430
-chronic back pain,431
-injury to internal organ,432
-osteoporosis,433
-tricuspid valve disease,434
-lichen planus,435
-pain disorder affecting the neck,436
-vitamin d deficiency,437
-trichiasis,438
-raynaud disease,439
-fungal infection of the skin,440
-decubitus ulcer,441
-pyloric stenosis,442
-empyema,443
-pneumothorax,444
-pulmonary fibrosis,445
-gum disease,446
-dislocation of the elbow,447
-wilson disease,448
-uterine fibroids,449
-dislocation of the patella,450
-brachial neuritis,451
-ischemia of the bowel,452
-hemochromatosis,453
-cryptococcosis,454
-magnesium deficiency,455
-otitis media,456
-hypercholesterolemia,457
-erythema multiforme,458
-toxoplasmosis,459
-cystic fibrosis,460
-epididymitis,461
-sarcoidosis,462
-mittelschmerz,463
-adrenal cancer,464
-hydrocephalus,465
-trigeminal neuralgia,466
-amyotrophic lateral sclerosis (als),467
-leukemia,468
-osteomyelitis,469
-lateral epicondylitis (tennis elbow),470
-guillain barre syndrome,471
-gastrointestinal hemorrhage,472
-peripheral arterial disease,473
-glaucoma,474
-dyshidrosis,475
-alopecia,476
-carbon monoxide poisoning,477
-bell palsy,478
-poisoning due to gas,479
-rhabdomyolysis,480
-chronic pancreatitis,481
-fracture of the pelvis,482
-astigmatism,483
-viral exanthem,484
-bone disorder,485
-drug abuse,486
-gallstone,487
-corneal abrasion,488
-psoriasis,489
-trigger finger (finger disorder),490
-meniere disease,491
-peripheral nerve disorder,492
-pilonidal cyst,493
-pituitary disorder,494
-ependymoma,495
-hydatidiform mole,496
-problem during pregnancy,497
-metastatic cancer,498
-hiatal hernia,499
-central atherosclerosis,500
-scarlet fever,501
-intussusception,502
-inguinal hernia,503
-vitreous hemorrhage,504
-lumbago,505
-pregnancy,506
-injury to the trunk,507
-pulmonary congestion,508
-eating disorder,509
-diabetic retinopathy,510
-muscle spasm,511
-fetal alcohol syndrome,512
-plantar fasciitis,513
-valley fever,514
-burn,515
-ectropion,516
-retinopathy due to high blood pressure,517
-herpangina,518
-anal fissure,519
-pharyngitis,520
-vaginismus,521
-thyroid cancer,522
-pancreatic cancer,523
-fracture of the leg,524
-dissociative disorder,525
-diaper rash,526
-open wound of the nose,527
-ectopic pregnancy,528
-social phobia,529
-stomach cancer,530
-gynecomastia,531
-obsessive compulsive disorder (ocd),532
-benign paroxysmal positional vertical (bppv),533
-itching of unknown cause,534
-open wound of the back,535
-fibroadenoma,536
-injury to the hip,537
-kidney cancer,538
-drug abuse (methamphetamine),539
-hypocalcemia,540
-pleural effusion,541
-premenstrual tension syndrome,542
-fracture of the foot,543
-post-traumatic stress disorder (ptsd),544
-emphysema,545
-priapism,546
-toxic multinodular goiter,547
-neurofibromatosis,548
-appendicitis,549
-parathyroid adenoma,550
-down syndrome,551
-chronic sinusitis,552
-open wound of the finger,553
-hemophilia,554
-fracture of the hand,555
-jaw disorder,556
-allergy to animals,557
-pericarditis,558
-common cold,559
-head and neck cancer,560
-chronic ulcer,561
-otitis externa (swimmer's ear),562
-scurvy,563
-sepsis,564
-kaposi sarcoma,565
-acute pancreatitis,566
-central retinal artery or vein occlusion,567
-envenomation from spider or animal bite,568
-coagulation (bleeding) disorder,569
-parasitic disease,570
-hypovolemia,571
-fracture of the arm,572
-abscess of nose,573
-varicose veins,574
-orbital cellulitis,575
-tension headache,576
-lymphangitis,577
-noninfectious gastroenteritis,578
-pelvic inflammatory disease,579
-ileus,580
-psychosexual disorder,581
-bladder disorder,582
-omphalitis,583
-hidradenitis suppurativa,584
-hepatic encephalopathy,585
-tooth abscess,586
-dislocation of the wrist,587
-pneumonia,588
-open wound of the hand,589
-granuloma inguinale,590
-nerve impingement near the shoulder,591
-somatization disorder,592
-spondylosis,593
-acute kidney injury,594
-lung cancer,595
-broken tooth,596
-yeast infection,597
-sprain or strain,598
-open wound of the chest,599
-syringomyelia,600
-neuralgia,601
-corneal disorder,602
-pituitary adenoma,603
-rectal disorder,604
-atrial flutter,605
-obesity,606
-frostbite,607
-hyponatremia,608
-chronic pain disorder,609
-paronychia,610
-venous insufficiency,611
-seborrheic dermatitis,612
-presbyopia,613
-chronic otitis media,614
-colonic polyp,615
-flat feet,616
-mitral valve disease,617
-cervicitis,618
-dislocation of the ankle,619
-open wound of the ear,620
-foreign body in the nose,621
-scleritis,622
-atrophy of the corpus cavernosum,623
-allergy,624
-irritable bowel syndrome,625
-adhesive capsulitis of the shoulder,626
-fracture of the patella,627
-lymphadenitis,628
-blepharitis,629
-amblyopia,630
-myoclonus,631
-hemorrhoids,632
-pemphigus,633
-conjunctivitis,634
-fluid overload,635
-injury to the face,636
-viral warts,637
-malaria,638
-primary insomnia,639
-obstructive sleep apnea (osa),640
-white blood cell disease,641
-thrombocytopenia,642
-cellulitis or abscess of mouth,643
-mastectomy,644
-metabolic disorder,645
-vulvar disorder,646
-panic disorder,647
-fracture of the shoulder,648
-atonic bladder,649
-open wound of the jaw,650
-conjunctivitis due to bacteria,651
-esophageal varices,652
-pelvic organ prolapse,653
-juvenile rheumatoid arthritis,654
-fracture of the jaw,655
-chronic rheumatic fever,656
-premature ovarian failure,657
-hydronephrosis,658
-delirium,659
-oral thrush (yeast infection),660
-coronary atherosclerosis,661
-deep vein thrombosis (dvt),662
-temporary or benign blood in urine,663
-chorioretinitis,664
-hyperosmotic hyperketotic state,665
-primary kidney disease,666
-open wound of the head,667
-gestational diabetes,668
-hirschsprung disease,669
-urethral stricture,670
-poisoning due to antidepressants,671
-ear drum damage,672
-mumps,673
-dermatitis due to sun exposure,674
-celiac disease,675
-abdominal hernia,676
-injury to the shoulder,677
-subacute thyroiditis,678
-hepatitis due to a toxin,679
-chlamydia,680
-osteochondrosis,681
-fracture of the neck,682
-oral mucosal lesion,683
-diverticulitis,684
-graves disease,685
-heat exhaustion,686
-myopia,687
-benign kidney cyst,688
-thyroid disease,689
-aspergillosis,690
-conductive hearing loss,691
-tietze syndrome,692
-poisoning due to antimicrobial drugs,693
-septic arthritis,694
-adjustment reaction,695
-thyroid nodule,696
-injury to the spinal cord,697
-lyme disease,698
-bursitis,699
-poisoning due to ethylene glycol,700
-stroke,701
-gastroesophageal reflux disease (gerd),702
-foreign body in the gastrointestinal tract,703
-otosclerosis,704
-diabetic kidney disease,705
-skin cancer,706
-eustachian tube dysfunction (ear disorder),707
-peyronie disease,708
-wernicke korsakoff syndrome,709
-bipolar disorder,710
-open wound of the lip,711
-lewy body dementia,712
-eczema,713
-induced abortion,714
-ovarian torsion,715
-injury to the finger,716
-angina,717
-conjunctivitis due to virus,718
-pyelonephritis,719
-gonorrhea,720
-edward syndrome,721
-hypertrophic obstructive cardiomyopathy (hocm),722
-hyperhidrosis,723
-onychomycosis,724
-hypoglycemia,725
-torticollis,726
-cardiac arrest,727
-seasonal allergies (hay fever),728
-tic (movement) disorder,729
-drug abuse (opioids),730
-choledocholithiasis,731
-necrotizing fasciitis,732
-poisoning due to analgesics,733
-ascending cholangitis,734
-cerebral palsy,735
-strep throat,736
-pterygium,737
-stress incontinence,738
-intracranial abscess,739
-blepharospasm,740
-normal pressure hydrocephalus,741
-osteoarthritis,742
-scar,743
-hemiplegia,744
-hypertensive heart disease,745
-subarachnoid hemorrhage,746
-rheumatic fever,747
-open wound of the mouth,748
-head injury,749
-chronic inflammatory demyelinating polyneuropathy (cidp),750
-abscess of the pharynx,751
-cholesteatoma,752
-overflow incontinence,753
-mastoiditis,754
-atrial fibrillation,755
-dry eye of unknown cause,756
-acute respiratory distress syndrome (ards),757
-bunion,758
-goiter,759
-intracerebral hemorrhage,760
-stricture of the esophagus,761
-concussion,762
-varicocele of the testicles,763
-open wound of the arm,764
-conversion disorder,765
-vesicoureteral reflux,766
-open wound of the shoulder,767
-vasculitis,768
-brain cancer,769
-prostatitis,770
-cholecystitis,771
-female infertility of unknown cause,772
+mononeuritis,414
+cerebral edema,415
+intestinal malabsorption,416
+anal fistula,417
+heat exhaustion,418
+myoclonus,419
+fracture of the patella,420
+testicular disorder,421
+open wound of the lip,422
+foreign body in the throat,423
+hyponatremia,424
+salivary gland disorder,425
+nerve impingement near the shoulder,426
+reactive arthritis,427
+eye alignment disorder,428
+vitamin d deficiency,429
+rocky mountain spotted fever,430
+intracranial hemorrhage,431
+presbyopia,432
+hemorrhoids,433
+testicular torsion,434
+kidney failure,435
+lipoma,436
+myocarditis,437
+head injury,438
+osteomyelitis,439
+eczema,440
+kaposi sarcoma,441
+open wound of the shoulder,442
+injury to the knee,443
+injury to the finger,444
+onychomycosis,445
+chronic ulcer,446
+kidney stone,447
+poisoning due to analgesics,448
+hypokalemia,449
+pilonidal cyst,450
+carcinoid syndrome,451
+atrial fibrillation,452
+floaters,453
+impetigo,454
+hyperosmotic hyperketotic state,455
+otitis externa (swimmer's ear),456
+obesity,457
+conductive hearing loss,458
+flat feet,459
+dislocation of the vertebra,460
+viral hepatitis,461
+dysthymic disorder,462
+chondromalacia of the patella,463
+anal fissure,464
+intestinal cancer,465
+ischemia of the bowel,466
+open wound of the chest,467
+drug abuse (opioids),468
+adhesive capsulitis of the shoulder,469
+idiopathic painful menstruation,470
+abscess of the lung,471
+acute bronchospasm,472
+drug withdrawal,473
+high blood pressure,474
+fracture of the jaw,475
+problem during pregnancy,476
+pituitary adenoma,477
+cervical cancer,478
+bladder disorder,479
+fibrocystic breast disease,480
+urethral disorder,481
+tracheitis,482
+von willebrand disease,483
+polycystic ovarian syndrome (pcos),484
+rheumatoid arthritis,485
+meniere disease,486
+diabetic ketoacidosis,487
+pterygium,488
+gum disease,489
+adrenal cancer,490
+paroxysmal ventricular tachycardia,491
+prostatitis,492
+mittelschmerz,493
+pulmonic valve disease,494
+threatened pregnancy,495
+dislocation of the shoulder,496
+intestinal obstruction,497
+chickenpox,498
+retinal detachment,499
+skin pigmentation disorder,500
+paronychia,501
+esophagitis,502
+diabetes,503
+endometrial cancer,504
+ovarian torsion,505
+hypergammaglobulinemia,506
+acariasis,507
+narcolepsy,508
+spontaneous abortion,509
+poisoning due to ethylene glycol,510
+postpartum depression,511
+crushing injury,512
+mucositis,513
+otosclerosis,514
+spinal stenosis,515
+magnesium deficiency,516
+colorectal cancer,517
+benign kidney cyst,518
+hirschsprung disease,519
+head and neck cancer,520
+hemarthrosis,521
+primary thrombocythemia,522
+viral exanthem,523
+thrombophlebitis,524
+pyloric stenosis,525
+edward syndrome,526
+dislocation of the foot,527
+fracture of the rib,528
+acute fatty liver of pregnancy (aflp),529
+pneumoconiosis,530
+endophthalmitis,531
+irritable bowel syndrome,532
+ectropion,533
+heart failure,534
+choledocholithiasis,535
+poisoning due to sedatives,536
+urethral stricture,537
+sepsis,538
+atrophic skin condition,539
+juvenile rheumatoid arthritis,540
+vertebrobasilar insufficiency,541
+pain after an operation,542
+insulin overdose,543
+placenta previa,544
+conjunctivitis due to bacteria,545
+atrophic vaginitis,546
+dislocation of the hip,547
+pregnancy,548
+varicose veins,549
+nose disorder,550
+herniated disk,551
+diabetic retinopathy,552
+malignant hypertension,553
+sick sinus syndrome,554
+lewy body dementia,555
+atonic bladder,556
+lymphadenitis,557
+hashimoto thyroiditis,558
+metabolic disorder,559
+open wound of the knee,560
+nasal polyp,561
+infection of open wound,562
+ischemic heart disease,563
+vocal cord polyp,564
+stye,565
+meningitis,566
+social phobia,567
+diaper rash,568
+fungal infection of the hair,569
+injury to internal organ,570
+breast infection (mastitis),571
+cholesteatoma,572
+coronary atherosclerosis,573
+oppositional disorder,574
+cysticercosis,575
+syringomyelia,576
+central retinal artery or vein occlusion,577
+hypertrophic obstructive cardiomyopathy (hocm),578
+birth trauma,579
+iron deficiency anemia,580
+sjogren syndrome,581
+acute otitis media,582
+placental abruption,583
+tonsillitis,584
+tinnitus of unknown cause,585
+fracture of the facial bones,586
+premature ventricular contractions (pvcs),587
+open wound of the neck,588
+chronic back pain,589
+tendinitis,590
+hyperkalemia,591
+idiopathic nonmenstrual bleeding,592
+esophageal cancer,593
+whooping cough,594
+premature ovarian failure,595
+cardiac arrest,596
+psychotic disorder,597
+intracerebral hemorrhage,598
+athlete's foot,599
+cellulitis or abscess of mouth,600
+carbon monoxide poisoning,601
+dislocation of the knee,602
+optic neuritis,603
+teething syndrome,604
+male genitalia infection,605
+spinocerebellar ataxia,606
+celiac disease,607
+lateral epicondylitis (tennis elbow),608
+toxoplasmosis,609
+broken tooth,610
+fracture of the neck,611
+normal pressure hydrocephalus,612
+idiopathic absence of menstruation,613
+dry eye of unknown cause,614
+blepharitis,615
+primary insomnia,616
+hemangioma,617
+fracture of the skull,618
+dislocation of the patella,619
+torticollis,620
+factitious disorder,621
+lymphogranuloma venereum,622
+g6pd enzyme deficiency,623
+ankylosing spondylitis,624
+stroke,625
+vesicoureteral reflux,626
+open wound of the foot,627
+urge incontinence,628
+lumbago,629
+glucocorticoid deficiency,630
+atrial flutter,631
+intussusception,632
+primary immunodeficiency,633
+fracture of the finger,634
+omphalitis,635
+subacute thyroiditis,636
+osteochondroma,637
+acute bronchiolitis,638
+amyotrophic lateral sclerosis (als),639
+inguinal hernia,640
+interstitial lung disease,641
+tic (movement) disorder,642
+attention deficit hyperactivity disorder (adhd),643
+trigeminal neuralgia,644
+bell palsy,645
+diabetic kidney disease,646
+varicocele of the testicles,647
+eating disorder,648
+histoplasmosis,649
+open wound of the cheek,650
+urinary tract infection,651
+meckel diverticulum,652
+fracture of the ankle,653
+heart block,654
+adrenal adenoma,655
+epidural hemorrhage,656
+transient ischemic attack,657
+hypoglycemia,658
+fracture of the vertebra,659
+scoliosis,660
+female infertility of unknown cause,661
+muscle spasm,662
+cardiomyopathy,663
+foreign body in the vagina,664
+myelodysplastic syndrome,665
+fracture of the leg,666
+phimosis,667
+knee ligament or meniscus tear,668
+chronic sinusitis,669
+graves disease,670
+human immunodeficiency virus infection (hiv),671
+ascending cholangitis,672
+primary kidney disease,673
+myositis,674
+stricture of the esophagus,675
+vitamin b12 deficiency,676
+bursitis,677
+skin cancer,678
+anemia,679
+avascular necrosis,680
+yeast infection,681
+seasonal allergies (hay fever),682
+zenker diverticulum,683
+asthma,684
+osteoarthritis,685
+sickle cell crisis,686
+degenerative disc disease,687
+amyloidosis,688
+hormone disorder,689
+dementia,690
+osteochondrosis,691
+cystitis,692
+cirrhosis,693
+gastritis,694
+aphthous ulcer,695
+essential tremor,696
+dissociative disorder,697
+rosacea,698
+neuralgia,699
+depression,700
+common cold,701
+pyogenic skin infection,702
+sinus bradycardia,703
+substance-related mental disorder,704
+syndrome of inappropriate secretion of adh (siadh),705
+pemphigus,706
+pulmonary fibrosis,707
+mitral valve disease,708
+conjunctivitis due to allergy,709
+autism,710
+myasthenia gravis,711
+chronic rheumatic fever,712
+tooth disorder,713
+melanoma,714
+drug abuse (methamphetamine),715
+labyrinthitis,716
+lice,717
+sprain or strain,718
+endometriosis,719
+fracture of the arm,720
+obsessive compulsive disorder (ocd),721
+cerebral palsy,722
+glaucoma,723
+thoracic outlet syndrome,724
+open wound of the finger,725
+alcohol abuse,726
+plantar fasciitis,727
+cervicitis,728
+corneal abrasion,729
+insect bite,730
+thyroid cancer,731
+trichomonas infection,732
+chronic constipation,733
+peritonitis,734
+acute stress reaction,735
+presbyacusis,736
+chlamydia,737
+cyst of the eyelid,738
+jaw disorder,739
+lyme disease,740
+leukemia,741
+carpal tunnel syndrome,742
+oral leukoplakia,743
+post-traumatic stress disorder (ptsd),744
+vulvar disorder,745
+hydatidiform mole,746
+open wound of the head,747
+lymphangitis,748
+brain cancer,749
+uterine atony,750
+thoracic aortic aneurysm,751
+personality disorder,752
+trichiasis,753
+ileus,754
+herpangina,755
+premature atrial contractions (pacs),756
+dyshidrosis,757
+spondylosis,758
+congenital malformation syndrome,759
+wilson disease,760
+decubitus ulcer,761
+dislocation of the ankle,762
+brachial neuritis,763
+tension headache,764
+anemia due to chronic kidney disease,765
+allergy to animals,766
+aphakia,767
+induced abortion,768
+pelvic inflammatory disease,769
+thyroid nodule,770
+diverticulitis,771
+eustachian tube dysfunction (ear disorder),772
