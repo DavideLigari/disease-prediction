@@ -117,41 +117,36 @@ discussed in Section \ref{subsec:most_important_actors} and its computational ti
 	\caption{Feature Selection Algorithm}\label{alg:feature_selection}
 
 	\begin{algorithmic}[1]
-
-		\State BestFeatureComb $\gets$ EmptySet
-
-		\For{each model}
-		\State CurrentModel $\gets$ EmptyModel
-		\State BestModAccuracy $\gets$ 0
+		\State RemainingFeatures $\gets$ AllFeatures
+		\State FeatureSet $\gets$ EmptySet
+		\State BestAccuracies $\gets$ EmptySet
 		\State Parameters $\gets$ InitializeRandomParameters
+		\State i $\gets$ 0
 
-		\For{i = 1 to NumberOfFeatures}
-		\State BestAccuracy $\gets$ -1
+		\While{RemainingFeatures is not Empty}
+			\State BestAccuracy $\gets$ 0
 
-		\For{each feature}
-		\State TrainModel(CurrentModel, Parameters)
+			\For{each feature in RemainingFeatures}
+				\State CurrentFeatureSet $\gets$ feature $\cup$ FeatureSet
+				\State Model $\gets$ EmptyModel
+				\State TrainModel(odel, CurrentFeatureSet, Parameters)
+				\State CurrentAccuracy $\gets$ GetAccuracy(Model)
 
-		\State CurrentAccuracy $\gets$ GetAccuracy(CurrentModel)
+				\If{CurrentAccuracy $>=$ BestAccuracy}
+					\State BestAccuracy $\gets$ CurrentAccuracy
+					\State BestFeature $\gets$ feature
+				\EndIf
+			\EndFor
 
-		\If{CurrentAccuracy $>=$ BestAccuracy}
-		\State BestAccuracy $\gets$ CurrentAccuracy
-		\State BestFeature $\gets$ feature
+			\State BestAccuracies[i] $\gets$ BestAccuracy
+			\State RemainingFeatures $\gets$ RemainingFeatures $-$ BestFeature
+			\State FeatureSet $\gets$ BestFeature $\cup$ FeatureSet
+			\State BestFeatureCombinations[i] $\gets$ FeatureSet
+			\State i $\gets$ i $+$ 1
+		\EndWhile
+		\State BFC $\gets$ BestFeatureCombinations[ArgMax(BestAccuracies)]
+		\State \textbf{return} BFC
 
-		\EndIf
-		\State UpdateModel(CurrentModel, BestFeature)
-		\EndFor
-		\State FreezeFeatures(CurrentModel)
-		\State ModelAccuracy[i] $\gets$ GetAccuracy(CurrentModel)
-		\State FeaturesComb[i] $\gets$ GetFeat(CurrentModel)
-
-		\EndFor
-
-		\State BestComb $\gets$ FeaturesComb[Max(ModelAccuracy)]
-		\State BestFeatureComb $\gets$ BestComb $\cup$ BestFeatureComb
-
-		\EndFor
-
-		\State \textbf{return} BestFeatureComb
 	\end{algorithmic}
 \end{algorithm}
 

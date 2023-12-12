@@ -8,10 +8,38 @@ in order to understand its features and its performance.
 
 \subsection{Model Selection}
 \label{subsec:results_ML_model_selection}
-
+As previously shown by the operative flow in Figure \ref{fig:ML_operative_flow}, there are several phases involved in the selection of the optimal prediction model. Given our limited resources we chose to take a greedy approach by performing the feature selection first, and then optimizing the hyperparameters at a later time for each of the three models considered.
 % MATTEO
 % - Matrix plot of stepwise (which is results of algorithm 1) for each model --> to justify the chosen features
 \subsubsection*{Features Selection}
+To reduce the amount of time spent training the models to select the best hyperparameters, it is best to first limit the number of features considered. The selection of the most useful features was performed using a forward stepwise selection, following a greedy a approach that aims at maximizing the accuracy. The hyperparameters were initalized with the default values provided by the library scikit-learn.
+
+As depicted in Figure \ref{fig:stepwise_acc_logreg}, we can see that the best accuracy with the logistic regression model is reached after the third iteration, with little improvement with respect to the model using a single feature. This kind of model seems to favor information about communities and centrality, while the L1 and L2 measures in some cases actually worsen its performance.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\columnwidth]{images/stepwise_acc_logreg.png}
+	\caption{Accuracy of the logistic regression models over the iterations of the forward stepwise feature selection}
+	\label{fig:stepwise_acc_logreg}
+\end{figure}
+
+Figure \ref{fig:stepwise_acc_randomforest} shows that the random forest models behave similarly to the logistic regression, as the best accuracy is reached after the same number of steps, employing the same features. These results start to reveal which features are the best when it comes to classification. It is also worth noting that the best random forest model has a slightly worse accuracy than logistic regression, but that might be due to the random choice of the model's parameters.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\columnwidth]{images/stepwise_acc_randomforest.png}
+	\caption{Accuracy of the random forest models over the iterations of the stepwise feature selection}
+	\label{fig:stepwise_acc_randomforest}
+\end{figure}
+
+The multi-layer perceptron model exhibits a different performance from the other two, given by the fact that the accuracy starts to lower after adding the second feature. As underlined by Figure \ref{fig:stepwise_acc_mlp}, with respect to the other models information about the betweenness is not needed to achieve the best possible results, which could be explained by the better ability of the MLP to adapt to non-linearities. This particular implementation of neural network has one hidden layer with 100 neurons, and in our case its performance is better than the random forest model, but still slightly worse than the logistic regression. We expect this to change after the optimization of the hyperparameters. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\columnwidth]{images/stepwise_acc_mlp.png}
+	\caption{Accuracy of the MLP models over the iterations of the stepwise feature selection}
+	\label{fig:stepwise_acc_mlp}
+\end{figure}
+
 
 % CRISTIAN
 % - Comparison for each model of the selected parameters --> to justify the chosen parameters
