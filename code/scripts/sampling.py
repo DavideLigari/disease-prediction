@@ -47,12 +47,12 @@ def balanceSampling(features, labels, threshold=35):
     # Over-sample
     original_samples_per_class = {label: np.sum(labels == label) for label in np.unique(labels)}
     sampling_strategy = {label: max(threshold, original_samples) for label, original_samples in original_samples_per_class.items()}
-    ros = RandomOverSampler(sampling_strategy=sampling_strategy)
+    ros = RandomOverSampler(random_state=42, sampling_strategy=sampling_strategy)
     oversampled_features, oversampled_labels = ros.fit_resample(features, labels)
     # Under-sample
     updated_samples_per_class = {label: np.sum(oversampled_labels == label) for label in np.unique(labels)}
     sampling_strategy = {label: min(threshold, original_samples) for label, original_samples in updated_samples_per_class.items()}
-    rus = RandomUnderSampler(sampling_strategy=sampling_strategy)
+    rus = RandomUnderSampler(random_state=42, sampling_strategy=sampling_strategy)
     undersampled_features, labels = rus.fit_resample(oversampled_features, oversampled_labels)
 
     return undersampled_features, labels
