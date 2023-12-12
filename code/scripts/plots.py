@@ -119,7 +119,9 @@ def top_common_entity(communities, adjacency_matrix, diseases_list, entity, top=
     comm_sizes = []
     if entity == "disease":
         adjacency_matrix = adjacency_matrix.T
-
+        color = 'lightcoral'
+    else:
+        color = '#1f77b4'
     num_communities = len(communities)
     for i in range(num_communities):
         comm = [label for index, label in enumerate(communities[i])]
@@ -132,7 +134,7 @@ def top_common_entity(communities, adjacency_matrix, diseases_list, entity, top=
         num_for_top = adjacency_matrix_.sum(axis=1)
 
         plotting_array = np.array([diseases_list[num_for_sorted], num_for_top])
-        plt.bar(x=plotting_array[0], height=plotting_array[1])
+        plt.bar(x=plotting_array[0], height=plotting_array[1], color=color)
         plt.plot(
             plotting_array[0],
             [avg_num] * len(num_for_top),
