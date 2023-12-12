@@ -205,7 +205,7 @@ Transitioning to the creation of features for the ML model, two types of feature
 
     \item \textbf{Community Size:} This feature replaces each symptom in the symptom vector with the size of the
           community to which the symptom belongs. It enables the model to distinguish between symptoms belonging to small and
-          large communities, injecting community information into the model beyond basic one-hot encoding of symptoms.
+          large communities. If many symptoms from small community are present, the associated diseases may be more likely.
 \end{itemize}
 \noindent
 It is noteworthy that communities can also contribute to improving the computational efficiency of the model.
