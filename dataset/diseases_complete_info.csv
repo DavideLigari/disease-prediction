@@ -1,0 +1,749 @@
+Disease,Degree,L2,Class
+panic disorder,6.0,63.83333333333333,2
+vocal cord polyp,10.0,28.8,3
+cryptorchidism,8.0,51.25,2
+poisoning due to ethylene glycol,4.0,70.25,2
+atrophic vaginitis,8.0,66.625,2
+fracture of the hand,4.0,35.75,1
+cellulitis or abscess of mouth,4.0,32.5,1
+eye alignment disorder,5.0,55.6,2
+headache after lumbar puncture,9.0,35.11111111111111,1
+pyloric stenosis,11.0,35.45454545454545,3
+salivary gland disorder,12.0,44.08333333333333,3
+osteochondrosis,12.0,54.666666666666664,4
+injury to the knee,11.0,60.27272727272727,4
+metabolic disorder,2.0,84.0,2
+vaginitis,8.0,30.0,1
+sick sinus syndrome,11.0,66.9090909090909,4
+tinnitus of unknown cause,10.0,38.800000000000004,3
+glaucoma,12.0,55.0,4
+eating disorder,9.0,59.44444444444444,2
+transient ischemic attack,11.0,35.36363636363637,3
+pyelonephritis,11.0,67.0909090909091,4
+rotator cuff injury,6.0,25.5,1
+chronic pain disorder,9.0,24.0,1
+problem during pregnancy,4.0,71.25,2
+liver cancer,2.0,59.0,2
+atelectasis,9.0,30.333333333333332,1
+injury to the hand,8.0,60.5,2
+choledocholithiasis,10.0,53.0,4
+injury to the hip,7.0,44.42857142857142,1
+cirrhosis,11.0,39.18181818181818,3
+thoracic aortic aneurysm,5.0,46.0,1
+subdural hemorrhage,8.0,31.75,1
+diabetic retinopathy,8.0,33.0,1
+fibromyalgia,5.0,21.8,1
+ischemia of the bowel,3.0,49.33333333333333,2
+fetal alcohol syndrome,5.0,33.4,1
+peritonitis,8.0,29.25,1
+injury to the abdomen,4.0,15.75,1
+acute pancreatitis,8.0,40.125,1
+thrombophlebitis,6.0,40.83333333333333,1
+asthma,4.0,47.25,2
+foreign body in the vagina,4.0,47.75,2
+restless leg syndrome,11.0,43.81818181818182,3
+emphysema,10.0,33.5,3
+cysticercosis,12.0,53.25,4
+induced abortion,9.0,41.666666666666664,1
+teething syndrome,4.0,31.5,1
+infectious gastroenteritis,8.0,47.75,2
+acute sinusitis,6.0,47.0,2
+substance-related mental disorder,11.0,53.54545454545455,4
+postpartum depression,8.0,55.875,2
+coronary atherosclerosis,12.0,33.08333333333333,3
+spondylitis,5.0,71.4,2
+pituitary adenoma,8.0,34.5,1
+uterine fibroids,2.0,57.5,2
+idiopathic nonmenstrual bleeding,11.0,48.909090909090914,4
+chalazion,8.0,29.25,1
+ovarian torsion,6.0,93.16666666666666,2
+retinopathy due to high blood pressure,8.0,39.25,1
+vaginal yeast infection,5.0,25.6,1
+mastoiditis,8.0,52.5,2
+lung contusion,8.0,42.25,1
+hypertrophic obstructive cardiomyopathy (hocm),9.0,33.666666666666664,1
+ingrown toe nail,8.0,25.875,1
+pulmonary eosinophilia,5.0,31.0,1
+corneal disorder,9.0,30.22222222222222,1
+foreign body in the gastrointestinal tract,9.0,25.555555555555554,1
+endophthalmitis,5.0,66.4,2
+intestinal malabsorption,4.0,31.5,1
+viral warts,9.0,35.77777777777778,1
+hyperhidrosis,10.0,41.900000000000006,3
+stroke,7.0,52.42857142857142,2
+pilonidal cyst,9.0,59.77777777777777,2
+crushing injury,12.0,15.833333333333332,3
+normal pressure hydrocephalus,10.0,35.1,3
+alopecia,10.0,31.200000000000003,3
+flat feet,3.0,42.33333333333333,1
+nonalcoholic liver disease (nash),7.0,16.285714285714285,1
+hemarthrosis,9.0,41.77777777777778,1
+pelvic organ prolapse,8.0,19.0,1
+fracture of the arm,11.0,24.727272727272727,3
+coagulation (bleeding) disorder,4.0,43.0,1
+intracranial hemorrhage,5.0,45.6,1
+hyperkalemia,7.0,35.0,1
+cornea infection,5.0,31.6,1
+abscess of the lung,11.0,39.0,3
+dengue fever,8.0,36.25,1
+chronic sinusitis,4.0,8.5,1
+cholesteatoma,4.0,15.5,1
+volvulus,9.0,25.0,1
+injury to the finger,7.0,12.142857142857142,1
+poisoning due to analgesics,5.0,27.200000000000003,1
+atrial fibrillation,6.0,39.166666666666664,1
+pinworm infection,12.0,25.916666666666664,3
+urethral valves,9.0,39.888888888888886,1
+open wound of the neck,6.0,82.16666666666666,2
+achalasia,8.0,43.625,1
+conductive hearing loss,8.0,46.75,2
+abdominal hernia,11.0,24.181818181818183,3
+cerebral palsy,3.0,26.0,1
+marijuana abuse,10.0,25.0,3
+cryptococcosis,6.0,77.16666666666666,2
+obesity,7.0,33.714285714285715,1
+indigestion,4.0,52.25,2
+bursitis,6.0,33.0,1
+esophageal cancer,6.0,65.0,2
+pulmonary congestion,6.0,19.333333333333332,1
+juvenile rheumatoid arthritis,6.0,17.833333333333332,1
+actinic keratosis,4.0,50.0,2
+acute otitis media,8.0,47.375,2
+astigmatism,10.0,27.5,3
+tuberous sclerosis,6.0,56.5,2
+empyema,6.0,46.166666666666664,1
+presbyacusis,12.0,51.666666666666664,4
+neonatal jaundice,9.0,56.77777777777777,2
+chronic obstructive pulmonary disease (copd),4.0,22.5,1
+dislocation of the elbow,6.0,32.5,1
+spondylosis,5.0,29.0,1
+herpangina,11.0,31.363636363636363,3
+injury to the shoulder,11.0,46.09090909090909,3
+poisoning due to antidepressants,10.0,25.5,3
+infection of open wound,4.0,54.25,2
+deep vein thrombosis (dvt),5.0,39.400000000000006,1
+protein deficiency,9.0,31.444444444444443,1
+myoclonus,11.0,50.27272727272727,4
+bone spur of the calcaneous,10.0,32.7,3
+von willebrand disease,10.0,58.5,4
+open wound of the back,8.0,65.375,2
+heart block,7.0,54.42857142857142,2
+colonic polyp,10.0,43.0,3
+magnesium deficiency,9.0,38.666666666666664,1
+female infertility of unknown cause,5.0,30.400000000000002,1
+pericarditis,7.0,31.57142857142857,1
+attention deficit hyperactivity disorder (adhd),8.0,33.25,1
+pulmonic valve disease,6.0,31.833333333333332,1
+tietze syndrome,11.0,52.0,4
+cranial nerve palsy,12.0,40.666666666666664,3
+injury to the arm,12.0,51.416666666666664,4
+conversion disorder,10.0,29.900000000000002,3
+complex regional pain syndrome,10.0,25.0,3
+otosclerosis,4.0,39.0,1
+injury to the trunk,4.0,19.5,1
+hypothyroidism,11.0,39.909090909090914,3
+primary insomnia,12.0,33.75,3
+lice,6.0,62.33333333333333,2
+vitamin b12 deficiency,10.0,41.800000000000004,3
+vulvodynia,3.0,21.333333333333332,1
+endometriosis,11.0,34.18181818181818,3
+vasculitis,4.0,53.75,2
+concussion,11.0,27.454545454545457,3
+oral leukoplakia,9.0,27.22222222222222,1
+chronic kidney disease,10.0,28.5,3
+bladder disorder,8.0,44.25,1
+chorioretinitis,8.0,38.5,1
+priapism,10.0,46.0,3
+myositis,11.0,49.27272727272727,4
+mononucleosis,6.0,23.5,1
+neuralgia,2.0,41.0,1
+polycystic kidney disease,3.0,14.666666666666666,1
+bipolar disorder,2.0,27.0,1
+amyloidosis,5.0,22.400000000000002,1
+chronic inflammatory demyelinating polyneuropathy (cidp),4.0,42.0,1
+gastroesophageal reflux disease (gerd),4.0,65.0,2
+vitreous hemorrhage,12.0,42.25,3
+poisoning due to antimicrobial drugs,7.0,30.57142857142857,1
+open wound of the mouth,4.0,24.5,1
+scleroderma,7.0,29.71428571428571,1
+myasthenia gravis,11.0,36.81818181818182,3
+hypoglycemia,10.0,33.9,3
+idiopathic absence of menstruation,8.0,35.5,1
+dislocation of the ankle,2.0,37.0,1
+carbon monoxide poisoning,12.0,19.0,3
+panic attack,11.0,33.90909090909091,3
+plantar fasciitis,9.0,37.77777777777778,1
+hyperopia,11.0,23.09090909090909,3
+poisoning due to sedatives,10.0,32.0,3
+pemphigus,2.0,63.0,2
+peyronie disease,10.0,63.7,4
+hiatal hernia,9.0,31.777777777777775,1
+extrapyramidal effect of drugs,9.0,28.666666666666664,1
+meniere disease,11.0,43.18181818181818,3
+anal fissure,4.0,23.5,1
+allergy,7.0,22.428571428571427,1
+chronic otitis media,5.0,27.200000000000003,1
+fracture of the finger,3.0,51.666666666666664,2
+hirschsprung disease,3.0,45.33333333333333,1
+polymyalgia rheumatica,3.0,21.666666666666664,1
+lymphedema,3.0,21.666666666666664,1
+bladder cancer,6.0,22.833333333333332,1
+acute bronchospasm,5.0,46.2,1
+acute glaucoma,4.0,36.25,1
+dislocation of the patella,5.0,34.800000000000004,1
+sciatica,12.0,50.5,4
+hypercalcemia,10.0,47.7,4
+stress incontinence,6.0,43.166666666666664,1
+varicose veins,10.0,29.900000000000002,3
+benign kidney cyst,6.0,35.166666666666664,1
+hydrocele of the testicle,9.0,39.888888888888886,1
+degenerative disc disease,8.0,43.625,1
+hirsutism,10.0,32.7,3
+dislocation of the foot,7.0,31.285714285714285,1
+hydronephrosis,11.0,63.54545454545455,4
+diverticulosis,7.0,73.14285714285714,2
+pain after an operation,11.0,26.81818181818182,3
+lymphoma,3.0,64.0,2
+dermatitis due to sun exposure,5.0,44.6,1
+anemia due to chronic kidney disease,9.0,31.11111111111111,1
+injury to internal organ,11.0,24.545454545454547,3
+scleritis,10.0,33.4,3
+pterygium,9.0,34.11111111111111,1
+fungal infection of the skin,8.0,57.0,2
+insulin overdose,5.0,30.400000000000002,1
+syndrome of inappropriate secretion of adh (siadh),12.0,39.58333333333333,3
+foreign body in the ear,2.0,18.0,1
+premenstrual tension syndrome,4.0,84.0,2
+orbital cellulitis,4.0,93.0,2
+injury to the leg,5.0,60.400000000000006,2
+hepatic encephalopathy,6.0,60.33333333333333,2
+bone cancer,5.0,14.200000000000001,1
+syringomyelia,5.0,11.8,1
+pulmonary fibrosis,9.0,34.22222222222222,1
+mitral valve disease,6.0,30.333333333333332,1
+parkinson disease,9.0,29.888888888888886,1
+gout,4.0,60.25,2
+otitis media,9.0,32.888888888888886,1
+drug abuse (opioids),3.0,67.33333333333333,2
+myelodysplastic syndrome,7.0,37.857142857142854,1
+fracture of the shoulder,10.0,17.6,3
+acute kidney injury,5.0,53.0,2
+threatened pregnancy,5.0,58.0,2
+intracranial abscess,2.0,86.0,2
+gum disease,12.0,66.58333333333333,4
+open wound from surgical incision,7.0,38.285714285714285,1
+gastrointestinal hemorrhage,11.0,28.727272727272727,3
+seborrheic dermatitis,6.0,41.83333333333333,1
+drug abuse (methamphetamine),9.0,23.333333333333332,1
+torticollis,4.0,43.0,1
+poisoning due to antihypertensives,7.0,23.285714285714285,1
+tension headache,5.0,7.6000000000000005,1
+alcohol intoxication,3.0,43.666666666666664,1
+scurvy,6.0,9.5,1
+narcolepsy,4.0,10.75,1
+food allergy,10.0,53.800000000000004,4
+labyrinthitis,5.0,37.2,1
+anxiety,5.0,33.2,1
+impulse control disorder,10.0,61.7,4
+stenosis of the tear duct,8.0,73.5,2
+abscess of nose,5.0,73.60000000000001,2
+omphalitis,9.0,52.33333333333333,2
+leukemia,5.0,17.8,1
+bell palsy,8.0,25.25,1
+conjunctivitis due to allergy,6.0,46.33333333333333,1
+drug reaction,7.0,55.857142857142854,2
+adrenal cancer,3.0,30.333333333333332,1
+myopia,7.0,22.857142857142854,1
+osteoarthritis,10.0,17.0,3
+thyroid disease,9.0,34.77777777777778,1
+pharyngitis,5.0,27.0,1
+chronic rheumatic fever,6.0,14.166666666666666,1
+hypocalcemia,8.0,22.125,1
+macular degeneration,6.0,25.5,1
+pneumonia,10.0,26.1,3
+cold sore,5.0,35.2,1
+premature ventricular contractions (pvcs),6.0,31.666666666666664,1
+testicular cancer,7.0,41.14285714285714,1
+hydrocephalus,11.0,39.27272727272727,3
+breast cancer,7.0,17.857142857142858,1
+anemia due to malignancy,5.0,67.2,2
+esophageal varices,8.0,31.0,1
+endometrial cancer,3.0,49.33333333333333,2
+cystic fibrosis,3.0,52.666666666666664,2
+intertrigo (skin condition),12.0,35.416666666666664,3
+parathyroid adenoma,10.0,34.4,3
+glucocorticoid deficiency,2.0,67.0,2
+temporomandibular joint disorder,4.0,23.5,1
+wilson disease,11.0,56.45454545454545,4
+vesicoureteral reflux,10.0,27.200000000000003,3
+vitamin a deficiency,10.0,69.60000000000001,4
+gonorrhea,10.0,52.6,4
+fracture of the rib,10.0,55.400000000000006,4
+ependymoma,12.0,48.416666666666664,4
+hepatitis due to a toxin,8.0,61.25,2
+vaginal cyst,7.0,31.285714285714285,1
+open wound of the shoulder,5.0,11.0,1
+ectopic pregnancy,9.0,29.0,1
+chronic knee pain,3.0,52.666666666666664,2
+pinguecula,5.0,23.6,1
+alcohol abuse,6.0,40.166666666666664,1
+carpal tunnel syndrome,12.0,22.5,3
+pituitary disorder,2.0,57.5,2
+kidney stone,7.0,34.285714285714285,1
+autism,5.0,53.6,2
+cat scratch disease,11.0,22.545454545454547,3
+chronic glaucoma,7.0,28.285714285714285,1
+retinal detachment,4.0,42.0,1
+aplastic anemia,8.0,19.75,1
+overflow incontinence,8.0,52.0,2
+hemolytic anemia,7.0,68.57142857142857,2
+lateral epicondylitis (tennis elbow),11.0,41.81818181818182,3
+open wound of the eye,10.0,51.6,4
+syphilis,2.0,34.5,1
+nose disorder,11.0,44.36363636363637,3
+drug withdrawal,8.0,74.625,2
+dental caries,10.0,32.7,3
+hypercholesterolemia,4.0,26.5,1
+fracture of the patella,5.0,49.6,2
+kidney failure,9.0,40.55555555555555,1
+fracture of the neck,3.0,44.33333333333333,1
+muscle spasm,4.0,68.25,2
+hemophilia,4.0,45.5,1
+hyperosmotic hyperketotic state,11.0,23.727272727272727,3
+peritonsillar abscess,6.0,64.5,2
+gastroparesis,8.0,54.25,2
+itching of unknown cause,11.0,34.45454545454545,3
+polycythemia vera,9.0,50.77777777777777,2
+thrombocytopenia,12.0,51.166666666666664,4
+head and neck cancer,6.0,43.5,1
+pseudohypoparathyroidism,3.0,60.666666666666664,2
+goiter,4.0,25.5,1
+urge incontinence,3.0,50.0,2
+edward syndrome,5.0,35.2,1
+open wound of the arm,3.0,21.666666666666664,1
+muscular dystrophy,5.0,61.400000000000006,2
+mittelschmerz,8.0,19.5,1
+corneal abrasion,7.0,59.71428571428571,2
+anemia of chronic disease,8.0,62.75,2
+dysthymic disorder,4.0,53.5,2
+scarlet fever,5.0,35.0,1
+hypertensive heart disease,11.0,62.0,4
+drug abuse (barbiturates),5.0,44.400000000000006,1
+polycystic ovarian syndrome (pcos),10.0,65.10000000000001,4
+encephalitis,3.0,43.0,1
+cyst of the eyelid,5.0,55.400000000000006,2
+balanitis,6.0,30.333333333333332,1
+foreign body in the throat,3.0,57.666666666666664,2
+drug abuse (cocaine),6.0,32.0,1
+optic neuritis,11.0,41.27272727272727,3
+alcohol withdrawal,3.0,60.33333333333333,2
+premature atrial contractions (pacs),5.0,54.0,2
+hemiplegia,12.0,42.0,3
+hammer toe,10.0,80.60000000000001,4
+joint effusion,9.0,76.33333333333333,2
+meningioma,4.0,47.25,2
+brain cancer,6.0,18.833333333333332,1
+placental abruption,9.0,65.66666666666666,2
+seasonal allergies (hay fever),9.0,40.11111111111111,1
+lung cancer,11.0,25.0,3
+primary kidney disease,4.0,66.25,2
+uterine cancer,11.0,27.09090909090909,3
+dry eye of unknown cause,6.0,39.33333333333333,1
+fibrocystic breast disease,11.0,29.636363636363637,3
+fungal infection of the hair,9.0,63.44444444444444,2
+tooth abscess,10.0,50.5,4
+envenomation from spider or animal bite,8.0,33.625,1
+vacterl syndrome,9.0,60.0,2
+vertebrobasilar insufficiency,8.0,36.125,1
+rectal disorder,4.0,49.25,2
+atonic bladder,12.0,54.416666666666664,4
+benign paroxysmal positional vertical (bppv),10.0,23.1,3
+blepharospasm,10.0,28.6,3
+sarcoidosis,8.0,23.0,1
+metastatic cancer,6.0,66.5,2
+trigger finger (finger disorder),5.0,81.2,2
+stye,12.0,22.0,3
+hemochromatosis,9.0,29.888888888888886,1
+osteochondroma,4.0,23.0,1
+cushing syndrome,7.0,25.142857142857142,1
+vitreous degeneration,4.0,41.5,1
+atrophic skin condition,5.0,35.6,1
+aspergillosis,12.0,23.75,3
+uterine atony,9.0,26.666666666666664,1
+trichinosis,4.0,64.25,2
+whooping cough,11.0,41.81818181818182,3
+open wound of the lip,10.0,37.800000000000004,3
+subacute thyroiditis,2.0,55.0,2
+oral mucosal lesion,9.0,58.44444444444444,2
+intracerebral hemorrhage,6.0,46.33333333333333,1
+alzheimer disease,5.0,43.6,1
+vaginismus,9.0,60.0,2
+systemic lupus erythematosis (sle),7.0,63.857142857142854,2
+premature ovarian failure,9.0,50.0,2
+thoracic outlet syndrome,10.0,60.0,4
+ganglion cyst,3.0,70.66666666666666,2
+dislocation of the knee,8.0,66.125,2
+crohn disease,3.0,64.33333333333333,2
+postoperative infection,9.0,37.22222222222222,1
+folate deficiency,11.0,29.545454545454547,3
+fluid overload,9.0,48.44444444444444,2
+atrial flutter,7.0,60.57142857142857,2
+skin disorder,11.0,45.09090909090909,3
+floaters,9.0,28.444444444444443,1
+tooth disorder,8.0,31.875,1
+heart attack,9.0,20.666666666666664,1
+open wound of the abdomen,5.0,35.0,1
+fracture of the leg,5.0,23.400000000000002,1
+oral thrush (yeast infection),4.0,36.5,1
+pityriasis rosea,8.0,52.75,2
+allergy to animals,11.0,51.45454545454545,4
+orthostatic hypotension,7.0,14.571428571428571,1
+obstructive sleep apnea (osa),10.0,53.0,4
+hypokalemia,6.0,41.166666666666664,1
+psoriasis,10.0,42.7,3
+dislocation of the shoulder,8.0,27.125,1
+intussusception,4.0,34.75,1
+cervicitis,5.0,39.800000000000004,1
+abscess of the pharynx,5.0,39.0,1
+primary thrombocythemia,3.0,48.33333333333333,2
+arthritis of the hip,5.0,39.6,1
+decubitus ulcer,10.0,27.8,3
+hypernatremia,5.0,41.2,1
+sensorineural hearing loss,12.0,44.416666666666664,3
+osteoporosis,7.0,35.285714285714285,1
+ileus,7.0,43.14285714285714,1
+sickle cell crisis,4.0,76.0,2
+urethritis,7.0,60.71428571428571,2
+prostatitis,9.0,56.44444444444444,2
+otitis externa (swimmer's ear),2.0,24.5,1
+poisoning due to anticonvulsants,9.0,33.22222222222222,1
+testicular torsion,3.0,33.33333333333333,1
+tricuspid valve disease,7.0,18.0,1
+urethral stricture,11.0,24.727272727272727,3
+vitamin d deficiency,4.0,91.0,2
+hydatidiform mole,4.0,58.5,2
+pain disorder affecting the neck,6.0,19.0,1
+tuberculosis,7.0,77.71428571428571,2
+pelvic fistula,12.0,30.333333333333332,3
+acute bronchiolitis,3.0,27.666666666666664,1
+presbyopia,6.0,56.33333333333333,2
+dementia,2.0,31.0,1
+insect bite,8.0,34.5,1
+paroxysmal ventricular tachycardia,8.0,50.75,2
+congenital heart defect,5.0,71.0,2
+connective tissue disorder,8.0,67.125,2
+foreign body in the eye,6.0,16.333333333333332,1
+poisoning due to gas,4.0,13.5,1
+pyogenic skin infection,5.0,21.0,1
+endometrial hyperplasia,9.0,56.11111111111111,2
+acanthosis nigricans,9.0,33.44444444444444,1
+central atherosclerosis,9.0,47.666666666666664,2
+viral exanthem,6.0,58.83333333333333,2
+noninfectious gastroenteritis,9.0,37.44444444444444,1
+benign prostatic hyperplasia (bph),10.0,30.400000000000002,3
+menopause,8.0,58.75,2
+primary immunodeficiency,2.0,49.5,2
+ovarian cancer,8.0,28.0,1
+cataract,5.0,37.6,1
+dislocation of the hip,11.0,44.36363636363637,3
+spinal stenosis,4.0,24.75,1
+intestinal obstruction,10.0,54.800000000000004,4
+heart contusion,5.0,48.400000000000006,2
+congenital malformation syndrome,7.0,45.857142857142854,1
+sporotrichosis,3.0,33.33333333333333,1
+lymphangitis,4.0,27.0,1
+wernicke korsakoff syndrome,9.0,25.666666666666664,1
+intestinal disease,6.0,55.666666666666664,2
+acute bronchitis,7.0,49.0,2
+persistent vomiting of unknown cause,8.0,43.5,1
+open wound of the foot,3.0,42.666666666666664,1
+preeclampsia,5.0,10.0,1
+ischemic heart disease,8.0,24.0,1
+neurofibromatosis,10.0,49.5,4
+chickenpox,4.0,60.75,2
+pancreatic cancer,5.0,62.0,2
+neuropathy due to drugs,11.0,38.36363636363637,3
+croup,5.0,67.8,2
+idiopathic excessive menstruation,12.0,55.416666666666664,4
+amblyopia,4.0,64.5,2
+meckel diverticulum,12.0,43.166666666666664,3
+dislocation of the wrist,3.0,11.666666666666666,1
+ear drum damage,9.0,29.444444444444443,1
+erectile dysfunction,12.0,28.416666666666664,3
+temporary or benign blood in urine,3.0,15.0,1
+kidney disease due to longstanding hypertension,9.0,32.888888888888886,1
+chondromalacia of the patella,3.0,39.666666666666664,1
+onychomycosis,3.0,49.666666666666664,2
+urethral disorder,4.0,17.0,1
+lyme disease,4.0,31.0,1
+iron deficiency anemia,5.0,17.0,1
+acute respiratory distress syndrome (ards),5.0,34.800000000000004,1
+toxic multinodular goiter,2.0,24.0,1
+open wound of the finger,4.0,21.0,1
+autonomic nervous system disorder,6.0,21.166666666666664,1
+psychosexual disorder,4.0,21.0,1
+anemia,5.0,17.0,1
+tendinitis,6.0,18.5,1
+common cold,5.0,49.0,2
+amyotrophic lateral sclerosis (als),4.0,44.75,1
+central retinal artery or vein occlusion,3.0,34.0,1
+paroxysmal supraventricular tachycardia,10.0,20.200000000000003,3
+venous insufficiency,4.0,52.75,2
+trichomonas infection,3.0,28.666666666666664,1
+acne,10.0,33.2,3
+depression,10.0,38.300000000000004,3
+drug abuse,7.0,37.57142857142857,1
+urinary tract obstruction,8.0,59.5,2
+diabetes insipidus,11.0,30.363636363636363,3
+iridocyclitis,7.0,44.0,1
+varicocele of the testicles,6.0,23.5,1
+irritable bowel syndrome,7.0,27.285714285714285,1
+fracture of the foot,9.0,21.555555555555554,1
+ovarian cyst,11.0,33.09090909090909,3
+chlamydia,11.0,44.18181818181818,3
+parasitic disease,3.0,50.666666666666664,2
+fracture of the jaw,4.0,47.25,2
+lipoma,9.0,53.666666666666664,2
+female genitalia infection,6.0,53.0,2
+pulmonary hypertension,7.0,24.57142857142857,1
+thyroid nodule,11.0,73.72727272727273,4
+broken tooth,9.0,49.888888888888886,2
+dumping syndrome,7.0,44.857142857142854,1
+lymphadenitis,7.0,56.0,2
+injury to the face,11.0,48.0,4
+aortic valve disease,6.0,69.16666666666666,2
+rheumatoid arthritis,4.0,29.5,1
+spermatocele,9.0,34.0,1
+impetigo,9.0,22.88888888888889,1
+anal fistula,9.0,52.22222222222222,2
+hypothermia,10.0,47.6,4
+oppositional disorder,3.0,47.33333333333333,2
+migraine,11.0,55.18181818181818,4
+diabetic peripheral neuropathy,9.0,25.0,1
+testicular disorder,3.0,52.33333333333333,2
+gestational diabetes,6.0,69.66666666666666,2
+hidradenitis suppurativa,8.0,24.0,1
+valley fever,6.0,38.0,1
+conjunctivitis due to bacteria,12.0,40.5,3
+lewy body dementia,6.0,36.166666666666664,1
+multiple myeloma,8.0,69.125,2
+head injury,7.0,37.57142857142857,1
+ascending cholangitis,7.0,79.85714285714285,2
+idiopathic irregular menstrual cycle,11.0,30.181818181818183,3
+interstitial lung disease,5.0,14.0,1
+mononeuritis,5.0,51.2,2
+malaria,6.0,19.166666666666664,1
+somatization disorder,8.0,29.75,1
+hypovolemia,4.0,45.75,1
+schizophrenia,6.0,38.83333333333333,1
+knee ligament or meniscus tear,4.0,61.5,2
+endocarditis,4.0,48.75,2
+sepsis,6.0,40.83333333333333,1
+cholecystitis,4.0,19.25,1
+cardiac arrest,4.0,34.0,1
+cardiomyopathy,7.0,23.857142857142854,1
+social phobia,10.0,61.6,4
+meningitis,4.0,92.0,2
+spherocytosis,12.0,57.83333333333333,4
+hormone disorder,8.0,57.625,2
+raynaud disease,6.0,54.166666666666664,2
+reactive arthritis,4.0,53.25,2
+scabies,4.0,33.5,1
+ear wax impaction,3.0,85.66666666666666,2
+hypertension of pregnancy,6.0,48.33333333333333,2
+peripheral arterial embolism,3.0,57.33333333333333,2
+rosacea,4.0,46.25,1
+fracture of the skull,7.0,74.42857142857143,2
+uveitis,4.0,56.25,2
+fracture of the facial bones,6.0,36.0,1
+tracheitis,8.0,47.5,2
+jaw disorder,8.0,15.125,1
+perirectal infection,5.0,63.400000000000006,2
+breast cyst,6.0,51.5,2
+post-traumatic stress disorder (ptsd),10.0,34.6,3
+kidney cancer,6.0,58.5,2
+vulvar cancer,9.0,33.11111111111111,1
+blepharitis,9.0,42.0,1
+celiac disease,6.0,12.833333333333332,1
+cystitis,7.0,48.285714285714285,2
+sickle cell anemia,5.0,16.8,1
+subconjunctival hemorrhage,3.0,55.666666666666664,2
+hemorrhoids,8.0,43.625,1
+contact dermatitis,6.0,53.666666666666664,2
+sinus bradycardia,5.0,39.0,1
+pelvic inflammatory disease,7.0,32.714285714285715,1
+liver disease,4.0,22.25,1
+chronic constipation,5.0,40.2,1
+thyroid cancer,7.0,31.285714285714285,1
+flu,5.0,21.8,1
+friedrich ataxia,3.0,50.0,2
+tic (movement) disorder,11.0,58.18181818181819,4
+skin polyp,8.0,16.875,1
+brachial neuritis,10.0,48.300000000000004,4
+cervical cancer,5.0,55.800000000000004,2
+adrenal adenoma,4.0,38.25,1
+esophagitis,5.0,68.8,2
+yeast infection,11.0,35.54545454545455,3
+spina bifida,7.0,22.0,1
+drug poisoning due to medication,11.0,30.545454545454547,3
+alcoholic liver disease,7.0,31.142857142857142,1
+malignant hypertension,9.0,59.44444444444444,2
+diverticulitis,11.0,48.909090909090914,4
+moyamoya disease,7.0,76.85714285714285,2
+heat exhaustion,7.0,66.14285714285714,2
+psychotic disorder,9.0,48.22222222222222,2
+frostbite,2.0,67.5,2
+atrophy of the corpus cavernosum,11.0,55.27272727272727,4
+smoking or tobacco addiction,3.0,71.66666666666666,2
+sprain or strain,11.0,42.45454545454545,3
+essential tremor,3.0,32.666666666666664,1
+open wound of the ear,2.0,24.5,1
+idiopathic painful menstruation,11.0,28.636363636363637,3
+down syndrome,8.0,47.0,2
+idiopathic infrequent menstruation,8.0,29.75,1
+pneumothorax,6.0,31.5,1
+de quervain disease,5.0,61.0,2
+fracture of the vertebra,10.0,22.400000000000002,3
+mumps,10.0,37.9,3
+subarachnoid hemorrhage,6.0,19.333333333333332,1
+acute fatty liver of pregnancy (aflp),4.0,44.25,1
+ectropion,8.0,70.125,2
+scar,7.0,37.14285714285714,1
+lactose intolerance,7.0,42.714285714285715,1
+eustachian tube dysfunction (ear disorder),6.0,57.0,2
+appendicitis,11.0,28.363636363636363,3
+graves disease,10.0,26.3,3
+dissociative disorder,5.0,51.400000000000006,2
+open wound of the face,8.0,34.625,1
+dislocation of the vertebra,7.0,37.57142857142857,1
+phimosis,2.0,74.0,2
+hyperemesis gravidarum,11.0,40.36363636363637,3
+pregnancy,11.0,28.181818181818183,3
+placenta previa,11.0,30.363636363636363,3
+epidural hemorrhage,11.0,35.81818181818182,3
+septic arthritis,10.0,27.200000000000003,3
+athlete's foot,11.0,60.72727272727273,4
+pleural effusion,5.0,47.400000000000006,2
+aphakia,9.0,63.33333333333333,2
+vulvar disorder,9.0,34.666666666666664,1
+sialoadenitis,8.0,43.5,1
+gynecomastia,8.0,36.875,1
+urinary tract infection,11.0,62.36363636363637,4
+histoplasmosis,11.0,45.36363636363637,3
+erythema multiforme,6.0,35.5,1
+scoliosis,10.0,33.1,3
+bunion,10.0,35.9,3
+arrhythmia,11.0,36.909090909090914,3
+trigeminal neuralgia,11.0,33.54545454545455,3
+ankylosing spondylitis,11.0,47.0,4
+peripheral nerve disorder,9.0,32.33333333333333,1
+sebaceous cyst,7.0,37.14285714285714,1
+poisoning due to antipsychotics,5.0,49.400000000000006,2
+neurosis,5.0,21.8,1
+prostate cancer,3.0,57.33333333333333,2
+cerebral edema,6.0,49.5,2
+dislocation of the finger,12.0,45.25,3
+birth trauma,4.0,56.0,2
+chronic pancreatitis,9.0,33.44444444444444,1
+hematoma,10.0,35.7,3
+seborrheic keratosis,12.0,38.166666666666664,3
+burn,12.0,30.166666666666664,3
+spontaneous abortion,2.0,30.0,1
+genital herpes,12.0,44.75,3
+adjustment reaction,5.0,38.0,1
+gallstone,7.0,61.57142857142857,2
+multiple sclerosis,12.0,56.5,4
+zenker diverticulum,7.0,27.142857142857142,1
+fracture of the pelvis,6.0,50.666666666666664,2
+pneumoconiosis,10.0,47.0,4
+hyperlipidemia,11.0,26.363636363636363,3
+ulcerative colitis,5.0,20.200000000000003,1
+male genitalia infection,6.0,69.0,2
+hpv,8.0,41.5,1
+angina,6.0,70.16666666666666,2
+injury to the spinal cord,7.0,35.285714285714285,1
+nasal polyp,3.0,38.666666666666664,1
+lichen simplex,4.0,49.5,2
+trichiasis,4.0,61.5,2
+acariasis,6.0,37.666666666666664,1
+colorectal cancer,9.0,39.22222222222222,1
+skin pigmentation disorder,12.0,39.33333333333333,3
+factitious disorder,8.0,49.0,2
+lymphogranuloma venereum,10.0,34.7,3
+galactorrhea of unknown cause,8.0,48.875,2
+g6pd enzyme deficiency,3.0,27.333333333333332,1
+nerve impingement near the shoulder,5.0,19.200000000000003,1
+toxoplasmosis,6.0,45.5,1
+fibroadenoma,7.0,74.14285714285714,2
+open wound of the hand,6.0,45.166666666666664,1
+missed abortion,11.0,35.81818181818182,3
+diabetic ketoacidosis,7.0,34.14285714285714,1
+granuloma inguinale,9.0,31.666666666666664,1
+obsessive compulsive disorder (ocd),4.0,25.75,1
+injury of the ankle,4.0,15.5,1
+hyponatremia,7.0,22.142857142857142,1
+stricture of the esophagus,6.0,54.5,2
+fracture of the ankle,8.0,59.75,2
+soft tissue sarcoma,8.0,38.375,1
+bone disorder,8.0,41.75,1
+epilepsy,9.0,18.88888888888889,1
+personality disorder,10.0,19.8,3
+shingles (herpes zoster),10.0,26.3,3
+tourette syndrome,8.0,34.875,1
+avascular necrosis,5.0,55.2,2
+strep throat,5.0,33.800000000000004,1
+spinocerebellar ataxia,2.0,41.0,1
+osteomyelitis,7.0,57.285714285714285,2
+sjogren syndrome,10.0,46.1,3
+adhesive capsulitis of the shoulder,5.0,26.400000000000002,1
+viral hepatitis,2.0,33.5,1
+tonsillar hypertrophy,8.0,55.875,2
+gastritis,2.0,40.0,1
+skin cancer,7.0,49.71428571428571,2
+aphthous ulcer,6.0,20.333333333333332,1
+tonsillitis,4.0,57.75,2
+intestinal cancer,3.0,40.666666666666664,1
+stomach cancer,9.0,53.22222222222222,2
+developmental disability,8.0,52.375,2
+acute stress reaction,8.0,23.0,1
+delirium,5.0,52.800000000000004,2
+callus,9.0,35.666666666666664,1
+guillain barre syndrome,9.0,23.444444444444443,1
+lumbago,11.0,50.45454545454545,4
+deviated nasal septum,10.0,40.1,3
+hemangioma,9.0,33.22222222222222,1
+peripheral arterial disease,3.0,17.0,1
+chronic back pain,9.0,34.44444444444444,1
+heart failure,3.0,37.666666666666664,1
+conjunctivitis,2.0,32.0,1
+herniated disk,12.0,29.583333333333332,3
+rhabdomyolysis,10.0,35.0,3
+breast infection (mastitis),6.0,43.83333333333333,1
+abdominal aortic aneurysm,11.0,33.81818181818182,3
+pulmonary embolism,4.0,53.5,2
+conduct disorder,10.0,19.3,3
+mastectomy,8.0,29.0,1
+epididymitis,8.0,52.0,2
+premature rupture of amniotic membrane,8.0,29.875,1
+molluscum contagiosum,4.0,83.5,2
+necrotizing fasciitis,4.0,41.0,1
+benign vaginal discharge (leukorrhea),10.0,57.1,4
+bladder obstruction,5.0,40.400000000000006,1
+melanoma,9.0,33.666666666666664,1
+cervical disorder,2.0,24.5,1
+laryngitis,5.0,28.0,1
+dyshidrosis,3.0,27.0,1
+poisoning due to opioids,8.0,31.875,1
+diaper rash,6.0,33.666666666666664,1
+lichen planus,5.0,25.400000000000002,1
+gastroduodenal ulcer,4.0,82.75,2
+inguinal hernia,3.0,13.0,1
+eczema,3.0,46.0,1
+asperger syndrome,6.0,16.833333333333332,1
+mucositis,12.0,44.33333333333333,3
+paronychia,3.0,51.0,2
+white blood cell disease,9.0,67.44444444444444,2
+spondylolisthesis,5.0,80.80000000000001,2
+pseudotumor cerebri,3.0,48.33333333333333,2
+conjunctivitis due to virus,9.0,37.44444444444444,1
+open wound of the nose,3.0,58.666666666666664,2
