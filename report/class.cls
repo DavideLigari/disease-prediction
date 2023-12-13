@@ -77,15 +77,16 @@
 % Page setup
 \setlength{\hoffset}{-1in}
 \setlength{\voffset}{-1in}
-\setlength{\oddsidemargin}{1.5cm}
-\setlength{\evensidemargin}{1.5cm}
-\setlength{\topmargin}{0.4cm}
-\setlength{\headheight}{2.3cm}
-\setlength{\headsep}{0.2cm}
-\setlength{\textheight}{25.5 cm}
-\setlength{\textwidth}{17.5cm}
-\setlength{\footskip}{2,3 cm}
-\setlength{\columnsep}{0.5cm}
+\setlength{\oddsidemargin}{2cm}   % Wider margin for odd-numbered pages
+\setlength{\evensidemargin}{2cm}  % Wider margin for even-numbered pages
+\setlength{\topmargin}{1cm}       % Increased margin from the top
+\setlength{\headheight}{1cm}      % Increased height of the header
+\setlength{\headsep}{0.8cm}       % Increased separation between header and text
+\setlength{\textheight}{25cm}     % Increased height of the text area
+\setlength{\textwidth}{17cm}    % Narrower width of the text area
+\setlength{\footskip}{3cm}        % Decreased distance from text to the bottom of the footer
+\setlength{\columnsep}{0.5cm}       % Increased separation between columns in a multi-column layout
+
 
 % Author and Affiliate Setup
 \usepackage[noblocks]{authblk}
