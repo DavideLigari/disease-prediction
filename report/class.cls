@@ -197,7 +197,7 @@
 \renewcommand{\headrulewidth}{0pt}
 \fancypagestyle{FirstPage}{%
   \fancyhf{}
-  \fancyhead[C]{\vcenteredinclude{figures/logo.png}}
+  \fancyhead[C]{}
   \fancyhead[L]{}
   \fancyhead[R]{}
 
