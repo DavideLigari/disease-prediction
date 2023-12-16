@@ -30,12 +30,10 @@ def load_features(names, path = "features/"):
 
      labels = np.load(path + names[0] + ".npz")['y']
      features = np.load(path + names[0] + ".npz")['X']
-     columns = [features.shape[1]]
-     for filename in names[1:]:
+     for filename in names:
           file_path = path + filename + ".npz"
           data = np.load(file_path)
           feature_matrix = data['X']
-          columns.append(feature_matrix.shape[1])
           features = np.concatenate((features, feature_matrix), axis=1)
 
      return features, labels
