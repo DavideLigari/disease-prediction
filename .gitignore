@@ -19,3 +19,5 @@ Presentation/~$Presentation.pptx
 documents/papers/to read/1-s2.0-S0378873322000685-main_highlited.pdf
 code/prediction_model/models/RF_classic.joblib
 code/prediction_model/models/RF_mix.joblib
+code/prediction_model/models/RF_mix_data_norm.joblib
+code/prediction_model/features/RF_mix_data_norm.npz
