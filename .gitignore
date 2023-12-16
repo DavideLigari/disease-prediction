@@ -21,3 +21,4 @@ code/prediction_model/models/RF_classic.joblib
 code/prediction_model/models/RF_mix.joblib
 code/prediction_model/models/RF_mix_data_norm.joblib
 code/prediction_model/features/RF_mix_data_norm.npz
+code/prediction_model/models/RF_mix_norm.joblib
