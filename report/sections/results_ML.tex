@@ -51,12 +51,19 @@ The multi-layer perceptron model exhibits a different performance from the other
 	% - precision, recall, AUC, accuracy
 \subsubsection*{Model Comparison} \label{subsubsec:results_ML_model_comparison}
 
-As depicted in Figure \ref{fig:ML_operative_flow}, we now have six different models: three with only symptoms 
-and three with both symptoms and new features. The best model was selected from each group based on their accuracy 
-values. Figures \ref{fig:acc_symptoms} and \ref{fig:acc_new_features} indicate consistently low overfitting 
-and similar performance across all models in both groups. Despite their varying complexity, the models achieve 
-similar performance on the test set, meaning that a linear separation boundary is sufficient to properly classify
-the features vector. This founds justification in the highly discriminative nature of the features of this dataset.
+As illustrated in Figure \ref{fig:ML_operative_flow}, our model ensemble now comprises six variants: 
+three leveraging only symptoms and three incorporating new network-based features. The selection of 
+the best-performing model from each group was based on test accuracy assessment, where the test is the same balanced dataset
+in all cases. Figure \ref{fig:acc_symptoms} 
+illustrates consistently low overfitting across all models, showcasing the stability of the symptom-only 
+models. In contrast, Figure \ref{fig:acc_new_features}, portraying the accuracy of models with the new 
+features, reveals some overfitting, particularly in the MLP and Random Forest.
+
+The observed tendency for models with new features to exhibit more pronounced overfitting is unsurprising, 
+given the greater number and complexity of these features compared to symptoms. Notably, despite their different
+complexity, all models demonstrate similar test accuracy levels, suggesting that a linear separation 
+boundary suffices for effective feature classification. Considering this, we retain the Logistic Regression 
+model as the best-performing model in each group, striking a balance between performance and complexity.
 
 \begin{figure}[H]
 	\centering
@@ -88,7 +95,7 @@ offer a comparable performance to using symptoms alone. However, It's essential 
 more numerous than the symptoms, contributing to a more complex model. In conclusion, the extracted network 
 features are not a superior alternative to symptoms. 
 
-It is noteworthy that the 'simplicity' of the dataset, leads to a very high accuracy in all models, thus may also affect the performance
+It is worth to underline that the 'simplicity' of the dataset, which leads to a very high accuracy in all models, may also affect the performance
 evaluation of the new features, which have a small room to improve the model. Therefore, a possible avenue
 for future exploration could involve the use of more complex dataset, to better assess the performance of the
 new features.

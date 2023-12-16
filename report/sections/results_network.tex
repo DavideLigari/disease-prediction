@@ -238,7 +238,7 @@ among the symptoms in a more effective manner.
 \end{figure*}
 
 To practically create the classes, we need to define thresholds for L1 and L2. We decided to consider
-a symptom as very important for our model if it is present in less than 0.5 times the average of L1 diseases,
+a symptom as important for the prediction of specific diseases if it is present in less than 0.5 times the average of L1 diseases,
 translating into a threshold of 8.21 for L1. Consequently, we adjusted the L2 threshold to maintain a proper balance
 between the classes, setting it to 8.
 
@@ -268,22 +268,29 @@ As a result, we categorize the features into the following classes:\\
 
 \begin{itemize}
     \setlength\itemsep{1em}
-    \item \textbf{High L1 - High L2}: Symptoms with high degree and high L2. These symptoms are less crucial for
-          prediction as they contribute to many classes (diseases), which are also connected to many other symptoms.
-    \item \textbf{High L1 - Low L2}: Symptoms with high degree and low L2. These symptoms should not be removed a
-          priori since they can be useful. For instance, a symptom may be associated with many diseases, but those
-          diseases may only be associated with that symptom. In this case, the symptom is very important for prediction.
-    \item \textbf{Low L1 - High L2}: Symptoms with low degree and high L2. These symptoms may be important for
-          prediction, as they contribute to few diseases.
-    \item \textbf{Low L1 - Low L2}: Symptoms with low degree and low L2. These symptoms are the most important
-          for prediction since they contribute to few classes (diseases), and those classes are also connected to
-          few other symptoms.
+    \item \textbf{Low L1 - Low L2}: Symptoms with low degree and low L2. These symptoms are connected to few diseases
+    which are also connected to few other symptoms. Therefore, we can expect this symptoms to provide a high
+    contribution to the prediction of few specific diseases.
+
+    \item \textbf{Low L1 - High L2}: Symptoms with low degree and high L2. For these symptoms, the same reasoning
+    as above applies, but with lesser strength. Indeed, these symptoms are connected to few diseases, but those
+    diseases are connected to many other symptoms.
+
+    \item \textbf{High L1 - Low L2}: Symptoms with high degree and low L2. These symptoms may be important for the
+    overall performance of the model. For instance, a symptom may be associated with many diseases, but those
+    diseases may only be associated with that symptom. In this case, the symptom is very important for prediction.
+    Since these symptoms are connected to many diseases, they can be considered important for the overall 
+    performance of the model, even if they are not crucial for the prediction of specific diseases.
+
+    \item \textbf{High L1 - High L2}: Symptoms with high degree and high L2. As for the previous class, 
+    these symptoms are not very specific of a diseases, but we can expect them to be important for the overall
+    accuracy of the model, since they provide information about many diseases.
+
 \end{itemize}
 
 \noindent
-According to the above considerations, we can start from the last class and iteratively add symptoms from the
-other classes, monitoring the impact on both accuracy and training time.
-The results are analyzed in Section~\ref{sec:results_ML}.\\
+To check the soundness of our expectations, together with the effect of this approach on the model's computational
+efficiency, we applied it to the best model and the results are analyzed in Section~\ref{sec:results_ML}.\\
 Figures~\ref{fig:symptoms_classes} and~\ref{fig:l1_l2_division} illustrate the division of symptoms into the four classes.
 The same entire analysis was conducted for diseases, in this case focusing on the high-L1-high-L2 class, which contains
 the most complex diseases under a symptomatology perspective. The results are reported in Figures~\ref{fig:diseases_classes}
@@ -291,8 +298,10 @@ and~\ref{fig:high_l1_high_l2_class}.\\
 
 
 \noindent
-To provide a complete picture of the most important symptoms we report the composition of the low-L1-low-L2 class
-in Figure~\ref{fig:low_l1_low_l2_class}.\\
+To provide a complete picture of the most specific symptoms we report the composition of the low-L1-low-L2 class
+in Figure~\ref{fig:low_l1_low_l2_class}. As we can see there are many symptoms which occur in just one disease.
+Their presence should make their associated diseases the most probable one. As an example, 'vulvar sore' 
+is only present in the diseases 'poisoning due to antihypertensives'.\\
 
 \begin{figure*}[!t]
     \centering
