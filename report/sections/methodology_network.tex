@@ -10,24 +10,22 @@ Additionally, an analysis of the node degree distribution was performed to asses
 The analysis revealed the presence of several symptoms, precisely 52 out of 377, not associated with any disease.
 Consequently, these isolated symptoms were removed from the graph as they do not contribute informative content.
 Diseases without associated symptoms were also removed for the same reason.\\
-Figure \ref{fig:bipartite_graph} illustrates the resulting bipartite graph. As observed, diseases tend to be peripheral,
+Figure~\ref{fig:bipartite_graph} illustrates the resulting bipartite graph. As observed, diseases tend to be peripheral,
 while symptoms tend to be central. This observation arises from the fact that symptoms are shared by multiple diseases,
 whereas diseases exhibit distinct symptoms. Furthermore, symptoms are fewer in number than diseases,
 making it more likely for a symptom to be shared among multiple diseases.\\
-Figure \ref{fig:unipartite_graphs} presents the unipartite graphs of symptoms and diseases.
+Figure~\ref{fig:unipartite_graphs} presents the unipartite graphs of symptoms and diseases.
 \begin{figure*}[thbp]
     \centering
     \includegraphics[width=.9\textwidth]{network.png}
-    \caption{Visual representation of the symptom-disease bipartite graph.}
-    \label{fig:bipartite_graph}
+    \caption{Visual representation of the symptom-disease bipartite graph.}\label{fig:bipartite_graph}
 \end{figure*}
 \noindent
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\columnwidth]{unipartite_networks.png}
-    \caption{Visual representation of symptom and disease unipartite graphs.}
-    \label{fig:unipartite_graphs}
+    \caption{Visual representation of symptom and disease unipartite graphs.}\label{fig:unipartite_graphs}
 \end{figure}
 \noindent
 
@@ -71,9 +69,9 @@ In our effort to identify significant nodes within the symptom-disease network,
 we focus on discerning topological properties that hold statistical significance.
 Our goal is to differentiate higher-order properties that are directly associated with local node features from those
 that emerge from the intricate interactions among nodes.\\
-Relevant studies by \citeauthor{Squartini_2011_a} \cite{Squartini_2011_a, Squartini_2011_b} and \citeauthor{Spelta_2023} \cite{Spelta_2023}
+Relevant studies~\citeauthor{Squartini_2011_a}~\cite{Squartini_2011_a, Squartini_2011_b} and~\citeauthor{Spelta_2023}~\cite{Spelta_2023}
 highlight how higher-order network properties naturally capture structured group interactions.
-Here, a 'group' is defined as all players connected by a 'hyperlink,' representing the higher-order analog of a link.\\
+Here, a `group' is defined as all players connected by a `hyperlink', representing the higher-order analog of a link.\\
 The sampling of random graphs with specified properties plays a pivotal role in network analysis,
 serving as fundamental null models for identifying patterns, including communities and motifs.\\
 To statistically assess the significance of SI and DI, we adopt a hypothesis testing approach based on a null model.
@@ -96,7 +94,7 @@ respectively.
 % ------------------- Betweenness -------------------
 
 \subsection{Betweenness Centrality}
-The betweenness centrality of a node \(v\), as defined by \Citeauthor{Brandes_2008} \cite{Brandes_2008},
+The betweenness centrality of a node \(v\), as defined by \Citeauthor{Brandes_2008}~\cite{Brandes_2008},
 is calculated as the sum of the fraction of all-pairs shortest paths that pass through \(v\):
 
 \begin{equation}
@@ -116,7 +114,7 @@ where:
 \end{itemize}
 \noindent
 To compute the betweenness centrality, the NetworkX function \textit{nx.bipartite.betweenness\_centrality}
-was utilized. This function implements the algorithm proposed by \Citeauthor{Brandes_2004} \cite{Brandes_2004},
+was utilized. This function implements the algorithm proposed by \Citeauthor{Brandes_2004}~\cite{Brandes_2004},
 specifically designed for bipartite graphs, and includes proper normalization for accurate results.
 
 % ------------------- Communities Detection -------------------
@@ -136,12 +134,11 @@ Prior to applying any community detection algorithm, two crucial steps must be p
           for symptoms, each entry \(s_{ij}\) represents the number of times the symptom \(i\) and the symptom \(j\)
           co-occur in the same disease.
 \end{itemize}
-\vspace{0.4cm}
 \noindent
 Once the two graphs, with links weighted by node similarity, are obtained, the community detection algorithm
-can be applied. We utilized the Clauset-Newman-Moore greedy modularity maximization algorithm \cite{Clauset_Newman_Moore_2004},
+can be applied. We utilized the Clauset-Newman-Moore greedy modularity maximization algorithm~\cite{Clauset_Newman_Moore_2004},
 implemented in the NetworkX function \textit{nx.algorithms.community.greedy\_modularity\_communities}. This algorithm aims to
-find the partition of the graph that maximizes modularity, defined by \Citeauthor{Newman_2006} \cite{Newman_2006} as:
+find the partition of the graph that maximizes modularity, defined by \Citeauthor{Newman_2006}~\cite{Newman_2006} as:
 
 \begin{equation}
     Q = \frac{1}{2m} \sum_{ij} \left[A_{ij} - \frac{k_i k_j}{2m}\right] \delta(c_i, c_j) \label{eq:modularity}
