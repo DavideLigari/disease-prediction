@@ -21,7 +21,7 @@ model is reached after the third iteration, with little improvement with respect
 This kind of model seems to favor information about communities and centrality, while the L1 and L2 measures in some cases actually worsen its performance.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\columnwidth]{images/stepwise_acc_logreg.png}
+	\includegraphics[width=\columnwidth]{stepwise_acc_logreg.png}
 	\caption{Accuracy of the logistic regression models over the iterations of the forward stepwise feature selection}\label{fig:stepwise_acc_logreg}
 \end{figure}
 \noindent
@@ -33,7 +33,7 @@ but that might be due to the random choice of the model's parameters.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\columnwidth]{images/stepwise_acc_randomforest.png}
+	\includegraphics[width=\columnwidth]{stepwise_acc_randomforest.png}
 	\caption{Accuracy of the random forest models over the iterations of the stepwise feature selection}\label{fig:stepwise_acc_randomforest}
 \end{figure}
 \noindent
@@ -46,7 +46,7 @@ than the random forest model, but still slightly worse than the logistic regress
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\columnwidth]{images/stepwise_acc_mlp.png}
+	\includegraphics[width=\columnwidth]{stepwise_acc_mlp.png}
 	\caption{Accuracy of the MLP models over the iterations of the stepwise feature selection}\label{fig:stepwise_acc_mlp}
 \end{figure}
 
@@ -76,13 +76,13 @@ model as the best-performing model in each group, striking a balance between per
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\columnwidth]{images/acc_symptoms.png}
+	\includegraphics[width=\columnwidth]{acc_symptoms.png}
 	\caption{Accuracy of the three models with only symptoms}\label{fig:acc_symptoms}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\columnwidth]{images/acc_new_features.png}
+	\includegraphics[width=\columnwidth]{acc_new_features.png}
 	\caption{Accuracy of the three models with new features}\label{fig:acc_new_features}
 \end{figure}
 
@@ -115,7 +115,7 @@ Another viable option for future work is to use the new features as a complement
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\columnwidth]{images/acc_best_models.png}
+	\includegraphics[width=\columnwidth]{acc_best_models.png}
 	\caption{Accuracy of the best models from both groups}\label{fig:acc_best_models}
 \end{figure}
 
@@ -129,8 +129,116 @@ Another viable option for future work is to use the new features as a complement
 % - confusion matrix computed on the 4 class diseases (HighL1 - HighL2, LowL1 - HighL2, ...)
 % - Worst error
 % - Most impactful symptoms
+\subsection*{Performance analysis}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\columnwidth]{conf_matrix_best _model.png}
+	\caption{Confusion matrix of the disease classes}\label{fig:conf_matrix}
+\end{figure}
+\noindent
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\columnwidth]{accuraci_diseases_best_model.png}
+	\caption{Accuracy and f1 score}\label{fig:acc_diseases}
+\end{figure}
+\noindent
 
 
+\rowcolors{2}{green!8}{green!18}
+\begin{table}[H]
+	\centering
+	\small
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Disease                             & Accuracy & f1-score \\
+		\hline
+		mitral valve disease                & 1.0      & 1.000000 \\
+		syndrome of inappropriate secretion & 1.0      & 1.000000 \\
+		acute bronchospasm                  & 1.0      & 1.000000 \\
+		eye alignment disorder              & 1.0      & 1.000000 \\
+		reactive arthritis                  & 1.0      & 1.000000 \\
+		joint effusion                      & 1.0      & 0.985507 \\
+		anal fistula                        & 1.0      & 0.823529 \\
+		open wound of the shoulder          & 1.0      & 0.791667 \\
+		alzheimer disease                   & 1.0      & 0.769231 \\
+		infectious gastroenteritis          & 1.0      & 0.666667 \\
+		\hline
+	\end{tabular}
+	\caption{Accuracy and f1 score for the 10 diseases with the highest accuracy}
+	\label{best}
+\end{table}
+
+
+\rowcolors{2}{red!8}{red!18}
+\begin{table}[H]
+	\centering
+	\small
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Disease                              & Accuracy & f1-score \\
+		\hline
+		premature ventricular contractions   & 0.500000 & 0.666667 \\
+		histoplasmosis                       & 0.498876 & 0.560252 \\
+		hemiplegia                           & 0.483908 & 0.496462 \\
+		acute bronchiolitis                  & 0.473684 & 0.562500 \\
+		poisoning due to antimicrobial drugs & 0.467849 & 0.567968 \\
+		open wound of the mouth              & 0.394890 & 0.564315 \\
+		acute otitis media                   & 0.383938 & 0.468456 \\
+		vitamin b12 deficiency               & 0.333333 & 0.071429 \\
+		bladder cancer                       & 0.288740 & 0.378102 \\
+		otitis media                         & 0.250000 & 0.181818 \\
+		\hline
+	\end{tabular}
+	\caption{Accuracy and f1 score for the 10 diseases with the lowest accuracy}
+	\label{worst}
+\end{table}
+
+\subsubsection*{Analysis of bladder cancer}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\columnwidth]{bladder_cancer_missclassified.png}
+	\caption{Percentage of bladder cancer samples misclassified}\label{fig:cancer_missclassified}
+\end{figure}
+\noindent
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\columnwidth]{cancer_diabet}
+	\caption{number of samples of bladder cancer and diabets insipidus that have the same symptoms}\label{fig:cancer_diabet}
+\end{figure}
+\noindent
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\columnwidth]{cancer_hemiplegia.png}
+	\caption{number of samples of bladder cancer and hemiplegia that have the same symptoms}\label{fig:caner_hemiplegia}
+\end{figure}
+\noindent
+
+\subsubsection*{Analysis of otitis}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\columnwidth]{otitis_missclassified.png}
+	\caption{Percentage of otitis samples misclassified}\label{fig:otitis_missclassified}
+\end{figure}
+\noindent
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\columnwidth]{otitis_itching.png}
+	\caption{number of samples of otitis and itching of unknown cause that have the same symptoms}\label{fig:otitis_itching}
+\end{figure}
+\noindent
+
+\subsection*{Most impactful symptoms}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\columnwidth]{most_important_features.png}
+	\caption{10 most impactful features}\label{fig:most_important_features}
+\end{figure}
+\noindent
 
 \subsection{Computational Complexity}
 % MATTEO
