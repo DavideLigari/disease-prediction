@@ -18,8 +18,7 @@ This narrower range indicates that diseases tend to have a more focused set of a
 \begin{figure}[H]
     \centering
     \includegraphics[width=\columnwidth]{degree_distribution.png}
-    \caption{Degree Distribution (level 1)}
-    \label{fig:DegreeDistribution}
+    \caption{Degree Distribution (level 1)}\label{fig:DegreeDistribution}
 \end{figure}
 
 \subsubsection*{Level-2 Metrics}
@@ -41,8 +40,7 @@ These results highlight the diverse roles played by symptoms and diseases in inf
 \begin{figure}[H]
     \centering
     \includegraphics[width=\columnwidth]{L2_distribution.png}
-    \caption{L2 Distribution for both symptoms and diseases}
-    \label{fig:l2_distribution}
+    \caption{L2 Distribution for both symptoms and diseases}\label{fig:l2_distribution}
 \end{figure}
 \subsubsection*{Power Law CCDF}
 
@@ -63,8 +61,7 @@ emphasizing the existence of highly influential symptoms that play a pivotal rol
 \begin{figure}[H]
     \centering
     \includegraphics[width=\columnwidth]{powerlaw_hid_metrics.png}
-    \caption{Power Law Distribution of the level 1 and level 2 metrics}
-    \label{fig:powerlaw_hid_metrics}
+    \caption{Power Law Distribution of the level 1 and level 2 metrics}\label{fig:powerlaw_hid_metrics}
 \end{figure}
 \subsubsection*{Statistical Validation of SI and DI}
 
@@ -95,8 +92,7 @@ for both symptoms and diseases underscore the diverse and context-dependent natu
 \begin{figure}[H]
     \centering
     \includegraphics[width=\columnwidth]{PDF_z_score.png}
-    \caption{Probability Density Function of the z-scores}
-    \label{fig:pdf_z_score}
+    \caption{Probability Density Function of the z-scores}\label{fig:pdf_z_score}
 \end{figure}
 % END: degree distribution and power law
 
@@ -109,8 +105,7 @@ nodes that act as pivotal connectors, while the majority of nodes exhibit lower 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\columnwidth]{bet_all.png}
-    \caption{Betweenness Centrality CDFs}
-    \label{fig:bet_all}
+    \caption{Betweenness Centrality CDFs}\label{fig:bet_all}
 \end{figure}
 \noindent
 Upon dissecting the centrality values into symptoms and diseases (see Figures~\ref{fig:bet_diseases} and~\ref{fig:bet_symptoms}),
@@ -120,15 +115,13 @@ significance of this result, it's essential to delve into the interpretation of 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\columnwidth]{bet_diseases.png}
-    \caption{Betweenness Centrality of the diseases}
-    \label{fig:bet_diseases}
+    \caption{Betweenness Centrality of the diseases}\label{fig:bet_diseases}
 \end{figure}
 \noindent
 \begin{figure}[H]
     \centering
     \includegraphics[width=\columnwidth]{bet_symptoms.png}
-    \caption{Betweenness Centrality of the symptoms}
-    \label{fig:bet_symptoms}
+    \caption{Betweenness Centrality of the symptoms}\label{fig:bet_symptoms}
 \end{figure}
 \noindent
 In general, a symptom exhibits high betweenness centrality when it is linked to numerous diseases, and these diseases,
@@ -144,8 +137,7 @@ As anticipated, these symptoms are more generic in nature, aligning with their c
 \begin{figure}[H]
     \centering
     \includegraphics[width=\columnwidth]{bet_top.png}
-    \caption{Top 10 nodes with the highest betweenness centrality}
-    \label{fig:bet_top}
+    \caption{Top 10 nodes with the highest betweenness centrality}\label{fig:bet_top}
 \end{figure}
 \noindent
 % END: betweenness centrality
@@ -163,8 +155,7 @@ different communities are illustrated in Figure~\ref{fig:com_sizes_all}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\columnwidth]{com_sizes_all.png}
-    \caption{Sizes of the communities of symptoms and diseases}
-    \label{fig:com_sizes_all}
+    \caption{Sizes of the communities of symptoms and diseases}\label{fig:com_sizes_all}
 \end{figure}
 \noindent
 
@@ -177,8 +168,7 @@ considering that on average each disease has only three symptoms from that commu
 \begin{figure}[H]
     \centering
     \includegraphics[width=\columnwidth]{com1_symptoms.png}
-    \caption{Community 1 of symptoms}
-    \label{fig:com1_symptoms}
+    \caption{Community 1 of symptoms}\label{fig:com1_symptoms}
 \end{figure}
 \noindent
 A similar study can be conducted for communities of diseases, as depicted in Figures~\ref{fig:com1_diseases},
@@ -190,8 +180,7 @@ generic nature and limited discriminatory value.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\columnwidth]{com1_diseases.png}
-    \caption{Community 1 of diseases}
-    \label{fig:com1_diseases}
+    \caption{Community 1 of diseases}\label{fig:com1_diseases}
 \end{figure}
 \noindent
 Transitioning to the creation of features for the ML model, two types of features were developed:\\
@@ -214,8 +203,7 @@ symptom vector. However, we opted for a comprehensive approach using a combinati
 
 % END: communities
 
-\subsection{Most Important Actors}
-\label{subsec:most_important_actors}
+\subsection{Most Important Actors}\label{subsec:most_important_actors}
 % BEGIN: most important symptoms/diseases (4 classes)
 
 As previously mentioned, our objective extends beyond feature extraction; we aim to leverage network information to
@@ -233,8 +221,7 @@ among the symptoms in a more effective manner.
 \begin{figure*}[!t]
     \centering
     \includegraphics[width=\textwidth]{feat_corr.png}
-    \caption{Correlation between features}
-    \label{fig:feat_corr}
+    \caption{Correlation between features}\label{fig:feat_corr}
 \end{figure*}
 
 To practically create the classes, we need to define thresholds for L1 and L2. We decided to consider
@@ -245,15 +232,13 @@ between the classes, setting it to 8.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\columnwidth]{symptoms_classes.png}
-    \caption{Symptoms divided into the four classes}
-    \label{fig:symptoms_classes}
+    \caption{Symptoms divided into the four classes}\label{fig:symptoms_classes}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\columnwidth]{l1_l2_division.png}
-    \caption{Division based on L1 and L2 values}
-    \label{fig:l1_l2_division}
+    \caption{Division based on L1 and L2 values}\label{fig:l1_l2_division}
 \end{figure}
 \noindent
 
@@ -269,22 +254,22 @@ As a result, we categorize the features into the following classes:\\
 \begin{itemize}
     \setlength\itemsep{1em}
     \item \textbf{Low L1 - Low L2}: Symptoms with low degree and low L2. These symptoms are connected to few diseases
-    which are also connected to few other symptoms. Therefore, we can expect this symptoms to provide a high
-    contribution to the prediction of few specific diseases.
+          which are also connected to few other symptoms. Therefore, we can expect this symptoms to provide a high
+          contribution to the prediction of few specific diseases.
 
     \item \textbf{Low L1 - High L2}: Symptoms with low degree and high L2. For these symptoms, the same reasoning
-    as above applies, but with lesser strength. Indeed, these symptoms are connected to few diseases, but those
-    diseases are connected to many other symptoms.
+          as above applies, but with lesser strength. Indeed, these symptoms are connected to few diseases, but those
+          diseases are connected to many other symptoms.
 
     \item \textbf{High L1 - Low L2}: Symptoms with high degree and low L2. These symptoms may be important for the
-    overall performance of the model. For instance, a symptom may be associated with many diseases, but those
-    diseases may only be associated with that symptom. In this case, the symptom is very important for prediction.
-    Since these symptoms are connected to many diseases, they can be considered important for the overall 
-    performance of the model, even if they are not crucial for the prediction of specific diseases.
+          overall performance of the model. For instance, a symptom may be associated with many diseases, but those
+          diseases may only be associated with that symptom. In this case, the symptom is very important for prediction.
+          Since these symptoms are connected to many diseases, they can be considered important for the overall
+          performance of the model, even if they are not crucial for the prediction of specific diseases.
 
-    \item \textbf{High L1 - High L2}: Symptoms with high degree and high L2. As for the previous class, 
-    these symptoms are not very specific of a diseases, but we can expect them to be important for the overall
-    accuracy of the model, since they provide information about many diseases.
+    \item \textbf{High L1 - High L2}: Symptoms with high degree and high L2. As for the previous class,
+          these symptoms are not very specific of a diseases, but we can expect them to be important for the overall
+          accuracy of the model, since they provide information about many diseases.
 
 \end{itemize}
 
@@ -300,14 +285,13 @@ and~\ref{fig:high_l1_high_l2_class}.\\
 \noindent
 To provide a complete picture of the most specific symptoms we report the composition of the low-L1-low-L2 class
 in Figure~\ref{fig:low_l1_low_l2_class}. As we can see there are many symptoms which occur in just one disease.
-Their presence should make their associated diseases the most probable one. As an example, 'vulvar sore' 
-is only present in the diseases 'poisoning due to antihypertensives'.\\
+Their presence should make their associated diseases the most probable one. As an example, `vulvar sore'
+is only present in the diseases `poisoning due to antihypertensives'.\\
 
 \begin{figure*}[!t]
     \centering
     \includegraphics[width=\textwidth]{low_l1_low_l2_class.png}
-    \caption{Composition of the low-L1-low-L2 class for symptoms}
-    \label{fig:low_l1_low_l2_class}
+    \caption{Composition of the low-L1-low-L2 class for symptoms}\label{fig:low_l1_low_l2_class}
 \end{figure*}
 
 % END: most important symptoms/diseases (4 classes)
