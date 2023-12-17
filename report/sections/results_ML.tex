@@ -100,13 +100,11 @@ performance evaluation. The results in Figure~\ref{fig:acc_best_models} reveal a
 the two groups. This addresses our \textbf{first goal}: the new features, while not improving the model,
 offer a comparable performance to using symptoms alone. However, It's essential to note that the new features are
 more numerous than the symptoms, contributing to a more complex model. In conclusion, the extracted network
-features are not a superior alternative to symptoms.
-
+features are not a superior alternative to symptoms.\\
 It is worth to underline that the `simplicity' of the dataset, which leads to a very high accuracy in all models, may also affect the performance
 evaluation of the new features, which have a small room to improve the model. Therefore, a possible avenue
 for future exploration could involve the use of more complex dataset, to better assess the performance of the
-new features.
-
+new features.\\
 Another viable option for future work is to use the new features as a complement to the symptoms.
 
 
@@ -124,16 +122,48 @@ Another viable option for future work is to use the new features as a complement
 % --------------- Best Model Performance ---------------
 
 \subsection{Best Model Analysis}
-% DAVIDE
-% - what are its features
-% - confusion matrix computed on the 4 class diseases (HighL1 - HighL2, LowL1 - HighL2, ...)
-% - Worst error
-% - Most impactful symptoms
+Given that the logistic regression using only symptoms and the one with the new features achieve the same accuracy,
+we have selected the logistic regression with the new features as the superior model for further analysis.
+Considering its greater complexity and the absence of overfitting,
+this model has the potential to capture more nuanced information and intricate patterns.\\
+The model contains 3 group of features: community size, SI index level 2 and community count.
 \subsubsection*{Performance analysis}
+The performance of our predictive model, as demonstrated by the confusion matrix in Figure \ref{fig:conf_matrix},
+is indicative of its capability to effectively distinguish between different disease classes.
+These classes are stratified based on their respective Disease Influence (DI) indices.
+
+\begin{itemize}
+	\item \textbf{Class 1: Low DI L1 - Low DI L2:} Diseases with a low degree (DI L1) and limited connections to other symptoms (DI L2)
+	      tend to be highly specific, which is reflected in the model's precision for such cases.
+	      The confusion matrix exhibits a low misclassification rate for these diseases,
+	      suggesting that when such specific symptoms are presented, the model can predict with high confidence,
+	      albeit for a restricted number of cases.
+
+	\item \textbf{Class 2: Low DI L1 - High DI L2:} Diseases characterized by a low DI L1 but a high DI L2 are connected to a few symptoms,
+	      which in turn are associated with a wider array of other diseases. The model's performance for these diseases,
+	      as shown in the confusion matrix, presents a moderate degree of accuracy.
+	      Misclassifications may occur due to the broader symptom overlap with other diseases.
+
+	\item \textbf{Class 3: High DI L1 - Low DI L2:} A high DI L1 coupled with a low DI L2 signifies diseases with numerous related symptoms,
+	      which however, do not significantly influence other diseases.
+	      The confusion matrix suggests that such diseases are predicted with a considerable degree of accuracy.
+	      The symptoms, while not disease-specific, contribute to a heightened overall model performance due to their prevalence.
+
+	\item \textbf{Class 4: High DI L1 - High DI L2:} Diseases with both high DI L1 and DI L2 indices are those that exhibit common symptoms
+	      influencing a multitude of other diseases. The confusion matrix shows that the model is generally accurate in predicting these diseases.
+	      However, due to the commonality of symptoms, there is an inherent challenge in precisely classifying them,
+	      which could result in a higher misclassification rate with diseases sharing similar symptom profiles.
+\end{itemize}
+\noindent
+The aforementioned analysis underscores the complexity inherent in disease-symptom relationships and their impact on predictive modeling.
+As the confusion matrix corroborates, our model adeptly handles diseases with distinct symptom profiles (Low DI L1 - Low DI L2)
+but is challenged by diseases sharing common symptoms (High DI L1 - High DI L2).
+Consequently, the model's performance is a direct reflection of the nuanced interplay between disease prevalence and symptom specificity,
+as encapsulated by the DI indices.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\columnwidth]{conf_matrix_best _model.png}
-	\caption{Confusion matrix of the disease classes}\label{fig:conf_matrix}
+	\includegraphics[width=\columnwidth]{conf_matrix_best_model.png}
+	\caption{Confusion matrix of the predictive model showing the performance across the four disease classes based on DI indices.}\label{fig:conf_matrix}
 \end{figure}
 \noindent
 
