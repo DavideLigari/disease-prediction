@@ -96,9 +96,10 @@ model as the best-performing model in each group, striking a balance between per
 
 \noindent
 The best model from each group was further trained on the full balanced dataset to ensure a more reliable
-performance evaluation. The results in Figure~\ref{fig:acc_best_models} reveal a minimal difference between
-the two groups. This addresses our \textbf{first goal}: the new features, while not improving the model,
-offer a comparable performance to using symptoms alone. However, It's essential to note that the new features are
+performance evaluation and the test accuracy was computed on the real unbalanced data. 
+The results in Figure~\ref{fig:acc_best_models} reveal a minimal difference between
+the two groups. This addresses our \textbf{first goal}: the new features, only slightly improve the model,
+offering a comparable performance to using symptoms alone. However, It's essential to note that the new features are
 more numerous than the symptoms, contributing to a more complex model. In conclusion, the extracted network
 features are not a superior alternative to symptoms.\\
 It is worth to underline that the `simplicity' of the dataset, which leads to a very high accuracy in all models, may also affect the performance
