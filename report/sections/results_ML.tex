@@ -96,9 +96,10 @@ model as the best-performing model in each group, striking a balance between per
 
 \noindent
 The best model from each group was further trained on the full balanced dataset to ensure a more reliable
-performance evaluation. The results in Figure~\ref{fig:acc_best_models} reveal a minimal difference between
-the two groups. This addresses our \textbf{first goal}: the new features, while not improving the model,
-offer a comparable performance to using symptoms alone. However, It's essential to note that the new features are
+performance evaluation and the test accuracy was computed on the real unbalanced data.
+The results in Figure~\ref{fig:acc_best_models} reveal a minimal difference between
+the two groups. This addresses our \textbf{first goal}: the new features, only slightly improve the model,
+offering a comparable performance to using symptoms alone. However, It's essential to note that the new features are
 more numerous than the symptoms, contributing to a more complex model. In conclusion, the extracted network
 features are not a superior alternative to symptoms.\\
 It is worth to underline that the `simplicity' of the dataset, which leads to a very high accuracy in all models, may also affect the performance
@@ -128,7 +129,7 @@ Considering its greater complexity and the absence of overfitting,
 this model has the potential to capture more nuanced information and intricate patterns.\\
 The model contains 3 group of features: community size, SI index level 2 and community count.
 \subsubsection*{Performance analysis}
-The performance of our predictive model, as demonstrated by the confusion matrix in Figure \ref{fig:conf_matrix},
+The performance of our predictive model, as demonstrated by the confusion matrix in Figure\ref{fig:conf_matrix},
 is indicative of its capability to effectively distinguish between different disease classes.
 These classes are stratified based on their respective Disease Influence (DI) indices.
 
@@ -163,18 +164,35 @@ as encapsulated by the DI indices.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{conf_matrix_best_model.png}
-	\caption{Confusion matrix of the predictive model showing the performance across the four disease classes based on DI indices.}\label{fig:conf_matrix}
+	\caption{Confusion matrix of the predictive model}\label{fig:conf_matrix}
 \end{figure}
 \noindent
-
-\begin{figure}[H]
+Figure\ref{fig:performance_graph} displays a detailed comparison of the model's diagnostic efficacy for a wide range of diseases,
+identified by their numerical codes on the x-axis.
+The graph features two key metrics: the F1 score and accuracy, represented by blue and orange lines, respectively.
+The accuracy line, mostly stable and high, shows the model's consistent ability to correctly detect both presence and absence of each disease.
+In contrast, the F1 score line, more varied, reflects the complexity and variability in predicting disease symptoms,
+illustrating the model's precision and recall for each disease. High points on the F1 score indicate optimal model performance,
+with a balanced precision and recall, effectively identifying true disease cases without errors.
+Low points, however, highlight areas where the model is less effective.
+\begin{figure*}[htbp]
 	\centering
-	\includegraphics[width=\columnwidth]{accuraci_diseases_best_model.png}
-	\caption{Accuracy and f1 score}\label{fig:acc_diseases}
-\end{figure}
-\noindent
-
-
+	\includegraphics[width=\textwidth]{accuraci_diseases_best_model.png}
+	\caption{A comparison of the F1 score and accuracy for each disease predicted by the model.}
+	\label{fig:performance_graph}
+\end{figure*}
+\subsubsection*{Best and worst performing diseases}
+Our diagnostic model's effectiveness is analyzed by assessing its performance across different diseases.\\
+Table\ref{best} lists the top ten diseases where the model demonstrates high accuracy.
+This exceptional performance is further highlighted by near-perfect f1-scores, indicating an optimal balance of precision and recall.
+Diseases like mitral valve disease, syndrome of inappropriate secretion, and acute bronchospasm stand out with f1-scores of 1.0,
+exemplifying the model's precision in diagnosing these conditions without any errors.\\
+On the other hand, Table\ref{worst} outlines the ten diseases with the lowest accuracy,
+indicating areas where the model's diagnostic efficiency is limited. While accuracy is lower for these diseases,
+the f1-scores for conditions like premature ventricular contractions and histoplasmosis reveal that the model,
+when accurate, maintains reasonable precision and recall.
+Nevertheless, the notable decline in f1-score for ailments such as vitamin b12 deficiency and otitis media reveals a significant imbalance
+in the model's diagnostic precision and recall, underscoring the need for targeted improvements in these specific areas.
 \rowcolors{2}{green!8}{green!18}
 \begin{table}[H]
 	\centering
@@ -226,11 +244,21 @@ as encapsulated by the DI indices.
 
 \subsubsection*{Analysis of bladder cancer}
 
-\begin{figure}[H]
+Bladder cancer, as identified in Table\ref{worst}, is a disease with notably low diagnostic accuracy in our model,
+prompting a more detailed investigation. Figure\ref{fig:cancer_missclassified}
+illustrates the proportion of bladder cancer cases incorrectly identified by the model, revealing frequent misclassifications,
+especially as diabetes insipidus and hemiplegia.\\
+Figures\ref{fig:cancer_diabet} and\ref{fig:caner_hemiplegia} delve deeper, showing the number of bladder cancer cases exhibiting
+symptoms akin to diabetes insipidus and hemiplegia, respectively. It's striking that 90\% of bladder cancer samples share
+symptoms with diabetes insipidus and hemiplegia, clarifying why the model often confuses bladder cancer with these diseases.\\
+Moreover, an important factor contributing to this diagnostic challenge is the representation of bladder cancer in our dataset.
+Constituting only 0.36\% of the total data, this limited presence may significantly impact the model's ability to accurately identify bladder cancer,
+leading to its lower accuracy for this specific condition.
+\begin{figure*}[htbp]
 	\centering
-	\includegraphics[width=\columnwidth]{bladder_cancer_missclassified.png}
+	\includegraphics[width=\textwidth]{bladder_cancer_missclassified.png}
 	\caption{Percentage of bladder cancer samples misclassified}\label{fig:cancer_missclassified}
-\end{figure}
+\end{figure*}
 \noindent
 
 \begin{figure}[H]
@@ -249,6 +277,16 @@ as encapsulated by the DI indices.
 
 \subsubsection*{Analysis of otitis}
 
+In a similar vein, we analyzed otitis, another condition exhibiting low diagnostic accuracy.
+Figure\ref{fig:otitis_missclassified} highlights that otitis is frequently misidentified as itching of unknown origin,
+with a significant 70\% of cases being incorrectly classified.\\
+Figure\ref{fig:otitis_itching} further elucidates this issue,
+showing that all otitis samples (100\%) manifest symptoms similar to those of itching of unknown cause.
+This overlap in symptoms is a key reason why the model often mistakes otitis for this condition.\\
+The challenge in accurately diagnosing otitis is compounded by its minimal representation in the dataset, amounting to only 0.0016\%.
+Conversely, itching of unknown cause constitutes a slightly larger portion of the dataset (0.018\%).
+This disparity in representation may bias the model towards more frequently diagnosing itching of unknown cause,
+leading to the observed high rate (70\%) of misclassification of otitis cases.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{otitis_missclassified.png}
@@ -263,11 +301,22 @@ as encapsulated by the DI indices.
 \noindent
 
 \subsection*{Most impactful symptoms}
-\begin{figure}[H]
+Another crucial aspect is to analyze which symptoms are most important for the model.
+Since the multiclass version of logistic regression assigns a weight to each symptom for every class,
+we have calculated the average absolute value of these weights for each symptom.\\
+Figure\ref{fig:most_important_features} shows the 30 most significant symptoms according to the model.
+As can be observed, certain symptoms are more influential. These include both `community size' and `SI index level 2' formats,
+such as `sharp chest pain' and `sharp abdominal pain', among others.\\
+Furthermore, it is noteworthy that among the three network information types obtained,
+none stands out as more important than the others. All three hold significance,
+as both `community size' and `SI index level 2' are equally represented among the most important symptoms,
+and `community count' is significant for the first two out of three communities.
+
+\begin{figure*}[htbp]
 	\centering
-	\includegraphics[width=\columnwidth]{most_important_features.png}
+	\includegraphics[width=\textwidth]{most_important_features.png}
 	\caption{10 most impactful features}\label{fig:most_important_features}
-\end{figure}
+\end{figure*}
 \noindent
 
 \subsection{Computational Complexity}

@@ -15,6 +15,7 @@
 
 
 % Required Packages
+
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{multirow}
@@ -39,6 +40,7 @@
 \usepackage{listings}
 \usepackage{subcaption}
 \usepackage{biblatex}
+
 %%% PDF file setup
 \usepackage[bookmarks,
   bookmarksopen = true,
@@ -74,6 +76,17 @@
   framexleftmargin=0mm,
   rulecolor=\color{white},
 }
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{enumitem} % Customize bullet lists
+\usepackage{biblatex}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
 % Page setup
 \setlength{\hoffset}{-1in}
 \setlength{\voffset}{-1in}
