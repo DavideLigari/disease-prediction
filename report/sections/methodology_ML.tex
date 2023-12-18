@@ -74,6 +74,16 @@ $P(Y=1|X=\mathbf{x_i})$ as \ref{eq:prob}.
 
 \noindent
 \textbf{Random Forest}\vspace{0.15cm}
+A \textit{Random Forest} is an ensemble learning method for classification and regression. It creates a \textit{forest} of decision trees during training and outputs the mode of the classes or the mean prediction of the individual trees. The inference in a Random Forest is given by:
+
+\begin{equation}
+    y(\mathbf{x}) = \frac{1}{B} \sum_{b=1}^{B} T_b(\mathbf{x})
+\end{equation}
+\noindent
+where $B$ is the number of trees in the forest, $T_b$ is the prediction of the $b^{th}$ tree, and $\mathbf{x}$ is the input vector.
+
+Random Forests mitigate overfitting, typical in individual decision trees, by averaging or 'voting' across trees, providing robustness and improved accuracy.
+
 \begin{itemize}
 	\item \textbf{Strengths}: Random Forest is renowned for its robustness in handling large and diverse datasets, making
 	      it well-suited for our expansive dataset with 700 disease classes. Moreover, Its ability to capture non-linear relationships
@@ -84,6 +94,22 @@ $P(Y=1|X=\mathbf{x_i})$ as \ref{eq:prob}.
 
 \noindent
 \textbf{Multilayer Perceptron (MLP)}\vspace{0.15cm}
+A \textit{Multilayer Perceptron (MLP)} is a type of feedforward artificial neural network with one or more hidden layers. It is defined by:
+
+\begin{equation}
+    \mathbf{h}^{(l)} = f(\mathbf{W}^{(l)} \mathbf{h}^{(l-1)} + \mathbf{b}^{(l)})
+\end{equation}
+\noindent
+where $\mathbf{h}^{(l)}$ is the output of the $l^{th}$ layer, $\mathbf{W}^{(l)}$ and $\mathbf{b}^{(l)}$ are the weights and biases of the $l^{th}$ layer, respectively, and $f$ is a nonlinear activation function. The final output $\mathbf{y}$ is given by:
+
+\begin{equation}
+    \mathbf{y} = \mathbf{h}^{(L)}
+\end{equation}
+\noindent
+where $L$ is the total number of layers. MLPs use backpropagation for training and are effective for classification and regression tasks.
+
+In classification tasks, the final layer often includes a softmax function for multiclass problems or a sigmoid function for binary classification, outputting a probability distribution over classes.
+
 \begin{itemize}
 	\item \textbf{Strengths}: MLPs are adept at capturing intricate relationships in high-dimensional datasets,
 	      aligning with the complexity inherent in our 300-feature symptom representation.
