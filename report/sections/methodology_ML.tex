@@ -153,18 +153,18 @@ We trained three different models: a Logistic Regression, a Random Forest, and a
 For each model, we faced the challenge of selecting both the best hyperparameters and the most effective features.
 The interdependence between these two aspects makes the optimal approach to explore all the possible combination of features
 and for each combination trying all the hyperparameters combination. This approach is not feasible in terms of computational effort
-leading us to adopt a greedy approach. We firstly split the features into two
+leading us to adopt a greedy approach whose limits are explained in Section \ref{sec:future_works}\ref{subsec:limits}. We firstly split the features into two
 groups: the symptoms' one-hot vector and the remaining features. The former is used to train a base model,
 while the latter is utilized to explore the potential improvement brought by the new features.\\
 Using Algorithm~\ref{alg:feature_selection}, we determined the best feature combination for each group (symptoms and other features).
 Subsequently, given the optimal feature combination, we identified the best Hyperparameters combination using Algorithm
 ~\ref{alg:greedy_hyperparameter_search}. Each model was then trained with the best hyperparameters and the best features combination.
 For each group of three models available at this point (3 models with symptoms and 3 models with other features), we selected the best one
-according to their accuracy value (Section~\ref{subsubsec:results_ML_model_comparison}).
+according to their accuracy value (Section \ref{sec:results_ML}\ref{subsubsec:results_ML_model_comparison}).
 Only at this point the two winning models were trained with the whole dataset to provide a more precise evaluation of their performance and
 were compared to assess the result of our first Goal.\\
 As regard the last Goal, the best between the above two models undergone the feature reduction process
-discussed in Section~\ref{subsec:most_important_actors} and its computational time was compared to the one of the full features model.\\
+discussed in Section \ref{sec:results_network}\ref{subsec:most_important_actors} and its computational time was compared to the one of the full features model.\\
 
 \begin{algorithm}[h] \small
 	\caption{Feature Selection Algorithm}\label{alg:feature_selection}

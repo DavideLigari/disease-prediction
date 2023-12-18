@@ -124,16 +124,18 @@ Prior to applying any community detection algorithm, two crucial steps must be p
 
 
 \begin{itemize}
-    \setlength\itemsep{1em} % set space between items
+    \setlength\itemsep{1em}
+     % set space between items
+    \item \textbf{Compute Similarity:} The similarity between nodes needs to be computed. For our purposes,
+    a co-occurrence matrix is created for each set of nodes. Taking the example of the co-occurrence matrix
+    for symptoms, each entry \(s_{ij}\) represents the number of times the symptom \(i\) and the symptom \(j\)
+    co-occur in the same disease.
+
     \item \textbf{Graph Projections:} The bipartite graph needs to be projected into two separate graphs,
           one for each set of nodes. In our case, the two sets represent symptoms and diseases. To achieve this,
           the NetworkX function \textit{nx.bipartite.projected\_graph} is employed, returning the projection of
           the bipartite graph onto the specified nodes.
 
-    \item \textbf{Compute Similarity:} The similarity between nodes needs to be computed. For our purposes,
-          a co-occurrence matrix is created for each set of nodes. Taking the example of the co-occurrence matrix
-          for symptoms, each entry \(s_{ij}\) represents the number of times the symptom \(i\) and the symptom \(j\)
-          co-occur in the same disease.
 \end{itemize}
 \noindent
 Once the two graphs, with links weighted by node similarity, are obtained, the community detection algorithm
