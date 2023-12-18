@@ -21,7 +21,7 @@ model is reached after the third iteration, with little improvement with respect
 This kind of model seems to favor information about communities and the L2 measure. The feature about the community count is weak on its own,
 being the only one that adds 3 columns, but it seems to carry complementary information with respect to the other features,
 raising the accuracy by a small margin.
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=\columnwidth]{stepwise_acc_logreg.png}
 	\caption{Accuracy of the logistic regression models over the iterations of the forward stepwise feature selection}\label{fig:stepwise_acc_logreg}
@@ -33,7 +33,7 @@ when it comes to classification.
 It is also worth noting that the best random forest model has a slightly worse accuracy than logistic regression,
 but that might be due to the random choice of the model's parameters.
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=\columnwidth]{stepwise_acc_randomforest.png}
 	\caption{Accuracy of the random forest models over the iterations of the stepwise feature selection}\label{fig:stepwise_acc_randomforest}
@@ -46,7 +46,7 @@ This particular implementation of neural network has one hidden layer with 100 n
 than the random forest model, but still slightly worse than the logistic regression. We expect this to change after the optimization of the hyperparameters,
 due to the ability of the MLP to `see' non-linearities.
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=\columnwidth]{stepwise_acc_mlp.png}
 	\caption{Accuracy of the MLP models over the iterations of the stepwise feature selection}\label{fig:stepwise_acc_mlp}
@@ -63,7 +63,7 @@ Tables~\ref{logistic_regression_hyperparams},~\ref{random_forest_hyperparams}, a
 tested and the best selections for Logistic Regression, Random Forest, and Multi-Layer Perceptron (MLP) respectively.
 
 \rowcolors{2}{blue!8}{blue!18}
-\begin{table}[H]
+\begin{table}[h]
 	\centering
 	\small
 	\begin{tabular}{|c|c|c|}
@@ -81,7 +81,7 @@ tested and the best selections for Logistic Regression, Random Forest, and Multi
 \end{table}
 
 \rowcolors{2}{blue!8}{blue!18}
-\begin{table}[H]
+\begin{table}[h]
 	\centering
 	\small
 	\begin{tabular}{|c|c|c|}
@@ -99,7 +99,7 @@ tested and the best selections for Logistic Regression, Random Forest, and Multi
 \end{table}
 
 \rowcolors{2}{blue!8}{blue!18}
-\begin{table}[H]
+\begin{table}[h]
 	\centering
 	\small
 	\begin{tabular}{|c|c|c|}
@@ -137,13 +137,13 @@ complexity, all models demonstrate similar test accuracy levels, suggesting that
 boundary suffices for effective feature classification. Considering this, we retain the Logistic Regression
 model as the best-performing model in each group, striking a balance between performance and complexity.
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=\columnwidth]{acc_symptoms.png}
 	\caption{Accuracy of the three models with only symptoms}\label{fig:acc_symptoms}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=\columnwidth]{acc_new_features.png}
 	\caption{Accuracy of the three models with new features}\label{fig:acc_new_features}
@@ -175,7 +175,7 @@ Another viable option for future work is to use the new features as a complement
 % THE FIGURE IS THE FIGURE OF MODEL FULLY TRAINED ON THE BALANCED DATASET
 
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=\columnwidth]{acc_best_models.png}
 	\caption{Accuracy of the best models from both groups}\label{fig:acc_best_models}
@@ -224,7 +224,7 @@ As the confusion matrix corroborates, our model adeptly handles diseases with di
 but is challenged by diseases sharing common symptoms (High DI L1 - High DI L2).
 Consequently, the model's performance is a direct reflection of the nuanced interplay between disease prevalence and symptom specificity,
 as encapsulated by the DI indices.
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=\columnwidth]{conf_matrix_best_model.png}
 	\caption{Confusion matrix of the predictive model}\label{fig:conf_matrix}
@@ -324,14 +324,14 @@ leading to its lower accuracy for this specific condition.
 \end{figure*}
 \noindent
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=\columnwidth]{cancer_diabet}
 	\caption{number of samples of bladder cancer and diabets insipidus that have the same symptoms}\label{fig:cancer_diabet}
 \end{figure}
 \noindent
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=\columnwidth]{cancer_hemiplegia.png}
 	\caption{number of samples of bladder cancer and hemiplegia that have the same symptoms}\label{fig:caner_hemiplegia}
@@ -350,13 +350,13 @@ The challenge in accurately diagnosing otitis is compounded by its minimal repre
 Conversely, itching of unknown cause constitutes a slightly larger portion of the dataset (0.018\%).
 This disparity in representation may bias the model towards more frequently diagnosing itching of unknown cause,
 leading to the observed high rate (70\%) of misclassification of otitis cases.
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=\columnwidth]{otitis_missclassified.png}
 	\caption{Percentage of otitis samples misclassified}\label{fig:otitis_missclassified}
 \end{figure}
 \noindent
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=\columnwidth]{otitis_itching.png}
 	\caption{number of samples of otitis and itching of unknown cause that have the same symptoms}\label{fig:otitis_itching}
@@ -397,7 +397,7 @@ features was the one corresponding to the class with both high SI L1 and L2.
 This feature class was the one performing better, with only a few classes that were consistently mispredicted.
 The worst one was the low-low class, which had a class-wise accuracy of less than 20\% for most of the disease classes.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{class_wise_accuracies.png}
 	\caption{Histogram of the class accuracy for each feature group, based on SI L1 and L2.}\label{fig:class_wise_accuracies}
@@ -412,7 +412,7 @@ reduction of 10\% of the accuracy of the complete model, giving up half the data
 This is a good trade-off, but the accuracy is valuable, so we decided to give up at most 1\% accuracy,
 which in this case corresponds to a reduction of the features by almost 30\%.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{accuuracy_vs_features_retained.png}
 	\caption{Comparison between the reduction in features against the reduction on the test accuracy.}\label{fig:accuracy_vs_features_retained}
