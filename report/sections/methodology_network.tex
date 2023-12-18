@@ -2,15 +2,16 @@
 In this section there is a technical description of the methodology used to create and analyze the network.
 
 \subsection{Network Creation}
-In this project, a bipartite graph was created where nodes represent symptoms (lightcoral) and diseases (lightblue),
-and edges denote the presence of symptoms in diseases.
-For simplicity, the graph is unweighted, and all edges have a weight of 1.
 Prior to graph creation, a preliminary data analysis was conducted to identify isolated nodes.
-Additionally, an analysis of the node degree distribution was performed to assess whether the distribution follows a power law (see Section 5.1).\\
 The analysis revealed the presence of several symptoms, precisely 52 out of 377, not associated with any disease.
 Consequently, these isolated symptoms were removed from the graph as they do not contribute informative content.
 Diseases without associated symptoms were also removed for the same reason.\\
-Figure~\ref{fig:bipartite_graph} illustrates the resulting bipartite graph. As observed, diseases tend to be peripheral,
+Additionally, an analysis of the node degree distribution was performed to assess whether the distribution follows a power law (see Section \ref{sec:results_network}\ref{subsubsec:power_law_ccdf}).\\
+
+Finally, a bipartite graph was created where nodes represent symptoms (lightcoral) and diseases (blue),
+and edges denote the presence of symptoms in diseases.
+For simplicity, the graph is unweighted.
+Figure~\ref{fig:bipartite_graph} illustrates the resulting bipartite graph. As showed, diseases tend to be peripheral,
 while symptoms tend to be central. This observation arises from the fact that symptoms are shared by multiple diseases,
 whereas diseases exhibit distinct symptoms. Furthermore, symptoms are fewer in number than diseases,
 making it more likely for a symptom to be shared among multiple diseases.\\
