@@ -57,6 +57,67 @@ due to the ability of the MLP to `see' non-linearities.
 % - Comparison for each model of the selected parameters --> to justify the chosen parameters
 \subsubsection*{Hyperparameters Selection}
 
+The process of hyperparameter tuning was integral to optimizing the performance of our machine learning models.
+We experimented with a range of hyperparameters for each model and identified the best configurations based on test accuracy.
+Tables~\ref{logistic_regression_hyperparams},~\ref{random_forest_hyperparams}, and~\ref{mlp_hyperparams} detail the hyperparameters
+tested and the best selections for Logistic Regression, Random Forest, and Multi-Layer Perceptron (MLP) respectively.
+
+\rowcolors{2}{blue!8}{blue!18}
+\begin{table}[H]
+	\centering
+	\small
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{Hyperparameters} & \textbf{Test}                                                                                   & \textbf{Best}                                               \\
+		\hline
+		C                        & \begin{tabular}[c]{@{}c@{}}0.001, 0.01, 0.1, 0.5,\\ 0.75, 1, 1.25,\\ 1.50, 10, 100\end{tabular} & 1.5                                                         \\
+		max iter                 & \begin{tabular}[c]{@{}c@{}}100, 200, 300,\\ 500, 1000\end{tabular}                              & \begin{tabular}[c]{@{}c@{}}Until\\ Convergence\end{tabular} \\
+		penalty                  & \begin{tabular}[c]{@{}c@{}}l1, l2,\\ None\end{tabular}                                          & l2                                                          \\
+		solver                   & \begin{tabular}[c]{@{}c@{}}lbfgs,\\ liblinear,\\ newton-cg\end{tabular}                         & lbfgs                                                       \\
+		\hline
+	\end{tabular}
+	\caption{Best Hyperparameters for Logistic Regression}
+	\label{logistic_regression_hyperparams}
+\end{table}
+
+\rowcolors{2}{blue!8}{blue!18}
+\begin{table}[H]
+	\centering
+	\small
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{Hyperparameters} & \textbf{Test}                                                                    & \textbf{Best} \\
+		\hline
+		n estimators             & \begin{tabular}[c]{@{}c@{}}50, 80, 100,\\ 200, 300, 400,\\ 500, 600\end{tabular} & 600           \\
+		max depth                & \begin{tabular}[c]{@{}c@{}}25, 50, 60,\\ 75, 100, None\end{tabular}              & 50            \\
+		min samples split        & \begin{tabular}[c]{@{}c@{}}2, 5,\\ 10, 20\end{tabular}                           & 2             \\
+		min samples leaf         & \begin{tabular}[c]{@{}c@{}}1, 2,\\ 5, 10\end{tabular}                            & 1             \\
+		\hline
+	\end{tabular}
+	\caption{Best Hyperparameters for Random Forest}
+	\label{random_forest_hyperparams}
+\end{table}
+
+\rowcolors{2}{blue!8}{blue!18}
+\begin{table}[H]
+	\centering
+	\small
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{Hyperparameters} & \textbf{Test}                                                                                                                                                  & \textbf{Best}     \\
+		\hline
+		First hidden layer       & \begin{tabular}[c]{@{}c@{}} (300)\\ (400)\\(100, 50)\\(500, 200)\\ (60), (80)\\(100), (200)\\ (100, 100, 100)\\ (900, 800, 700)\\ (700, 300, 100)\end{tabular} & (80)              \\
+		max iter                 & \begin{tabular}[c]{@{}c@{}}100, 200\\ 300, 500\\ 1000\end{tabular}                                                                                             & Until Convergence \\
+		alpha                    & \begin{tabular}[c]{@{}c@{}}0.0001, 0.001\\ 0.01, 0.1, 1\end{tabular}                                                                                           & 0.0001            \\
+		activation               & \begin{tabular}[c]{@{}c@{}}relu, tanh\\ logistic, identity\end{tabular}                                                                                        & relu              \\
+		\hline
+	\end{tabular}
+	\caption{Best Hyperparameters for MLP}
+	\label{mlp_hyperparams}
+\end{table}
+\noindent
+These hyperparameter configurations were carefully selected to maximize the performance of each model. The Logistic Regression model, with its optimal C value and penalty type, demonstrates a balance between model complexity and regularization. The Random Forest model's parameters, such as the number of estimators and maximum depth, were chosen to balance the bias-variance trade-off, ensuring robustness and generalization. Lastly, the MLP model, with its specific hidden layer sizes and activation function, was configured to effectively capture complex, non-linear relationships in the data.
+
 
 % ANDREA
 % - Comparison of the three models with best combination of features and best parameters
