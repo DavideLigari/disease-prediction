@@ -49,40 +49,44 @@ Our selection narrows down to three models renowned for their robust predictive 
 as substantiated by the findings of \citeauthor{Kohli}~\cite{Kohli}, \citeauthor{Singh}~\cite{Singh}, and \citeauthor{Uddin2019Dec}~\cite{Uddin2019Dec}.
 These models are Logistic Regression, Random Forest, and Multilayer Perceptron (MLP).\\
 
-
+\vspace{0.3cm}
 \noindent
-\textbf{Logistic Regression}\vspace{0.15cm}
-\subsection{Logistic Regression}
-As a discriminative model, it classifies data by learning the boundary directly. Specifically, it learns the function \ref{eq:funct} and estimates 
-$P(Y=1|X=\mathbf{x_i})$ as \ref{eq:prob}. 
+\textbf{Logistic Regression}\vspace{0.15cm}\\
+Multinomial Logistic Regression, also known as \textit{softmax regression}, extends logistic regression to multi-class classification problems. It models the probability of each class as a function of the input features. The model is given by:
 
-\vspace{0cm}
-\begin{equation} \label{eq:funct}
-    z_i = b_i + w_1x_{i1} + w_2x_{i2} + .... + w_nx_{in}
+\begin{equation}
+    \hat{P}(Y = k | \mathbf{x}) = \frac{e^{\mathbf{w}_k^\top \mathbf{x} + bk}}{\sum_{j=1}^{K} e^{\mathbf{w}_j^\top \mathbf{x} + b_j}}
 \end{equation}
-\vspace{0cm}
-\begin{equation} \label{eq:prob}
-    \hat{p_i}=\frac {1}{1+e^{-z_i}}
+\noindent
+where $\mathbf{x}$ is the input feature vector, $\mathbf{w}_k$ is the weight vector for class $k$, $b_k$ is the bias term for class $k$, and $K$ is the total number of classes.\\
+The output $\hat{P}(Y = k | \mathbf{x})$ is the estimated probability that the input $\mathbf{x}$ belongs to class $k$. The model predicts the class with the highest probability as the output:
+
+\begin{equation}
+    \hat{y} = \underset{k}{\arg\max} \left\{ \hat{P}(Y = k | \mathbf{x}) \right\}
 \end{equation}
-\vspace{0cm}
+\noindent
+Multinomial logistic regression is widely used for classification problems where the output can belong to more than two discrete classes. It is a generalization of binary logistic regression and retains its properties as a linear model, making it interpretable and efficient for high-dimensional datasets.
+
 \begin{itemize}
 	\item \textbf{Strengths}: Logistic Regression's computational efficiency makes it an attractive choice for initial exploration and
 	      baseline performance assessment. Its simplicity facilitates interpretability, providing insights into the impact of individual symptoms on disease prediction.
 	\item \textbf{Considerations}: While efficient, Logistic Regression assumes a linear relationship between features and the
 	      log-odds of the target, potentially limiting its ability to capture complex non-linear patterns.
 \end{itemize}
+\vspace{0.3cm}
 
 \noindent
-\textbf{Random Forest}\vspace{0.15cm}
-A \textit{Random Forest} is an ensemble learning method for classification and regression. It creates a \textit{forest} of decision trees during training and outputs the mode of the classes or the mean prediction of the individual trees. The inference in a Random Forest is given by:
+\textbf{Random Forest}\vspace{0.15cm}\\
+A \textit{Random Forest} is an ensemble learning technique used primarily for classification. It constructs a multitude of decision trees during training and integrates their outcomes to improve the final prediction accuracy. The classification decision in a Random Forest is based on the majority voting system among all trees. 
+The prediction for a class label $\hat{y}$ for an input vector $\mathbf{x}$ is given by:
 
 \begin{equation}
-    y(\mathbf{x}) = \frac{1}{B} \sum_{b=1}^{B} T_b(\mathbf{x})
+\hat{y}(\mathbf{x}) = \text{mode} \left\{ T_1(\mathbf{x}), T_2(\mathbf{x}), \ldots, T_B(\mathbf{x}) \right\}
 \end{equation}
 \noindent
-where $B$ is the number of trees in the forest, $T_b$ is the prediction of the $b^{th}$ tree, and $\mathbf{x}$ is the input vector.
-
-Random Forests mitigate overfitting, typical in individual decision trees, by averaging or 'voting' across trees, providing robustness and improved accuracy.
+where $B$ is the number of trees in the forest, and $T_b(\mathbf{x})$ is the prediction of the $b^{th}$ tree.
+\noindent
+The Random Forest algorithm improves classification accuracy by reducing overfitting, a common problem in individual decision trees. This is achieved by creating diversity in the trees through random selection of features and samples, and then aggregating
 
 \begin{itemize}
 	\item \textbf{Strengths}: Random Forest is renowned for its robustness in handling large and diverse datasets, making
@@ -93,22 +97,28 @@ Random Forests mitigate overfitting, typical in individual decision trees, by av
 \end{itemize}
 
 \noindent
-\textbf{Multilayer Perceptron (MLP)}\vspace{0.15cm}
-A \textit{Multilayer Perceptron (MLP)} is a type of feedforward artificial neural network with one or more hidden layers. It is defined by:
+\vspace{0.3cm}
+\textbf{Multilayer Perceptron (MLP)}\vspace{0.15cm}\\
+A \textit{Multilayer Perceptron (MLP)} is a type of feedforward artificial neural network, commonly used for classification tasks. It consists of multiple layers of nodes: an input layer, one or more hidden layers, and an output layer. The output of each layer is computed as:
 
 \begin{equation}
-    \mathbf{h}^{(l)} = f(\mathbf{W}^{(l)} \mathbf{h}^{(l-1)} + \mathbf{b}^{(l)})
+    \mathbf{h}^{(l)} = f(\mathbf{W}^{(l)} \mathbf{h}^{(l-1)} + \mathbf{b}^{(l)}) = f(\mathbf{z}^{(l)})
 \end{equation}
 \noindent
-where $\mathbf{h}^{(l)}$ is the output of the $l^{th}$ layer, $\mathbf{W}^{(l)}$ and $\mathbf{b}^{(l)}$ are the weights and biases of the $l^{th}$ layer, respectively, and $f$ is a nonlinear activation function. The final output $\mathbf{y}$ is given by:
+where $\mathbf{h}^{(l)}$ is the output of the $l^{th}$ layer, $\mathbf{W}^{(l)}$ and $\mathbf{b}^{(l)}$ are the weights and biases of the $l^{th}$ layer, respectively, and $f$ is a nonlinear activation function.\\
+For classification, the final layer typically uses a softmax activation function to output a probability distribution over the classes. The class with the highest probability is selected as the model's prediction. The softmax function in the output layer for a classification problem with $K$ classes is given by:
 
 \begin{equation}
-    \mathbf{y} = \mathbf{h}^{(L)}
+    \text{softmax}(\mathbf{z})_i = \frac{e^{zi}}{\sum_{k=1}^{K} e^{z_k}} \quad \text{for } i = 1, \ldots, K
 \end{equation}
 \noindent
-where $L$ is the total number of layers. MLPs use backpropagation for training and are effective for classification and regression tasks.
+where $\mathbf{z}$ is the input to the softmax function, typically the output of the last hidden layer of the network. The final output $\mathbf{y}$ is given by:
 
-In classification tasks, the final layer often includes a softmax function for multiclass problems or a sigmoid function for binary classification, outputting a probability distribution over classes.
+\begin{equation}
+	\mathbf{y} = \arg\max \left\{ \text{softmax}(\mathbf{z}^{(L)}) \right\}
+\end{equation}
+\noindent
+where $L$ is the total number of layers. The MLP is trained using backpropagation, adjusting its weights and biases to minimize the error in its predictions for the training data.
 
 \begin{itemize}
 	\item \textbf{Strengths}: MLPs are adept at capturing intricate relationships in high-dimensional datasets,
