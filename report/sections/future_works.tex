@@ -1,5 +1,37 @@
-\section{Future Works}
+\section{Limits and Future Works}
+
+To get to the final model, we had to pass through many choices and decisions. We had to take decisions on the models to use, on the features to use and how to 
+make them work together using normalization, on the hyperparameters to use during training and on the way to evaluate the model. Not less important, we had also
+to decide about a strategy for the feature reduction goal. The strict interdependence between all these choices forced us to make some compromises, which may lead
+to suboptimal results. 
+In this section we address some of the limits of our work and we propose some ideas for future works.
+
+\subsection{Limits}
 % - our approach in feature selection and parameters search is not optimal 
+\begin{itemize}
+	\item \textbf{Feature selection}: as illustrated in Figure \ref{fig:ML_operative_flow}, prior to the hyperparameters tuning we selected the best
+	features using the default hyperparameters values offered by the \textit{scikit-learn} library. As a consequence this approach may lead to the
+	choice of a only apparently optimal set of features, since the two aspects are strictly related.
+
+	\item \textbf{Hyperparameters tuning}: the best combination of hyperparameters was found using the accuracy as metric. Despite
+	to have a reliable accuracy estimation we used a stratified cross-validation on a balanced dataset, the accuracy may not be the best metric.
+	A more complete approach should consider also other metrics like precision, recall and F1-score. 
+	
+	\item \textbf{Feature reduction}: the feature reduction process was performed evenly separating the 4 classes of symptoms and starting
+	retaining features from the class showing the highest predictive power. This approach may lead to a suboptimal feature reduction, since
+	there may be a specific threshold starting from which the predictive power of a feature becomes less relevant.
+	To better clarify this concept, let's consider the following example: suppose we have only two classes of symptoms, evenly distributed 
+	using the median as a threshold on the degree value. Suppose also that the predictive power of the features is the same for both classes.
+	In this case we cannot actually say that the degree doesn't impact the predictive power of the model. Indeed in the high degree class
+	we can have put lots of features with a degree not sufficiently high to become less relevant and these diseases end up
+	altering the result of the whole class, especially in a power law distribution context. 
+
+	A possible improved approach consist in using a manual threshold for the degree value, to find the real most useful features, possibly creating
+	unbalanced classes.
+\end{itemize}
+
+\subsection{Future Works}
+
 % - list the possible issues (e.g. we are training model on diverse features with the optimal parameters for other features)
 % - exploit the knowledge of symptoms communities and their most pointed diseases, using it at prior probability for the model classification
 % - analysis of diseases complexity based on the difficulty of the model to predict them, changing L1 and L2 thresholds.
