@@ -279,14 +279,14 @@ As a result, we categorize the features into the following classes:\\
 \end{itemize}
 
 \noindent
-As it stands it may not be clear which are the category of symptoms we can get rid of. One can thing that the symptoms having bot L1
+As it stands it may not be clear which are the category of symptoms we can get rid of. One can think that the symptoms having bot L1
 and L2 low can be the most useful, since they are specific, thus very informative. At the same time the symptoms having both L1 and L2 high
-can be the least useful, since a symptoms actually appears in many diseases, thus doesn't provide much information.
+can be the least useful, since a symptom actually appears in many diseases, thus doesn't provide much information.
 However we should consider also the model viewpoint. Indeed, if we retain only the symptoms with both L1 and L2 low, we end up
 having information about only few diseases, and the model may not be able to learn the patterns of the other diseases, leading
-to a poor result in the accuracy. To investigate this aspect, once again we used a greedy approach, starting from evenly distributed
-classes, and starting retaining features from the most promising. This procedure, whose limits are discussed in
-Section \ref{sec:future_works}\ref{subsec:limits}, was applied it to the best model and the results are analyzed in 
+to a poor result in the overall accuracy. To investigate this aspect, once again we adopted a greedy approach, starting from evenly distributed
+classes, and starting retaining features from the most promising one. This procedure, whose limits are discussed in
+Section \ref{sec:future_works}\ref{subsec:limits}, was applied to the best model and the results are analyzed in 
 Section \ref{sec:results_ML}\ref{subsec:computational_complexity}.\\
 Figures \ref{fig:symptoms_classes} and \ref{fig:l1_l2_division} illustrate the division of symptoms into the four classes.
 The same entire analysis was conducted for diseases, in this case focusing on the high-L1-high-L2 class, which contains
