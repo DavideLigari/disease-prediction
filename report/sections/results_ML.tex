@@ -18,16 +18,14 @@ following a greedy a approach that aims at maximizing the accuracy. The hyperpar
 values provided by the library scikit-learn.\\
 As depicted in Figure~\ref{fig:stepwise_acc_logreg}, we can see that the best accuracy with the logistic regression
 model is reached after the third iteration, with little improvement with respect to the model using a single feature.
-This kind of model seems to favor information about communities and centrality, while the L1 and L2 measures in some cases actually worsen its performance.
+This kind of model seems to favor information about communities and the L2 measure. The feature about the community count is weak on its own, being the only one that adds 3 columns, but it seems to carry complementary information with respect to the other features, raising the accuracy by a small margin.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{stepwise_acc_logreg.png}
 	\caption{Accuracy of the logistic regression models over the iterations of the forward stepwise feature selection}\label{fig:stepwise_acc_logreg}
 \end{figure}
 \noindent
-Figure~\ref{fig:stepwise_acc_randomforest} shows that the random forest models behave similarly to the logistic regression,
-as the best accuracy is reached after the same number of steps, employing the same features.
-These results start to reveal which features are the best when it comes to classification.
+Figure~\ref{fig:stepwise_acc_randomforest} shows that the random forest models work best with less information than logistic regression. In this case the only features retained are the ones about communities: these results start to reveal which features are the most useful when it comes to classification.
 It is also worth noting that the best random forest model has a slightly worse accuracy than logistic regression,
 but that might be due to the random choice of the model's parameters.
 
@@ -37,12 +35,10 @@ but that might be due to the random choice of the model's parameters.
 	\caption{Accuracy of the random forest models over the iterations of the stepwise feature selection}\label{fig:stepwise_acc_randomforest}
 \end{figure}
 \noindent
-The multi-layer perceptron model exhibits a different performance from the other two,
-given by the fact that the accuracy starts to lower after adding the second feature.
-As underlined by Figure~\ref{fig:stepwise_acc_mlp}, with respect to the other models information about the betweenness
-is not needed to achieve the best possible results, which could be explained by the better ability of the MLP to adapt to non-linearities.
+The multi-layer perceptron model stands in the middle with respect to the other two models in terms of accuracy.
+As underlined by Figure~\ref{fig:stepwise_acc_mlp}, unlike the other two cases the model performs its prediction by leveraging only the L2 features, enhanced by the smaller community count. Two steps are enough to reach the best possible test accuracy.
 This particular implementation of neural network has one hidden layer with 100 neurons, and in our case its performance is better
-than the random forest model, but still slightly worse than the logistic regression. We expect this to change after the optimization of the hyperparameters.
+than the random forest model, but still slightly worse than the logistic regression. We expect this to change after the optimization of the hyperparameters, due to the ability of the MLP to "see" non-linearities.
 
 \begin{figure}[H]
 	\centering
@@ -167,7 +163,7 @@ as encapsulated by the DI indices.
 	\caption{Confusion matrix of the predictive model}\label{fig:conf_matrix}
 \end{figure}
 \noindent
-Figure\ref{fig:performance_graph} displays a detailed comparison of the model's diagnostic efficacy for a wide range of diseases,
+Figure \ref{fig:performance_graph} displays a detailed comparison of the model's diagnostic efficacy for a wide range of diseases,
 identified by their numerical codes on the x-axis.
 The graph features two key metrics: the F1 score and accuracy, represented by blue and orange lines, respectively.
 The accuracy line, mostly stable and high, shows the model's consistent ability to correctly detect both presence and absence of each disease.
@@ -304,7 +300,7 @@ leading to the observed high rate (70\%) of misclassification of otitis cases.
 Another crucial aspect is to analyze which symptoms are most important for the model.
 Since the multiclass version of logistic regression assigns a weight to each symptom for every class,
 we have calculated the average absolute value of these weights for each symptom.\\
-Figure\ref{fig:most_important_features} shows the 30 most significant symptoms according to the model.
+Figure \ref{fig:most_important_features} shows the 30 most significant symptoms according to the model.
 As can be observed, certain symptoms are more influential. These include both `community size' and `SI index level 2' formats,
 such as `sharp chest pain' and `sharp abdominal pain', among others.\\
 Furthermore, it is noteworthy that among the three network information types obtained,
@@ -325,7 +321,37 @@ and `community count' is significant for the first two out of three communities.
 % - compare the performance of the reduced model with the original one
 % - precision, recall, AUC, accuracy
 % - compare the times needed to train the two models
+After confirming the presence of some symptoms that are more impactful than others, we applied a reduction technique based on their importance, leveraging the division into four classes based on the L1 and L2 Symptom Influence indexes (SI). The first test was to divide the data into four balanced classes, containing 25\% of the features each. As shown by Figure \ref{fig:class_wise_accuracies}, the most impactful set of features was the one corresponding to the class with both high SI L1 and L2. This feature class was the one performing better, with only a few classes that were consistently mispredicted. The worst one was the low-low class, which had a class-wise accuracy of less than 20\% for most of the disease classes.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\columnwidth]{class_wise_accuracies.png}
+	\caption{Histogram of the class accuracy for each feature group, based on SI L1 and L2.}\label{fig:class_wise_accuracies}
+\end{figure}
+
+Even then, the high-high class by itself would not be a sufficiently good set of features to make predictions, so it was used as a baseline to expand the feature set, retaining increasingly more features. As it can be seen from Figure \ref{fig:accuracy_vs_features_retained}, the model performance is quite good even when using only a limited amount of features, reaching around 80\% test accuracy when using half of the features, which corresponds to a reduction of 10\% of the accuracy of the complete model, giving up half the data. This is a good trade-off, but the accuracy is valuable, so we decided to give up at most 1\% accuracy, which in this case corresponds to a reduction of the features by almost 30\%.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\columnwidth]{accuuracy_vs_features_retained.png}
+	\caption{Comparison between the reduction in features against the reduction on the test accuracy.}\label{fig:accuracy_vs_features_retained}
+\end{figure}
+
+To assess how the reduction of the complexity of the model impacts the training, we repeated the training phase on the whole balanced dataset, recording the difference in time between the two models. In the end, the experimental results showed a reduction in training time of 9.39\% caused by a reduction of the training features of 27.87\%. The relative time reduction is lower in comparison to the whole model, but it shows promising results that could possibly be even more impactful when dealing with more complex models.  
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\columnwidth]{features_vs_time.png}
+	\caption{Visual rendition of the training time reduction compared to the features.}\label{fig:features_vs_time}
+\end{figure}
+
+Given the reduction of the features of almost 30\%, the accuracy went down by around a percent and a half, but to really assess the quality of the reduced model, we cannot rely only on the test accuracy. Other metrics were employed for the evaluation, which were the precision, recall, and AUC of the ROC. As depicted by Figure \ref{fig:precision_recall_auc}, the data showed a similar difference in these metrics, with the exeption of the AUC being almost identical. This helped us understand that the reduction on the features didn't cause the model to perform well on just the most frequent classes, but resulted in a good performance across the whole data.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\columnwidth]{precision_recall_auc.png}
+	\caption{comparison of various metrics which are useful to asses the relative quality of the reduced model.}\label{fig:precision_recall_auc}
+\end{figure}
 
 % CRISTIAN
 % - 6 Modelli: 3 con solo sintomi, 3 con nuove features
