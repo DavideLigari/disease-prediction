@@ -279,14 +279,21 @@ As a result, we categorize the features into the following classes:\\
 \end{itemize}
 
 \noindent
-To check the soundness of our expectations, together with the effect of this approach on the model's computational
-efficiency, we applied it to the best model and the results are analyzed in Section~\ref{sec:results_ML}.\\
-Figures~\ref{fig:symptoms_classes} and~\ref{fig:l1_l2_division} illustrate the division of symptoms into the four classes.
+As it stands it may not be clear which are the category of symptoms we can get rid of. One can thing that the symptoms having bot L1
+and L2 low can be the most useful, since they are specific, thus very informative. At the same time the symptoms having both L1 and L2 high
+can be the least useful, since a symptoms actually appears in many diseases, thus doesn't provide much information.
+However we should consider also the model viewpoint. Indeed, if we retain only the symptoms with both L1 and L2 low, we end up
+having information about only few diseases, and the model may not be able to learn the patterns of the other diseases, leading
+to a poor result in the accuracy. To investigate this aspect, once again we used a greedy approach, starting from evenly distributed
+classes, and starting retaining features from the most promising. This procedure, whose limits are discussed in
+Section \ref{sec:future_works}\ref{subsec:limits}, was applied it to the best model and the results are analyzed in 
+Section \ref{sec:results_ML}\ref{subsec:computational_complexity}.\\
+Figures \ref{fig:symptoms_classes} and \ref{fig:l1_l2_division} illustrate the division of symptoms into the four classes.
 The same entire analysis was conducted for diseases, in this case focusing on the high-L1-high-L2 class, which contains
-the most complex diseases under a symptomatology perspective. The results are reported in Figures~\ref{fig:diseases_classes}
-and~\ref{fig:high_l1_high_l2_class}.\\
+the most complex diseases under a symptomatology perspective. The results are reported in Figures \ref{fig:diseases_classes}
+and \ref{fig:high_l1_high_l2_class}.\\
 To provide a complete picture of the most specific symptoms we report the composition of the low-L1-low-L2 class
-in Figure~\ref{fig:low_l1_low_l2_class}. As we can see there are many symptoms which occur in just one disease.
+in Figure \ref{fig:low_l1_low_l2_class}. As we can see there are many symptoms which occur in just one disease.
 Their presence should make their associated diseases the most probable one. As an example, `vulvar sore'
 is only present in the diseases `poisoning due to antihypertensives'.\\
 
