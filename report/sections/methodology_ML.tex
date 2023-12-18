@@ -52,6 +52,19 @@ These models are Logistic Regression, Random Forest, and Multilayer Perceptron (
 
 \noindent
 \textbf{Logistic Regression}\vspace{0.15cm}
+\subsection{Logistic Regression}
+As a discriminative model, it classifies data by learning the boundary directly. Specifically, it learns the function \ref{eq:funct} and estimates 
+$P(Y=1|X=\mathbf{x_i})$ as \ref{eq:prob}. 
+
+\vspace{0cm}
+\begin{equation} \label{eq:funct}
+    z_i = b_i + w_1x_{i1} + w_2x_{i2} + .... + w_nx_{in}
+\end{equation}
+\vspace{0cm}
+\begin{equation} \label{eq:prob}
+    \hat{p_i}=\frac {1}{1+e^{-z_i}}
+\end{equation}
+\vspace{0cm}
 \begin{itemize}
 	\item \textbf{Strengths}: Logistic Regression's computational efficiency makes it an attractive choice for initial exploration and
 	      baseline performance assessment. Its simplicity facilitates interpretability, providing insights into the impact of individual symptoms on disease prediction.
