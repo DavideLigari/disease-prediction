@@ -1,37 +1,48 @@
 \section{Limits and Future Works}
 
-To get to the final model, we had to pass through many choices and decisions. We had to take decisions on the models to use, on the features to use and how to 
-make them work together using normalization, on the hyperparameters to use during training and on the way to evaluate the model. Not less important, we had also
-to decide about a strategy for the feature reduction goal. The strict interdependence between all these choices forced us to make some compromises, which may lead
-to suboptimal results. 
-In this section we address some of the limits of our work and we propose some ideas for future works.
+In the pursuit of our final model, we navigated through a series of pivotal decisions, ranging from model selection, feature choices, 
+and the intricate interplay of normalization techniques to hyperparameter tuning. These decisions, while steering us toward a robust model, 
+come with inherent trade-offs, potentially leading to suboptimal outcomes. Here, we discuss some limitations in our approach and suggest 
+avenues for future exploration.
 
 \subsection{Limits}
-% - our approach in feature selection and parameters search is not optimal 
+
 \begin{itemize}
-	\item \textbf{Feature selection}: as illustrated in Figure \ref{fig:ML_operative_flow}, prior to the hyperparameters tuning we selected the best
-	features using the default hyperparameters values offered by the \textit{scikit-learn} library. As a consequence this approach may lead to the
-	choice of a only apparently optimal set of features, since the two aspects are strictly related.
+\item \textbf{Feature Selection}: The selection of optimal features, as depicted in Figure \ref{fig:ML_operative_flow}, occurred 
+before hyperparameter tuning. This sequential approach may result in the choice of an ostensibly optimal feature set, 
+as both aspects are tightly linked.
 
-	\item \textbf{Hyperparameters tuning}: the best combination of hyperparameters was found using the accuracy as metric. Despite
-	to have a reliable accuracy estimation we used a stratified cross-validation on a balanced dataset, the accuracy may not be the best metric.
-	A more complete approach should consider also other metrics like precision, recall and F1-score. 
-	
-	\item \textbf{Feature reduction}: the feature reduction process was performed evenly separating the 4 classes of symptoms and starting
-	retaining features from the class showing the highest predictive power. This approach may lead to a suboptimal feature reduction, since
-	there may be a specific threshold starting from which the predictive power of a feature becomes less relevant.
-	To better clarify this concept, let's consider the following example: suppose we have only two classes of symptoms, evenly distributed 
-	using the median as a threshold on the degree value. Suppose also that the predictive power of the features is the same for both classes.
-	In this case we cannot actually say that the degree doesn't impact the predictive power of the model. Indeed in the high degree class
-	we can have put lots of features with a degree not sufficiently high to become less relevant and these diseases end up
-	altering the result of the whole class, especially in a power law distribution context. 
+\item \textbf{Hyperparameter Tuning}: The determination of the best hyperparameter combination relied on accuracy as 
+the sole metric. While we employed a stratified cross-validation on a balanced dataset for a reliable accuracy estimate, 
+a more comprehensive approach should encompass additional metrics such as precision, recall, and F1-score.
 
-	A possible improved approach consist in using a manual threshold for the degree value, to find the real most useful features, possibly creating
-	unbalanced classes.
+\item \textbf{Feature Reduction}: The feature reduction process evenly separated the four classes of symptoms and commenced 
+retaining features from the class demonstrating the highest predictive power. This approach may yield suboptimal results, as a 
+specific threshold might exist beyond which the predictive power of a feature diminishes. 
+To better clarify this concept, let's consider the following example: suppose we have only two classes of symptoms, evenly distributed 
+using the median as a threshold on the degree value. Suppose also that the predictive power of the features is the same for both classes.
+In this case we cannot actually say that the degree doesn't impact the predictive power of the model. Indeed in the high degree class
+we can have put lots of features with a degree not sufficiently high to become less relevant and these diseases end up
+altering the result of the whole class, especially in a power law distribution context. 
+A refined strategy involves employing a manual threshold for the degree value, identifying truly impactful features, 
+potentially resulting in unbalanced classes.
+
 \end{itemize}
 
-\subsection{Future Works}
+\subsection{Future Work}
 
-% - list the possible issues (e.g. we are training model on diverse features with the optimal parameters for other features)
-% - exploit the knowledge of symptoms communities and their most pointed diseases, using it at prior probability for the model classification
-% - analysis of diseases complexity based on the difficulty of the model to predict them, changing L1 and L2 thresholds.
+\begin{itemize}
+\item \textbf{Symptoms Communities}: The features extracted from symptom communities were integrated into the model based on their 
+inherent ability to capture relevant information. A potential enhancement involves leveraging this knowledge explicitly, using it as prior 
+probability for the model. This entails favoring the most common diseases associated with the patient's symptoms and their communities.
+
+\item \textbf{Multi-label Classification}: Our current approach treats diseases as independent entities. However, some diseases 
+may be intricately connected. A prospective improvement entails treating diseases as a multi-label classification problem. 
+For instance, the model could output the three most likely diseases instead of a singular one.
+
+\item \textbf{Disease Complexity Analysis}: Our accuracy analysis extends to different classes of diseases based on their L1 and L2 values. 
+A potential refinement involves a nuanced exploration of disease complexity, adjusting L1 and L2 thresholds to maximize accuracy 
+differentials among disease classes. This approach would facilitate an in-depth analysis of diseases that pose higher prediction challenges.
+
+
+\end{itemize}
