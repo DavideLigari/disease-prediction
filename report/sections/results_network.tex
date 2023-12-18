@@ -157,8 +157,8 @@ different communities are illustrated in Figure~\ref{fig:com_sizes_all}.
     \includegraphics[width=.9\columnwidth]{com_sizes_all.png}
     \caption{Sizes of the communities of symptoms and diseases}\label{fig:com_sizes_all}
 \end{figure}
-\noindent
 
+\noindent
 For clinical relevance, examining symptoms communities provides valuable information about diseases associated
 with these symptoms. This is exemplified in Figures~\ref{fig:com1_symptoms},~\ref{fig:com2_symptoms},
 and~\ref{fig:com3_symptoms}. As an example, in the symptoms' community 1 (Figure~\ref{fig:com1_symptoms}),
@@ -170,6 +170,7 @@ considering that on average each disease has only three symptoms from that commu
     \includegraphics[width=.9\columnwidth]{com1_symptoms.png}
     \caption{Community 1 of symptoms}\label{fig:com1_symptoms}
 \end{figure}
+
 \noindent
 A similar study can be conducted for communities of diseases, as depicted in Figures~\ref{fig:com1_diseases},
 ~\ref{fig:com2_diseases},~\ref{fig:com3_diseases}. This information aids in profiling diseases and understanding
@@ -182,6 +183,7 @@ generic nature and limited discriminatory value.
     \includegraphics[width=.9\columnwidth]{com1_diseases.png}
     \caption{Community 1 of diseases}\label{fig:com1_diseases}
 \end{figure}
+
 \noindent
 Transitioning to the creation of features for the ML model, two types of features were developed:\\
 
@@ -196,6 +198,7 @@ Transitioning to the creation of features for the ML model, two types of feature
           community to which the symptom belongs. It enables the model to distinguish between symptoms belonging to small and
           large communities. If many symptoms from small community are present, the associated diseases may be more likely.
 \end{itemize}
+
 \noindent
 It is noteworthy that communities can also contribute to improving the computational efficiency of the model.
 For example, a symptom associated with many diseases may be less informative and could potentially be removed from the
@@ -224,6 +227,7 @@ among the symptoms in a more effective manner.
     \caption{Correlation between features}\label{fig:feat_corr}
 \end{figure*}
 
+\noindent
 To practically create the classes, we need to define thresholds for L1 and L2. We decided to consider
 a symptom as important for the prediction of specific diseases if it is present in less than 0.5 times the average of L1 diseases,
 translating into a threshold of 8.21 for L1. Consequently, we adjusted the L2 threshold to maintain a proper balance
@@ -240,8 +244,6 @@ between the classes, setting it to 8.
     \includegraphics[width=.9\columnwidth]{l1_l2_division.png}
     \caption{Division based on L1 and L2 values}\label{fig:l1_l2_division}
 \end{figure}
-\noindent
-
 
 \noindent
 As demonstrated in Figure~\ref{fig:symptoms_classes}, the four classes have different sizes, and more importantly,
@@ -280,9 +282,6 @@ Figures~\ref{fig:symptoms_classes} and~\ref{fig:l1_l2_division} illustrate the d
 The same entire analysis was conducted for diseases, in this case focusing on the high-L1-high-L2 class, which contains
 the most complex diseases under a symptomatology perspective. The results are reported in Figures~\ref{fig:diseases_classes}
 and~\ref{fig:high_l1_high_l2_class}.\\
-
-
-\noindent
 To provide a complete picture of the most specific symptoms we report the composition of the low-L1-low-L2 class
 in Figure~\ref{fig:low_l1_low_l2_class}. As we can see there are many symptoms which occur in just one disease.
 Their presence should make their associated diseases the most probable one. As an example, `vulvar sore'

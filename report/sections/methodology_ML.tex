@@ -96,6 +96,7 @@ These models are Logistic Regression, Random Forest, and Multilayer Perceptron (
 	\caption{Operative Flow of the ML Model}\label{fig:ML_operative_flow}
 \end{figure}
 
+\noindent
 Once the features are ready, the core part of the model-building process can begin. The operational flow was quite complex,
 and it is summarized in Figure~\ref{fig:ML_operative_flow}.\\
 We trained three different models: a Logistic Regression, a Random Forest, and a Multi-Layer Perceptron (MLP).\\
@@ -152,6 +153,7 @@ discussed in Section~\ref{subsec:most_important_actors} and its computational ti
 	\end{algorithmic}
 \end{algorithm}
 
+\noindent
 The quest for optimal hyperparameters (hparams) in machine learning models is often constrained by computational resources. In light of these
 limitations, we adopted a resource-efficient greedy search strategy to navigate the vast hyperparameter space.
 Our approach unfolds in several stages. Initially, we randomly initialize hyperparameters (hparams) to initiate the search. Subsequently, we employ
@@ -208,8 +210,8 @@ computational resources are limited, allowing us to derive meaningful results wi
 		\EndFor
 	\end{algorithmic}
 \end{algorithm}
-\noindent
 
+\noindent
 At the conclusion of these procedures, we obtained the following two models:\\
 
 \begin{itemize}
