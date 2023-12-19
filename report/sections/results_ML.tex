@@ -197,8 +197,8 @@ is indicative of its capability to effectively distinguish between different dis
 These classes are stratified based on their respective Disease Influence (DI) indices.
 
 \begin{itemize}
-	\item \textbf{Class 1: Low DI L1 - Low DI L2:} Diseases with a low degree (DI L1) and limited connections to other symptoms (DI L2)
-	      tend to be highly specific, which is reflected in the model's precision for such cases.
+	\item \textbf{Class 1: Low DI L1 - Low DI L2:} Diseases with a low degree (DI L1) and their symptoms are connected to a limited number
+	      of other diseases (DI L2) tend to be highly specific, which is reflected in the model's precision for such cases.
 	      The confusion matrix exhibits a low misclassification rate for these diseases,
 	      suggesting that when such specific symptoms are presented, the model can predict with high confidence,
 	      albeit for a restricted number of cases.
@@ -240,7 +240,7 @@ with a balanced precision and recall, effectively identifying true disease cases
 Low points, however, highlight areas where the model is less effective.
 \begin{figure*}[htbp]
 	\centering
-	\includegraphics[width=\textwidth]{accuraci_diseases_best_model.png}
+	\includegraphics[width=.8\textwidth]{accuraci_diseases_best_model.png}
 	\caption{A comparison of the F1 score and accuracy for each disease predicted by the model.}
 	\label{fig:performance_graph}
 \end{figure*}
@@ -324,14 +324,14 @@ leading to its lower accuracy for this specific condition.
 \end{figure*}
 \noindent
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{cancer_diabet}
 	\caption{number of samples of bladder cancer and diabets insipidus that have the same symptoms}\label{fig:cancer_diabet}
 \end{figure}
 \noindent
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{cancer_hemiplegia.png}
 	\caption{number of samples of bladder cancer and hemiplegia that have the same symptoms}\label{fig:caner_hemiplegia}
@@ -350,13 +350,13 @@ The challenge in accurately diagnosing otitis is compounded by its minimal repre
 Conversely, itching of unknown cause constitutes a slightly larger portion of the dataset (0.018\%).
 This disparity in representation may bias the model towards more frequently diagnosing itching of unknown cause,
 leading to the observed high rate (70\%) of misclassification of otitis cases.
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{otitis_missclassified.png}
 	\caption{Percentage of otitis samples misclassified}\label{fig:otitis_missclassified}
 \end{figure}
 \noindent
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{otitis_itching.png}
 	\caption{number of samples of otitis and itching of unknown cause that have the same symptoms}\label{fig:otitis_itching}

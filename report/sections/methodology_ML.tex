@@ -56,14 +56,14 @@ These models are Logistic Regression, Random Forest, and Multilayer Perceptron (
 Multinomial Logistic Regression, also known as \textit{softmax regression}, extends logistic regression to multi-class classification problems. It models the probability of each class as a function of the input features. The model is given by:
 
 \begin{equation}
-    \hat{P}(Y = k | \mathbf{x}) = \frac{e^{\mathbf{w}_k^\top \mathbf{x} + bk}}{\sum_{j=1}^{K} e^{\mathbf{w}_j^\top \mathbf{x} + b_j}}
+	\hat{P}(Y = k | \mathbf{x}) = \frac{e^{\mathbf{w}_k^\top \mathbf{x} + bk}}{\sum_{j=1}^{K} e^{\mathbf{w}_j^\top \mathbf{x} + b_j}}
 \end{equation}
 \noindent
 where $\mathbf{x}$ is the input feature vector, $\mathbf{w}_k$ is the weight vector for class $k$, $b_k$ is the bias term for class $k$, and $K$ is the total number of classes.\\
 The output $\hat{P}(Y = k | \mathbf{x})$ is the estimated probability that the input $\mathbf{x}$ belongs to class $k$. The model predicts the class with the highest probability as the output:
 
 \begin{equation}
-    \hat{y} = \underset{k}{\arg\max} \left\{ \hat{P}(Y = k | \mathbf{x}) \right\}
+	\hat{y} = \underset{k}{\arg\max} \left\{ \hat{P}(Y = k | \mathbf{x}) \right\}
 \end{equation}
 \noindent
 Multinomial logistic regression is widely used for classification problems where the output can belong to more than two discrete classes. It is a generalization of binary logistic regression and retains its properties as a linear model, making it interpretable and efficient for high-dimensional datasets.
@@ -78,11 +78,11 @@ Multinomial logistic regression is widely used for classification problems where
 
 \noindent
 \textbf{Random Forest}\vspace{0.15cm}\\
-A \textit{Random Forest} is an ensemble learning technique used primarily for classification. It constructs a multitude of decision trees during training and integrates their outcomes to improve the final prediction accuracy. The classification decision in a Random Forest is based on the majority voting system among all trees. 
+A \textit{Random Forest} is an ensemble learning technique used primarily for classification. It constructs a multitude of decision trees during training and integrates their outcomes to improve the final prediction accuracy. The classification decision in a Random Forest is based on the majority voting system among all trees.
 The prediction for a class label $\hat{y}$ for an input vector $\mathbf{x}$ is given by:
 
 \begin{equation}
-\hat{y}(\mathbf{x}) = \text{mode} \left\{ T_1(\mathbf{x}), T_2(\mathbf{x}), \ldots, T_B(\mathbf{x}) \right\}
+	\hat{y}(\mathbf{x}) = \text{mode} \left\{ T_1(\mathbf{x}), T_2(\mathbf{x}), \ldots, T_B(\mathbf{x}) \right\}
 \end{equation}
 \noindent
 where $B$ is the number of trees in the forest, and $T_b(\mathbf{x})$ is the prediction of the $b^{th}$ tree.
@@ -103,14 +103,14 @@ The Random Forest algorithm improves classification accuracy by reducing overfit
 A \textit{Multilayer Perceptron (MLP)} is a type of feedforward artificial neural network, commonly used for classification tasks. It consists of multiple layers of nodes: an input layer, one or more hidden layers, and an output layer. The output of each layer is computed as:
 
 \begin{equation}
-    \mathbf{h}^{(l)} = f(\mathbf{W}^{(l)} \mathbf{h}^{(l-1)} + \mathbf{b}^{(l)}) = f(\mathbf{z}^{(l)})
+	\mathbf{h}^{(l)} = f(\mathbf{W}^{(l)} \mathbf{h}^{(l-1)} + \mathbf{b}^{(l)}) = f(\mathbf{z}^{(l)})
 \end{equation}
 \noindent
 where $\mathbf{h}^{(l)}$ is the output of the $l^{th}$ layer, $\mathbf{W}^{(l)}$ and $\mathbf{b}^{(l)}$ are the weights and biases of the $l^{th}$ layer, respectively, and $f$ is a nonlinear activation function.\\
 For classification, the final layer typically uses a softmax activation function to output a probability distribution over the classes. The class with the highest probability is selected as the model's prediction. The softmax function in the output layer for a classification problem with $K$ classes is given by:
 
 \begin{equation}
-    \text{softmax}(\mathbf{z})_i = \frac{e^{zi}}{\sum_{k=1}^{K} e^{z_k}} \quad \text{for } i = 1, \ldots, K
+	\text{softmax}(\mathbf{z})_i = \frac{e^{zi}}{\sum_{k=1}^{K} e^{z_k}} \quad \text{for } i = 1, \ldots, K
 \end{equation}
 \noindent
 where $\mathbf{z}$ is the input to the softmax function, typically the output of the last hidden layer of the network. The final output $\mathbf{y}$ is given by:
@@ -226,7 +226,7 @@ computational resources are limited, allowing us to derive meaningful results wi
 
 		\For{each hparam in hparams}
 		\State src\_range $\gets$ initialSrcRange
-		\State best\_value $\gets$ curr\_hparams[hparam]
+		\State bestVal $\gets$ curr\_hparams[hparam]
 		\State accuracy $\gets$ 0
 
 		\For{value in src\_range}
@@ -234,17 +234,17 @@ computational resources are limited, allowing us to derive meaningful results wi
 		\State performance $\gets$ eval(model, curr\_hparams)
 
 		\If{performance better than accuracy}
-		\State best\_value $\gets$ value
+		\State bestVal $\gets$ value
 		\State accuracy $\gets$ performance
 		\EndIf
 		\EndFor
 
-		\If{best\_value is at the lower extreme}
-		\State src\_range $\gets$ extendSrcRangeLower(best\_value)
-		\ElsIf{best\_value is at the upper extreme}
-		\State src\_range $\gets$ extendSrcRangeUpper(best\_value)
+		\If{bestVal is at the lower extreme}
+		\State src\_range $\gets$ extendSrcRangeLower(bestVal)
+		\ElsIf{bestVal is at the upper extreme}
+		\State src\_range $\gets$ extendSrcRangeUpper(bestVal)
 		\Else
-		\State src\_range $\gets$ narrowSrcRange(best\_value)
+		\State src\_range $\gets$ narrowSrcRange(bestVal)
 		\EndIf
 
 		\For{value in src\_range}
@@ -252,11 +252,11 @@ computational resources are limited, allowing us to derive meaningful results wi
 		\State performance $\gets$ eval(model, curr\_hparams)
 
 		\If{performance better than accuracy}
-		\State best\_value $\gets$ value
+		\State bestVal $\gets$ value
 		\State accuracy $\gets$ performance
 		\EndIf
 		\EndFor
-		\State curr\_hparams[hparam] $\gets$ best\_value
+		\State curr\_hparams[hparam] $\gets$ bestVal
 		\EndFor
 	\end{algorithmic}
 \end{algorithm}
