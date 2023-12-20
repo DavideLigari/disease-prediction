@@ -28,7 +28,7 @@ Given the symptoms and diseases data we opted for a bipartite graph representing
 
 ## Operational Flow for the Model
 
-The operational flow involves feature extraction, model training, and complexity reduction. Models are trained using a combination of symptoms and other features, and complexity reduction is applied to retain relevant features. ![Operational Flow Chart](report/images/operational_flow.png)
+The operational flow involves feature extraction, model training, and complexity reduction. Models are trained using a combination of symptoms and other features, and complexity reduction is applied to retain relevant features. ![Operational Flow Chart](report/images/operational_flow.drawio-2.png)
 
 ## Results
 
